@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Title Generator</string>
+    <string name="action_settings">Settings</string>
+    <string name="word_count">Words: %d</string>
+    <string name="title_words">title words</string>
+    <string name="form_X">%s</string>
+    <string name="form_X_Y">%s %s</string>
+    <string name="form_X__Y">%s: %s</string>
+    <string name="form_X_of_Y">%s of %s</string>
+    <string name="form_X_of_the_Y">%s of the %s</string>
+    <string name="form_X_and_Y">%s and %s</string>
+    <string name="form_X_and_the_Y">%s and the %s</string>
+    <string name="category_feature">Feature</string>
+    <string name="category_concept">Concept</string>
+    <string name="category_thing">Thing</string>
+    <string name="category_actor_and_action">Actor &amp; Action</string>
+    <string name="category_PlaceAndTime">Place &amp; Time</string>
+</resources>
