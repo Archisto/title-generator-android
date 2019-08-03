@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView wordListSizeText;
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
+    private ToggleButton titleDecorationsToggle;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
@@ -30,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
-    private boolean enableTitleForms = true;
+    private boolean enableTitleDecorations = true;
 
-    private enum TitleForm {
+    private enum TitleDecoration {
         X_Y,
         X_colon_Y,
+        X_colon_theY,
         XofY,
         XoftheY,
         XandY,
@@ -67,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 displayTitles();
+            }
+        });
+
+        titleDecorationsToggle = (ToggleButton) findViewById(R.id.toggle_titleDecorations);
+        titleDecorationsToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                enableTitleDecorations = titleDecorationsToggle.isChecked();
             }
         });
     }
@@ -103,28 +114,27 @@ public class MainActivity extends AppCompatActivity {
 
             boolean emptySlot = i >= displayedTitleCount;
             if (!emptySlot) {
-                TitleForm form = getRandomTitleForm();
+                TitleDecoration decoration = getRandomTitleDecoration();
 
                 title.append(String.format(getString(R.string.titleNumber), i + 1));
                 title.append(" ");
 
-                if (enableTitleForms && Math.random() <= 0.3f) {
+                if (enableTitleDecorations && Math.random() <= 0.3f) {
                     title.append("The ");
                 }
 
                 int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
 
                 for (int j = 0; j < wordsPerTitle; j++) {
-                    //Word word = getRandomWord(-1);
+                    boolean isLastWord = j == wordsPerTitle - 1;
 
                     title.append(getRandomWord(-1));
-                    //title.append(" (" + word.categoryName + ")");
 
-                    if (enableTitleForms && j == formPlaceWordIndex && wordsPerTitle > 1) {
-                        applyTitleForm(form, title);
+                    if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
+                        applyTitleDecoration(decoration, title);
                     }
-                    else if (j < wordsPerTitle - 1) {
-                        applyTitleForm(null, title);
+                    else if (!isLastWord) {
+                        applyTitleDecoration(TitleDecoration.X_Y, title);
                     }
                 }
             }
@@ -143,40 +153,49 @@ public class MainActivity extends AppCompatActivity {
         return wordList.get(randWordIndex);
     }
 
-    private TitleForm getRandomTitleForm() {
+    private TitleDecoration getRandomTitleDecoration() {
         double rand = Math.random();
-        if (rand <= 0.2) {
-            return TitleForm.X_colon_Y;
+        if (rand <= 0.12) {
+            return TitleDecoration.X_colon_Y;
+        }
+        else if (rand <= 0.2) {
+            return TitleDecoration.X_colon_theY;
         }
         else if (rand <= 0.3) {
-            return TitleForm.XofY;
+            return TitleDecoration.XofY;
         }
         else if (rand <= 0.45) {
-            return TitleForm.XoftheY;
+            return TitleDecoration.XoftheY;
         }
         else if (rand <= 0.55) {
-            return TitleForm.XandY;
+            return TitleDecoration.XandY;
         }
         else if (rand <= 0.65) {
-            return TitleForm.XandtheY;
+            return TitleDecoration.XandtheY;
         }
         else if (rand <= 0.7) {
-            return TitleForm.XsY;
+            return TitleDecoration.XsY;
         }
         else {
-            return TitleForm.X_Y;
+            return TitleDecoration.X_Y;
         }
     }
 
-    private void applyTitleForm(TitleForm form, StringBuilder title) {
-        if (form == null) {
+    private void applyTitleDecoration(TitleDecoration decoration, StringBuilder title) {
+        if (decoration == null) {
             title.append(" ");
             return;
         }
 
-        switch (form) {
+        switch (decoration) {
+            case X_Y:
+                title.append(" ");
+                break;
             case X_colon_Y:
                 title.append(": ");
+                break;
+            case X_colon_theY:
+                title.append(": The ");
                 break;
             case XofY:
                 title.append(" of ");

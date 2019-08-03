@@ -4,7 +4,7 @@
     <string name="form_X">%s</string>
     <string name="form_X_Y">%s %s</string>
     <string name="form_X__Y">%s: %s</string>
-    <string name="form_X_of_Y">%s of %s</string>
+    <string name="form_X_of_Y" translatable="false">%s of %s</string>
     <string name="form_X_of_the_Y">%s of the %s</string>
     <string name="form_X_and_Y">%s and %s</string>
     <string name="form_X_and_the_Y">%s and the %s</string>
@@ -18,4 +18,7 @@
     <string name="titleCount">Title Count: %d</string>
     <string name="titleWordCount">Words in a Title: %d</string>
     <string name="totalWordCount">Words in Total: %d</string>
+    <string name="toggleTitleForms_on">Title Decorations On</string>
+    <string name="toggleTitleForms_off">Title Decorations Off</string>
+    <string name="toggleTitleForms">Toggle Title Decorations</string>
 </resources>
