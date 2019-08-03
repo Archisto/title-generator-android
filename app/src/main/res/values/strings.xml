@@ -15,5 +15,6 @@
     <string name="category_PlaceAndTime">Place &amp; Time</string>
     <string name="titleNumber">%d)</string>
     <string name="titleCount">Title Count: %d</string>
+    <string name="titleWordCount">Words in a Title: %d</string>
     <string name="totalWordCount">Words in Total: %d</string>
 </resources>
