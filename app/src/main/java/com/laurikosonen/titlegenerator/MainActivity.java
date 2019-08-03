@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
+    private boolean enableTitleForms = true;
 
     private enum TitleForm {
         X_Y,
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         XofY,
         XoftheY,
         XandY,
-        XandtheY
+        XandtheY,
+        XsY
     }
 
     @Override
@@ -101,12 +103,29 @@ public class MainActivity extends AppCompatActivity {
 
             boolean emptySlot = i >= displayedTitleCount;
             if (!emptySlot) {
+                TitleForm form = getRandomTitleForm();
+
                 title.append(String.format(getString(R.string.titleNumber), i + 1));
                 title.append(" ");
 
+                if (enableTitleForms && Math.random() <= 0.3f) {
+                    title.append("The ");
+                }
+
+                int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
+
                 for (int j = 0; j < wordsPerTitle; j++) {
+                    //Word word = getRandomWord(-1);
+
                     title.append(getRandomWord(-1));
-                    title.append(" ");
+                    //title.append(" (" + word.categoryName + ")");
+
+                    if (enableTitleForms && j == formPlaceWordIndex && wordsPerTitle > 1) {
+                        applyTitleForm(form, title);
+                    }
+                    else if (j < wordsPerTitle - 1) {
+                        applyTitleForm(null, title);
+                    }
                 }
             }
 
@@ -115,17 +134,73 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Word getRandomWord(int wordCategoryId) {
-        double rand;
-
         if (wordCategoryId < 0) {
-            rand = Math.random();
-            wordCategoryId = (int) (rand * wordLists.size());
+            wordCategoryId = (int) (Math.random() * wordLists.size());
         }
 
         List<Word> wordList = wordLists.get(wordCategoryId);
-        rand = Math.random();
-        int randWordIndex = (int) (rand * wordList.size());
+        int randWordIndex = (int) (Math.random() * wordList.size());
         return wordList.get(randWordIndex);
+    }
+
+    private TitleForm getRandomTitleForm() {
+        double rand = Math.random();
+        if (rand <= 0.2) {
+            return TitleForm.X_colon_Y;
+        }
+        else if (rand <= 0.3) {
+            return TitleForm.XofY;
+        }
+        else if (rand <= 0.45) {
+            return TitleForm.XoftheY;
+        }
+        else if (rand <= 0.55) {
+            return TitleForm.XandY;
+        }
+        else if (rand <= 0.65) {
+            return TitleForm.XandtheY;
+        }
+        else if (rand <= 0.7) {
+            return TitleForm.XsY;
+        }
+        else {
+            return TitleForm.X_Y;
+        }
+    }
+
+    private void applyTitleForm(TitleForm form, StringBuilder title) {
+        if (form == null) {
+            title.append(" ");
+            return;
+        }
+
+        switch (form) {
+            case X_colon_Y:
+                title.append(": ");
+                break;
+            case XofY:
+                title.append(" of ");
+                break;
+            case XoftheY:
+                title.append(" of the ");
+                break;
+            case XandY:
+                title.append(" and ");
+                break;
+            case XandtheY:
+                title.append(" and the ");
+                break;
+            case XsY:
+                if (title.charAt(title.length() - 1) == 's'
+                    || title.charAt(title.length() - 1) == 'z')
+                    title.append("' ");
+                else
+                    title.append("'s ");
+                break;
+            default:
+                title.append(" ");
+                break;
+        }
     }
 
     @Override

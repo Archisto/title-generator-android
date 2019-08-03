@@ -8,6 +8,7 @@
     <string name="form_X_of_the_Y">%s of the %s</string>
     <string name="form_X_and_Y">%s and %s</string>
     <string name="form_X_and_the_Y">%s and the %s</string>
+    <string name="form_Xs_Y">%s\'s %s</string>
     <string name="category_feature">Feature</string>
     <string name="category_concept">Concept</string>
     <string name="category_thing">Thing</string>
