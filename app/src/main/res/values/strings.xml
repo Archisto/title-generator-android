@@ -15,4 +15,5 @@
     <string name="category_thing">Thing</string>
     <string name="category_actor_and_action">Actor &amp; Action</string>
     <string name="category_PlaceAndTime">Place &amp; Time</string>
+    <string name="title_number">%d)</string>
 </resources>

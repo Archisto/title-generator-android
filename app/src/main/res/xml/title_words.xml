@@ -391,13 +391,13 @@
         <word plural="true">Dreams</word>
         <word>Drome</word>
         <word>Echo</word>
-        <word>Echoes</word>
+        <word plural="true">Echoes</word>
         <word>Edge</word>
         <word>Effect</word>
         <word>Electron</word>
         <word>Enclave</word>
         <word>End</word>
-        <word>Ends</word>
+        <word plural="true">Ends</word>
         <word>Energy</word>
         <word>Epidemic</word>
         <word>Error</word>
@@ -491,7 +491,7 @@
         <word>Mod</word>
         <word>Mode</word>
         <word>Myth</word>
-        <word>Myths</word>
+        <word plural="true">Myths</word>
         <word>Name</word>
         <word>Names</word>
         <word>Narrative</word>
@@ -602,7 +602,7 @@
         <word>Time</word>
         <word>Torment</word>
         <word>Trail</word>
-        <word>Trials</word>
+        <word plural="true">Trials</word>
         <word>Tribute</word>
         <word>Triumph</word>
         <word>Truth</word>
@@ -619,7 +619,7 @@
         <word>Vigilance</word>
         <word>Violence</word>
         <word>Virtue</word>
-        <word>Virtues</word>
+        <word plural="true">Virtues</word>
         <word>Volt</word>
         <word>Vortex</word>
         <word>War</word>
@@ -627,7 +627,7 @@
         <word>Warning</word>
         <word>Wave</word>
         <word>Way</word>
-        <word>We</word>
+        <word plural="true">We</word>
         <word>Weakness</word>
         <word>What</word>
         <word>When</word>

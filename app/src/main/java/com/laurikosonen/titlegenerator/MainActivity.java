@@ -2,7 +2,6 @@ package com.laurikosonen.titlegenerator;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -11,18 +10,21 @@ import android.view.MenuItem;
 
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private List<TextView> titleSlots;
+    private TextView wordListSizeText;
+
     private List<List<Word>> wordLists;
     private List<Word> allWords;
+
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
-    private int wordsPerTitle = 3;
-    private boolean randomTitleLength;
-    private List<TextView> titleSlots;
+    private int titleWordCount = 3;
+    private boolean randomTitleLength = true;
 
     private enum TitleForm {
         X_Y,
@@ -40,20 +42,31 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        initWords();
         initTitleSlots();
+
+        wordListSizeText = (TextView) findViewById(R.id.tipText);
+        wordListSizeText.setText(String.format(getString(R.string.word_count), allWords.size()));
 
         for (TextView text : titleSlots) {
             text.setText(getString(R.string.category_feature));
         }
 
+        displayTitles();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+                displayTitles();
             }
         });
+    }
+
+    private void initWords() {
+        wordLists = new ArrayList<>();
+        allWords = new ArrayList<>();
+        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords);
     }
 
     private void initTitleSlots() {
@@ -68,6 +81,45 @@ public class MainActivity extends AppCompatActivity {
         titleSlots.add((TextView) findViewById(R.id.titleSlot08));
         titleSlots.add((TextView) findViewById(R.id.titleSlot09));
         titleSlots.add((TextView) findViewById(R.id.titleSlot10));
+    }
+
+    private void displayTitles() {
+        int wordsPerTitle = titleWordCount;
+
+        for (int i = 0; i < titleSlots.size(); i++) {
+            StringBuilder title = new StringBuilder();
+
+            if (randomTitleLength) {
+                wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
+            }
+
+            boolean emptySlot = i >= displayedTitleCount;
+            if (!emptySlot) {
+                title.append(String.format(getString(R.string.title_number), i + 1));
+                title.append(" ");
+
+                for (int j = 0; j < wordsPerTitle; j++) {
+                    title.append(getRandomWord(-1));
+                    title.append(" ");
+                }
+            }
+
+            titleSlots.get(i).setText(title);
+        }
+    }
+
+    private Word getRandomWord(int wordCategoryId) {
+        double rand;
+
+        if (wordCategoryId < 0) {
+            rand = Math.random();
+            wordCategoryId = (int) (rand * wordLists.size());
+        }
+
+        List<Word> wordList = wordLists.get(wordCategoryId);
+        rand = Math.random();
+        int randWordIndex = (int) (rand * wordList.size());
+        return wordList.get(randWordIndex);
     }
 
     @Override

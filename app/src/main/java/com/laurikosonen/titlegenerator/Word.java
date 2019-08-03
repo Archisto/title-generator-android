@@ -18,4 +18,9 @@ public class Word {
         this.categoryShortName = categoryShortName;
         this.categoryId = categoryId;
     }
+
+    @Override
+    public String toString() {
+        return word;
+    }
 }

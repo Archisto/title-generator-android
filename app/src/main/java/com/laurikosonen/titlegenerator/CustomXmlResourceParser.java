@@ -16,7 +16,6 @@ public class CustomXmlResourceParser {
     private static final String nameStr = "name";
     private static final String shortNameStr = "shortName";
     private static final String idStr = "id";
-    private static final String typeStr = "type";
     private static final String pluralStr = "plural";
 
     private static int parseInt(String str) {
@@ -33,7 +32,7 @@ public class CustomXmlResourceParser {
         return result;
     }
 
-    public static void parseCards(Resources resources,
+    public static void parseWords(Resources resources,
                                   int resourceID,
                                   List<List<Word>> pools,
                                   List<Word> poolAll) {
@@ -52,7 +51,7 @@ public class CustomXmlResourceParser {
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
                     startTagName = parser.getName();
-                    Log.d("TitleGen", "startTagName: " + startTagName);
+//                    Log.d("TitleGnr", "startTagName: " + startTagName);
 
                     // Parses the category
                     if (startTagName.equalsIgnoreCase(categoryStr)) {
@@ -61,16 +60,16 @@ public class CustomXmlResourceParser {
                         categoryShortName = parser.getAttributeValue(null, shortNameStr);
                         categoryId = parseInt(strId);
 
-                        String pluralAttributeValue =
-                            parser.getAttributeValue(null, pluralStr);
-                        isPlural = pluralAttributeValue != null;
-
                         // Increases the pool count if the ID is too large
                         if (pools.size() <= categoryId) {
                             List<Word> newPool = new ArrayList<>();
                             pools.add(newPool);
-                            Log.d("TitleGen", "Created pool; new pool count: " + pools.size());
                         }
+                    }
+                    else if (startTagName.equalsIgnoreCase(wordStr)) {
+                        String pluralAttributeValue =
+                            parser.getAttributeValue(null, pluralStr);
+                        isPlural = pluralAttributeValue != null;
                     }
                 }
                 else if (eventType == XmlPullParser.TEXT) {
@@ -96,7 +95,7 @@ public class CustomXmlResourceParser {
             e.printStackTrace();
         }
         finally {
-            Log.d("TitleGen", "Word parsing complete");
+            Log.d("TitleGnr", "Word parsing complete");
         }
     }
 
@@ -106,7 +105,6 @@ public class CustomXmlResourceParser {
                                       String categoryShortName,
                                       int id) {
         if (text != null && !text.isEmpty()) {
-            Log.d("TitleGen", "Created word: " + text);
             return new Word(text, isPlural, categoryName, categoryShortName, id);
         }
 
