@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleWordCountMenuItem;
     private ToggleButton titleDecorationsToggle;
     private EditText customTemplateInput;
+    private MenuItem customTemplateToggle;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
@@ -274,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         initMenu(menu);
         initCategories(menu);
+        customTemplateToggle = menu.findItem(R.id.action_customTemplate);
         return true;
     }
 
@@ -414,14 +416,18 @@ public class MainActivity extends AppCompatActivity {
     private boolean handleCustomTemplateActivation(int id, MenuItem item) {
         if (id == R.id.action_customTemplate) {
             enableCustomTemplate = !enableCustomTemplate;
+            customTemplateToggle.setChecked(enableCustomTemplate);
+            customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
+            titleDecorationsToggle.setEnabled(!enableCustomTemplate);
 
-            if (enableCustomTemplate && (customTemplate == null || customTemplate.isEmpty())) {
+            if (enableCustomTemplate
+                && (customTemplate == null
+                    || customTemplate.isEmpty()
+                    || customTemplateInput.getText().toString().isEmpty())) {
                 customTemplate = defaultTemplate;
                 customTemplateInput.setText(customTemplate);
             }
 
-            customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
-            titleDecorationsToggle.setEnabled(!enableCustomTemplate);
             return true;
         }
 

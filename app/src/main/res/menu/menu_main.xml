@@ -73,6 +73,7 @@
 
     <item
         android:id="@+id/action_customTemplate"
+        android:checkable="true"
         android:title="@string/action_customTemplate" />
 
     <group android:id="@+id/group_displayCategories" >
