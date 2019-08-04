@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private final int maxTitleWords = 5;
 
     private List<TextView> titleSlots;
-    private TextView wordListSizeText;
+    private List<TextView> titleNumberSlots;
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
     private ToggleButton titleDecorationsToggle;
@@ -54,10 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         initWords();
         initTitleSlots();
-
-        wordListSizeText = (TextView) findViewById(R.id.tipText);
-        wordListSizeText.setText(String.format(
-            getString(R.string.totalWordCount), allWords.size()));
 
         for (TextView text : titleSlots) {
             text.setText(getString(R.string.category_feature));
@@ -100,6 +96,18 @@ public class MainActivity extends AppCompatActivity {
         titleSlots.add((TextView) findViewById(R.id.titleSlot08));
         titleSlots.add((TextView) findViewById(R.id.titleSlot09));
         titleSlots.add((TextView) findViewById(R.id.titleSlot10));
+
+        titleNumberSlots = new ArrayList<>(10);
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber01));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber02));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber03));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber04));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber05));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber06));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber07));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber08));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber09));
+        titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber10));
     }
 
     private void displayTitles() {
@@ -113,11 +121,16 @@ public class MainActivity extends AppCompatActivity {
             }
 
             boolean emptySlot = i >= displayedTitleCount;
+
+            // Sets the number text before the title, e.g. "1) Title"
+            String numberText = "";
+            if (!emptySlot)
+                numberText = String.format(getString(R.string.titleNumber), i + 1);
+            titleNumberSlots.get(i).setText(numberText);
+
+            // Creates the title
             if (!emptySlot) {
                 TitleDecoration decoration = getRandomTitleDecoration();
-
-                title.append(String.format(getString(R.string.titleNumber), i + 1));
-                title.append(" ");
 
                 if (enableTitleDecorations && Math.random() <= 0.3f) {
                     title.append("The ");
