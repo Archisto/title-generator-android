@@ -106,6 +106,7 @@
         <word>Evil</word>
         <word>Evolved</word>
         <word>Extraordinary</word>
+        <word>Fabled</word>
         <word>Faded</word>
         <word>Failed</word>
         <word>Failing</word>
@@ -133,7 +134,6 @@
         <word>Frozen</word>
         <word>Full</word>
         <word>Fun</word>
-        <word>Future</word>
         <word>Galactic</word>
         <word>Gamma</word>
         <word>Geo</word>
@@ -233,7 +233,6 @@
         <word>Over</word>
         <word>Pale</word>
         <word>Paper</word>
-        <word>Past</word>
         <word>Perfect</word>
         <word>Perished</word>
         <word>Pierced</word>
@@ -254,6 +253,7 @@
         <word>Righteous</word>
         <word>Rising</word>
         <word>Rival</word>
+        <word>Rogue</word>
         <word>Rotten</word>
         <word>Royal</word>
         <word>Sacred</word>
@@ -298,6 +298,7 @@
         <word>Taking</word>
         <word>Tera</word>
         <word>Terrible</word>
+        <word plural="true">These</word>
         <word>This</word>
         <word>Thousand</word>
         <word>Tiny</word>
@@ -427,6 +428,8 @@
         <word>Event</word>
         <word>Events</word>
         <word>Exile</word>
+        <word>Fable</word>
+        <word>Fables</word>
         <word>Factor</word>
         <word>Faith</word>
         <word>Family</word>
@@ -1060,6 +1063,9 @@
         <word>Fuse</word>
         <word>Fusion</word>
         <word>Glow</word>
+        <word>Grin</word>
+        <word>Grind</word>
+        <word>Grinding</word>
         <word>Grip</word>
         <word>Guard</word>
         <word>Guardian</word>
@@ -1186,6 +1192,8 @@
         <word>Slayer</word>
         <word>Slide</word>
         <word>Slinger</word>
+        <word>Smile</word>
+        <word>Smiles</word>
         <word>Soldier</word>
         <word>Soldiers</word>
         <word>Spark</word>
@@ -1287,6 +1295,7 @@
         <word>Fort</word>
         <word>Fortress</word>
         <word>Frontier</word>
+        <word>Future</word>
         <word>Galaxy</word>
         <word>Gallery</word>
         <word>Garden</word>
@@ -1339,6 +1348,7 @@
         <word>Orbit</word>
         <word>Palace</word>
         <word>Paradise</word>
+        <word>Past</word>
         <word>Path</word>
         <word>Pit</word>
         <word>Plaza</word>
