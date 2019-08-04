@@ -415,6 +415,20 @@
         app:layout_constraintTop_toBottomOf="@+id/titleSlot03"
         app:layout_constraintVertical_bias="0.0" />
 
+    <EditText
+        android:id="@+id/textInput_customTemplate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/toggle_titleDecorations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ToggleButton
         android:id="@+id/toggle_titleDecorations"
         android:layout_width="wrap_content"

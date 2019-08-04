@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.widget.EditText;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -25,15 +26,20 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
     private ToggleButton titleDecorationsToggle;
+    private EditText customTemplateInput;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
+    private String customTemplate;
+    private String defaultTemplate;
+    private char templateWordChar = '#';
 
     private int displayedCategory;
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
     private boolean enableTitleDecorations = true;
+    private boolean enableCustomTemplate = false;
 
     private enum TitleDecoration {
         X_Y,
@@ -55,10 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         initWords();
         initTitleSlots();
-
-        for (TextView text : titleSlots) {
-            text.setText(getString(R.string.category_feature));
-        }
+        initCustomTemplate();
 
         displayTitles();
 
@@ -66,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (enableCustomTemplate) {
+                    customTemplate = customTemplateInput.getText().toString();
+                }
+
                 displayTitles();
             }
         });
@@ -111,45 +118,58 @@ public class MainActivity extends AppCompatActivity {
         titleNumberSlots.add((TextView) findViewById(R.id.titleSlotNumber10));
     }
 
+    private void initCustomTemplate() {
+        defaultTemplate = getString(R.string.customTemplateExample);
+        customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
+        customTemplateInput.setVisibility(View.GONE);
+    }
+
     private void displayTitles() {
         int wordsPerTitle = titleWordCount;
 
         for (int i = 0; i < titleSlots.size(); i++) {
+            boolean emptySlot = i >= displayedTitleCount;
+            if (emptySlot) {
+                titleSlots.get(i).setText("");
+                titleNumberSlots.get(i).setText("");
+                continue;
+            }
+
             StringBuilder title = new StringBuilder();
+
+            // Sets the number text before the title, e.g. "1) Title"
+            String numberText = String.format(getString(R.string.titleNumber), i + 1);
+            titleNumberSlots.get(i).setText(numberText);
+
+            if (enableCustomTemplate) {
+                applyCustomTemplate(title);
+                titleSlots.get(i).setText(title);
+                continue;
+            }
 
             if (randomTitleLength) {
                 wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
             }
 
-            boolean emptySlot = i >= displayedTitleCount;
+            // Creates the title:
 
-            // Sets the number text before the title, e.g. "1) Title"
-            String numberText = "";
-            if (!emptySlot)
-                numberText = String.format(getString(R.string.titleNumber), i + 1);
-            titleNumberSlots.get(i).setText(numberText);
+            TitleDecoration decoration = getRandomTitleDecoration();
+            if (enableTitleDecorations && Math.random() <= 0.3f) {
+                title.append("The ");
+            }
 
-            // Creates the title
-            if (!emptySlot) {
-                TitleDecoration decoration = getRandomTitleDecoration();
+            int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
 
-                if (enableTitleDecorations && Math.random() <= 0.3f) {
-                    title.append("The ");
+            for (int j = 0; j < wordsPerTitle; j++) {
+                boolean isLastWord = j == wordsPerTitle - 1;
+
+                title.append(getRandomWord(displayedCategory));
+
+                if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
+                    applyTitleDecoration(decoration, title);
                 }
-
-                int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
-
-                for (int j = 0; j < wordsPerTitle; j++) {
-                    boolean isLastWord = j == wordsPerTitle - 1;
-
-                    title.append(getRandomWord(displayedCategory));
-
-                    if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
-                        applyTitleDecoration(decoration, title);
-                    }
-                    else if (!isLastWord) {
-                        applyTitleDecoration(TitleDecoration.X_Y, title);
-                    }
+                else if (!isLastWord) {
+                    applyTitleDecoration(TitleDecoration.X_Y, title);
                 }
             }
 
@@ -237,6 +257,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void applyCustomTemplate(StringBuilder title) {
+        for (int i = 0; i < customTemplate.length(); i++) {
+            if (customTemplate.charAt(i) == templateWordChar) {
+                title.append(getRandomWord(displayedCategory));
+            }
+            else {
+                title.append(customTemplate.charAt(i));
+            }
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -287,6 +318,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if (handleDisplayedCategoryOptions(id, item)) {
+            return true;
+        }
+        else if (handleCustomTemplateActivation(id, item)) {
             return true;
         }
 
@@ -372,6 +406,23 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_displayCategory4: {
                 return setDisplayedCategory(item, 4);
             }
+        }
+
+        return false;
+    }
+
+    private boolean handleCustomTemplateActivation(int id, MenuItem item) {
+        if (id == R.id.action_customTemplate) {
+            enableCustomTemplate = !enableCustomTemplate;
+
+            if (enableCustomTemplate && (customTemplate == null || customTemplate.isEmpty())) {
+                customTemplate = defaultTemplate;
+                customTemplateInput.setText(customTemplate);
+            }
+
+            customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
+            titleDecorationsToggle.setEnabled(!enableCustomTemplate);
+            return true;
         }
 
         return false;

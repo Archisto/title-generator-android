@@ -71,6 +71,10 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/action_customTemplate"
+        android:title="@string/action_customTemplate" />
+
     <group android:id="@+id/group_displayCategories" >
         <item
             android:id="@+id/action_displayAll"

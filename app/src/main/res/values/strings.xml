@@ -23,4 +23,6 @@
     <string name="toggleTitleForms">Toggle Title Decorations</string>
     <string name="action_displayAll">Display All Categories</string>
     <string name="action_displayCategory">> %s</string>
+    <string name="action_customTemplate">Toggle Custom Template</string>
+    <string name="customTemplateExample"># Example: # #</string>
 </resources>
