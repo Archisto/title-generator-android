@@ -12,8 +12,8 @@
     <string name="category_feature">Feature</string>
     <string name="category_concept">Concept</string>
     <string name="category_thing">Thing</string>
-    <string name="category_actor_and_action">Actor &amp; Action</string>
-    <string name="category_PlaceAndTime">Place &amp; Time</string>
+    <string name="category_actorAndAction">Actor &amp; Action</string>
+    <string name="category_placeAndTime">Place &amp; Time</string>
     <string name="titleNumber">%d)</string>
     <string name="titleCount">Title Count: %d</string>
     <string name="titleWordCount">Words in a Title: %d</string>
@@ -21,4 +21,6 @@
     <string name="toggleTitleForms_on">Title Decorations On</string>
     <string name="toggleTitleForms_off">Title Decorations Off</string>
     <string name="toggleTitleForms">Toggle Title Decorations</string>
+    <string name="action_displayAll">Display All Categories</string>
+    <string name="action_displayCategory">> %s</string>
 </resources>

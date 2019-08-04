@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<TextView> titleSlots;
     private List<TextView> titleNumberSlots;
+    private MenuItem currentDisplayedCatItem;
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
     private ToggleButton titleDecorationsToggle;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private List<List<Word>> wordLists;
     private List<Word> allWords;
 
-    private int displayedCategory = -1;
+    private int displayedCategory;
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int j = 0; j < wordsPerTitle; j++) {
                     boolean isLastWord = j == wordsPerTitle - 1;
 
-                    title.append(getRandomWord(-1));
+                    title.append(getRandomWord(displayedCategory));
 
                     if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
                         applyTitleDecoration(decoration, title);
@@ -157,13 +158,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Word getRandomWord(int wordCategoryId) {
-        if (wordCategoryId < 0) {
-            wordCategoryId = (int) (Math.random() * wordLists.size());
-        }
+        List<Word> wordList;
+        if (wordCategoryId < 0)
+            wordList = allWords;
+        else
+            wordList = wordLists.get(wordCategoryId);
 
-        List<Word> wordList = wordLists.get(wordCategoryId);
-        int randWordIndex = (int) (Math.random() * wordList.size());
-        return wordList.get(randWordIndex);
+        int wordIndex = (int) (Math.random() * wordList.size());
+        return wordList.get(wordIndex);
     }
 
     private TitleDecoration getRandomTitleDecoration() {
@@ -240,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         initMenu(menu);
+        initCategories(menu);
         return true;
     }
 
@@ -253,6 +256,23 @@ public class MainActivity extends AppCompatActivity {
             setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
     }
 
+    private void initCategories(Menu menu) {
+        displayedCategory = -1;
+        currentDisplayedCatItem = menu.findItem(R.id.action_displayAll);
+        currentDisplayedCatItem.setEnabled(false);
+
+        menu.findItem(R.id.action_displayCategory0).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_feature)));
+        menu.findItem(R.id.action_displayCategory1).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_concept)));
+        menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_thing)));
+        menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_actorAndAction)));
+        menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime)));
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -264,6 +284,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if (handleSetTitleWordCount(id)) {
+            return true;
+        }
+        else if (handleDisplayedCategoryOptions(id, item)) {
             return true;
         }
 
@@ -329,6 +352,31 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    private boolean handleDisplayedCategoryOptions(int id, MenuItem item) {
+        switch (id) {
+            case R.id.action_displayAll: {
+                return setDisplayedCategory(item, -1);
+            }
+            case R.id.action_displayCategory0: {
+                return setDisplayedCategory(item, 0);
+            }
+            case R.id.action_displayCategory1: {
+                return setDisplayedCategory(item, 1);
+            }
+            case R.id.action_displayCategory2: {
+                return setDisplayedCategory(item, 2);
+            }
+            case R.id.action_displayCategory3: {
+                return setDisplayedCategory(item, 3);
+            }
+            case R.id.action_displayCategory4: {
+                return setDisplayedCategory(item, 4);
+            }
+        }
+
+        return false;
+    }
+
     private boolean setDisplayedTitleCount(int value, int max) {
         if (value >= 1 && value <= max) {
             displayedTitleCount = value;
@@ -336,9 +384,8 @@ public class MainActivity extends AppCompatActivity {
                 setTitle(String.format(getString(R.string.titleCount), displayedTitleCount));
             return true;
         }
-        else {
-            return false;
-        }
+
+        return false;
     }
 
     private boolean setTitleWordCount(int value, int max) {
@@ -348,8 +395,19 @@ public class MainActivity extends AppCompatActivity {
                 setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
             return true;
         }
-        else {
-            return false;
+
+        return false;
+    }
+
+    private boolean setDisplayedCategory(MenuItem item, int categoryId) {
+        if (categoryId < wordLists.size()) {
+            displayedCategory = categoryId;
+            item.setEnabled(false);
+            currentDisplayedCatItem.setEnabled(true);
+            currentDisplayedCatItem = item;
+            return true;
         }
+
+        return false;
     }
 }

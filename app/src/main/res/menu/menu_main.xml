@@ -43,6 +43,7 @@
                 android:title="10" />
         </menu>
     </item>
+
     <item
         android:id="@+id/submenu_titleWordCount"
         android:enabled="true"
@@ -69,4 +70,31 @@
                 android:title="5" />
         </menu>
     </item>
+
+    <group android:id="@+id/group_displayCategories" >
+        <item
+            android:id="@+id/action_displayAll"
+            android:orderInCategory="0"
+            android:title="@string/action_displayAll" />
+        <item
+            android:id="@+id/action_displayCategory0"
+            android:orderInCategory="1"
+            android:title="@string/action_displayCategory" />
+        <item
+            android:id="@+id/action_displayCategory1"
+            android:orderInCategory="2"
+            android:title="@string/action_displayCategory" />
+        <item
+            android:id="@+id/action_displayCategory2"
+            android:orderInCategory="3"
+            android:title="@string/action_displayCategory" />
+        <item
+            android:id="@+id/action_displayCategory3"
+            android:orderInCategory="4"
+            android:title="@string/action_displayCategory" />
+        <item
+            android:id="@+id/action_displayCategory4"
+            android:orderInCategory="5"
+            android:title="@string/action_displayCategory" />
+    </group>
 </menu>
