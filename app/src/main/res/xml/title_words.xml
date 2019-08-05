@@ -2,6 +2,8 @@
 <resources>
     <category id="0" name="Feature" shortName="Ft">
         <word>Abyssal</word>
+        <word>Ace</word>
+        <word>Adamant</word>
         <word>Aero</word>
         <word>Afflicted</word>
         <word>Alien</word>
@@ -36,6 +38,7 @@
         <word>Black</word>
         <word>Blind</word>
         <word>Blue</word>
+        <word>Bold</word>
         <word>Bound</word>
         <word>Brass</word>
         <word>Bright</word>
@@ -74,6 +77,7 @@
         <word>Darkest</word>
         <word>Dead</word>
         <word>Deep</word>
+        <word>Defeated</word>
         <word>Delirious</word>
         <word>Delta</word>
         <word>Deluxe</word>
@@ -91,6 +95,7 @@
         <word>Drowned</word>
         <word>Dry</word>
         <word>Dying</word>
+        <word>Dystopian</word>
         <word>Eastern</word>
         <word>Ebony</word>
         <word>Elder</word>
@@ -117,6 +122,7 @@
         <word>Far</word>
         <word>Fatal</word>
         <word>Faulty</word>
+        <word>Feared</word>
         <word>Few</word>
         <word>Final</word>
         <word>First</word>
@@ -137,10 +143,12 @@
         <word>Galactic</word>
         <word>Gamma</word>
         <word>Geo</word>
+        <word>Ghostly</word>
         <word>Giant</word>
         <word>Giga</word>
         <word>Gilded</word>
         <word>Glass</word>
+        <word>Glorious</word>
         <word>Gold</word>
         <word>Golden</word>
         <word>Good</word>
@@ -152,6 +160,7 @@
         <word>Grim</word>
         <word>Guilty</word>
         <word>Half</word>
+        <word>Happy</word>
         <word>Haunted</word>
         <word>Heavy</word>
         <word>Heroic</word>
@@ -174,6 +183,7 @@
         <word>Infected</word>
         <word>Infernal</word>
         <word>Infinite</word>
+        <word>Innocent</word>
         <word>Invisible</word>
         <word>Iron</word>
         <word>Ivory</word>
@@ -213,6 +223,7 @@
         <word>New</word>
         <word>Next</word>
         <word>No</word>
+        <word>Nocturnal</word>
         <word>Normal</word>
         <word>Northern</word>
         <word>Nova</word>
@@ -245,9 +256,11 @@
         <word>Quad</word>
         <word>Quantum</word>
         <word>Ravenous</word>
+        <word>Rad</word>
         <word>Raw</word>
         <word>Real</word>
         <word>Red</word>
+        <word>Retro</word>
         <word>Reverse</word>
         <word>Right</word>
         <word>Righteous</word>
@@ -258,6 +271,7 @@
         <word>Royal</word>
         <word>Sacred</word>
         <word>Sad</word>
+        <word>Safe</word>
         <word>Savage</word>
         <word>Scarred</word>
         <word>Scorched</word>
@@ -271,6 +285,7 @@
         <word>Shallow</word>
         <word>Sharp</word>
         <word>Shattered</word>
+        <word>Sheer</word>
         <word>Shredded</word>
         <word>Sick</word>
         <word>Silent</word>
@@ -281,6 +296,7 @@
         <word>Solar</word>
         <word>Southern</word>
         <word>Sovereign</word>
+        <word>Stained</word>
         <word>Standard</word>
         <word>Static</word>
         <word>Steel</word>
@@ -325,7 +341,9 @@
         <word>Unlimited</word>
         <word>Unseen</word>
         <word>Up</word>
+        <word>Utopian</word>
         <word>Valiant</word>
+        <word>Victorious</word>
         <word>Vigilant</word>
         <word>Vile</word>
         <word>Violent</word>
@@ -345,6 +363,7 @@
         <word>X</word>
         <word>Xeno</word>
         <word>Yellow</word>
+        <word>Young</word>
         <word>Zero</word>
     </category>
     <category id="1" name="Concept" shortName="Con">
@@ -435,7 +454,6 @@
         <word>Family</word>
         <word>Fate</word>
         <word>Fault</word>
-        <word>Fear</word>
         <word>Filth</word>
         <word>Fleet</word>
         <word>Force</word>
@@ -458,6 +476,7 @@
         <word>Grid</word>
         <word>Guild</word>
         <word>Guilt</word>
+        <word>Happiness</word>
         <word>Harm</word>
         <word>Harmony</word>
         <word>Harvest</word>
@@ -476,8 +495,12 @@
         <word>Hunger</word>
         <word>Identity</word>
         <word>Immortality</word>
+        <word>Imperfection</word>
+        <word>Imperfections</word>
         <word>Infinity</word>
+        <word>Innocence</word>
         <word>Instinct</word>
+        <word>Jet</word>
         <word>Joy</word>
         <word>Justice</word>
         <word>Kin</word>
@@ -504,6 +527,7 @@
         <word>Matrix</word>
         <word>Matter</word>
         <word>Mayhem</word>
+        <word>Melody</word>
         <word>Mercy</word>
         <word>Meter</word>
         <word>Metre</word>
@@ -529,6 +553,7 @@
         <word>Neutrality</word>
         <word>Neutron</word>
         <word>Nexus</word>
+        <word>Nocturne</word>
         <word>Nothing</word>
         <word>Oath</word>
         <word>Oblivion</word>
@@ -552,6 +577,7 @@
         <word>Passage</word>
         <word>Peace</word>
         <word>Peak</word>
+        <word>Perfection</word>
         <word>Perimeter</word>
         <word>Phantom</word>
         <word>Phenomenon</word>
@@ -578,6 +604,7 @@
         <word>Ray</word>
         <word>Reality</word>
         <word>Remedy</word>
+        <word>Rhapsody</word>
         <word>Rift</word>
         <word>Rim</word>
         <word>Ripple</word>
@@ -587,6 +614,8 @@
         <word>Ruin</word>
         <word>Ruse</word>
         <word>Sacrifice</word>
+        <word>Sadness</word>
+        <word>Safety</word>
         <word>Saga</word>
         <word>Scape</word>
         <word>Scorn</word>
@@ -615,13 +644,18 @@
         <word>Splendor</word>
         <word>Squad</word>
         <word>Squadron</word>
+        <word>Stain</word>
+        <word plural="true">Stains</word>
         <word>State</word>
+        <word plural="true">States</word>
         <word plural="true">Stories</word>
         <word>Storm</word>
         <word>Story</word>
         <word>Strength</word>
         <word>Strife</word>
+        <word>Success</word>
         <word>Supremacy</word>
+        <word>Symphony</word>
         <word>Tale</word>
         <word plural="true">Tales</word>
         <word>Team</word>
@@ -635,6 +669,7 @@
         <word>Time</word>
         <word>Torment</word>
         <word>Trail</word>
+        <word>Travesty</word>
         <word plural="true">Trials</word>
         <word>Tribute</word>
         <word>Triumph</word>
@@ -648,6 +683,7 @@
         <word>Vantage</word>
         <word>Vector</word>
         <word>Verse</word>
+        <word>Versus</word>
         <word>Victory</word>
         <word>Vigilance</word>
         <word>Violence</word>
@@ -714,8 +750,10 @@
         <word>Candle</word>
         <word>Cannon</word>
         <word>Canvas</word>
+        <word>Cap</word>
         <word>Cape</word>
         <word>Case</word>
+        <word>Cash</word>
         <word>Chain</word>
         <word>Chains</word>
         <word>Chainsaw</word>
@@ -760,12 +798,15 @@
         <word>Engine</word>
         <word>Eye</word>
         <word>Eyes</word>
+        <word>Face</word>
         <word>Falcon</word>
         <word>Father</word>
         <word>Feather</word>
         <word>Files</word>
         <word>Fire</word>
         <word>Fist</word>
+        <word>Flag</word>
+        <word>Flags</word>
         <word>Flame</word>
         <word>Flesh</word>
         <word>Flood</word>
@@ -773,6 +814,8 @@
         <word>Flute</word>
         <word>Fog</word>
         <word>Forge</word>
+        <word>Freak</word>
+        <word>Freaks</word>
         <word>Fuel</word>
         <word>Furnace</word>
         <word>Galleon</word>
@@ -793,6 +836,8 @@
         <word>Halo</word>
         <word>Hammer</word>
         <word>Hand</word>
+        <word>Hands</word>
+        <word>Harness</word>
         <word>Harp</word>
         <word>Hawk</word>
         <word>Head</word>
@@ -806,6 +851,7 @@
         <word>Horns</word>
         <word>Horse</word>
         <word>Human</word>
+        <word>Humans</word>
         <word>Hurricane</word>
         <word>Hydra</word>
         <word>Hyena</word>
@@ -842,6 +888,7 @@
         <word>Mirage</word>
         <word>Mirror</word>
         <word>Mist</word>
+        <word>Money</word>
         <word>Monster</word>
         <word>Mother</word>
         <word>Neon</word>
@@ -864,6 +911,7 @@
         <word>Plasma</word>
         <word>Poison</word>
         <word>Portal</word>
+        <word>Radio</word>
         <word>Rain</word>
         <word>Rat</word>
         <word>Rats</word>
@@ -928,6 +976,7 @@
         <word>Tank</word>
         <word>Tether</word>
         <word>Thorn</word>
+        <word>Thread</word>
         <word>Throne</word>
         <word>Tiger</word>
         <word>Titan</word>
@@ -943,8 +992,6 @@
         <word>Vampire</word>
         <word>Venom</word>
         <word>Vermin</word>
-        <word>Villain</word>
-        <word>Villains</word>
         <word>Violin</word>
         <word>Viper</word>
         <word>Walls</word>
@@ -969,6 +1016,7 @@
     </category>
     <category id="3" name="Actor &amp; Action" shortName="Act">
         <word>Access</word>
+        <word>Action</word>
         <word>Apostate</word>
         <word>Architect</word>
         <word>Army</word>
@@ -979,7 +1027,9 @@
         <word>Ascension</word>
         <word>Assault</word>
         <word>Attack</word>
+        <word>Avenge</word>
         <word>Avenger</word>
+        <word>Avenging</word>
         <word>Awaken</word>
         <word>Awakening</word>
         <word>Bandit</word>
@@ -998,8 +1048,13 @@
         <word>Call</word>
         <word>Caller</word>
         <word>Captain</word>
+        <word>Capture</word>
+        <word>Capturing</word>
         <word>Cast</word>
         <word>Caster</word>
+        <word>Catch</word>
+        <word>Catcher</word>
+        <word>Catching</word>
         <word>Champion</word>
         <word>Champions</word>
         <word>Citizen</word>
@@ -1051,8 +1106,12 @@
         <word>Evolve</word>
         <word>Existence</word>
         <word>Expedition</word>
+        <word>Experience</word>
+        <word>Experiment</word>
         <word>Fall</word>
+        <word>Fear</word>
         <word>Fell</word>
+        <word>Festering</word>
         <word>Fighter</word>
         <word>Fighters</word>
         <word>Flash</word>
@@ -1086,6 +1145,7 @@
         <word>Hunter</word>
         <word>Hurt</word>
         <word>Infection</word>
+        <word>Innocents</word>
         <word>Journey</word>
         <word>Keeper</word>
         <word>Kill</word>
@@ -1131,6 +1191,7 @@
         <word>Pilgrim</word>
         <word>Pilgrimage</word>
         <word>Pilgrims</word>
+        <word>Pilot</word>
         <word>Pioneer</word>
         <word>Pioneers</word>
         <word>Plot</word>
@@ -1151,6 +1212,7 @@
         <word>Recluse</word>
         <word>Redemption</word>
         <word>Reign</word>
+        <word>Renegade</word>
         <word>Rest</word>
         <word>Retribution</word>
         <word>Return</word>
@@ -1220,10 +1282,14 @@
         <word>Vandal</word>
         <word>Vanguard</word>
         <word>Vengeance</word>
-        <word>Versus</word>
         <word>Victor</word>
         <word>Victors</word>
         <word>Viking</word>
+        <word>Vikings</word>
+        <word>Villager</word>
+        <word>Villagers</word>
+        <word>Villain</word>
+        <word>Villains</word>
         <word>Vision</word>
         <word>Visitor</word>
         <word>Walk</word>
@@ -1264,6 +1330,7 @@
         <word>Chasm</word>
         <word>Church</word>
         <word>Citadel</word>
+        <word>Cities</word>
         <word>City</word>
         <word>Coast</word>
         <word>Colony</word>
@@ -1279,6 +1346,7 @@
         <word>Destination</word>
         <word>Domain</word>
         <word>Dungeon</word>
+        <word>Dystopia</word>
         <word>Earth</word>
         <word>East</word>
         <word>Eden</word>
@@ -1317,6 +1385,7 @@
         <word>Kingdom</word>
         <word>Laboratory</word>
         <word>Labyrinth</word>
+        <word>Lagoon</word>
         <word>Lair</word>
         <word>Lake</word>
         <word>Land</word>
@@ -1368,6 +1437,7 @@
         <word>Sector</word>
         <word>Shelter</word>
         <word>Ship</word>
+        <word>Shire</word>
         <word>Shrine</word>
         <word>Skies</word>
         <word>Sky</word>
@@ -1378,6 +1448,8 @@
         <word>Star</word>
         <word>Stars</word>
         <word>Station</word>
+        <word>Street</word>
+        <word>Streets</word>
         <word>Summer</word>
         <word>Sun</word>
         <word>Surface</word>
@@ -1389,7 +1461,10 @@
         <word>Tomorrow</word>
         <word>Tower</word>
         <word>Town</word>
+        <word>Towns</word>
         <word>Universe</word>
+        <word>Utopia</word>
+        <word>Vale</word>
         <word>Valley</word>
         <word>Vault</word>
         <word>Village</word>

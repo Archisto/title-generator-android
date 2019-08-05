@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private String defaultTemplate;
     private char templateWordChar = '#';
 
-    private int displayedCategory;
+    private int displayedCategory = -1;
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
@@ -290,7 +290,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCategories(Menu menu) {
-        displayedCategory = -1;
         currentDisplayedCatItem = menu.findItem(R.id.action_displayAll);
         currentDisplayedCatItem.setEnabled(false);
 
