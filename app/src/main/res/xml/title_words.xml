@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <category id="0" name="Feature" shortName="Ft">
+        <word plural="true">These</word>
+        <word plural="true">Unlimited</word>
         <word>Abyssal</word>
         <word>Ace</word>
         <word>Adamant</word>
         <word>Aero</word>
         <word>Afflicted</word>
+        <word>After</word>
         <word>Alien</word>
         <word>All</word>
         <word>Alpha</word>
@@ -14,7 +17,6 @@
         <word>Ancient</word>
         <word>Angelic</word>
         <word>Anti</word>
-        <word>Apex</word>
         <word>Arcane</word>
         <word>Ashen</word>
         <word>Astral</word>
@@ -30,6 +32,7 @@
         <word>Ballistic</word>
         <word>Banished</word>
         <word>Basic</word>
+        <word>Before</word>
         <word>Below</word>
         <word>Beta</word>
         <word>Betrayed</word>
@@ -41,6 +44,7 @@
         <word>Bold</word>
         <word>Bound</word>
         <word>Brass</word>
+        <word>Brave</word>
         <word>Bright</word>
         <word>Brilliant</word>
         <word>Broken</word>
@@ -68,6 +72,7 @@
         <word>Criminal</word>
         <word>Crimson</word>
         <word>Crooked</word>
+        <word>Crude</word>
         <word>Cruel</word>
         <word>Cursed</word>
         <word>Cyber</word>
@@ -107,6 +112,7 @@
         <word>Empty</word>
         <word>Endless</word>
         <word>Epic</word>
+        <word>Equal</word>
         <word>Eternal</word>
         <word>Evil</word>
         <word>Evolved</word>
@@ -204,6 +210,7 @@
         <word>Malevolent</word>
         <word>Many</word>
         <word>Masked</word>
+        <word>Mauled</word>
         <word>Mech</word>
         <word>Mechanical</word>
         <word>Mega</word>
@@ -255,8 +262,8 @@
         <word>Pyro</word>
         <word>Quad</word>
         <word>Quantum</word>
-        <word>Ravenous</word>
         <word>Rad</word>
+        <word>Ravenous</word>
         <word>Raw</word>
         <word>Real</word>
         <word>Red</word>
@@ -305,25 +312,28 @@
         <word>Stolen</word>
         <word>Stone</word>
         <word>Strange</word>
+        <word>Stricken</word>
         <word>Strong</word>
         <word>Stygian</word>
         <word>Sub</word>
+        <word>Succumbed</word>
         <word>Sunken</word>
         <word>Super</word>
         <word>Taken</word>
         <word>Taking</word>
         <word>Tera</word>
         <word>Terrible</word>
-        <word plural="true">These</word>
         <word>This</word>
         <word>Thousand</word>
         <word>Tiny</word>
+        <word>Tireless</word>
         <word>Torn</word>
         <word>Total</word>
         <word>Toxic</word>
         <word>Tribal</word>
         <word>Triple</word>
         <word>Triumphant</word>
+        <word>Tropical</word>
         <word>True</word>
         <word>Turbo</word>
         <word>Twisted</word>
@@ -338,7 +348,6 @@
         <word>Unfortunate</word>
         <word>Unholy</word>
         <word>Unknown</word>
-        <word>Unlimited</word>
         <word>Unseen</word>
         <word>Up</word>
         <word>Utopian</word>
@@ -367,29 +376,72 @@
         <word>Zero</word>
     </category>
     <category id="1" name="Concept" shortName="Con">
+        <word plural="true">Adventures</word>
+        <word plural="true">Ancestors</word>
+        <word plural="true">Anomalies</word>
+        <word plural="true">Atoms</word>
+        <word plural="true">Beginnings</word>
+        <word plural="true">Challenges</word>
+        <word plural="true">Crimes</word>
+        <word plural="true">Dreams</word>
+        <word plural="true">Echoes</word>
+        <word plural="true">Ends</word>
+        <word plural="true">Equals</word>
+        <word plural="true">Games</word>
+        <word plural="true">Ghosts</word>
+        <word plural="true">Horizons</word>
+        <word plural="true">Imperfections</word>
+        <word plural="true">Leagues</word>
+        <word plural="true">Legends</word>
+        <word plural="true">Legions</word>
+        <word plural="true">Minds</word>
+        <word plural="true">Misadventures</word>
+        <word plural="true">Myths</word>
+        <word plural="true">Names</word>
+        <word plural="true">Omens</word>
+        <word plural="true">Origins</word>
+        <word plural="true">Shadows</word>
+        <word plural="true">Sins</word>
+        <word plural="true">Souls</word>
+        <word plural="true">Spirits</word>
+        <word plural="true">Stains</word>
+        <word plural="true">States</word>
+        <word plural="true">Stories</word>
+        <word plural="true">Storms</word>
+        <word plural="true">Tales</word>
+        <word plural="true">Trials</word>
+        <word plural="true">Us</word>
+        <word plural="true">Virtues</word>
+        <word plural="true">Voices</word>
+        <word plural="true">We</word>
+        <word plural="true">Whispers</word>
         <word>Absolution</word>
         <word>Adventure</word>
-        <word plural="true">Adventures</word>
+        <word>Aether</word>
         <word>Affliction</word>
         <word>Amnesia</word>
-        <word plural="true">Ancestors</word>
+        <word>Ancestor</word>
         <word>Anger</word>
         <word>Annihilation</word>
         <word>Anomaly</word>
         <word>Anthem</word>
+        <word>Apex</word>
         <word>Apocalypse</word>
         <word>Art</word>
         <word>Atom</word>
+        <word>Aurora</word>
         <word>Awe</word>
         <word>Band</word>
         <word>Bane</word>
         <word>Battalion</word>
         <word>Battle</word>
         <word>Beacon</word>
+        <word>Beauty</word>
         <word>Beginning</word>
         <word>Belief</word>
-        <word>Betrayal</word>
         <word>Birth</word>
+        <word>Bravery</word>
+        <word>Brigade</word>
         <word>Brotherhood</word>
         <word>Challenge</word>
         <word>Chaos</word>
@@ -398,8 +450,8 @@
         <word>Clan</word>
         <word>Company</word>
         <word>Conflict</word>
-        <word>Conspiracy</word>
         <word>Contract</word>
+        <word>Convergence</word>
         <word>Core</word>
         <word>Corporation</word>
         <word>Corps</word>
@@ -407,7 +459,6 @@
         <word>Creed</word>
         <word>Crew</word>
         <word>Crime</word>
-        <word plural="true">Crimes</word>
         <word>Crisis</word>
         <word>Cross</word>
         <word>Cruelty</word>
@@ -430,16 +481,13 @@
         <word>Doom</word>
         <word>Doubt</word>
         <word>Dream</word>
-        <word plural="true">Dreams</word>
         <word>Drome</word>
         <word>Echo</word>
-        <word plural="true">Echoes</word>
         <word>Edge</word>
         <word>Effect</word>
         <word>Electron</word>
         <word>Enclave</word>
         <word>End</word>
-        <word plural="true">Ends</word>
         <word>Energy</word>
         <word>Epidemic</word>
         <word>Error</word>
@@ -455,6 +503,7 @@
         <word>Fate</word>
         <word>Fault</word>
         <word>Filth</word>
+        <word>Flak</word>
         <word>Fleet</word>
         <word>Force</word>
         <word>Fortune</word>
@@ -465,15 +514,17 @@
         <word>Funeral</word>
         <word>Fury</word>
         <word>Gale</word>
+        <word>Gambit</word>
+        <word>Game</word>
         <word>Gang</word>
         <word>Genesis</word>
         <word>Ghost</word>
-        <word plural="true">Ghosts</word>
         <word>Glitch</word>
         <word>Glory</word>
         <word>Gravity</word>
         <word>Greed</word>
         <word>Grid</word>
+        <word>Grudge</word>
         <word>Guild</word>
         <word>Guilt</word>
         <word>Happiness</word>
@@ -496,7 +547,7 @@
         <word>Identity</word>
         <word>Immortality</word>
         <word>Imperfection</word>
-        <word>Imperfections</word>
+        <word>Incident</word>
         <word>Infinity</word>
         <word>Innocence</word>
         <word>Instinct</word>
@@ -510,7 +561,6 @@
         <word>League</word>
         <word>Legacy</word>
         <word>Legend</word>
-        <word plural="true">Legends</word>
         <word>Legion</word>
         <word>Liberty</word>
         <word>Lie</word>
@@ -533,10 +583,7 @@
         <word>Metre</word>
         <word>Might</word>
         <word>Mind</word>
-        <word>Minds</word>
-        <word>Minute</word>
         <word>Misadventure</word>
-        <word plural="true">Misadventures</word>
         <word>Misery</word>
         <word>Misfortune</word>
         <word>Mission</word>
@@ -545,9 +592,7 @@
         <word>Mod</word>
         <word>Mode</word>
         <word>Myth</word>
-        <word plural="true">Myths</word>
         <word>Name</word>
-        <word>Names</word>
         <word>Narrative</word>
         <word>Nature</word>
         <word>Neutrality</word>
@@ -561,12 +606,10 @@
         <word>Octane</word>
         <word>Odyssey</word>
         <word>Omen</word>
-        <word plural="true">Omens</word>
         <word>Onward</word>
         <word>Order</word>
         <word>Organization</word>
         <word>Origin</word>
-        <word plural="true">Origins</word>
         <word>Pact</word>
         <word>Pain</word>
         <word>Pandemic</word>
@@ -624,31 +667,24 @@
         <word>Series</word>
         <word>Shade</word>
         <word>Shadow</word>
-        <word plural="true">Shadows</word>
         <word>Shape</word>
         <word>Showdown</word>
         <word>Side</word>
         <word>Signal</word>
         <word>Silence</word>
         <word>Sin</word>
-        <word plural="true">Sins</word>
         <word>Skirmish</word>
         <word>Solace</word>
         <word>Solstice</word>
         <word>Soul</word>
-        <word plural="true">Souls</word>
         <word>Source</word>
         <word>Spirit</word>
-        <word plural="true">Spirits</word>
         <word>Spite</word>
         <word>Splendor</word>
         <word>Squad</word>
         <word>Squadron</word>
         <word>Stain</word>
-        <word plural="true">Stains</word>
         <word>State</word>
-        <word plural="true">States</word>
-        <word plural="true">Stories</word>
         <word>Storm</word>
         <word>Story</word>
         <word>Strength</word>
@@ -657,7 +693,6 @@
         <word>Supremacy</word>
         <word>Symphony</word>
         <word>Tale</word>
-        <word plural="true">Tales</word>
         <word>Team</word>
         <word>Tech</word>
         <word>Tempest</word>
@@ -670,15 +705,12 @@
         <word>Torment</word>
         <word>Trail</word>
         <word>Travesty</word>
-        <word plural="true">Trials</word>
         <word>Tribute</word>
         <word>Triumph</word>
         <word>Truth</word>
         <word>Type</word>
-        <word>Tyranny</word>
         <word>Ultimatum</word>
         <word>Umbra</word>
-        <word plural="true">Us</word>
         <word>Valor</word>
         <word>Vantage</word>
         <word>Vector</word>
@@ -688,7 +720,7 @@
         <word>Vigilance</word>
         <word>Violence</word>
         <word>Virtue</word>
-        <word plural="true">Virtues</word>
+        <word>Voice</word>
         <word>Volt</word>
         <word>Vortex</word>
         <word>War</word>
@@ -696,12 +728,10 @@
         <word>Warning</word>
         <word>Wave</word>
         <word>Way</word>
-        <word plural="true">We</word>
         <word>Weakness</word>
         <word>What</word>
         <word>When</word>
         <word>Whisper</word>
-        <word plural="true">Whispers</word>
         <word>Why</word>
         <word>Wisdom</word>
         <word>Wonder</word>
@@ -710,12 +740,100 @@
         <word>Zodiac</word>
     </category>
     <category id="2" name="Thing" shortName="Th">
+        <word plural="true">Amulets</word>
+        <word plural="true">Angels</word>
+        <word plural="true">Banners</word>
+        <word plural="true">Bats</word>
+        <word plural="true">Beasts</word>
+        <word plural="true">Blades</word>
+        <word plural="true">Bones</word>
+        <word plural="true">Books</word>
+        <word plural="true">Bracers</word>
+        <word plural="true">Brains</word>
+        <word plural="true">Brothers</word>
+        <word plural="true">Bullets</word>
+        <word plural="true">Chains</word>
+        <word plural="true">Children</word>
+        <word plural="true">Chronicles</word>
+        <word plural="true">Claws</word>
+        <word plural="true">Corpses</word>
+        <word plural="true">Creatures</word>
+        <word plural="true">Crowns</word>
+        <word plural="true">Crows</word>
+        <word plural="true">Daughters</word>
+        <word plural="true">Demons</word>
+        <word plural="true">Dragons</word>
+        <word plural="true">Drums</word>
+        <word plural="true">Dwarves</word>
+        <word plural="true">Embers</word>
+        <word plural="true">Engines</word>
+        <word plural="true">Eyes</word>
+        <word plural="true">Faces</word>
+        <word plural="true">Files</word>
+        <word plural="true">Fists</word>
+        <word plural="true">Flags</word>
+        <word plural="true">Flames</word>
+        <word plural="true">Flowers</word>
+        <word plural="true">Freaks</word>
+        <word plural="true">Gallows</word>
+        <word plural="true">Gates</word>
+        <word plural="true">Gears</word>
+        <word plural="true">Giants</word>
+        <word plural="true">Gods</word>
+        <word plural="true">Hands</word>
+        <word plural="true">Heads</word>
+        <word plural="true">Hearts</word>
+        <word plural="true">Heroes</word>
+        <word plural="true">Humans</word>
+        <word plural="true">Insignia</word>
+        <word plural="true">Lords</word>
+        <word plural="true">Machines</word>
+        <word plural="true">Masks</word>
+        <word plural="true">Men</word>
+        <word plural="true">Monsters</word>
+        <word plural="true">Mothers</word>
+        <word plural="true">Notes</word>
+        <word plural="true">People</word>
+        <word plural="true">Pillars</word>
+        <word plural="true">Planets</word>
+        <word plural="true">Rats</word>
+        <word plural="true">Ravens</word>
+        <word plural="true">Rigs</word>
+        <word plural="true">Rings</word>
+        <word plural="true">Robots</word>
+        <word plural="true">Rockets</word>
+        <word plural="true">Runes</word>
+        <word plural="true">Scars</word>
+        <word plural="true">Seeds</word>
+        <word plural="true">Shreds</word>
+        <word plural="true">Signs</word>
+        <word plural="true">Sisters</word>
+        <word plural="true">Skulls</word>
+        <word plural="true">Sons</word>
+        <word plural="true">Swords</word>
+        <word plural="true">Symbols</word>
+        <word plural="true">Teeth</word>
+        <word plural="true">Thrones</word>
+        <word plural="true">Titans</word>
+        <word plural="true">Tomes</word>
+        <word plural="true">Trees</word>
+        <word plural="true">Tribes</word>
+        <word plural="true">Valkyries</word>
+        <word plural="true">Vampires</word>
+        <word plural="true">Walls</word>
+        <word plural="true">Wheels</word>
+        <word plural="true">Winds</word>
+        <word plural="true">Wings</word>
+        <word plural="true">Witches</word>
+        <word plural="true">Wolves</word>
+        <word plural="true">Women</word>
+        <word plural="true">Words</word>
+        <word plural="true">Worms</word>
         <word>Acid</word>
         <word>Air</word>
         <word>Amulet</word>
         <word>Android</word>
         <word>Angel</word>
-        <word>Angels</word>
         <word>Anvil</word>
         <word>Arc</word>
         <word>Arch</word>
@@ -726,7 +844,6 @@
         <word>Banner</word>
         <word>Bass</word>
         <word>Bat</word>
-        <word>Bats</word>
         <word>Beast</word>
         <word>Bird</word>
         <word>Bishop</word>
@@ -739,13 +856,11 @@
         <word>Bone</word>
         <word>Book</word>
         <word>Box</word>
+        <word>Bracer</word>
         <word>Brain</word>
-        <word>Brains</word>
         <word>Bride</word>
         <word>Brother</word>
-        <word>Brothers</word>
         <word>Bullet</word>
-        <word>Bullets</word>
         <word>Cage</word>
         <word>Candle</word>
         <word>Cannon</word>
@@ -755,15 +870,12 @@
         <word>Case</word>
         <word>Cash</word>
         <word>Chain</word>
-        <word>Chains</word>
         <word>Chainsaw</word>
         <word>Child</word>
-        <word>Children</word>
-        <word>Chronicles</word>
         <word>Circle</word>
         <word>Claw</word>
-        <word>Claws</word>
         <word>Cloak</word>
+        <word>Coat</word>
         <word>Cobra</word>
         <word>Code</word>
         <word>Codex</word>
@@ -779,9 +891,7 @@
         <word>Cube</word>
         <word>Dagger</word>
         <word>Daughter</word>
-        <word>Daughters</word>
         <word>Demon</word>
-        <word>Demons</word>
         <word>Devil</word>
         <word>Diamond</word>
         <word>Disc</word>
@@ -791,22 +901,18 @@
         <word>Dragon</word>
         <word>Drone</word>
         <word>Drum</word>
-        <word>Drums</word>
         <word>Dust</word>
+        <word>Dwarf</word>
         <word>Ember</word>
-        <word>Embers</word>
         <word>Engine</word>
         <word>Eye</word>
-        <word>Eyes</word>
         <word>Face</word>
         <word>Falcon</word>
         <word>Father</word>
         <word>Feather</word>
-        <word>Files</word>
         <word>Fire</word>
         <word>Fist</word>
         <word>Flag</word>
-        <word>Flags</word>
         <word>Flame</word>
         <word>Flesh</word>
         <word>Flood</word>
@@ -815,52 +921,43 @@
         <word>Fog</word>
         <word>Forge</word>
         <word>Freak</word>
-        <word>Freaks</word>
         <word>Fuel</word>
         <word>Furnace</word>
         <word>Galleon</word>
-        <word>Gallows</word>
         <word>Gate</word>
-        <word>Gates</word>
         <word>Gauntlet</word>
         <word>Gear</word>
-        <word>Gears</word>
-        <word>Giants</word>
         <word>Glaive</word>
         <word>God</word>
         <word>Goddess</word>
-        <word>Gods</word>
         <word>Guide</word>
         <word>Guitar</word>
         <word>Gun</word>
         <word>Halo</word>
         <word>Hammer</word>
         <word>Hand</word>
-        <word>Hands</word>
         <word>Harness</word>
         <word>Harp</word>
         <word>Hawk</word>
         <word>Head</word>
         <word>Heart</word>
-        <word>Hearts</word>
         <word>Hero</word>
-        <word>Heroes</word>
         <word>Hole</word>
         <word>Hood</word>
         <word>Horn</word>
         <word>Horns</word>
         <word>Horse</word>
+        <word>Hull</word>
         <word>Human</word>
-        <word>Humans</word>
         <word>Hurricane</word>
         <word>Hydra</word>
         <word>Hyena</word>
         <word>Ice</word>
         <word>Illusion</word>
         <word>Ink</word>
-        <word>Insignia</word>
         <word>Ion</word>
         <word>Jackal</word>
+        <word>Jacket</word>
         <word>Jet</word>
         <word>Jewel</word>
         <word>Lady</word>
@@ -876,20 +973,19 @@
         <word>Log</word>
         <word>Lord</word>
         <word>Machine</word>
-        <word>Machines</word>
         <word>Magma</word>
         <word>Magnet</word>
         <word>Man</word>
         <word>Mantis</word>
         <word>Mask</word>
         <word>Maw</word>
-        <word>Men</word>
         <word>Meteor</word>
         <word>Mirage</word>
         <word>Mirror</word>
         <word>Mist</word>
         <word>Money</word>
         <word>Monster</word>
+        <word>Mosaic</word>
         <word>Mother</word>
         <word>Neon</word>
         <word>Nitro</word>
@@ -899,12 +995,10 @@
         <word>Pack</word>
         <word>Pariah</word>
         <word>Pearl</word>
-        <word>People</word>
         <word>Person</word>
         <word>Phoenix</word>
         <word>Phone</word>
         <word>Pillar</word>
-        <word>Pillars</word>
         <word>Pin</word>
         <word>Piranha</word>
         <word>Planet</word>
@@ -914,44 +1008,36 @@
         <word>Radio</word>
         <word>Rain</word>
         <word>Rat</word>
-        <word>Rats</word>
         <word>Raven</word>
-        <word>Ravens</word>
+        <word>Razor</word>
         <word>Rig</word>
-        <word>Rigs</word>
         <word>Ring</word>
         <word>Robe</word>
         <word>Robot</word>
-        <word>Robots</word>
         <word>Rock</word>
         <word>Rocket</word>
         <word>Rook</word>
         <word>Rookie</word>
         <word>Rooster</word>
         <word>Rose</word>
+        <word>Rotor</word>
         <word>Rune</word>
-        <word>Runes</word>
         <word>Salt</word>
         <word>Saw</word>
         <word>Scar</word>
         <word>Scarab</word>
-        <word>Scars</word>
         <word>Scorpion</word>
         <word>Scrap</word>
         <word>Script</word>
         <word>Scroll</word>
         <word>Scythe</word>
         <word>Seed</word>
-        <word>Seeds</word>
         <word>Shark</word>
         <word>Shell</word>
         <word>Shield</word>
         <word>Shot</word>
-        <word>Shreds</word>
         <word>Sign</word>
-        <word>Signs</word>
         <word>Sister</word>
-        <word>Sisters</word>
         <word>Skin</word>
         <word>Skull</word>
         <word>Smoke</word>
@@ -959,7 +1045,6 @@
         <word>Snow</word>
         <word>Son</word>
         <word>Song</word>
-        <word>Sons</word>
         <word>Spear</word>
         <word>Spell</word>
         <word>Sphere</word>
@@ -982,7 +1067,6 @@
         <word>Titan</word>
         <word>Tome</word>
         <word>Tooth</word>
-        <word>Tooth</word>
         <word>Torch</word>
         <word>Trap</word>
         <word>Tree</word>
@@ -994,33 +1078,79 @@
         <word>Vermin</word>
         <word>Violin</word>
         <word>Viper</word>
-        <word>Walls</word>
+        <word>Wall</word>
         <word>Water</word>
         <word>Web</word>
         <word>Werewolf</word>
         <word>Wheel</word>
         <word>Wind</word>
         <word>Window</word>
-        <word>Winds</word>
         <word>Wing</word>
-        <word>Wings</word>
         <word>Witch</word>
         <word>Wolf</word>
         <word>Woman</word>
-        <word>Women</word>
         <word>Word</word>
-        <word>Words</word>
         <word>Worm</word>
-        <word>Worms</word>
         <word>Zephyr</word>
     </category>
     <category id="3" name="Actor &amp; Action" shortName="Act">
+        <word plural="true">Architects</word>
+        <word plural="true">Bandits</word>
+        <word plural="true">Champions</word>
+        <word plural="true">Citizens</word>
+        <word plural="true">Cries</word>
+        <word plural="true">Crusades</word>
+        <word plural="true">Emperors</word>
+        <word plural="true">Experiments</word>
+        <word plural="true">Falls</word>
+        <word plural="true">Fears</word>
+        <word plural="true">Fighters</word>
+        <word plural="true">Followers</word>
+        <word plural="true">Fools</word>
+        <word plural="true">Guardians</word>
+        <word plural="true">Guards</word>
+        <word plural="true">Have</word>
+        <word plural="true">Hunters</word>
+        <word plural="true">Innocents</word>
+        <word plural="true">Keepers</word>
+        <word plural="true">Killers</word>
+        <word plural="true">Kings</word>
+        <word plural="true">Knights</word>
+        <word plural="true">Leaders</word>
+        <word plural="true">Liars</word>
+        <word plural="true">Masters</word>
+        <word plural="true">Operations</word>
+        <word plural="true">Outcasts</word>
+        <word plural="true">Outsiders</word>
+        <word plural="true">Revelations</word>
+        <word plural="true">Rules</word>
+        <word plural="true">Saints</word>
+        <word plural="true">Screams</word>
+        <word plural="true">Screeches</word>
+        <word plural="true">Servants</word>
+        <word plural="true">Servitors</word>
+        <word plural="true">Sinners</word>
+        <word plural="true">Smiles</word>
+        <word plural="true">Soldiers</word>
+        <word plural="true">Stalkers</word>
+        <word plural="true">Strangers</word>
+        <word plural="true">Traitors</word>
+        <word plural="true">Travelers</word>
+        <word plural="true">Tyrants</word>
+        <word plural="true">Victors</word>
+        <word plural="true">Vikings</word>
+        <word plural="true">Villagers</word>
+        <word plural="true">Villains</word>
+        <word plural="true">Visitors</word>
+        <word plural="true">Warlords</word>
+        <word plural="true">Warriors</word>
+        <word plural="true">Watchmen</word>
         <word>Access</word>
         <word>Action</word>
         <word>Apostate</word>
         <word>Architect</word>
-        <word>Army</word>
         <word>Armies</word>
+        <word>Army</word>
         <word>Artist</word>
         <word>Ascend</word>
         <word>Ascendant</word>
@@ -1033,10 +1163,12 @@
         <word>Awaken</word>
         <word>Awakening</word>
         <word>Bandit</word>
-        <word>Bandits</word>
         <word>Banishment</word>
         <word>Beggar</word>
+        <word>Behold</word>
+        <word>Beholder</word>
         <word>Believe</word>
+        <word>Betrayal</word>
         <word>Blast</word>
         <word>Blaster</word>
         <word>Bleed</word>
@@ -1056,15 +1188,15 @@
         <word>Catcher</word>
         <word>Catching</word>
         <word>Champion</word>
-        <word>Champions</word>
         <word>Citizen</word>
-        <word>Citizens</word>
         <word>Combat</word>
         <word>Combine</word>
         <word>Command</word>
         <word>Commander</word>
         <word>Conquest</word>
+        <word>Conspiracy</word>
         <word>Control</word>
+        <word>Convert</word>
         <word>Corrosion</word>
         <word>Corruption</word>
         <word>Craft</word>
@@ -1082,6 +1214,7 @@
         <word>Descendant</word>
         <word>Descent</word>
         <word>Design</word>
+        <word>Destroy</word>
         <word>Destroyer</word>
         <word>Devotion</word>
         <word>Devourer</word>
@@ -1093,9 +1226,10 @@
         <word>Dominion</word>
         <word>Drift</word>
         <word>Drifter</word>
-        <word>Drop</word>
         <word>Drive</word>
+        <word>Drop</word>
         <word>Duel</word>
+        <word>Embrace</word>
         <word>Embrace</word>
         <word>Emperor</word>
         <word>Empress</word>
@@ -1112,8 +1246,8 @@
         <word>Fear</word>
         <word>Fell</word>
         <word>Festering</word>
+        <word>Fight</word>
         <word>Fighter</word>
-        <word>Fighters</word>
         <word>Flash</word>
         <word>Flight</word>
         <word>Fold</word>
@@ -1121,6 +1255,7 @@
         <word>Fool</word>
         <word>Fuse</word>
         <word>Fusion</word>
+        <word>Gamble</word>
         <word>Glow</word>
         <word>Grin</word>
         <word>Grind</word>
@@ -1128,10 +1263,9 @@
         <word>Grip</word>
         <word>Guard</word>
         <word>Guardian</word>
-        <word>Guardians</word>
         <word>Guillotine</word>
+        <word>Harbinger</word>
         <word>Has</word>
-        <word>Have</word>
         <word>Heal</word>
         <word>Healing</word>
         <word>Heist</word>
@@ -1144,33 +1278,29 @@
         <word>Hunt</word>
         <word>Hunter</word>
         <word>Hurt</word>
+        <word>Incinerate</word>
+        <word>Incinerator</word>
         <word>Infection</word>
-        <word>Innocents</word>
         <word>Journey</word>
+        <word>Keel</word>
         <word>Keeper</word>
         <word>Kill</word>
         <word>Killer</word>
-        <word>Killers</word>
         <word>King</word>
-        <word>Kings</word>
         <word>Knave</word>
         <word>Knight</word>
-        <word>Knights</word>
         <word>Knowing</word>
         <word>Lancer</word>
         <word>Lead</word>
         <word>Leader</word>
-        <word>Leaders</word>
-        <word>Legions</word>
         <word>Liar</word>
-        <word>Liars</word>
         <word>Link</word>
         <word>Maker</word>
         <word>Mancer</word>
         <word>March</word>
         <word>Marine</word>
         <word>Master</word>
-        <word>Masters</word>
+        <word>Maul</word>
         <word>Miss</word>
         <word>Mister</word>
         <word>Morph</word>
@@ -1181,9 +1311,7 @@
         <word>Nomad</word>
         <word>Operation</word>
         <word>Outcast</word>
-        <word plural="true">Outcasts</word>
         <word>Outsider</word>
-        <word plural="true">Outsiders</word>
         <word>Pass</word>
         <word>Perish</word>
         <word>Pierce</word>
@@ -1214,10 +1342,11 @@
         <word>Reign</word>
         <word>Renegade</word>
         <word>Rest</word>
+        <word>Restoration</word>
+        <word>Restore</word>
         <word>Retribution</word>
         <word>Return</word>
         <word>Revelation</word>
-        <word>Revelations</word>
         <word>Revenge</word>
         <word>Revolution</word>
         <word>Rider</word>
@@ -1228,20 +1357,18 @@
         <word>Rule</word>
         <word>Run</word>
         <word>Saint</word>
-        <word>Saints</word>
         <word>Salvation</word>
         <word>Savior</word>
         <word>Scavenger</word>
         <word>Scorch</word>
         <word>Scream</word>
+        <word>Screech</word>
         <word>Seeker</word>
         <word>Seer</word>
         <word>Seize</word>
         <word>Seizing</word>
         <word>Servant</word>
-        <word>Servants</word>
         <word>Servitor</word>
-        <word>Servitors</word>
         <word>Servitude</word>
         <word>Set</word>
         <word>Shift</word>
@@ -1250,14 +1377,11 @@
         <word>Show</word>
         <word>Siege</word>
         <word>Sinner</word>
-        <word>Sinners</word>
         <word>Slayer</word>
         <word>Slide</word>
         <word>Slinger</word>
         <word>Smile</word>
-        <word>Smiles</word>
         <word>Soldier</word>
-        <word>Soldiers</word>
         <word>Spark</word>
         <word>Spawn</word>
         <word>Spitter</word>
@@ -1270,7 +1394,10 @@
         <word>Strangle</word>
         <word>Strike</word>
         <word>Study</word>
+        <word>Succumb</word>
         <word>Surge</word>
+        <word>Survival</word>
+        <word>Survive</word>
         <word>Take</word>
         <word>Taker</word>
         <word>Thief</word>
@@ -1278,42 +1405,77 @@
         <word>Thug</word>
         <word>Traitor</word>
         <word>Traveler</word>
+        <word>Turn</word>
+        <word>Turned</word>
+        <word>Tyranny</word>
         <word>Tyrant</word>
         <word>Vandal</word>
         <word>Vanguard</word>
+        <word>Vanquish</word>
         <word>Vengeance</word>
         <word>Victor</word>
-        <word>Victors</word>
         <word>Viking</word>
-        <word>Vikings</word>
         <word>Villager</word>
-        <word>Villagers</word>
         <word>Villain</word>
-        <word>Villains</word>
         <word>Vision</word>
         <word>Visitor</word>
         <word>Walk</word>
         <word>Walker</word>
         <word>Warlord</word>
-        <word>Warlords</word>
         <word>Warrior</word>
-        <word>Warriors</word>
         <word>Waste</word>
         <word>Watch</word>
+        <word>Watchman</word>
         <word>Widow</word>
         <word>Wither</word>
         <word>Witness</word>
-        <word>Woods</word>
         <word>Work</word>
         <word>Worship</word>
     </category>
     <category id="4" name="Place &amp; Time" shortName="PT">
+        <word plural="true">Altars</word>
+        <word plural="true">Archives</word>
+        <word plural="true">Castles</word>
+        <word plural="true">Centuries</word>
+        <word plural="true">Chambers</word>
+        <word plural="true">Cities</word>
+        <word plural="true">Crypts</word>
+        <word plural="true">Days</word>
+        <word plural="true">Dungeons</word>
+        <word plural="true">Earths</word>
+        <word plural="true">Empires</word>
+        <word plural="true">Fields</word>
+        <word plural="true">Frontiers</word>
+        <word plural="true">Futures</word>
+        <word plural="true">Galaxies</word>
+        <word plural="true">Graves</word>
+        <word plural="true">Halls</word>
+        <word plural="true">Hours</word>
+        <word plural="true">Houses</word>
+        <word plural="true">Islands</word>
+        <word plural="true">Lands</word>
+        <word plural="true">Mines</word>
+        <word plural="true">Months</word>
+        <word plural="true">Moons</word>
+        <word plural="true">Mountains</word>
+        <word plural="true">Nights</word>
+        <word plural="true">Oceans</word>
+        <word plural="true">Roads</word>
+        <word plural="true">Ruins</word>
+        <word plural="true">Seas</word>
+        <word plural="true">Seasons</word>
+        <word plural="true">Skies</word>
+        <word plural="true">Stars</word>
+        <word plural="true">Streets</word>
+        <word plural="true">Tombs</word>
+        <word plural="true">Towns</word>
+        <word plural="true">Woods</word>
+        <word plural="true">Worlds</word>
         <word>Abyss</word>
         <word>Age</word>
         <word>Altar</word>
         <word>Always</word>
         <word>Archive</word>
-        <word>Archives</word>
         <word>Autumn</word>
         <word>Away</word>
         <word>Base</word>
@@ -1321,6 +1483,8 @@
         <word>Bay</word>
         <word>Bog</word>
         <word>Border</word>
+        <word>Brig</word>
+        <word>Camp</word>
         <word>Canyon</word>
         <word>Castle</word>
         <word>Cave</word>
@@ -1330,7 +1494,6 @@
         <word>Chasm</word>
         <word>Church</word>
         <word>Citadel</word>
-        <word>Cities</word>
         <word>City</word>
         <word>Coast</word>
         <word>Colony</word>
@@ -1340,7 +1503,6 @@
         <word>Crypt</word>
         <word>Dawn</word>
         <word>Day</word>
-        <word>Days</word>
         <word>Den</word>
         <word>Desert</word>
         <word>Destination</word>
@@ -1357,7 +1519,6 @@
         <word>Eve</word>
         <word>Evening</word>
         <word>Field</word>
-        <word>Fields</word>
         <word>Forest</word>
         <word>Forever</word>
         <word>Fort</word>
@@ -1371,7 +1532,6 @@
         <word>Ground</word>
         <word>Grove</word>
         <word>Hall</word>
-        <word>Halls</word>
         <word>Haven</word>
         <word>Heaven</word>
         <word>Hell</word>
@@ -1389,16 +1549,16 @@
         <word>Lair</word>
         <word>Lake</word>
         <word>Land</word>
-        <word>Lands</word>
         <word>Library</word>
         <word>Lot</word>
         <word>Luna</word>
         <word>Marsh</word>
         <word>Maze</word>
+        <word>Mesa</word>
         <word>Midnight</word>
         <word>Millennium</word>
         <word>Mine</word>
-        <word>Mines</word>
+        <word>Minute</word>
         <word>Month</word>
         <word>Moon</word>
         <word>Morning</word>
@@ -1407,7 +1567,6 @@
         <word>Nether</word>
         <word>Never</word>
         <word>Night</word>
-        <word>Nights</word>
         <word>Noon</word>
         <word>North</word>
         <word>Now</word>
@@ -1429,27 +1588,22 @@
         <word>River</word>
         <word>Road</word>
         <word>Route</word>
-        <word>Ruins</word>
         <word>Sanctuary</word>
         <word>Sea</word>
-        <word>Seas</word>
         <word>Season</word>
         <word>Sector</word>
         <word>Shelter</word>
         <word>Ship</word>
         <word>Shire</word>
         <word>Shrine</word>
-        <word>Skies</word>
         <word>Sky</word>
         <word>Sol</word>
         <word>South</word>
         <word>Space</word>
         <word>Spring</word>
         <word>Star</word>
-        <word>Stars</word>
         <word>Station</word>
         <word>Street</word>
-        <word>Streets</word>
         <word>Summer</word>
         <word>Sun</word>
         <word>Surface</word>
@@ -1461,13 +1615,14 @@
         <word>Tomorrow</word>
         <word>Tower</word>
         <word>Town</word>
-        <word>Towns</word>
+        <word>Tropic</word>
         <word>Universe</word>
         <word>Utopia</word>
         <word>Vale</word>
         <word>Valley</word>
         <word>Vault</word>
         <word>Village</word>
+        <word>Vista</word>
         <word>Void</word>
         <word>Well</word>
         <word>West</word>
