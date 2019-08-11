@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.EditText;
@@ -31,16 +32,22 @@ public class MainActivity extends AppCompatActivity {
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
-    private String customTemplate;
-    private String defaultTemplate;
-    private char templateWordChar = '#';
 
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
     private boolean randomTitleLength = false;
     private boolean enableTitleDecorations = true;
+
+    // Custom template
+    private String customTemplate;
+    private String defaultTemplate;
+    private char templateWordChar;
+    private int mutatorBlockLength;
+    private boolean lastCharTemplateWordChar = false;
     private boolean enableCustomTemplate = false;
+    private String[] lastWordMutators;
+    private int lastWordCategory;
 
     private enum TitleDecoration {
         X_Y,
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         wordLists = new ArrayList<>();
         allWords = new ArrayList<>();
         CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords);
+        templateWordChar = getString(R.string.function_word).charAt(0);
     }
 
     private void initTitleSlots() {
@@ -156,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
             TitleDecoration decoration = getRandomTitleDecoration();
             if (enableTitleDecorations && Math.random() <= 0.3f) {
-                title.append("The ");
+                title.append(getString(R.string.str_the)).append(' ');
             }
 
             int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
@@ -186,7 +194,10 @@ public class MainActivity extends AppCompatActivity {
             wordList = wordLists.get(wordCategoryId);
 
         int wordIndex = (int) (Math.random() * wordList.size());
-        return wordList.get(wordIndex);
+        Word word = wordList.get(wordIndex);
+        lastWordCategory = word.categoryId;
+
+        return word;
     }
 
     private TitleDecoration getRandomTitleDecoration() {
@@ -259,14 +270,193 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyCustomTemplate(StringBuilder title) {
+        lastWordCategory = -1;
+
         for (int i = 0; i < customTemplate.length(); i++) {
+            boolean isLastChar = i == customTemplate.length() - 1;
+
+            if (mutatorBlockLength > 0) {
+                mutatorBlockLength--;
+                continue;
+            }
+
+            // When a template word character is hit, a word isn't yet added to the title.
+            // Instead, it is checked if the word has any mutators after it.
             if (customTemplate.charAt(i) == templateWordChar) {
-                title.append(getRandomWord(displayedCategory));
+                lastCharTemplateWordChar = true;
+            }
+            else if (lastCharTemplateWordChar) {
+                // TODO: If the word is empty, there may be two consecutive spaces
+
+                title.append(getRandomWordAndParseMutators(i))
+                     .append(mutatorBlockLength == 0 ? customTemplate.charAt(i) : "");
+                lastCharTemplateWordChar = false;
             }
             else {
                 title.append(customTemplate.charAt(i));
             }
+
+            if (isLastChar && lastCharTemplateWordChar) {
+                title.append(getRandomWord(displayedCategory));
+                lastWordCategory = displayedCategory;
+            }
         }
+
+        mutatorBlockLength = 0;
+    }
+
+   /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
+    * Mutators: singular, plural, nominative, possessive, infinitive, past tense, negative, actor, uppercase, lowercase,
+    * initialism, 50 % chance for no word, same mutators as the last, same non-category mutators, same category,
+    * same category options and mutator chaining.
+    *
+    * @param index  The index on the custom template.
+    * @returns      A word string with applied mutators.
+    */
+    private String getRandomWordAndParseMutators(int index) {
+        StringBuilder mutators = new StringBuilder();
+        boolean mutatorsActive = false;
+        for (int i = index; i < customTemplate.length(); i++) {
+
+            // There is no mutator block; returns a random word
+            if (i == index && customTemplate.charAt(i) != getString(R.string.function_mutatorBlockStart).charAt(0)) {
+                mutatorBlockLength = 0;
+                return getRandomWord(displayedCategory).toString();
+            }
+            // The start of the mutator block
+            else if (i == index) {
+                mutatorsActive = true;
+            }
+            // The end of the mutator block
+            else if (customTemplate.charAt(i) == getString(R.string.function_mutatorBlockEnd).charAt(0)) {
+                mutatorBlockLength = i - index;
+                mutatorsActive = false;
+                break;
+            }
+            // The mutators
+            else {
+                mutators.append(customTemplate.charAt(i));
+            }
+        }
+
+        // The mutator block misses an end char and thus is considered null and void; returns a random word
+        if (mutatorsActive) {
+            mutatorBlockLength = 0;
+            return getRandomWord(displayedCategory).toString();
+        }
+
+        return getWordWithAppliedMutators(mutators);
+    }
+
+    private String getWordWithAppliedMutators(StringBuilder mutatorString) {
+        // TODO: Mutators
+
+        String result = "";
+        String[] mutators = mutatorString.toString().split("[|]"); // R.string.function_chainMutators
+
+        // General mutators
+        boolean copyNonCatMutators = false;
+        if (lastWordMutators != null) {
+            for (String mutator : mutators) {
+                if (mutator.equals(getString(R.string.function_copyAllMutators))) {
+                    mutators = lastWordMutators;
+                    break;
+                } else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
+                    copyNonCatMutators = true;
+                }
+            }
+        }
+
+        // Category mutators
+        int category = displayedCategory;
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_copyCategory))) {
+                category = lastWordCategory;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catAny1)) || mutator.equals(getString(R.string.function_catAny2))) {
+                category = -1;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catFeature1)) || mutator.equals(getString(R.string.function_catFeature2))) {
+                category = 0;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catConcept1)) || mutator.equals(getString(R.string.function_catConcept2))) {
+                category = 1;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catThing1)) || mutator.equals(getString(R.string.function_catThing2))) {
+                category = 2;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catActorAndAction1)) || mutator.equals(getString(R.string.function_catActorAndAction2))) {
+                category = 3;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catPlaceAndTime1)) || mutator.equals(getString(R.string.function_catPlaceAndTime2))) {
+                category = 4;
+                break;
+            }
+        }
+
+        result = getRandomWord(category).toString();
+
+        if (copyNonCatMutators) {
+            mutators = lastWordMutators;
+        }
+
+        // Postfix mutators
+        StringBuilder newResult = new StringBuilder(result);
+        char lastLetter = newResult.charAt(result.length() - 1);
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_singular))) {
+                // TODO: Singular
+            }
+            else if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
+                // TODO: Use the word's isPlural field
+                if (lastLetter == 's' || lastLetter == 'x' || lastLetter == 'z')
+                    newResult.append("es");
+                /*else if (lastLetter == 'y')
+                    newResult.replace(newResult.length() - 1, newResult.length(), "ies");*/
+                else
+                    newResult.append("s");
+            }
+            else if (mutator.equals(getString(R.string.function_possessive))) {
+                if (lastLetter == 's' || lastLetter == 'z')
+                    newResult.append("'");
+                else
+                    newResult.append("'s");
+            }
+            else if (mutator.equals(getString(R.string.function_negative1)) || mutator.equals(getString(R.string.function_negative2))) {
+                newResult.replace(0, 1, ("" + newResult.charAt(0)).toLowerCase());
+                newResult.insert(0,"Un");
+            }
+        }
+        result = newResult.toString();
+
+        // Visual mutators
+        boolean optionalWord = false;
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_uppercase))) {
+                result = result.toUpperCase();
+            }
+            else if (mutator.equals(getString(R.string.function_lowercase))) {
+                result = result.toLowerCase();
+            }
+            else if (mutator.equals(getString(R.string.function_initialism))) {
+                newResult = new StringBuilder();
+                for (int i = 0; i < result.length(); i++) {
+                    newResult.append(result.charAt(i)).append('.');
+                }
+                result = newResult.toString().toUpperCase();
+            }
+            else if (mutator.equals(getString(R.string.function_emptyChance1)) || mutator.length() == 0) {
+                optionalWord = true;
+            }
+        }
+
+        // 50 % chance for an empty result
+        if (optionalWord && Math.random() < 0.5) {
+            result = "";
+        }
+
+        lastWordMutators = mutators;
+        return result;
     }
 
     @Override

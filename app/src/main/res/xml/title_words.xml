@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <category id="0" name="Feature" shortName="Ft">
+        <word plural="true">Few</word>
         <word plural="true">These</word>
         <word plural="true">Unlimited</word>
         <word>Abyssal</word>
@@ -129,7 +130,6 @@
         <word>Fatal</word>
         <word>Faulty</word>
         <word>Feared</word>
-        <word>Few</word>
         <word>Final</word>
         <word>First</word>
         <word>Five</word>
@@ -139,10 +139,8 @@
         <word>Fortunate</word>
         <word>Fractal</word>
         <word>Free</word>
-        <word>Freeze</word>
         <word>Fresh</word>
         <word>Front</word>
-        <word>Frost</word>
         <word>Frozen</word>
         <word>Full</word>
         <word>Fun</word>
@@ -607,7 +605,6 @@
         <word>Odyssey</word>
         <word>Omen</word>
         <word>Onward</word>
-        <word>Order</word>
         <word>Organization</word>
         <word>Origin</word>
         <word>Pact</word>
@@ -921,6 +918,7 @@
         <word>Fog</word>
         <word>Forge</word>
         <word>Freak</word>
+        <word>Frost</word>
         <word>Fuel</word>
         <word>Furnace</word>
         <word>Galleon</word>
@@ -1120,6 +1118,7 @@
         <word plural="true">Liars</word>
         <word plural="true">Masters</word>
         <word plural="true">Operations</word>
+        <word plural="true">Orders</word>
         <word plural="true">Outcasts</word>
         <word plural="true">Outsiders</word>
         <word plural="true">Revelations</word>
@@ -1253,6 +1252,7 @@
         <word>Fold</word>
         <word>Follower</word>
         <word>Fool</word>
+        <word>Freeze</word>
         <word>Fuse</word>
         <word>Fusion</word>
         <word>Gamble</word>
@@ -1310,6 +1310,7 @@
         <word>Nemesis</word>
         <word>Nomad</word>
         <word>Operation</word>
+        <word>Order</word>
         <word>Outcast</word>
         <word>Outsider</word>
         <word>Pass</word>
