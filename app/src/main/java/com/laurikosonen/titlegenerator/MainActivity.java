@@ -70,17 +70,13 @@ public class MainActivity extends AppCompatActivity {
         initTitleSlots();
         initCustomTemplate();
 
-        displayTitles();
+        generateTitles();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (enableCustomTemplate) {
-                    customTemplate = customTemplateInput.getText().toString();
-                }
-
-                displayTitles();
+                generateTitles();
             }
         });
 
@@ -139,6 +135,14 @@ public class MainActivity extends AppCompatActivity {
         defaultTemplate = getString(R.string.customTemplateExample);
         customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
         customTemplateInput.setVisibility(View.GONE);
+    }
+
+    private void generateTitles() {
+        if (enableCustomTemplate) {
+            customTemplate = customTemplateInput.getText().toString();
+        }
+
+        displayTitles();
     }
 
     private void displayTitles() {
@@ -642,6 +646,10 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_titleDecorations) {
             enableTitleDecorations = !enableTitleDecorations;
             titleDecorationsToggle.setChecked(enableTitleDecorations);
+
+            if (!enableCustomTemplate)
+                generateTitles();
+
             return true;
         }
 
@@ -653,6 +661,9 @@ public class MainActivity extends AppCompatActivity {
             displayedTitleCount = value;
             titleCountMenuItem.
                 setTitle(String.format(getString(R.string.titleCount), displayedTitleCount));
+
+            generateTitles();
+
             return true;
         }
 
@@ -664,6 +675,10 @@ public class MainActivity extends AppCompatActivity {
             titleWordCount = value;
             titleWordCountMenuItem.
                 setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
+
+            if (!enableCustomTemplate)
+                generateTitles();
+
             return true;
         }
 
@@ -676,6 +691,9 @@ public class MainActivity extends AppCompatActivity {
             item.setEnabled(false);
             currentDisplayedCatItem.setEnabled(true);
             currentDisplayedCatItem = item;
+
+            generateTitles();
+
             return true;
         }
 
