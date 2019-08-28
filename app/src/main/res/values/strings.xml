@@ -17,12 +17,12 @@
     <string name="titleCount">Title Count: %d</string>
     <string name="titleWordCount">Words in a Title: %d</string>
     <string name="totalWordCount">Words in Total: %d</string>
-    <string name="toggleTitleForms_on">Title Decorations On</string>
-    <string name="toggleTitleForms_off">Title Decorations Off</string>
-    <string name="toggleTitleForms">Toggle Title Decorations</string>
+    <string name="action_titleDecorations">Title Decorations</string>
     <string name="action_displayAll">Display All Categories</string>
     <string name="action_displayCategory">> %s</string>
     <string name="action_customTemplate">Custom Template</string>
+    <string name="customTemplate_on">Custom Template On</string>
+    <string name="customTemplate_off">Custom Template Off</string>
     <string name="customTemplateExample"># Example: # #</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
@@ -40,8 +40,6 @@
     <string name="function_infinitive2">in</string>
     <string name="function_pastTense1">d</string>
     <string name="function_pastTense2">ed</string>
-    <string name="function_negative1">u</string>
-    <string name="function_negative2">un</string>
     <string name="function_possessive">\'</string>
     <string name="function_emptyChance1">x</string>
     <string name="function_copyAllMutators">=</string>

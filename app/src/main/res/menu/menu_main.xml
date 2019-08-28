@@ -72,9 +72,9 @@
     </item>
 
     <item
-        android:id="@+id/action_customTemplate"
+        android:id="@+id/action_titleDecorations"
         android:checkable="true"
-        android:title="@string/action_customTemplate" />
+        android:title="@string/action_titleDecorations" />
 
     <group android:id="@+id/group_displayCategories" >
         <item

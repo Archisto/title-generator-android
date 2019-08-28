@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import android.view.View;
 import android.view.Menu;
@@ -26,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem currentDisplayedCatItem;
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
-    private ToggleButton titleDecorationsToggle;
+    private ToggleButton customTemplateToggle;
     private EditText customTemplateInput;
-    private MenuItem customTemplateToggle;
+    private MenuItem titleDecorationsToggle;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private String defaultTemplate;
     private char templateWordChar;
     private int mutatorBlockLength;
-    private boolean lastCharTemplateWordChar = false;
+    private boolean lastCharWasTemplateWordChar = false;
     private boolean enableCustomTemplate = false;
     private String[] lastWordMutators;
     private int lastWordCategory;
@@ -85,11 +84,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        titleDecorationsToggle = (ToggleButton) findViewById(R.id.toggle_titleDecorations);
-        titleDecorationsToggle.setOnClickListener(new View.OnClickListener() {
+        customTemplateToggle = (ToggleButton) findViewById(R.id.toggle_customTemplate);
+        customTemplateToggle.setChecked(enableCustomTemplate);
+        customTemplateToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enableTitleDecorations = titleDecorationsToggle.isChecked();
+                enableCustomTemplate = customTemplateToggle.isChecked();
+                customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
+                if (enableCustomTemplate
+                    && (customTemplate == null
+                    || customTemplate.isEmpty()
+                    || customTemplateInput.getText().toString().isEmpty())) {
+                    customTemplate = defaultTemplate;
+                    customTemplateInput.setText(customTemplate);
+                }
             }
         });
     }
@@ -282,28 +290,51 @@ public class MainActivity extends AppCompatActivity {
 
             // When a template word character is hit, a word isn't yet added to the title.
             // Instead, it is checked if the word has any mutators after it.
+            // (Unless there are consecutive template word chars in which case a word is added
+            // to the title.)
             if (customTemplate.charAt(i) == templateWordChar) {
-                lastCharTemplateWordChar = true;
-            }
-            else if (lastCharTemplateWordChar) {
-                // TODO: If the word is empty, there may be two consecutive spaces
+                if (lastCharWasTemplateWordChar) {
+                    title.append(getRandomWord(displayedCategory));
+                }
 
-                title.append(getRandomWordAndParseMutators(i))
-                     .append(mutatorBlockLength == 0 ? customTemplate.charAt(i) : "");
-                lastCharTemplateWordChar = false;
+                lastCharWasTemplateWordChar = true;
+            }
+            else if (lastCharWasTemplateWordChar) {
+                // TODO: If the word is empty, there may be two consecutive spaces
+                appendWordWithMutatorsToTitle(title, i);
+                lastCharWasTemplateWordChar = false;
             }
             else {
                 title.append(customTemplate.charAt(i));
             }
 
-            if (isLastChar && lastCharTemplateWordChar) {
+            if (isLastChar && lastCharWasTemplateWordChar) {
                 title.append(getRandomWord(displayedCategory));
                 lastWordCategory = displayedCategory;
             }
         }
 
+        lastCharWasTemplateWordChar = false;
         mutatorBlockLength = 0;
     }
+
+    private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
+        // TODO: Better mutator parsing
+//        StringBuilder mutators = parseMutators(customTemplateIndex);
+//        title.append(getRandomStringWithAppliedMutators(mutators))
+//            .append(mutatorBlockLength == 0 ? customTemplate.charAt(customTemplateIndex) : "");
+
+        title.append(getRandomWordAndParseMutators(customTemplateIndex))
+             .append(mutatorBlockLength == 0 ? customTemplate.charAt(customTemplateIndex) : "");
+    }
+
+//    private StringBuilder parseMutators(int customTemplateIndex) {
+//
+//    }
+//
+//    private String getRandomStringWithAppliedMutators(StringBuilder mutators) {
+//
+//    }
 
    /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
     * Mutators: singular, plural, nominative, possessive, infinitive, past tense, negative, actor, uppercase, lowercase,
@@ -394,7 +425,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        result = getRandomWord(category).toString();
+        Word word = getRandomWord(category);
+        result = word.toString();
 
         if (copyNonCatMutators) {
             mutators = lastWordMutators;
@@ -403,13 +435,20 @@ public class MainActivity extends AppCompatActivity {
         // Postfix mutators
         StringBuilder newResult = new StringBuilder(result);
         char lastLetter = newResult.charAt(result.length() - 1);
+        char secondToLastLetter = '_';
+        if (result.length() >= 2) {
+            secondToLastLetter = newResult.charAt(result.length() - 2);
+        }
+
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_singular))) {
                 // TODO: Singular
             }
-            else if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
-                // TODO: Use the word's isPlural field
-                if (lastLetter == 's' || lastLetter == 'x' || lastLetter == 'z')
+            else if (!word.isPlural && (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2)))) {
+                // TODO: Use the plural attribute
+                if (lastLetter == 's' || lastLetter == 'x' || lastLetter == 'z'
+                    || (secondToLastLetter == 'c' && lastLetter == 'h')
+                    || (secondToLastLetter == 's' && lastLetter == 'h'))
                     newResult.append("es");
                 /*else if (lastLetter == 'y')
                     newResult.replace(newResult.length() - 1, newResult.length(), "ies");*/
@@ -421,10 +460,6 @@ public class MainActivity extends AppCompatActivity {
                     newResult.append("'");
                 else
                     newResult.append("'s");
-            }
-            else if (mutator.equals(getString(R.string.function_negative1)) || mutator.equals(getString(R.string.function_negative2))) {
-                newResult.replace(0, 1, ("" + newResult.charAt(0)).toLowerCase());
-                newResult.insert(0,"Un");
             }
         }
         result = newResult.toString();
@@ -465,7 +500,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         initMenu(menu);
         initCategories(menu);
-        customTemplateToggle = menu.findItem(R.id.action_customTemplate);
+        titleDecorationsToggle = menu.findItem(R.id.action_titleDecorations);
+        titleDecorationsToggle.setChecked(enableTitleDecorations);
         return true;
     }
 
@@ -511,7 +547,7 @@ public class MainActivity extends AppCompatActivity {
         else if (handleDisplayedCategoryOptions(id, item)) {
             return true;
         }
-        else if (handleCustomTemplateActivation(id, item)) {
+        else if (handleTitleDecorationsActivation(id)) {
             return true;
         }
 
@@ -602,21 +638,10 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private boolean handleCustomTemplateActivation(int id, MenuItem item) {
-        if (id == R.id.action_customTemplate) {
-            enableCustomTemplate = !enableCustomTemplate;
-            customTemplateToggle.setChecked(enableCustomTemplate);
-            customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
-            titleDecorationsToggle.setEnabled(!enableCustomTemplate);
-
-            if (enableCustomTemplate
-                && (customTemplate == null
-                    || customTemplate.isEmpty()
-                    || customTemplateInput.getText().toString().isEmpty())) {
-                customTemplate = defaultTemplate;
-                customTemplateInput.setText(customTemplate);
-            }
-
+    private boolean handleTitleDecorationsActivation(int id) {
+        if (id == R.id.action_titleDecorations) {
+            enableTitleDecorations = !enableTitleDecorations;
+            titleDecorationsToggle.setChecked(enableTitleDecorations);
             return true;
         }
 
