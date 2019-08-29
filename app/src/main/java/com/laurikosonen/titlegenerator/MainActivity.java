@@ -305,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else if (lastCharWasTemplateWordChar) {
                 // TODO: If the word is empty, there may be two consecutive spaces
+                // TODO: Also remove space if the word contains a dash at the end
                 appendWordWithMutatorsToTitle(title, i);
                 lastCharWasTemplateWordChar = false;
             }
@@ -420,11 +421,14 @@ public class MainActivity extends AppCompatActivity {
             } else if (mutator.equals(getString(R.string.function_catThing1)) || mutator.equals(getString(R.string.function_catThing2))) {
                 category = 2;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catActorAndAction1)) || mutator.equals(getString(R.string.function_catActorAndAction2))) {
+            } else if (mutator.equals(getString(R.string.function_catPeopleAndCreatures1)) || mutator.equals(getString(R.string.function_catPeopleAndCreatures2))) {
                 category = 3;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catPlaceAndTime1)) || mutator.equals(getString(R.string.function_catPlaceAndTime2))) {
+            } else if (mutator.equals(getString(R.string.function_catAction1)) || mutator.equals(getString(R.string.function_catAction2))) {
                 category = 4;
+                break;
+            } else if (mutator.equals(getString(R.string.function_catPlaceAndTime1)) || mutator.equals(getString(R.string.function_catPlaceAndTime2))) {
+                category = 5;
                 break;
             }
         }
@@ -454,8 +458,8 @@ public class MainActivity extends AppCompatActivity {
                     || (secondToLastLetter == 'c' && lastLetter == 'h')
                     || (secondToLastLetter == 's' && lastLetter == 'h'))
                     newResult.append("es");
-                /*else if (lastLetter == 'y')
-                    newResult.replace(newResult.length() - 1, newResult.length(), "ies");*/
+                else if (lastLetter == 'y')
+                    newResult.replace(newResult.length() - 1, newResult.length(), "ies");
                 else
                     newResult.append("s");
             }
@@ -466,6 +470,7 @@ public class MainActivity extends AppCompatActivity {
                     newResult.append("'s");
             }
         }
+
         result = newResult.toString();
 
         // Visual mutators
@@ -530,8 +535,10 @@ public class MainActivity extends AppCompatActivity {
         menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_thing)));
         menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_actorAndAction)));
+            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures)));
         menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_action)));
+        menu.findItem(R.id.action_displayCategory5).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime)));
     }
 
@@ -636,6 +643,9 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.action_displayCategory4: {
                 return setDisplayedCategory(item, 4);
+            }
+            case R.id.action_displayCategory5: {
+                return setDisplayedCategory(item, 5);
             }
         }
 
