@@ -76,6 +76,11 @@
         android:checkable="true"
         android:title="@string/action_titleDecorations" />
 
+    <item
+        android:id="@+id/action_randomTitleLength"
+        android:checkable="true"
+        android:title="@string/action_randomTitleLength" />
+
     <group android:id="@+id/group_displayCategories" >
         <item
             android:id="@+id/action_displayAll"

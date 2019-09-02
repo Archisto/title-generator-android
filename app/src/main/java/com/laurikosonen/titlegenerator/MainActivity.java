@@ -28,21 +28,23 @@ public class MainActivity extends AppCompatActivity {
     private ToggleButton customTemplateToggle;
     private EditText customTemplateInput;
     private MenuItem titleDecorationsToggle;
+    private MenuItem randomTitleLengthToggle;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
 
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
-    private int titleWordCount = 3;
-    private boolean randomTitleLength = false;
+    private int titleWordCount = 2;
     private boolean enableTitleDecorations = true;
+    private boolean enableRandomTitleLength = false;
 
     // Custom template
     private String customTemplate;
     private String defaultTemplate;
     private char templateWordChar;
     private int mutatorBlockLength;
+    private boolean skipSpace;
     private boolean lastCharWasTemplateWordChar = false;
     private boolean enableCustomTemplate = false;
     private String[] lastWordMutators;
@@ -149,6 +151,9 @@ public class MainActivity extends AppCompatActivity {
         int wordsPerTitle = titleWordCount;
 
         for (int i = 0; i < titleSlots.size(); i++) {
+            // TODO: Skip space in non-custom template titles
+            skipSpace = false;
+
             boolean emptySlot = i >= displayedTitleCount;
             if (emptySlot) {
                 titleSlots.get(i).setText("");
@@ -162,19 +167,21 @@ public class MainActivity extends AppCompatActivity {
             String numberText = String.format(getString(R.string.titleNumber), i + 1);
             titleNumberSlots.get(i).setText(numberText);
 
+            // Custom template titles:
             if (enableCustomTemplate) {
                 applyCustomTemplate(title);
                 titleSlots.get(i).setText(title);
                 continue;
             }
 
-            if (randomTitleLength) {
+            // Non-custom template titles:
+
+            if (enableRandomTitleLength) {
                 wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
             }
 
             // Creates the title:
 
-            TitleDecoration decoration = getRandomTitleDecoration();
             if (enableTitleDecorations && Math.random() <= 0.3f) {
                 title.append(getString(R.string.str_the)).append(' ');
             }
@@ -187,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 title.append(getRandomWord(displayedCategory));
 
                 if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
-                    applyTitleDecoration(decoration, title);
+                    applyTitleDecoration(getRandomTitleDecoration(), title);
                 }
                 else if (!isLastWord) {
                     applyTitleDecoration(TitleDecoration.X_Y, title);
@@ -196,6 +203,51 @@ public class MainActivity extends AppCompatActivity {
 
             titleSlots.get(i).setText(title);
         }
+    }
+
+    private void applyCustomTemplate(StringBuilder title) {
+        lastWordCategory = -1;
+
+        for (int i = 0; i < customTemplate.length(); i++) {
+            if (mutatorBlockLength > 0) {
+                mutatorBlockLength--;
+                continue;
+            }
+
+            char currentChar = customTemplate.charAt(i);
+            boolean isLastChar = i == customTemplate.length() - 1;
+
+            // When a template word character is hit, a word isn't yet added to the title.
+            // Instead, it is checked if the word has any mutators after it.
+            // (Unless there are consecutive template word chars in which case a word is added
+            // to the title.)
+            if (currentChar == templateWordChar) {
+                if (lastCharWasTemplateWordChar) {
+                    title.append(getRandomWord(displayedCategory));
+                }
+
+                lastCharWasTemplateWordChar = true;
+            }
+            else if (lastCharWasTemplateWordChar) {
+                appendWordWithMutatorsToTitle(title, i);
+                lastCharWasTemplateWordChar = false;
+            }
+            else if (!skipSpace || currentChar != ' ') {
+                title.append(currentChar);
+            }
+
+            if (skipSpace && currentChar == ' ') {
+                skipSpace = false;
+            }
+
+            if (isLastChar && lastCharWasTemplateWordChar) {
+                title.append(getRandomWord(displayedCategory));
+                lastWordCategory = displayedCategory;
+            }
+        }
+
+        lastCharWasTemplateWordChar = false;
+        mutatorBlockLength = 0;
     }
 
     private Word getRandomWord(int wordCategoryId) {
@@ -251,76 +303,34 @@ public class MainActivity extends AppCompatActivity {
                 title.append(" ");
                 break;
             case X_colon_Y:
-                title.append(": ");
+                title.append(getString(R.string.form_X__Y));
                 break;
             case X_colon_theY:
-                title.append(": The ");
+                title.append(getString(R.string.form_X__The_Y));
                 break;
             case XofY:
-                title.append(" of ");
+                title.append(getString(R.string.form_X_of_Y));
                 break;
             case XoftheY:
-                title.append(" of the ");
+                title.append(getString(R.string.form_X_of_the_Y));
                 break;
             case XandY:
-                title.append(" and ");
+                title.append(getString(R.string.form_X_and_Y));
                 break;
             case XandtheY:
-                title.append(" and the ");
+                title.append(getString(R.string.form_X_and_the_Y));
                 break;
             case XsY:
                 if (title.charAt(title.length() - 1) == 's'
                     || title.charAt(title.length() - 1) == 'z')
-                    title.append("' ");
+                    title.append(getString(R.string.form_Xs_Y2));
                 else
-                    title.append("'s ");
+                    title.append(getString(R.string.form_Xs_Y));
                 break;
             default:
                 title.append(" ");
                 break;
         }
-    }
-
-    private void applyCustomTemplate(StringBuilder title) {
-        lastWordCategory = -1;
-
-        for (int i = 0; i < customTemplate.length(); i++) {
-            boolean isLastChar = i == customTemplate.length() - 1;
-
-            if (mutatorBlockLength > 0) {
-                mutatorBlockLength--;
-                continue;
-            }
-
-            // When a template word character is hit, a word isn't yet added to the title.
-            // Instead, it is checked if the word has any mutators after it.
-            // (Unless there are consecutive template word chars in which case a word is added
-            // to the title.)
-            if (customTemplate.charAt(i) == templateWordChar) {
-                if (lastCharWasTemplateWordChar) {
-                    title.append(getRandomWord(displayedCategory));
-                }
-
-                lastCharWasTemplateWordChar = true;
-            }
-            else if (lastCharWasTemplateWordChar) {
-                // TODO: If the word is empty, there may be two consecutive spaces
-                // TODO: Also remove space if the word contains a dash at the end
-                appendWordWithMutatorsToTitle(title, i);
-                lastCharWasTemplateWordChar = false;
-            }
-            else {
-                title.append(customTemplate.charAt(i));
-            }
-
-            if (isLastChar && lastCharWasTemplateWordChar) {
-                title.append(getRandomWord(displayedCategory));
-                lastWordCategory = displayedCategory;
-            }
-        }
-
-        lastCharWasTemplateWordChar = false;
-        mutatorBlockLength = 0;
     }
 
     private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
@@ -329,8 +339,29 @@ public class MainActivity extends AppCompatActivity {
 //        title.append(getRandomStringWithAppliedMutators(mutators))
 //            .append(mutatorBlockLength == 0 ? customTemplate.charAt(customTemplateIndex) : "");
 
-        title.append(getRandomWordAndParseMutators(customTemplateIndex))
-             .append(mutatorBlockLength == 0 ? customTemplate.charAt(customTemplateIndex) : "");
+        String wordWithMutators = getRandomWordAndParseMutators(customTemplateIndex);
+
+        boolean appendWord = true;
+        if (wordWithMutators.length() == 0) {
+            appendWord = false;
+            skipSpace = true;
+        }
+        else if (wordWithMutators.charAt(wordWithMutators.length() - 1) == '-') {
+            // TODO: The last word shouldn't have a dash at the end
+            wordWithMutators = wordWithMutators.substring(0, wordWithMutators.length() - 1);
+            skipSpace = true;
+        }
+
+        if (appendWord) {
+            title.append(wordWithMutators);
+        }
+
+        // The character immediately following the word template char is added to the title
+        // if there's no mutator block and, if the char's a space, it's not skipped
+        if (mutatorBlockLength == 0
+              && (!skipSpace || customTemplate.charAt(customTemplateIndex) != ' ')) {
+            title.append(customTemplate.charAt(customTemplateIndex));
+        }
     }
 
 //    private StringBuilder parseMutators(int customTemplateIndex) {
@@ -509,8 +540,13 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         initMenu(menu);
         initCategories(menu);
+
         titleDecorationsToggle = menu.findItem(R.id.action_titleDecorations);
         titleDecorationsToggle.setChecked(enableTitleDecorations);
+
+        randomTitleLengthToggle = menu.findItem(R.id.action_randomTitleLength);
+        randomTitleLengthToggle.setChecked(enableRandomTitleLength);
+
         return true;
     }
 
@@ -529,17 +565,17 @@ public class MainActivity extends AppCompatActivity {
         currentDisplayedCatItem.setEnabled(false);
 
         menu.findItem(R.id.action_displayCategory0).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_feature)));
+            getString(R.string.action_displayCategory), getString(R.string.category_feature),getString(R.string.category_feature_short)));
         menu.findItem(R.id.action_displayCategory1).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_concept)));
+            getString(R.string.action_displayCategory), getString(R.string.category_concept), getString(R.string.category_concept_short)));
         menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_thing)));
+            getString(R.string.action_displayCategory), getString(R.string.category_thing), getString(R.string.category_thing_short)));
         menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures)));
+            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures), getString(R.string.category_peopleAndCreatures_short)));
         menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_action)));
+            getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
         menu.findItem(R.id.action_displayCategory5).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime)));
+            getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime), getString(R.string.category_placeAndTime_short)));
     }
 
     @Override
@@ -559,6 +595,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if (handleTitleDecorationsActivation(id)) {
+            return true;
+        }
+        else if (handleRandomTitleLengthActivation(id)) {
             return true;
         }
 
@@ -656,6 +695,20 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_titleDecorations) {
             enableTitleDecorations = !enableTitleDecorations;
             titleDecorationsToggle.setChecked(enableTitleDecorations);
+
+            if (!enableCustomTemplate)
+                generateTitles();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean handleRandomTitleLengthActivation(int id) {
+        if (id == R.id.action_randomTitleLength) {
+            enableRandomTitleLength = !enableRandomTitleLength;
+            randomTitleLengthToggle.setChecked(enableRandomTitleLength);
 
             if (!enableCustomTemplate)
                 generateTitles();
