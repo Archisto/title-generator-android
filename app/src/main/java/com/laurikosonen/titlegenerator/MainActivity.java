@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < wordsPerTitle; j++) {
                 boolean isLastWord = j == wordsPerTitle - 1;
 
-                title.append(getRandomWord(displayedCategory));
+                title.append(getRandomWord(displayedCategory).getRandomWordForm());
 
                 if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
                     applyTitleDecoration(getRandomTitleDecoration(), title);
@@ -374,9 +374,9 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
    /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
-    * Mutators: singular, plural, nominative, possessive, infinitive, past tense, negative, actor, uppercase, lowercase,
-    * initialism, 50 % chance for no word, same mutators as the last, same non-category mutators, same category,
-    * same category options and mutator chaining.
+    * Mutators: uppercase, lowercase, plural, possessive, noun, infinitive, present tense, past tense,
+    * initialism, comparative, superlative, 50 % chance for no word, same mutators as the last,
+    * same non-category mutators, same category, same category options and mutator chaining.
     *
     * @param index  The index on the custom template.
     * @returns      A word string with applied mutators.
@@ -410,6 +410,10 @@ public class MainActivity extends AppCompatActivity {
         // The mutator block misses an end char and thus is considered null and void; returns a random word
         if (mutatorsActive) {
             mutatorBlockLength = 0;
+            return getRandomWord(displayedCategory).toString();
+        }
+        // No mutators in otherwise valid mutator block
+        else if (mutators.length() == 0) {
             return getRandomWord(displayedCategory).toString();
         }
 
@@ -475,35 +479,49 @@ public class MainActivity extends AppCompatActivity {
             mutators = lastWordMutators;
         }
 
-        // Postfix mutators
+        // Word form mutators
         StringBuilder newResult = new StringBuilder(result);
         char lastLetter = newResult.charAt(result.length() - 1);
-        char secondToLastLetter = '_';
-        if (result.length() >= 2) {
-            secondToLastLetter = newResult.charAt(result.length() - 2);
-        }
+        boolean possessive = false;
 
         for (String mutator : mutators) {
-            if (mutator.equals(getString(R.string.function_singular))) {
-                // TODO: Singular
+            if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
+                newResult = new StringBuilder(word.getPlural());
             }
-            else if (!word.isPlural && (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2)))) {
-                // TODO: Use the plural attribute
-                if (lastLetter == 's' || lastLetter == 'x' || lastLetter == 'z'
-                    || (secondToLastLetter == 'c' && lastLetter == 'h')
-                    || (secondToLastLetter == 's' && lastLetter == 'h'))
-                    newResult.append("es");
-                else if (lastLetter == 'y')
-                    newResult.replace(newResult.length() - 1, newResult.length(), "ies");
-                else
-                    newResult.append("s");
+            else if (mutator.equals(getString(R.string.function_noun))) {
+                newResult = new StringBuilder(word.getNoun());
+            }
+            else if (mutator.equals(getString(R.string.function_infinitive1)) || mutator.equals(getString(R.string.function_infinitive2))) {
+                newResult = new StringBuilder(word.getInfinitive());
+            }
+            else if (mutator.equals(getString(R.string.function_presentTense))) {
+                newResult = new StringBuilder(word.getPresentTense());
+            }
+            else if (mutator.equals(getString(R.string.function_pastTense1)) || mutator.equals(getString(R.string.function_pastTense2))) {
+                newResult = new StringBuilder(word.getPastTense());
+            }
+            else if (mutator.equals(getString(R.string.function_pastPerfectTense))) {
+                newResult = new StringBuilder(word.getPastPerfectTense());
+            }
+            else if (mutator.equals(getString(R.string.function_comparative))) {
+                newResult = new StringBuilder(word.getComparative());
+            }
+            else if (mutator.equals(getString(R.string.function_superlative))) {
+                newResult = new StringBuilder(word.getSuperlative());
+            }
+            else if (mutator.equals(getString(R.string.function_manner))) {
+                newResult = new StringBuilder(word.getManner());
             }
             else if (mutator.equals(getString(R.string.function_possessive))) {
-                if (lastLetter == 's')
-                    newResult.append("'");
-                else
-                    newResult.append("'s");
+                possessive = true;
             }
+        }
+
+        if (possessive) {
+            if (lastLetter == 's')
+                newResult.append("'");
+            else
+                newResult.append("'s");
         }
 
         result = newResult.toString();
@@ -524,7 +542,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 result = newResult.toString().toUpperCase();
             }
-            else if (mutator.equals(getString(R.string.function_emptyChance1)) || mutator.length() == 0) {
+            else if (mutator.equals(getString(R.string.function_emptyChance1))) {
                 optionalWord = true;
             }
         }
