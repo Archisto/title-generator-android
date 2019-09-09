@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 skipSpace = false;
             }
 
+            // TODO: Apply mutators to remove ending dash
             if (isLastChar && lastCharWasTemplateWordChar) {
                 title.append(getRandomWord(displayedCategory));
                 lastWordCategory = displayedCategory;
@@ -443,22 +444,25 @@ public class MainActivity extends AppCompatActivity {
             } else if (mutator.equals(getString(R.string.function_catAny1)) || mutator.equals(getString(R.string.function_catAny2))) {
                 category = -1;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catFeature1)) || mutator.equals(getString(R.string.function_catFeature2))) {
+            } else if (mutator.equals(getString(R.string.number_1)) || mutator.equals(getString(R.string.category_feature_short))) {
                 category = 0;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catConcept1)) || mutator.equals(getString(R.string.function_catConcept2))) {
+            } else if (mutator.equals(getString(R.string.number_2)) || mutator.equals(getString(R.string.category_concept_short))) {
                 category = 1;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catThing1)) || mutator.equals(getString(R.string.function_catThing2))) {
+            } else if (mutator.equals(getString(R.string.number_3)) || mutator.equals(getString(R.string.category_substance_short))) {
                 category = 2;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catPeopleAndCreatures1)) || mutator.equals(getString(R.string.function_catPeopleAndCreatures2))) {
+            } else if (mutator.equals(getString(R.string.number_4)) || mutator.equals(getString(R.string.category_thing_short))) {
                 category = 3;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catAction1)) || mutator.equals(getString(R.string.function_catAction2))) {
+            } else if (mutator.equals(getString(R.string.number_5)) || mutator.equals(getString(R.string.category_peopleAndCreatures_short))) {
                 category = 4;
                 break;
-            } else if (mutator.equals(getString(R.string.function_catPlaceAndTime1)) || mutator.equals(getString(R.string.function_catPlaceAndTime2))) {
+            } else if (mutator.equals(getString(R.string.number_6)) || mutator.equals(getString(R.string.category_action_short))) {
+                category = 5;
+                break;
+            } else if (mutator.equals(getString(R.string.number_7)) || mutator.equals(getString(R.string.category_placeAndTime_short))) {
                 category = 5;
                 break;
             }
@@ -495,7 +499,7 @@ public class MainActivity extends AppCompatActivity {
                     newResult.append("s");
             }
             else if (mutator.equals(getString(R.string.function_possessive))) {
-                if (lastLetter == 's' || lastLetter == 'z')
+                if (lastLetter == 's')
                     newResult.append("'");
                 else
                     newResult.append("'s");
@@ -569,12 +573,14 @@ public class MainActivity extends AppCompatActivity {
         menu.findItem(R.id.action_displayCategory1).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_concept), getString(R.string.category_concept_short)));
         menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_thing), getString(R.string.category_thing_short)));
+            getString(R.string.action_displayCategory), getString(R.string.category_substance), getString(R.string.category_substance_short)));
         menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures), getString(R.string.category_peopleAndCreatures_short)));
+            getString(R.string.action_displayCategory), getString(R.string.category_thing), getString(R.string.category_thing_short)));
         menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
+            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures), getString(R.string.category_peopleAndCreatures_short)));
         menu.findItem(R.id.action_displayCategory5).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
+        menu.findItem(R.id.action_displayCategory6).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime), getString(R.string.category_placeAndTime_short)));
     }
 
@@ -685,6 +691,9 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.action_displayCategory5: {
                 return setDisplayedCategory(item, 5);
+            }
+            case R.id.action_displayCategory6: {
+                return setDisplayedCategory(item, 6);
             }
         }
 

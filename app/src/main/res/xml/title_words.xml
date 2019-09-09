@@ -2819,6 +2819,7 @@
         <word plural="true">Beasts</word>
         <word plural="true">Beings</word>
         <word plural="true">Believers</word>
+        <word plural="true">Bots</word>
         <word plural="true">Boys</word>
         <word plural="true">Breakers</word>
         <word plural="true">Bringers</word>
@@ -3061,6 +3062,7 @@
         <word>Bishop</word>
         <word>Bison</word>
         <word>Boss</word>
+        <word>Bot</word>
         <word>Boy</word>
         <word>Breaker</word>
         <word>Bride</word>
