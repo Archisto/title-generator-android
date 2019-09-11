@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <category id="0" name="Feature" shortName="ft">
+    <category id="0" name="Kind" shortName="ki">
         <word name="Abandoned" />
-        <word name="Abhorrent" manner="-" />
-        <word name="Able" plural="-" />
+        <word name="Abhorrent" />
+        <word name="Able" plural="-" manner="" />
         <word name="Abolished" />
-        <word name="Absolute" plural="-" manner="-" />
+        <word name="About" manner="" />
+        <word name="Absolute" plural="-" />
         <word name="Absolved" />
-        <word name="Absurd" manner="-" />
+        <word name="Absurd" />
         <word name="Abyssal" />
         <word name="Accomplished" />
         <word name="Ace" />
-        <word name="Across" />
-        <word name="Active" manner="-" />
-        <word name="Adamant" manner="-" />
+        <word name="Across" manner="" />
+        <word name="Active" />
+        <word name="Adamant" />
         <word name="Adaptive" />
         <word name="Afflicted" />
         <word name="African" />
@@ -22,314 +23,326 @@
         <word name="Airborne" />
         <word name="Alike" />
         <word name="Alive" />
-        <word name="All" />
+        <word name="All" compa="" super="" manner="" />
         <word name="Allowed" />
-        <word name="Almost" />
+        <word name="Almost" manner="" />
         <word name="Alone" />
-        <word name="Along" />
-        <word name="Alpha" />
+        <word name="Along" manner="" />
+        <word name="Alpha" manner="" />
         <word name="Alpine" />
         <word name="Altered" />
-        <word name="Amazing" manner="-" />
+        <word name="Amazing" />
         <word name="Ambitious" />
         <word name="American" plural="-" />
-        <word name="Among" />
+        <word name="Among" manner="" />
         <word name="Amplified" />
         <word name="Ancestral" />
         <word name="Ancient" />
-        <word name="Angelic" manner="-" />
+        <word name="Angelic" />
         <word name="Angry" compa="-" super="-" />
-        <word name="Anonymous" manner="-" />
-        <word name="Anti" />
-        <word name="Any" />
-        <word name="Apex" />
+        <word name="Anonymous" />
+        <word name="Anti" manner="" />
+        <word name="Any" manner="" />
+        <word name="Apex" manner="" />
         <word name="Apologetic" />
         <word name="Applied" />
         <word name="Arcane" />
-        <word name="Arduous" manner="-" />
+        <word name="Arduous" />
+        <word name="Arrogant" />
+        <word name="As" compa="" super="" manner="" />
         <word name="Ashen" />
         <word name="Asian" />
-        <word name="Astonishing" manner="-" />
+        <word name="Astonishing" />
         <word name="Astral" />
-        <word name="Astray" />
-        <word name="Astronomical" manner="-" />
-        <word name="Atrocious" manner="-" />
+        <word name="Astray" manner="" />
+        <word name="Astronomical" />
+        <word name="Atop" manner="" />
+        <word name="Atrocious" />
         <word name="Augmented" />
-        <word name="Auto" />
+        <word name="Auto" manner="" />
         <word name="Automated" />
         <word name="Automatic" />
         <word name="Avenged" />
         <word name="Average" plural="-" />
         <word name="Awakened" />
         <word name="Aware" />
-        <word name="Awesome" manner="-" />
-        <word name="Awful" manner="-" />
-        <word name="Back" />
+        <word name="Awesome" />
+        <word name="Awful" />
+        <word name="Back" manner="" />
         <word name="Bad" compa="!Worse" super="!Worst" />
-        <word name="Ballistic" manner="-" />
+        <word name="Ballistic" />
         <word name="Banished" />
         <word name="Barbed" />
         <word name="Barren" plural="-" />
         <word name="Basic" plural="-" manner="ally" />
-        <word name="Beautiful" manner="-" />
-        <word name="Behind" />
+        <word name="Beautiful" />
+        <word name="Behind" manner="" />
         <word name="Beloved" />
-        <word name="Benevolent" manner="-" />
-        <word name="Beta" />
+        <word name="Benevolent" />
+        <word name="Beta" manner="" />
         <word name="Betrayed" />
-        <word name="Between" />
-        <word name="Big" compa="ger" super="gest" />
-        <word name="Bionic" manner="-" />
-        <word name="Bitter" manner="-" />
-        <word name="Bizarre" manner="-" />
-        <word name="Bland" compa="-" super="-" manner="-" />
-        <word name="Blank" manner="-" />
+        <word name="Between" manner="" />
+        <word name="Big" compa="ger" super="gest" manner="!Hugely" />
+        <word name="Bionic" />
+        <word name="Bitter" />
+        <word name="Bizarre" />
+        <word name="Bland" compa="-" super="-" />
+        <word name="Blank" />
         <word name="Blazing" />
-        <word name="Bleak" compa="-" super="-" manner="-" />
+        <word name="Bleak" compa="-" super="-" />
         <word name="Bleeding" />
         <word name="Blessed" />
         <word name="Blind" plural="-" />
-        <word name="Blissful" manner="-" />
+        <word name="Blissful" />
         <word name="Bloody" compa="-" super="-" />
         <word name="Blurry" compa="-" super="-" />
-        <word name="Bold" compa="-" super="-" manner="-" />
-        <word name="Bonus" />
+        <word name="Bold" compa="-" super="-" />
+        <word name="Bonus" manner="" />
         <word name="Borrowed" />
-        <word name="Both" />
-        <word name="Bottom" />
-        <word name="Brave" compa="-" super="-" manner="-" />
-        <word name="Bright" compa="-" super="-" manner="-" />
-        <word name="Brilliant" manner="-" />
+        <word name="Both" manner="" />
+        <word name="Bottom" manner="" />
+        <word name="Brave" compa="-" super="-" />
+        <word name="Bright" compa="-" super="-" />
+        <word name="Brilliant" plural="-" />
         <word name="Brittle" compa="-" super="-" />
         <word name="Broken" />
-        <word name="Brutal" manner="-" />
+        <word name="Brutal" plural="-" />
         <word name="Bulletproof" />
         <word name="Buried" />
         <word name="Burning" />
         <word name="Burnt" />
-        <word name="Busy" compa="-" super="-" manner="-" />
-        <word name="Calm" compa="-" super="-" manner="-" />
-        <word name="Candid" manner="-" />
-        <word name="Careful" manner="-" />
-        <word name="Careless" manner="-" />
+        <word name="Busy" compa="-" super="-" />
+        <word name="By" manner="" />
+        <word name="Calm" compa="-" super="-" />
+        <word name="Candid" />
+        <word name="Careful" plural="-" />
+        <word name="Careless" />
         <word name="Carved" />
         <word name="Carven" />
-        <word name="Casual" manner="-" />
+        <word name="Casual" />
         <word name="Caustic" />
         <word name="Celestial" plural="-" />
-        <word name="Center" />
-        <word name="Central" />
-        <word name="Centre" />
-        <word name="Certain" manner="-" />
+        <word name="Center" manner="2rally" />
+        <word name="Central" plural="-" />
+        <word name="Centre" manner="1ally" />
+        <word name="Certain" />
         <word name="Chaotic" manner="ally" />
-        <word name="Charming" manner="-" />
+        <word name="Charming" />
         <word name="Charred" />
         <word name="Cheap" compa="-" super="-" />
         <word name="Chill" super="-" />
         <word name="Chosen" />
         <word name="Clandestine" />
         <word name="Classic" manner="ally" />
-        <word name="Clean" compa="-" super="-" manner="-" />
-        <word name="Clear" compa="-" super="-" manner="-" />
-        <word name="Clever" compa="-" super="-" manner="-" />
-        <word name="Close" compa="-" super="-" manner="-" />
+        <word name="Clean" compa="-" super="-" />
+        <word name="Clear" compa="-" super="-" />
+        <word name="Clever" compa="-" super="-" />
+        <word name="Close" compa="-" super="-" />
         <word name="Closed" />
-        <word name="Cold" compa="-" super="-" manner="-" />
-        <word name="Colorful" />
-        <word name="Colourful" />
-        <word name="Common" plural="-" manner="-" />
-        <word name="Compassionate" manner="-" />
-        <word name="Competent" manner="-" />
-        <word name="Complete" manner="-" />
+        <word name="Cold" compa="-" super="-" />
+        <word name="Colorful" plural="-" />
+        <word name="Colourful" plural="-" />
+        <word name="Common" plural="-" />
+        <word name="Compassionate" />
+        <word name="Competent" />
+        <word name="Complete" />
         <word name="Complex" plural="ities" />
         <word name="Compromised" />
         <word name="Concave" />
         <word name="Condemned" />
-        <word name="Confident" manner="-" />
-        <word name="Confidential" manner="-" />
-        <word name="Constant" plural="-" manner="-" />
-        <word name="Contra" />
+        <word name="Confident" plural="-" />
+        <word name="Confidential" />
+        <word name="Conscious" />
+        <word name="Consistent" />
+        <word name="Constant" plural="-" />
+        <word name="Contra" manner="" />
         <word name="Contradictory" />
         <word name="Converted" />
         <word name="Convex" />
         <word name="Cool" compa="-" super="-" />
-        <word name="Correct" manner="-" />
+        <word name="Correct" />
         <word name="Corrosive" />
         <word name="Corrupt" noun="-" />
         <word name="Corrupted" />
         <word name="Cosmic" />
-        <word name="Counterfeit" />
-        <word name="Cowardly" />
+        <word name="Counterfeit" manner="" />
+        <word name="Cowardly" manner="" />
         <word name="Crawling" />
         <word name="Crazy" compa="-" super="-" />
-        <word name="Creepy" compa="-" super="-" manner="-" />
-        <word name="Crescent" />
-        <word name="Criminal" manner="-" />
-        <word name="Critical" manner="-" />
-        <word name="Crooked" manner="-" />
-        <word name="Crude" manner="-" />
+        <word name="Creepy" compa="-" super="-" />
+        <word name="Crescent" manner="" />
+        <word name="Criminal" />
+        <word name="Critical" />
+        <word name="Crooked" />
+        <word name="Crude" />
         <word name="Cruel" compa="-" super="-" />
-        <word name="Cryptic" manner="-" />
-        <word name="Curious" manner="-" />
-        <word name="Current" manner="-" />
+        <word name="Cryptic" />
+        <word name="Cunning" />
+        <word name="Curious" />
+        <word name="Current" />
         <word name="Cursed" />
         <word name="Curved" />
         <word name="Damaged" />
-        <word name="Damned" />
-        <word name="Damning" />
-        <word name="Dangerous" manner="-" />
-        <word name="Dark" compa="-" super="-" manner="-" />
+        <word name="Damned" prtc="2ing" />
+        <word name="Dangerous" />
+        <word name="Dark" compa="-" super="-" />
         <word name="Daunting" />
         <word name="Dauntless" />
         <word name="Dazed" />
         <word name="Dazzling" />
         <word name="Dead" compa="-" super="-" />
-        <word name="Deadly" compa="-" super="-" />
+        <word name="Deadly" compa="-" super="-" manner="" />
         <word name="Deaf" />
-        <word name="Dear" super="-" />
+        <word name="Dear" plural="-" compa="-" super="-" />
         <word name="Decayed" />
         <word name="Decorative" />
         <word name="Deep" compa="-" super="-" />
         <word name="Defeated" />
         <word name="Defensive" />
-        <word name="Defiant" manner="-" />
+        <word name="Defiant" />
         <word name="Defiled" />
         <word name="Defined" />
-        <word name="Definite" manner="-" />
+        <word name="Definite" />
         <word name="Defunct" />
         <word name="Degenerate" plural="-" />
-        <word name="Delicious" manner="-" />
+        <word name="Delicious" />
         <word name="Delighted" />
-        <word name="Delirious" manner="-" />
-        <word name="Delta" />
+        <word name="Delirious" />
+        <word name="Delta" manner="" />
         <word name="Deluxe" />
         <word name="Demonic" />
-        <word name="Dense" compa="-" super="-" manner="-" />
+        <word name="Dense" compa="-" super="-" />
         <word name="Departed" />
         <word name="Depraved" />
         <word name="Deranged" />
+        <word name="Derelict" manner="ily" />
         <word name="Designated" />
         <word name="Desolate" />
         <word name="Destroyed" />
         <word name="Determined" />
         <word name="Devastating" />
         <word name="Deviant" />
-        <word name="Devious" manner="-" />
+        <word name="Devious" />
         <word name="Devout" />
-        <word name="Difficult" />
-        <word name="Digital" manner="-" />
-        <word name="Dire" manner="-" />
-        <word name="Direct" manner="-" />
-        <word name="Dirty" compa="-" super="-" manner="-" />
-        <word name="Disasterous" manner="-" />
+        <word name="Difficult" manner="ily" />
+        <word name="Digital" />
+        <word name="Dire" />
+        <word name="Direct" />
+        <word name="Dirty" compa="-" super="-" />
+        <word name="Disasterous" />
         <word name="Discarded" />
-        <word name="Disgraceful" manner="-" />
-        <word name="Disgusting" manner="-" />
-        <word name="Dishonorable" manner="-" />
-        <word name="Dishonourable" manner="-" />
-        <word name="Dismal" manner="-" />
+        <word name="Discreet" />
+        <word name="Discrete" />
+        <word name="Disgraceful" />
+        <word name="Disgusting" />
+        <word name="Dishonorable" />
+        <word name="Dishonourable" />
+        <word name="Dismal" />
         <word name="Disowned" />
-        <word name="Distant" manner="-" />
-        <word name="Distinct" manner="-" />
+        <word name="Distant" />
+        <word name="Distinct" />
         <word name="Disturbed" />
-        <word name="Disturbing" manner="-" />
+        <word name="Disturbing" />
         <word name="Divided" />
-        <word name="Divine" manner="-" />
-        <word name="Dominant" manner="-" />
-        <word name="Done" />
+        <word name="Divine" />
+        <word name="Dominant" />
+        <word name="Done" manner="" />
         <word name="Dormant" />
-        <word name="Double" plural="-" manner="-" />
-        <word name="Down" />
+        <word name="Double" plural="-" />
+        <word name="Down" manner="" />
         <word name="Drawn" />
-        <word name="Dreadful" manner="-" />
+        <word name="Dreadful" />
         <word name="Drowned" />
-        <word name="Dry" compa="-" super="-" />
+        <word name="Dry" compa="-" super="-" manner="ly" />
         <word name="Dull" compa="-" super="-" />
         <word name="Dumb" compa="-" super="-" />
         <word name="Dying" />
-        <word name="Dynamic" manner="-" />
+        <word name="Dynamic" />
         <word name="Dystopian" />
-        <word name="Eager" manner="-" />
-        <word name="Early" compa="-" super="-" />
+        <word name="Eager" />
+        <word name="Early" compa="-" super="-" manner="" />
         <word name="Eastern" />
         <word name="Eaten" />
-        <word name="Eco" />
-        <word name="Effective" manner="-" />
+        <word name="Eco" manner="" />
+        <word name="Effective" />
+        <word name="Eight" manner="" />
         <word name="Elder" />
         <word name="Eldritch" />
-        <word name="Electrical" manner="-" />
-        <word name="Electronic" manner="-" />
-        <word name="Elegant" manner="-" />
-        <word name="Elemental" manner="-" />
+        <word name="Electrical" />
+        <word name="Electronic" />
+        <word name="Elegant" />
+        <word name="Elemental" />
+        <word name="Eleven" />
         <word name="Elusive" />
         <word name="Empty" compa="-" super="-" />
-        <word name="Endless" manner="-" />
+        <word name="Endless" />
         <word name="Enhanced" />
-        <word name="Enormous" manner="-" />
-        <word name="Enough" />
+        <word name="Enormous" />
+        <word name="Enough" manner="" />
         <word name="Entered" />
         <word name="Entertaining" />
         <word name="Entropic" />
-        <word name="Epic" manner="-" />
-        <word name="Equal" manner="-" />
+        <word name="Epic" />
+        <word name="Equal" />
         <word name="Equivalent" />
         <word name="Erased" />
-        <word name="Essential" manner="-" />
-        <word name="Eternal" manner="-" />
-        <word name="Euro" />
+        <word name="Essential" />
+        <word name="Eternal" />
+        <word name="Euro" manner="" />
         <word name="European" />
-        <word name="Even" manner="-" />
-        <word name="Ever" />
-        <word name="Every" />
-        <word name="Evil" super="-" manner="-" />
-        <word name="Evocative" manner="-" />
+        <word name="Even" />
+        <word name="Ever" manner="" />
+        <word name="Every" manner="" />
+        <word name="Evil" super="-" />
+        <word name="Evocative" />
         <word name="Evolved" />
-        <word name="Excellent" manner="-" />
+        <word name="Excellent" />
+        <word name="Exceptional" />
         <word name="Exemplary" />
         <word name="Exiled" />
-        <word name="Exo" />
+        <word name="Exo" manner="" />
         <word name="Exotic" />
         <word name="Explosive" plural="-" />
-        <word name="Exquisite" manner="-" />
+        <word name="Exquisite" />
         <word name="Exterminated" />
         <word name="Extinct" />
         <word name="Extra" plural="-" />
-        <word name="Extraordinary" manner="-" />
-        <word name="Extravagant" manner="-" />
-        <word name="Extreme" manner="-" />
+        <word name="Extraordinary" />
+        <word name="Extravagant" />
+        <word name="Extreme" />
         <word name="Fabled" />
         <word name="Faded" />
         <word name="Fading" />
         <word name="Failed" />
         <word name="Failing" />
-        <word name="Fair" manner="-" />
+        <word name="Fair" />
         <word name="Fake" plural="-" />
         <word name="Fallen" />
         <word name="Falling" />
-        <word name="False" manner="-" />
+        <word name="False" />
         <word name="Faltering" />
-        <word name="Familiar" manner="-" />
-        <word name="Famous" manner="-" />
-        <word name="Fantastic" manner="-" />
+        <word name="Familiar" />
+        <word name="Famous" />
+        <word name="Fantastic" />
         <word name="Far" compa="ther" super="thest" />
         <word name="Fast" compa="-" super="-" />
-        <word name="Fat" />
-        <word name="Fatal" plural="-" manner="-" />
+        <word name="Fat" manner="tily" />
+        <word name="Fatal" plural="-" />
         <word name="Faulty" compa="-" super="-" />
         <word name="Favorite" plural="-" />
         <word name="Favourite" plural="-" />
         <word name="Feared" />
         <word name="Festering" />
-        <word name="Festive" manner="-" />
-        <word name="Few" compa="-" super="-" />
-        <word name="Fierce" compa="-" super="-" manner="-" />
-        <word name="Fifth" manner="-" />
-        <word name="Final" manner="-" />
-        <word name="Fine" compa="-" super="-" manner="-" />
-        <word name="Finite" manner="-" />
-        <word name="Firm" compa="-" super="-" manner="-" />
-        <word name="First" manner="-" />
-        <word name="Five" />
+        <word name="Festive" />
+        <word name="Few" compa="-" super="-" manner="" />
+        <word name="Fierce" compa="-" super="-" />
+        <word name="Fifth" super="-" />
+        <word name="Final" />
+        <word name="Fine" compa="-" super="-" />
+        <word name="Finite" />
+        <word name="Firm" compa="-" super="-" />
+        <word name="First" />
+        <word name="Five" manner="" />
         <word name="Fixed" />
         <word name="Flawed" />
         <word name="Fleeing" />
@@ -337,9 +350,10 @@
         <word name="Flowing" />
         <word name="Flying" />
         <word name="Folded" />
+        <word name="Following" />
         <word name="Forbidden" />
         <word name="Forced" />
-        <word name="Fore" />
+        <word name="Fore" super="most" manner="" />
         <word name="Foreign" />
         <word name="Forgiven" />
         <word name="Forgotten" />
@@ -348,409 +362,427 @@
         <word name="Fortunate" />
         <word name="Foul" compa="-" super="-" />
         <word name="Found" />
-        <word name="Four" />
-        <word name="Fourth" manner="-" />
+        <word name="Four" manner="" />
+        <word name="Fourth" super="-" />
         <word name="Fractured" />
         <word name="Fragile" />
-        <word name="Free" manner="-" />
-        <word name="Fresh" manner="-" />
-        <word name="Front" />
+        <word name="Free" compa="-" super="-" />
+        <word name="Fresh" compa="-" super="-" />
+        <word name="Front" manner="" />
         <word name="Frozen" />
         <word name="Fulfilled" />
-        <word name="Full" manner="-" />
-        <word name="Fun" />
-        <word name="Fundamental" manner="-" />
-        <word name="Furious" manner="-" />
+        <word name="Full" compa="-" super="-" />
+        <word name="Fun" compa="ner" super="nest" manner="nily" />
+        <word name="Funny" compa="-" super="-" />
+        <word name="Fundamental" />
+        <word name="Furious" />
         <word name="Further" super="1st" />
         <word name="Galactic" />
-        <word name="Gamma" />
-        <word name="Generous" manner="-" />
+        <word name="Gamma" manner="" />
+        <word name="Generous" />
         <word name="Genetic" />
-        <word name="Gentle" manner="-" />
-        <word name="Genuine" manner="-" />
-        <word name="Ghostly" compa="-" super="-" />
-        <word name="Giant" />
+        <word name="Gentle" />
+        <word name="Genuine" />
+        <word name="Ghostly" compa="-" super="-" manner="2ily" />
+        <word name="Giant" compa="-" super="-" />
         <word name="Gilded" />
-        <word name="Glad" manner="-" />
-        <word name="Global" manner="-" />
+        <word name="Glad" compa="der" super="dest" />
+        <word name="Global" />
         <word name="Gloomy" compa="-" super="-" />
-        <word name="Glorious" manner="-" />
+        <word name="Glorious" />
         <word name="Glowing" />
         <word name="Godlike" />
         <word name="Golden" />
-        <word name="Gone" />
-        <word name="Good" compa="!Better" super="!Best" />
+        <word name="Gone" manner="" />
+        <word name="Good" compa="!Better" super="!Best" manner="!Well" />
         <word name="Gory" compa="-" super="-" />
         <word name="Gothic" />
-        <word name="Graceful" manner="-" />
+        <word name="Graceful" />
         <word name="Grand" compa="-" super="-" />
-        <word name="Grateful" manner="-" />
-        <word name="Gratuitous" manner="-" />
+        <word name="Grateful" />
+        <word name="Gratuitous" />
         <word name="Great" compa="-" super="-" />
         <word name="Grim" compa="mer" super="mest" />
-        <word name="Grotesque" manner="-" />
-        <word name="Gruesome" manner="-" />
+        <word name="Grotesque" />
+        <word name="Gruesome" />
         <word name="Guaranteed" />
         <word name="Guiding" />
         <word name="Guilty" compa="-" super="-" />
         <word name="Half" />
         <word name="Hallowed" />
+        <word name="Handsome" compa="-" super="-" />
         <word name="Hanged" />
         <word name="Happy" compa="-" super="-" />
         <word name="Hard" compa="-" super="-" />
-        <word name="Hardcore" />
+        <word name="Hardcore" manner="" />
         <word name="Hardened" />
-        <word name="Hardly" />
+        <word name="Hardly" manner="" />
         <word name="Hated" />
-        <word name="Hateful" manner="-" />
+        <word name="Hateful" />
         <word name="Haunted" />
         <word name="Haunting" />
-        <word name="Hazy" manner="-" />
-        <word name="Heavy" compa="-" super="-" manner="-" />
-        <word name="Hectic" manner="-" />
-        <word name="Heroic" manner="-" />
+        <word name="Hazy" compa="-" super="-" />
+        <word name="Heavy" compa="-" super="-" />
+        <word name="Hectic" />
+        <word name="Heroic" />
         <word name="Hidden" />
         <word name="High" compa="-" super="-" />
         <word name="Hired" />
-        <word name="Historical" manner="-" />
+        <word name="Historical" />
         <word name="Hollow" compa="-" super="-" />
-        <word name="Holy" compa="-" super="-" />
+        <word name="Holy" compa="-" super="-" manner="" />
         <word name="Honed" />
-        <word name="Honest" manner="-" />
-        <word name="Honorable" manner="-" />
-        <word name="Honourable" manner="-" />
+        <word name="Honest" />
+        <word name="Honorable" />
+        <word name="Honourable" />
         <word name="Horned" />
-        <word name="Horrible" manner="-" />
-        <word name="Horrific" manner="-" />
-        <word name="Hostile" />
+        <word name="Horrible" />
+        <word name="Horrific" />
+        <word name="Hostile" manner="ly" />
         <word name="Hot" compa="ter" super="test" />
         <word name="Howling" />
         <word name="Huge" super="-" />
-        <word name="Humble" manner="-" />
+        <word name="Humble" compa="-" super="-" />
         <word name="Humiliated" />
         <word name="Humiliating" />
         <word name="Hundred" />
-        <word name="Hungry" compa="-" super="-" manner="-" />
+        <word name="Hungry" compa="-" super="-" />
         <word name="Hunted" />
         <word name="Hyper" />
         <word name="Idyllic" />
-        <word name="Ill" super="-" />
-        <word name="Illegal" manner="-" />
+        <word name="Ill" super="-" manner="" />
+        <word name="Illegal" />
         <word name="Imaginary" />
-        <word name="Imminent" manner="-" />
-        <word name="Immortal" plural="-" manner="-" />
+        <word name="Imaginative" />
+        <word name="Imminent" />
+        <word name="Immortal" plural="-" />
         <word name="Immune" plural="-" />
-        <word name="Imperial" manner="-" />
+        <word name="Imperial" />
         <word name="Impervious" />
-        <word name="Important" manner="-" />
-        <word name="Impossible" manner="-" />
-        <word name="Impure" manner="-" />
-        <word name="In" compa="ner" />
+        <word name="Important" />
+        <word name="Impossible" />
+        <word name="Impure" compa="-" super="-" />
+        <word name="In" compa="ner" super="nermost" manner="" />
         <word name="Incognito" />
-        <word name="Incompetent" manner="-" />
-        <word name="Incomplete" manner="-" />
-        <word name="Incredible" manner="-" />
-        <word name="Industrial" manner="-" />
-        <word name="Ineffective" manner="-" />
-        <word name="Inert" manner="-" />
-        <word name="Infamous" manner="-" />
+        <word name="Incompetent" />
+        <word name="Incomplete" />
+        <word name="Incredible" />
+        <word name="Industrial" />
+        <word name="Ineffective" />
+        <word name="Inert" />
+        <word name="Infamous" />
         <word name="Infected" />
-        <word name="Infernal" manner="-" />
-        <word name="Infinite" manner="-" />
-        <word name="Infra" />
-        <word name="Ingenious" manner="-" />
-        <word name="Inglorious" manner="-" />
-        <word name="Inherent" manner="-" />
-        <word name="Inhospitable" manner="-" />
-        <word name="Innocent" manner="-" />
-        <word name="Insane" manner="-" />
+        <word name="Infernal" />
+        <word name="Infinite" />
+        <word name="Infra" manner="" />
+        <word name="Ingenious" />
+        <word name="Inglorious" />
+        <word name="Inherent" />
+        <word name="Inhospitable" />
+        <word name="Innocent" />
+        <word name="Insane" super="-" />
         <word name="Insolent" />
-        <word name="Instant" manner="-" />
-        <word name="Integral" manner="-" />
-        <word name="Interesting" manner="-" />
-        <word name="International" manner="-" />
-        <word name="Into" />
-        <word name="Inverse" manner="-" />
-        <word name="Invisible" manner="-" />
-        <word name="Invulnerable" manner="-" />
+        <word name="Instant" />
+        <word name="Integral" />
+        <word name="Inter" manner="" />
+        <word name="Interesting" />
+        <word name="International" />
+        <word name="Into" manner="" />
+        <word name="Inverse" />
+        <word name="Invisible" />
+        <word name="Invulnerable" />
+        <word name="Irate" />
         <word name="Ironclad" />
-        <word name="Ironic" manner="-" />
-        <word name="Irresponsible" manner="-" />
+        <word name="Ironic" />
+        <word name="Irresponsible" />
         <word name="Jolly" compa="-" super="-" />
-        <word name="Just" manner="-" />
+        <word name="Just" />
         <word name="Killed" />
         <word name="Kind" compa="-" super="-" />
-        <word name="Kinetic" manner="-" />
-        <word name="Known" />
-        <word name="Last" manner="-" />
+        <word name="Kinetic" />
+        <word name="Known" manner="1ingly" />
+        <word name="Last" />
         <word name="Late" compa="-" super="-" />
-        <word name="Lavish" manner="-" />
+        <word name="Lavish" />
         <word name="Law-Abiding" />
-        <word name="Lawful" manner="-" />
-        <word name="Lazy" compa="-" super="-" manner="-" />
+        <word name="Lawful" />
+        <word name="Lazy" compa="-" super="-" />
         <word name="Lead" />
         <word name="Leaden" />
-        <word name="Left" />
-        <word name="Legal" manner="-" />
-        <word name="Legendary" manner="-" />
-        <word name="Less" compa="-" super="2ast" />
+        <word name="Left" compa="-" super="most" manner="" />
+        <word name="Legal" />
+        <word name="Legendary" />
+        <word name="Less" compa="-" super="!Least" />
         <word name="Lifeless" />
         <word name="Like" />
-        <word name="Likely" />
+        <word name="Likely" compa="-" super="-" />
         <word name="Little" compa="-" super="-" />
-        <word name="Lively" compa="-" super="-" />
+        <word name="Lively" compa="-" super="-" manner="" />
         <word name="Livid" />
         <word name="Living" />
         <word name="Loathed" />
         <word name="Loathsome" />
         <word name="Locked" />
         <word name="Lone" />
-        <word name="Lonely" compa="-" super="-" />
+        <word name="Lonely" compa="-" super="-" manner="" />
         <word name="Lost" />
-        <word name="Loud" compa="-" super="-" manner="-" />
+        <word name="Loud" compa="-" super="-" />
         <word name="Loved" />
-        <word name="Lovely" compa="-" super="-" />
-        <word name="Loving" manner="-" />
+        <word name="Lovely" compa="-" super="-" manner="" />
+        <word name="Loving" />
         <word name="Low" compa="-" super="-" />
-        <word name="Lucky" compa="-" super="-" manner="-" />
-        <word name="Ludicrous" manner="-" />
+        <word name="Lucky" compa="-" super="-" />
+        <word name="Ludicrous" />
         <word name="Lunar" />
-        <word name="Lush" />
-        <word name="Luxurious" manner="-" />
-        <word name="Luxury" />
+        <word name="Lush" compa="-" super="-" />
+        <word name="Luxurious" />
+        <word name="Luxury" compa="-" super="-" />
         <word name="Mad" compa="der" super="dest" />
-        <word name="Magical" manner="-" />
-        <word name="Magnificent" manner="-" />
-        <word name="Main" manner="-" />
-        <word name="Majestic" manner="-" />
-        <word name="Major" manner="-" />
-        <word name="Malevolent" manner="-" />
+        <word name="Magical" />
+        <word name="Magnificent" />
+        <word name="Main" />
+        <word name="Majestic" />
+        <word name="Major" />
+        <word name="Malevolent" />
         <word name="Malformed" />
         <word name="Malleable" />
-        <word name="Many" />
-        <word name="Marvelous" manner="-" />
+        <word name="Many" compa="!More" super="!Most" />
+        <word name="Marvelous" />
         <word name="Masked" />
-        <word name="Massive" manner="-" />
+        <word name="Massive" />
         <word name="Mauled" />
-        <word name="Max" />
-        <word name="Maximum" />
-        <word name="Maybe" />
+        <word name="Max" manner="" />
+        <word name="Maximum" manner="2ally" />
+        <word name="Maybe" compa="!More Possible" super="!Most Possible" manner="!Possibly" />
         <word name="Mean" compa="-" super="-" />
-        <word name="Mechanical" manner="-" />
-        <word name="Medical" manner="-" />
+        <word name="Mechanical" />
+        <word name="Medical" />
         <word name="Medium" />
-        <word name="Meek" compa="-" super="-" manner="-" />
+        <word name="Meek" compa="-" super="-" />
         <word name="Mellow" />
-        <word name="Menacing" manner="-" />
-        <word name="Mental" manner="-" />
+        <word name="Menacing" />
+        <word name="Mental" />
         <word name="Mesmerizing" />
-        <word name="Meta" />
+        <word name="Meta" manner="" />
         <word name="Metallic" />
-        <word name="Mid-" />
-        <word name="Middle" />
+        <word name="Mid-" manner="" />
+        <word name="Middle" compa="-" super="-" />
         <word name="Mighty" compa="-" super="-" />
-        <word name="Million" plural="-" />
-        <word name="Mindless" manner="-" />
+        <word name="Million" plural="-" compa="-" super="-" />
+        <word name="Mindless" />
         <word name="Mini" />
         <word name="Minimum" />
-        <word name="Miraculous" manner="-" />
+        <word name="Miraculous" />
         <word name="Missing" />
         <word name="Mobile" />
         <word name="Modern" />
         <word name="Molded" />
         <word name="Moldy" compa="-" super="-" />
         <word name="Molten" />
-        <word name="Mono" />
-        <word name="Monstrous" manner="-" />
+        <word name="Mono" manner="" />
+        <word name="Monstrous" />
         <word name="Moody" compa="-" super="-" />
         <word name="Morbid" />
-        <word name="More" super="2st" />
-        <word name="Mortal" manner="-" />
-        <word name="Mournful" manner="-" />
+        <word name="More" compa="" super="!Most" manner="" />
+        <word name="Mortal" />
+        <word name="Most" compa="!More" super="" />
+        <word name="Mostly" compa="" super="" manner="" />
+        <word name="Mournful" />
         <word name="Much" />
         <word name="Muddy" compa="-" super="-" />
         <word name="Murdered" />
         <word name="Mute" />
         <word name="My" plural="!Our" />
-        <word name="Mysterious" manner="-" />
-        <word name="Mystical" manner="-" />
-        <word name="Mythical" manner="-" />
-        <word name="Nasty" compa="-" super="-" manner="-" />
-        <word name="National" manner="-" />
+        <word name="Mysterious" />
+        <word name="Mystical" />
+        <word name="Mythical" />
+        <word name="Nasty" compa="-" super="-" />
+        <word name="National" />
         <word name="Native" plural="-" />
-        <word name="Natural" manner="-" />
+        <word name="Natural" />
         <word name="Naval" />
         <word name="Near" compa="-" super="-" />
         <word name="Nebulous" />
-        <word name="Necro" />
+        <word name="Necro" manner="" />
         <word name="Necrotic" />
         <word name="Needed" />
-        <word name="Nefarious" manner="-" />
-        <word name="Negative" manner="-" />
-        <word name="Neither" />
-        <word name="Neo" />
-        <word name="Neural" manner="-" />
-        <word name="Neuro" />
-        <word name="Neutral" manner="-" />
+        <word name="Nefarious" />
+        <word name="Negative" />
+        <word name="Neither" manner="" />
+        <word name="Neo" manner="!Newly" />
+        <word name="Neural" />
+        <word name="Neuro" manner="1ally" />
+        <word name="Neutral" />
         <word name="Neverending" />
         <word name="New" compa="-" super="-" />
-        <word name="Next" />
-        <word name="No" />
-        <word name="Noble" plural="-" manner="-" />
-        <word name="Nocturnal" manner="-" />
-        <word name="Normal" plural="-" manner="-" />
+        <word name="Next" manner="" />
+        <word name="Nice" compa="-" super="-" />
+        <word name="Nine" manner="" />
+        <word name="No" manner="" />
+        <word name="Noble" plural="-" />
+        <word name="Nocturnal" />
+        <word name="Normal" plural="-" />
         <word name="Northern" />
-        <word name="Not" />
-        <word name="Notorious" manner="-" />
-        <word name="Nought" />
-        <word name="Nova" />
+        <word name="Not" manner="" />
+        <word name="Notorious" />
+        <word name="Nought" manner="" />
+        <word name="Nova" manner="" />
         <word name="Nuclear" />
-        <word name="Null" />
-        <word name="Obscure" manner="-" />
+        <word name="Null" manner="" />
+        <word name="Oblivious" />
+        <word name="Obscure" compa="-" super="-" />
         <word name="Odd" compa="-" super="-" />
-        <word name="Off" />
-        <word name="Official" manner="-" />
+        <word name="Off" manner="" />
+        <word name="Official" />
         <word name="Old" compa="-" super="-" />
-        <word name="Omega" />
-        <word name="Omni" />
-        <word name="On" />
+        <word name="Omega" manner="" />
+        <word name="Omni" manner="" />
+        <word name="On" manner="" />
         <word name="Once" />
-        <word name="One" plural="-" />
-        <word name="Only" />
-        <word name="Open" past="ed" manner="-" />
-        <word name="Oppressive" manner="-" />
-        <word name="Optimal" manner="-" />
+        <word name="One" plural="-" manner="" />
+        <word name="Only" manner="" />
+        <word name="Open" past="ed" />
+        <word name="Oppressive" />
+        <word name="Optimal" />
         <word name="Optimized" />
-        <word name="Optimum" />
-        <word name="Ordinary" manner="-" />
+        <word name="Optimum" manner="2ally" />
+        <word name="Ordinary" />
+        <word name="Organic" />
         <word name="Original" plural="-" />
         <word name="Other" plural="-" />
-        <word name="Out" compa="-" />
-        <word name="Painful" manner="-" />
-        <word name="Painless" manner="-" />
-        <word name="Pale" compa="-" super="-" />
-        <word name="Para" />
+        <word name="Out" compa="-" super="ermost" manner="" />
+        <word name="Painful" />
+        <word name="Painless" />
+        <word name="Pale" compa="-" super="-" manner="ly" />
+        <word name="Para" manner="" />
         <word name="Paramount" />
         <word name="Paranoid" />
         <word name="Paranormal" />
-        <word name="Particular" manner="-" />
-        <word name="Passive" manner="-" />
-        <word name="Pathetic" manner="-" />
-        <word name="Perfect" manner="-" />
+        <word name="Particular" />
+        <word name="Passive" />
+        <word name="Pathetic" />
+        <word name="Patient" />
+        <word name="Perfect" />
         <word name="Perfected" />
-        <word name="Perhaps" />
+        <word name="Perhaps" compa="!More Possible" super="!Most Possible" manner="!Possibly" />
         <word name="Perished" />
-        <word name="Permanent" manner="-" />
+        <word name="Permanent" />
         <word name="Pierced" />
-        <word name="Pious" manner="-" />
-        <word name="Plain" compa="-" super="-" manner="-" />
+        <word name="Pious" />
+        <word name="Plain" compa="-" super="-" />
         <word name="Pleasing" />
-        <word name="Poisoned" inf="2ing" />
+        <word name="Poisoned" prtc="2ing" />
         <word name="Poisonous" />
         <word name="Poor" compa="-" super="-" />
-        <word name="Positive" manner="-" />
+        <word name="Positive" />
         <word name="Possessed" />
-        <word name="Possible" manner="-" />
-        <word name="Post-" />
+        <word name="Possible" />
+        <word name="Post-" manner="" />
         <word name="Powered" />
-        <word name="Powerful" manner="-" />
-        <word name="Powerless" manner="-" />
-        <word name="Practical" manner="-" />
+        <word name="Powerful" />
+        <word name="Powerless" />
+        <word name="Practical" />
         <word name="Pre-" />
-        <word name="Predictable" manner="-" />
-        <word name="Prehistoric" manner="-" />
+        <word name="Predictable" />
+        <word name="Prehistoric" />
         <word name="Premium" />
-        <word name="Present" manner="-" />
-        <word name="Previous" manner="-" />
-        <word name="Primal" />
-        <word name="Primary" manner="-" />
-        <word name="Prime" manner="-" />
+        <word name="Present" />
+        <word name="Previous" />
+        <word name="Primal" compa="-" super="-" />
+        <word name="Primary" />
+        <word name="Prime" compa="-" super="-" />
         <word name="Primordial" />
-        <word name="Pristine" manner="-" />
-        <word name="Private" manner="-" />
+        <word name="Pristine" />
+        <word name="Private" />
         <word name="Promised" />
-        <word name="Prone" />
-        <word name="Prophetic" manner="-" />
-        <word name="Protective" manner="-" />
-        <word name="Proto" />
-        <word name="Proud" compa="-" super="-" manner="-" />
-        <word name="Pseudo" />
-        <word name="Psionic" manner="-" />
-        <word name="Psycho" />
-        <word name="Public" manner="-" />
+        <word name="Prone" compa="-" super="-" />
+        <word name="Prophetic" />
+        <word name="Protective" />
+        <word name="Proto" manner="" />
+        <word name="Proud" compa="-" super="-" />
+        <word name="Pseudo" manner="" />
+        <word name="Psionic" />
+        <word name="Psychic" />
+        <word name="Psycho" manner="" />
+        <word name="Public" manner="ly" />
         <word name="Punished" />
-        <word name="Pure" compa="-" super="-" manner="-" />
+        <word name="Pure" compa="-" super="-" />
         <word name="Putrid" />
         <word name="Pyroclastic" />
-        <word name="Quad" plural="-" />
+        <word name="Quad" plural="-" manner="" />
         <word name="Quadruple" plural="-" />
-        <word name="Quarter" plural="-" manner="-" />
+        <word name="Quarter" plural="-" />
         <word name="Quick" compa="-" super="-" />
         <word name="Quiet" compa="-" super="-" />
         <word name="Rad" super="dest" />
-        <word name="Radiant" manner="-" />
-        <word name="Random" manner="-" />
+        <word name="Radiant" />
+        <word name="Raging" />
+        <word name="Random" />
         <word name="Ranged" />
         <word name="Ransacked" />
-        <word name="Rapid" compa="-" super="-" manner="-" />
+        <word name="Rapid" compa="-" super="-" />
         <word name="Rare" compa="-" super="-" />
-        <word name="Ravenous" manner="-" />
+        <word name="Ravenous" />
         <word name="Raving" />
         <word name="Raw" super="-" />
-        <word name="Re-" />
-        <word name="Ready" super="-" manner="-" />
-        <word name="Real" super="-" manner="-" />
-        <word name="Reasonable" manner="-" />
+        <word name="Re-" manner="" />
+        <word name="Ready" super="-" />
+        <word name="Real" super="-" />
+        <word name="Really" manner="" />
+        <word name="Reasonable" />
         <word name="Reborn" />
-        <word name="Reckless" manner="-" />
+        <word name="Reckless" />
         <word name="Reinforced" />
-        <word name="Reliable" manner="-" />
+        <word name="Reliable" />
         <word name="Reloaded" />
-        <word name="Remorseful" manner="-" />
+        <word name="Remorseful" />
         <word name="Renowned" />
         <word name="Replica" plural="-" />
         <word name="Required" />
         <word name="Resolute" />
-        <word name="Responsible" manner="-" />
+        <word name="Respectable" />
+        <word name="Respected" prtc="2ing"  />
+        <word name="Responsible" />
         <word name="Retro" />
         <word name="Revered" />
-        <word name="Reverse" past="d" inf="1ing" />
+        <word name="Reverse" past="d" prtc="1ing" />
         <word name="Rich" compa="-" super="-" />
-        <word name="Ridiculous" manner="-" />
-        <word name="Right" compa="-" super="-" manner="-" />
-        <word name="Righteous" manner="-" />
+        <word name="Ridiculous" />
+        <word name="Right" compa="-" super="-" />
+        <word name="Righteous" />
         <word name="Rising" />
         <word name="Rival" />
         <word name="Rocky" compa="-" super="-" />
         <word name="Rogue" plural="-" />
         <word name="Rotten" />
         <word name="Round" />
-        <word name="Royal" manner="-" />
+        <word name="Royal" />
         <word name="Rude" compa="-" super="-" />
         <word name="Sacred" />
         <word name="Sad" compa="der" super="dest" />
         <word name="Safe" compa="-" super="-" />
+        <word name="Same" />
         <word name="Savage" super="-" />
         <word name="Scared" />
         <word name="Scarred" />
         <word name="Scary" compa="-" super="-" />
-        <word name="Scientific" manner="-" />
+        <word name="Scientific" />
         <word name="Scorched" />
         <word name="Scorned" />
         <word name="Screaming" />
         <word name="Searing" />
-        <word name="Second" manner="-" />
+        <word name="Second" super="-" />
         <word name="Secondary" />
-        <word name="Secret" manner="-" />
-        <word name="Secure" />
+        <word name="Secret" compa="-" super="-" />
+        <word name="Secure" compa="-" super="-" />
         <word name="Seething" />
-        <word name="Selfish" manner="-" />
-        <word name="Semi-" />
-        <word name="Separate" manner="-" />
-        <word name="Serious" manner="-" />
-        <word name="Seven" />
+        <word name="Selfish" />
+        <word name="Semi-" manner="" />
+        <word name="Separate" />
+        <word name="Serious" />
+        <word name="Seven" manner="" />
         <word name="Shallow" compa="-" super="-" />
-        <word name="Shameful" manner="-" />
+        <word name="Shameful" />
         <word name="Shared" />
         <word name="Sharp" compa="-" super="-" />
         <word name="Shattered" />
@@ -761,32 +793,37 @@
         <word name="Shredded" />
         <word name="Shriveled" />
         <word name="Shrouded" />
-        <word name="Sick" compa="-" super="-" manner="-" />
-        <word name="Silent" manner="-" />
+        <word name="Sick" compa="-" super="-" />
+        <word name="Silent" />
         <word name="Silky" compa="-" super="-" />
         <word name="Simple" compa="-" super="-" />
         <word name="Simulated" />
+        <word name="Simultaneous" />
         <word name="Single" />
         <word name="Sinister" />
         <word name="Siphoned" />
-        <word name="Skilled" />
+        <word name="Six" manner="" />
+        <word name="Skilled" manner="2fully" />
+        <word name="Skillful" />
         <word name="Slain" />
-        <word name="Sleepy" compa="-" super="-" manner="-" />
+        <word name="Sleepy" compa="-" super="-" />
         <word name="Slim" compa="mer" super="mest" />
         <word name="Slithering" />
-        <word name="Slow" compa="-" super="-" manner="-" />
+        <word name="Slow" compa="-" super="-" />
         <word name="Small" compa="-" super="-" />
-        <word name="Smooth" compa="-" super="-" manner="-" />
+        <word name="Smooth" compa="-" super="-" />
         <word name="Solar" />
+        <word name="Sole" manner="ly" />
+        <word name="Solo" manner="1ely" />
         <word name="Somber" />
-        <word name="Some" />
-        <word name="Sorry" compa="-" super="-" manner="-" />
-        <word name="Sour" compa="-" super="-" manner="-" />
+        <word name="Some" manner="" />
+        <word name="Sorry" compa="-" super="-" />
+        <word name="Sour" compa="-" super="-" />
         <word name="Southern" />
         <word name="Sovereign" />
-        <word name="Special" manner="-" />
+        <word name="Special" />
         <word name="Spent" />
-        <word name="Spooky" compa="-" super="-" manner="-" />
+        <word name="Spooky" compa="-" super="-" />
         <word name="Spreading" />
         <word name="Stable" plural="-" compa="-" super="-" />
         <word name="Stained" />
@@ -797,12 +834,12 @@
         <word name="Startling" />
         <word name="Starved" />
         <word name="Starving" />
-        <word name="Static" manner="-" />
-        <word name="Stellar" manner="-" />
-        <word name="Stereo" />
+        <word name="Static" />
+        <word name="Stellar" />
+        <word name="Stereo" manner="" />
         <word name="Sterling" />
-        <word name="Still" />
-        <word name="Stoic" manner="ly" />
+        <word name="Still" manner="" />
+        <word name="Stoic" />
         <word name="Stolen" />
         <word name="Straight" compa="-" super="-" />
         <word name="Strange" compa="-" super="-" />
@@ -811,826 +848,837 @@
         <word name="Stubborn" />
         <word name="Stupid" compa="-" super="-" />
         <word name="Stygian" />
-        <word name="Sub" />
-        <word name="Substantial" manner="-" />
+        <word name="Sub" manner="" />
+        <word name="Substantial" />
         <word name="Subterranean" />
         <word name="Succumbed" />
-        <word name="Sudden" manner="-" />
+        <word name="Sudden" />
         <word name="Sunken" />
         <word name="Sunny" compa="-" super="-" />
-        <word name="Super" />
+        <word name="Super" manner="" />
         <word name="Superluminal" />
-        <word name="Supernatural" manner="-" />
-        <word name="Suppressive" manner="-" />
-        <word name="Supreme" manner="-" />
-        <word name="Sure" compa="-" super="-" manner="-" />
-        <word name="Surplus" />
+        <word name="Supernatural" />
+        <word name="Suppressive" />
+        <word name="Supreme" />
+        <word name="Sure" compa="-" super="-" />
+        <word name="Surplus" manner="" />
         <word name="Suspected" />
         <word name="Sweet" compa="-" super="-" />
         <word name="Swift" compa="-" super="-" />
         <word name="Symbiotic" />
         <word name="Synchronized" />
         <word name="Synchronous" />
-        <word name="Tactical" manner="-" />
+        <word name="Tactical" />
         <word name="Taken" />
         <word name="Taking" />
         <word name="Talented" />
         <word name="Tarnished" />
-        <word name="Technical" manner="-" />
-        <word name="Temporal" manner="-" />
-        <word name="Temporary" manner="-" />
+        <word name="Technical" />
+        <word name="Temporal" />
+        <word name="Temporary" />
         <word name="Tempting" />
-        <word name="Ten" plural="-" />
-        <word name="Tender" manner="-" />
-        <word name="Tense" manner="-" />
+        <word name="Ten" plural="-" manner="" />
+        <word name="Tender" />
+        <word name="Tense" />
         <word name="Terminated" />
         <word name="Terran" plural="-" />
-        <word name="Terrible" manner="-" />
+        <word name="Terrible" />
         <word name="Tertiary" />
-        <word name="Theoretical" manner="-" />
-        <word name="Third" />
-        <word name="This" plural="2ese" />
-        <word name="Thousand" plural="-" />
-        <word name="Three" />
+        <word name="Theoretical" />
+        <word name="Third" super="-" />
+        <word name="This" plural="2ese" manner="!Thusly" />
+        <word name="Thousand" plural="-" compa="-" super="-" />
+        <word name="Three" manner="" />
         <word name="Thriving" />
         <word name="Through" manner="!Thoroughly" />
-        <word name="Tight" compa="-" super="-" manner="-" />
+        <word name="Tight" compa="-" super="-" />
         <word name="Tiny" compa="-" super="-" />
         <word name="Tired" />
-        <word name="Tireless" manner="-" />
-        <word name="Top" plural="-" />
+        <word name="Tireless" />
+        <word name="Top" plural="-" compa="per" super="pest" manner="" />
         <word name="Torn" />
         <word name="Tortured" />
-        <word name="Total" manner="-" />
+        <word name="Total" />
         <word name="Tough" compa="-" super="-" />
-        <word name="Toxic" manner="-" />
-        <word name="Traditional" manner="-" />
+        <word name="Toxic" />
+        <word name="Traditional" />
         <word name="Traitorous" />
         <word name="Tranquil" />
         <word name="Trapped" />
         <word name="Treasured" />
-        <word name="Tri-" />
-        <word name="Tribal" manner="-" />
+        <word name="Tri-" manner="" />
+        <word name="Tribal" />
         <word name="Triple" plural="-" />
-        <word name="Triumphant" manner="-" />
-        <word name="Trivial" manner="-" />
-        <word name="Tropical" manner="-" />
-        <word name="True" compa="-" super="-" />
+        <word name="Triumphant" />
+        <word name="Trivial" />
+        <word name="Tropical" />
+        <word name="True" compa="-" super="-" manner="1ly" />
         <word name="Trusted" />
-        <word name="Turbo" />
-        <word name="Twelve" />
+        <word name="Turbo" manner="" />
+        <word name="Twelve" manner="" />
         <word name="Twice" />
         <word name="Twin" />
-        <word name="Twisted" manner="-" />
-        <word name="Two" />
-        <word name="Ultimate" manner="-" />
-        <word name="Ultra" />
-        <word name="Un-" />
+        <word name="Twisted" />
+        <word name="Two" manner="" />
+        <word name="Ultimate" />
+        <word name="Ultra" manner="" />
+        <word name="Un-" manner="" />
         <word name="Unapologetic" />
         <word name="Unbelievable" />
         <word name="Unbroken" />
         <word name="Undead" />
         <word name="Undone" />
         <word name="Undying" />
-        <word name="Unfamiliar" manner="-" />
-        <word name="Unfortunate" manner="-" />
-        <word name="Unholy" compa="-" super="-" />
+        <word name="Unfamiliar" />
+        <word name="Unfortunate" />
+        <word name="Unholy" compa="-" super="-" manner="" />
         <word name="United" />
-        <word name="Unknown" />
+        <word name="Unknown" manner="1ingly" />
         <word name="Unlikely" />
         <word name="Unlimited" />
-        <word name="Unofficial" manner="-" />
+        <word name="Unofficial" />
         <word name="Unreal" />
-        <word name="Unreliable" manner="-" />
+        <word name="Unreliable" />
         <word name="Unseen" />
-        <word name="Unsettling" manner="-" />
-        <word name="Unstable" manner="-" />
+        <word name="Unsettling" />
+        <word name="Unstable" />
         <word name="Unyielding" />
         <word name="Up" compa="per" />
         <word name="Upset" />
         <word name="Urban" />
-        <word name="Useless" manner="-" />
-        <word name="Usual" manner="-" />
+        <word name="Useless" />
+        <word name="Usual" />
         <word name="Utopian" plural="-" />
-        <word name="Utter" manner="-" />
+        <word name="Utter" />
         <word name="Vain" />
-        <word name="Valiant" manner="-" />
-        <word name="Valuable" manner="-" />
-        <word name="Vapid" manner="-" />
+        <word name="Valiant" />
+        <word name="Valuable" />
+        <word name="Vapid" />
         <word name="Vaporized" />
         <word name="Veiled" />
-        <word name="Venomous" manner="-" />
+        <word name="Venomous" />
         <word name="Versatile" />
-        <word name="Very" />
-        <word name="Vibrant" manner="-" />
-        <word name="Vicarious" manner="-" />
-        <word name="Vicious" manner="-" />
-        <word name="Victorious" manner="-" />
-        <word name="Vigilant" manner="-" />
+        <word name="Very" compa="!More" super="!Most" />
+        <word name="Vibrant" />
+        <word name="Vicarious" />
+        <word name="Vicious" />
+        <word name="Victorious" />
+        <word name="Vigilant" />
         <word name="Vile" compa="-" super="-" />
         <word name="Villainous" />
         <word name="Vintage" />
-        <word name="Violent" manner="-" />
-        <word name="Viral" manner="-" />
-        <word name="Virtual" manner="-" />
-        <word name="Virulent" manner="-" />
-        <word name="Visual" plural="-" manner="-" />
-        <word name="Vital" manner="-" />
-        <word name="Vulnerable" manner="-" />
+        <word name="Violent" />
+        <word name="Viral" />
+        <word name="Virtual" />
+        <word name="Virulent" />
+        <word name="Visual" plural="-" />
+        <word name="Vital" />
+        <word name="Vulnerable" />
         <word name="Wailing" />
         <word name="Wanted" />
         <word name="Warped" />
-        <word name="Wary" manner="-" />
+        <word name="Wary" />
         <word name="Wasted" />
-        <word name="Weak" compa="-" super="-" manner="-" />
-        <word name="Weird" compa="-" super="-" manner="-" />
+        <word name="Weak" compa="-" super="-" />
+        <word name="Weird" compa="-" super="-" />
+        <word name="Welcome" prtc="1ing" />
         <word name="Western" />
         <word name="Wet" compa="ter" super="test" />
         <word name="Whole" manner="1ly" />
-        <word name="Wicked" manner="-" />
-        <word name="Wild" compa="-" super="-" manner="-" />
+        <word name="Wicked" />
+        <word name="Wild" compa="-" super="-" />
         <word name="Wired" />
-        <word name="Wise" compa="-" super="-" manner="-" />
+        <word name="Wise" compa="-" super="-" />
         <word name="Withered" />
-        <word name="Without" />
+        <word name="Without" manner="" />
         <word name="Wooden" />
         <word name="Woolly" />
         <word name="Worn" />
         <word name="Worrisome" />
-        <word name="Worthless" manner="-" />
-        <word name="Worthy" manner="-" />
+        <word name="Worthless" />
+        <word name="Worthy" />
         <word name="Woven" />
         <word name="Wrecked" />
         <word name="Wretched" />
         <word name="Written" />
-        <word name="Wrong" manner="-" />
-        <word name="X" />
-        <word name="Xeno" />
-        <word name="Y" />
+        <word name="Wrong" />
+        <word name="X" manner="" />
+        <word name="Xeno" manner="" />
+        <word name="Y" manner="" />
         <word name="Young" compa="-" super="-" />
-        <word name="Your" />
-        <word name="Z" />
-        <word name="Zero" />
-        <word name="[Number]" />
+        <word name="Z" manner="" />
+        <word name="Zero" manner="" />
+        <word name="[Number]" manner="" />
     </category>
-    <category id="1" name="Concept" shortName="co">
-        <word name="Aberration" plural="-" />
-        <word name="Ability" plural="-" />
-        <word name="Abomination" plural="-" />
-        <word name="Absence" />
-        <word name="Absolution" />
-        <word name="Acceptance" />
-        <word name="Accident" plural="-" />
-        <word name="Accolade" plural="-" />
-        <word name="Accord" plural="-" />
-        <word name="Accordance" />
-        <word name="Account" plural="-" />
-        <word name="Ache" plural="-" />
-        <word name="Activity" plural="-" />
-        <word name="Addiction" plural="-" />
-        <word name="Advantage" plural="-" />
-        <word name="Affliction" plural="-" />
-        <word name="Again" />
-        <word name="Agency" plural="-" />
-        <word name="Aggression" plural="-" />
-        <word name="Agility" plural="-" />
-        <word name="Ailment" plural="-" />
-        <word name="Alchemy" />
-        <word name="Alert" plural="-" inf="-" />
-        <word name="Algorithm" plural="-" />
-        <word name="Altruism" />
-        <word name="Ambition" plural="-" />
-        <word name="Amnesia" />
-        <word name="Amount" plural="-" />
-        <word name="Anarchy" />
-        <word name="Anger" />
-        <word name="Annihilation" plural="-" />
-        <word name="Anomaly" plural="-" />
-        <word name="Anonymity" />
-        <word name="Anthem" plural="-" />
-        <word name="Anxiety" />
+    <category id="1" name="Concept" shortName="co" implicitPlural="true">
+        <word name="Aberration" />
+        <word name="Ability" />
+        <word name="Abomination" />
+        <word name="Absence" plural="" />
+        <word name="Absolution" plural="" />
+        <word name="Acceptance" plural="" />
+        <word name="Accident" />
+        <word name="Accolade" />
+        <word name="Accord" />
+        <word name="Accordance" plural="" />
+        <word name="Account" />
+        <word name="Ache" />
+        <word name="Activity" />
+        <word name="Addiction" />
+        <word name="Advantage" />
+        <word name="Affliction" />
+        <word name="Again" plural="" />
+        <word name="Agency" />
+        <word name="Aggression" />
+        <word name="Agility" />
+        <word name="Ailment" />
+        <word name="Alchemy" plural="" />
+        <word name="Alert" prtc="-" />
+        <word name="Algorithm" />
+        <word name="Altruism" plural="" />
+        <word name="Ambition" />
+        <word name="Amnesia" plural="" />
+        <word name="Amount" />
+        <word name="Anarchy" plural="" />
+        <word name="Anger" prtc="-" past="-" />
+        <word name="Annihilation" />
+        <word name="Anomaly" />
+        <word name="Anonymity" plural="" />
+        <word name="Anthem" />
+        <word name="Anxiety" plural="" />
         <word name="Apocalypse" />
-        <word name="Apparition" plural="-" />
-        <word name="Archaeology" />
-        <word name="Architecture" />
-        <word name="Art" plural="-" />
-        <word name="Aspect" plural="-" />
-        <word name="Asset" plural="-" />
-        <word name="Astronomy" />
-        <word name="Atrocity" plural="-" />
-        <word name="Attitude" plural="-" />
-        <word name="Attribute" plural="-" />
-        <word name="Aura" plural="-" />
-        <word name="Authority" plural="-" />
-        <word name="Avail" />
-        <word name="Awe" />
-        <word name="Axiom" plural="-" />
+        <word name="Apparition" />
+        <word name="Archaeology" plural="" />
+        <word name="Architecture" plural="" />
+        <word name="Arrogance" plural="" />
+        <word name="Art" />
+        <word name="Aspect" />
+        <word name="Asset" />
+        <word name="Astronomy" plural="" />
+        <word name="Atrocity" />
+        <word name="Attitude" />
+        <word name="Attribute" />
+        <word name="Aura" />
+        <word name="Authority" />
+        <word name="Avail" plural="" />
+        <word name="Awe" plural="" />
+        <word name="Axiom" />
         <word name="Backward" />
-        <word name="Balance" />
-        <word name="Bane" plural="-" />
-        <word name="Basics" />
-        <word name="Basis" />
+        <word name="Balance" plural="" />
+        <word name="Bane" />
+        <word name="Basics" plural="" />
+        <word name="Basis" plural="2es" />
         <word name="Beauty" />
-        <word name="Beginning" plural="-" />
-        <word name="Belief" plural="-" />
-        <word name="Benefit" plural="-" />
-        <word name="Benevolence" />
+        <word name="Beginning" />
+        <word name="Belief" />
+        <word name="Benefit" />
+        <word name="Benevolence" plural="" />
         <word name="Binary" />
-        <word name="Birth" plural="-" />
+        <word name="Birth" />
         <word name="Birthday" plural="s" />
-        <word name="Blasphemy" />
-        <word name="Blight" plural="-" />
-        <word name="Bliss" />
-        <word name="Blunder" plural="-" />
-        <word name="Bond" plural="-" />
-        <word name="Border" plural="-" />
-        <word name="Bounty" plural="-" />
-        <word name="Brand" plural="-" />
-        <word name="Bravery" />
-        <word name="Brilliance" />
-        <word name="Burden" plural="-" />
-        <word name="Calamity" plural="-" />
+        <word name="Blasphemy" plural="" />
+        <word name="Blight" />
+        <word name="Bliss" plural="" />
+        <word name="Blunder" />
+        <word name="Bond" />
+        <word name="Border" />
+        <word name="Bounty" />
+        <word name="Brand" />
+        <word name="Bravery" plural="" />
+        <word name="Brilliance" plural="" />
+        <word name="Burden" />
+        <word name="Calamity" />
         <word name="Caliber" />
-        <word name="Campaign" plural="-" />
-        <word name="Career" plural="-" />
-        <word name="Carnage" />
-        <word name="Cataclysm" plural="-" />
-        <word name="Catalyst" plural="-" />
-        <word name="Catastrophy" plural="-" />
-        <word name="Causality" />
-        <word name="Challenge" plural="-" />
-        <word name="Chance" plural="-" />
-        <word name="Chaos" />
-        <word name="Charity" plural="-" />
-        <word name="Charm" plural="-" />
-        <word name="Chemistry" />
-        <word name="Choice" plural="-" />
-        <word name="Christmas" plural="-" />
-        <word name="Clarity" />
-        <word name="Class" plural="-" />
-        <word name="Clue" plural="-" />
+        <word name="Campaign" />
+        <word name="Career" />
+        <word name="Carnage" plural="" />
+        <word name="Cataclysm" />
+        <word name="Catalyst" />
+        <word name="Catastrophy" />
+        <word name="Causality" plural="" />
+        <word name="Challenge" />
+        <word name="Chance" />
+        <word name="Chaos" plural="" />
+        <word name="Charity" />
+        <word name="Charm" />
+        <word name="Chemistry" plural="" />
+        <word name="Choice" />
+        <word name="Christmas" />
+        <word name="Clarity" plural="" />
+        <word name="Class" />
+        <word name="Clue" />
         <word name="Comedy" />
         <word name="Compassion" />
-        <word name="Complexity" plural="-" />
-        <word name="Compromise" plural="-" />
-        <word name="Concept" plural="-" />
+        <word name="Complexity" />
+        <word name="Compromise" />
+        <word name="Concept" />
         <word name="Conception" />
-        <word name="Condition" plural="-" />
-        <word name="Confidence" />
-        <word name="Conflict" plural="-" />
+        <word name="Condition" />
+        <word name="Confidence" plural="" />
+        <word name="Conflict" />
         <word name="Confusion" />
-        <word name="Consequence" plural="-" />
-        <word name="Conspiracy" plural="-" />
+        <word name="Conscience" />
+        <word name="Consciousness" />
+        <word name="Consequence" />
+        <word name="Consistency" />
+        <word name="Conspiracy" />
+        <word name="Constitution" />
         <word name="Contagion" />
-        <word name="Contempt" />
-        <word name="Content" plural="-" />
+        <word name="Contempt" plural="" />
+        <word name="Content" />
         <word name="Contingency" />
         <word name="Convergence" />
-        <word name="Core" plural="-" />
+        <word name="Core" />
         <word name="Corruption" />
-        <word name="Courage" />
+        <word name="Courage" plural="" />
         <word name="Craze" />
-        <word name="Credit" plural="-" />
-        <word name="Creed" plural="-" />
-        <word name="Crime" plural="-" />
+        <word name="Credit" />
+        <word name="Creed" />
+        <word name="Crime" />
         <word name="Crisis" plural="2es" />
         <word name="Cruelty" />
         <word name="Crux" />
-        <word name="Culture" plural="-" />
-        <word name="Cure" plural="-" />
-        <word name="Damage" plural="-" />
-        <word name="Danger" plural="-" />
-        <word name="Death" plural="-" />
-        <word name="Decay" />
+        <word name="Culture" />
+        <word name="Cure" />
+        <word name="Damage" />
+        <word name="Damnation" />
+        <word name="Danger" />
+        <word name="Death" />
+        <word name="Decay" plural="" />
         <word name="Deception" />
-        <word name="Deed" plural="-" />
-        <word name="Defence" plural="-" />
-        <word name="Defense" plural="-" />
-        <word name="Definition" plural="-" />
-        <word name="Delight" plural="-" />
-        <word name="Delirium" />
-        <word name="Demise" plural="-" />
+        <word name="Deed" />
+        <word name="Defence" />
+        <word name="Defense" />
+        <word name="Definition" />
+        <word name="Delight" />
+        <word name="Delirium" plural="" />
+        <word name="Demise" />
         <word name="Denial" />
-        <word name="Density" />
-        <word name="Depravity" />
-        <word name="Depth" plural="-" />
+        <word name="Density" plural="" />
+        <word name="Depravity" plural="" />
+        <word name="Depth" />
         <word name="Designation" />
-        <word name="Desire" plural="-" />
+        <word name="Desire" />
         <word name="Desolation" />
-        <word name="Destiny" plural="-" />
+        <word name="Destiny" />
         <word name="Destruction" />
-        <word name="Detail" plural="-" />
+        <word name="Detail" />
         <word name="Determination" />
-        <word name="Development" plural="-" />
-        <word name="Devotion" plural="-" />
+        <word name="Development" />
+        <word name="Devotion" />
         <word name="Difficulty" />
-        <word name="Dilemma" plural="-" />
-        <word name="Dimension" plural="-" />
-        <word name="Diplomacy" />
-        <word name="Direction" plural="-" />
-        <word name="Dirge" plural="-" />
-        <word name="Disadvantage" plural="-" />
-        <word name="Disarray" />
-        <word name="Disaster" plural="-" />
+        <word name="Dilemma" />
+        <word name="Dimension" />
+        <word name="Diplomacy" plural="" />
+        <word name="Disadvantage" />
+        <word name="Disarray" plural="" />
+        <word name="Disaster" />
         <word name="Discipline" />
-        <word name="Discord" />
-        <word name="Discovery" plural="-" />
-        <word name="Disease" plural="-" />
+        <word name="Discord" plural="" />
+        <word name="Discovery" />
+        <word name="Disease" />
         <word name="Disgrace" />
         <word name="Dishonor" />
         <word name="Dishonour" />
-        <word name="Distance" plural="-" />
+        <word name="Distance" />
         <word name="Divinity" />
-        <word name="Dogma" plural="-" />
-        <word name="Dominion" plural="-" />
-        <word name="Doom" plural="-" />
-        <word name="Doubt" plural="-" />
-        <word name="Downward" />
+        <word name="Dogma" />
+        <word name="Dominion" />
+        <word name="Doom" />
+        <word name="Doubt" />
         <word name="Drama" />
-        <word name="Dread" />
+        <word name="Dread" plural="" />
         <word name="Dreadnought" />
-        <word name="Dream" plural="-" />
+        <word name="Dream" />
         <word name="Duty" />
-        <word name="Easter" plural="-" />
-        <word name="Edge" plural="-" />
-        <word name="Ego" plural="-" />
-        <word name="Emergency" plural="-" />
-        <word name="Emotion" plural="-" />
-        <word name="End" plural="-" />
-        <word name="Ending" plural="-" />
-        <word name="Endurance" />
-        <word name="Entertainment" />
-        <word name="Entrance" plural="-" />
+        <word name="Easter" />
+        <word name="Edge" />
+        <word name="Ego" />
+        <word name="Emergency" />
+        <word name="Emotion" />
+        <word name="End" />
+        <word name="Ending" />
+        <word name="Endurance" plural="" />
+        <word name="Entertainment" plural="" />
+        <word name="Entrance" />
         <word name="Entropy" />
-        <word name="Epidemic" plural="-" />
-        <word name="Equilibrium" plural="-" />
-        <word name="Error" plural="-" />
-        <word name="Essence" plural="-" />
+        <word name="Epidemic" />
+        <word name="Equilibrium" />
+        <word name="Error" />
+        <word name="Essence" />
         <word name="Evolution" />
-        <word name="Excellence" />
-        <word name="Excitement" />
-        <word name="Exile" plural="-" />
+        <word name="Excellence" plural="" />
+        <word name="Excitement" plural="" />
+        <word name="Exile" />
+        <word name="Existence" />
         <word name="Exodus" />
-        <word name="Expanse" plural="-" />
-        <word name="Experience" plural="-" />
-        <word name="Extent" plural="-" />
-        <word name="Extinction" plural="-" />
+        <word name="Expanse" />
+        <word name="Experience" />
+        <word name="Extent" />
+        <word name="Extinction" />
         <word name="Extortion" />
         <word name="Extravagance" />
-        <word name="Fact" plural="-" />
-        <word name="Factor" plural="-" />
-        <word name="Failure" plural="-" />
-        <word name="Faith" plural="-" />
-        <word name="Fame" />
-        <word name="Fantasy" plural="-" />
-        <word name="Farewell" plural="-" />
-        <word name="Fate" plural="-" />
-        <word name="Fault" plural="-" />
-        <word name="Favor" plural="-" />
-        <word name="Favour" plural="-" />
-        <word name="Fever" plural="-" />
-        <word name="Fiction" />
-        <word name="Fidelity" />
-        <word name="Flak" />
-        <word name="Flank" plural="-" />
-        <word name="Flaw" plural="-" />
-        <word name="Flux" />
-        <word name="Folly" />
-        <word name="For" />
-        <word name="Force" plural="-" />
+        <word name="Fact" />
+        <word name="Factor" />
+        <word name="Failure" />
+        <word name="Faith" />
+        <word name="Fame" plural="" />
+        <word name="Fantasy" />
+        <word name="Farewell" />
+        <word name="Fate" />
+        <word name="Fatigue" plural="" />
+        <word name="Fault" />
+        <word name="Favor" />
+        <word name="Favour" />
+        <word name="Feature" />
+        <word name="Fever" />
+        <word name="Fiction" plural="" />
+        <word name="Fidelity" plural="" />
+        <word name="Flak" plural="" />
+        <word name="Flank" />
+        <word name="Flaw" />
+        <word name="Flux" plural="" />
+        <word name="Folly" plural="" />
+        <word name="For" plural="" />
+        <word name="Force" />
         <word name="Foresight" />
-        <word name="Forgiveness" />
-        <word name="Format" plural="-" />
-        <word name="Fortune" plural="-" />
+        <word name="Forgiveness" plural="" />
+        <word name="Format" />
+        <word name="Fortune" />
         <word name="Forward" />
-        <word name="Fraud" plural="-" />
-        <word name="Freedom" plural="-" />
+        <word name="Fraud" />
+        <word name="Freedom" />
         <word name="Frenzy" />
-        <word name="Friction" plural="-" />
+        <word name="Friction" />
         <word name="Fringe" />
-        <word name="Frontline" plural="-" />
-        <word name="Function" plural="-" />
-        <word name="Fury" plural="-" />
-        <word name="Gambit" plural="-" />
-        <word name="Generation" plural="-" />
-        <word name="Genesis" />
-        <word name="Glamour" />
-        <word name="Glitch" plural="-" />
-        <word name="Gloom" />
-        <word name="Glory" />
-        <word name="Gluttony" />
-        <word name="Goodbye" plural="-" />
-        <word name="Grace" plural="-" />
+        <word name="Frontline" />
+        <word name="Function" />
+        <word name="Fury" />
+        <word name="Gambit" />
+        <word name="Generation" />
+        <word name="Genesis" plural="" />
+        <word name="Glamour" plural="" />
+        <word name="Glitch" />
+        <word name="Gloom" plural="" />
+        <word name="Glory" plural="" />
+        <word name="Gluttony" plural="" />
+        <word name="Goal" />
+        <word name="Goodbye" />
+        <word name="Grace" />
         <word name="Gratitude" />
         <word name="Gravity" />
-        <word name="Greed" />
-        <word name="Grief" />
-        <word name="Growth" plural="-" />
-        <word name="Grudge" plural="-" />
-        <word name="Guerrilla" />
-        <word name="Guilt" plural="-" />
-        <word name="Habit" plural="-" />
-        <word name="Halloween" plural="-" />
+        <word name="Greed" plural="" />
+        <word name="Grief" plural="" />
+        <word name="Growth" />
+        <word name="Grudge" />
+        <word name="Guerrilla" plural="" />
+        <word name="Guilt" />
+        <word name="Habit" />
+        <word name="Halloween" />
         <word name="Happiness" />
-        <word name="Harm" plural="-" />
-        <word name="Harmony" plural="-" />
-        <word name="Harvest" plural="-" />
-        <word name="Haste" />
-        <word name="Hate" />
-        <word name="Hatred" />
-        <word name="Havoc" />
-        <word name="Hazard" plural="-" />
-        <word name="Haze" />
-        <word name="Health" />
+        <word name="Harm" />
+        <word name="Harmony" />
+        <word name="Harvest" />
+        <word name="Haste" plural="" />
+        <word name="Hate" plural="" />
+        <word name="Hatred" plural="" />
+        <word name="Havoc" plural="" />
+        <word name="Hazard" />
+        <word name="Haze" plural="" />
+        <word name="Health" plural="" />
         <word name="Heartbreak" />
         <word name="Height" />
-        <word name="Heirloom" plural="-" />
+        <word name="Heirloom" />
         <word name="Hello" />
-        <word name="Heresy" />
-        <word name="Heritage" plural="-" />
-        <word name="History" plural="-" />
+        <word name="Heresy" plural="" />
+        <word name="Heritage" />
+        <word name="History" />
         <word name="Hoax" />
-        <word name="Honesty" />
-        <word name="Honor" plural="-" />
-        <word name="Honour" plural="-" />
-        <word name="Hope" plural="-" />
-        <word name="Horror" plural="-" />
-        <word name="Hospitality" />
-        <word name="Hostility" />
-        <word name="How" />
-        <word name="Hubris" />
-        <word name="Hunger" plural="-" />
-        <word name="Husk" plural="-" />
-        <word name="Hype" />
+        <word name="Honesty" plural="" />
+        <word name="Honor" />
+        <word name="Honour" />
+        <word name="Hope" />
+        <word name="Horror" />
+        <word name="Hospitality" plural="" />
+        <word name="Hostility" plural="" />
+        <word name="How" plural="" />
+        <word name="Hubris" plural="" />
+        <word name="Hunger" />
+        <word name="Husk" />
+        <word name="Hype" plural="" />
         <word name="Hypothesis" plural="2es" />
-        <word name="Idea" plural="-" />
-        <word name="Identity" plural="-" />
-        <word name="Ideology" plural="-" />
-        <word name="Illness" plural="-" />
-        <word name="Imagination" plural="-" />
-        <word name="Immortality" />
-        <word name="Immunity" plural="-" />
-        <word name="Imperfection" plural="-" />
-        <word name="Importance" />
-        <word name="Impurity" plural="-" />
-        <word name="Incident" plural="-" />
-        <word name="Industry" plural="-" />
-        <word name="Infamy" />
-        <word name="Infection" plural="-" />
+        <word name="Idea" />
+        <word name="Identity" />
+        <word name="Ideology" />
+        <word name="Illness" />
+        <word name="Imagination" />
+        <word name="Immortality" plural="" />
+        <word name="Immunity" />
+        <word name="Imperfection" />
+        <word name="Importance" plural="" />
+        <word name="Impurity" />
+        <word name="Incident" />
+        <word name="Industry" />
+        <word name="Infamy" plural="" />
+        <word name="Infection" />
         <word name="Inferno" />
-        <word name="Infidelity" />
-        <word name="Infinity" plural="-" />
-        <word name="Influence" plural="-" />
-        <word name="Information" />
-        <word name="Ingenuity" />
-        <word name="Injury" plural="-" />
-        <word name="Innocence" />
-        <word name="Insanity" plural="-" />
-        <word name="Insolence" />
-        <word name="Instance" plural="-" />
-        <word name="Instinct" plural="-" />
-        <word name="Intel" />
-        <word name="Intelligence" />
-        <word name="Intention" plural="-" />
-        <word name="Interest" plural="-" />
-        <word name="Interface" plural="-" />
-        <word name="Interval" plural="-" />
-        <word name="Intro" plural="-" />
-        <word name="Introduction" plural="-" />
-        <word name="Ire" />
-        <word name="Irony" />
-        <word name="Issue" plural="-" />
+        <word name="Infidelity" plural="" />
+        <word name="Infinity" />
+        <word name="Influence" />
+        <word name="Information" plural="" />
+        <word name="Ingenuity" plural="" />
+        <word name="Injury" />
+        <word name="Innocence" plural="" />
+        <word name="Insanity" />
+        <word name="Insolence" plural="" />
+        <word name="Instance" />
+        <word name="Instinct" />
+        <word name="Intel" plural="" />
+        <word name="Intelligence" plural="" />
+        <word name="Intention" />
+        <word name="Interest" />
+        <word name="Interface" />
+        <word name="Interval" />
+        <word name="Intro" />
+        <word name="Introduction" />
+        <word name="Ire" plural="" />
+        <word name="Irony" plural="" />
+        <word name="Issue" />
+        <word name="Jest" plural="" />
         <word name="Joy" plural="s" />
         <word name="Jubilation" />
-        <word name="Judgement" plural="-" />
-        <word name="Judgment" plural="-" />
-        <word name="Justice" />
-        <word name="Karma" />
-        <word name="Kindness" />
-        <word name="Law" plural="-" />
-        <word name="Layer" plural="-" />
+        <word name="Judgement" />
+        <word name="Judgment" />
+        <word name="Justice" plural="" />
+        <word name="Karma" plural="" />
+        <word name="Kindness" plural="" />
+        <word name="Law" />
+        <word name="Layer" />
         <word name="Legacy" />
-        <word name="Legend" plural="-" />
-        <word name="Length" plural="-" />
-        <word name="Level" plural="-" />
-        <word name="Liberty" plural="-" />
-        <word name="Lie" plural="-" />
+        <word name="Legend" />
+        <word name="Length" />
+        <word name="Level" />
+        <word name="Liberty" />
+        <word name="Lie" />
         <word name="Life" plural="2ves" />
-        <word name="Limbo" />
-        <word name="Limit" plural="-" />
-        <word name="Link" plural="-" />
-        <word name="Logic" plural="-" />
-        <word name="Longing" />
-        <word name="Loop" plural="-" />
+        <word name="Limbo" plural="" />
+        <word name="Limit" />
+        <word name="Link" />
+        <word name="Logic" />
+        <word name="Longing" plural="" />
+        <word name="Loop" />
+        <word name="Loss" />
         <word name="Love" />
-        <word name="Luck" />
-        <word name="Luminescence" />
-        <word name="Lunacy" />
-        <word name="Madness" />
-        <word name="Maelstrom" plural="-" />
-        <word name="Malevolence" />
-        <word name="Malfunction" plural="-" />
-        <word name="Marathon" plural="-" />
+        <word name="Luck" plural="" />
+        <word name="Luminescence" plural="" />
+        <word name="Lunacy" plural="" />
+        <word name="Madness" plural="" />
+        <word name="Maelstrom" />
+        <word name="Malevolence" plural="" />
+        <word name="Malfunction" />
+        <word name="Marathon" />
         <word name="Marriage" />
-        <word name="Martyrdom" />
-        <word name="Marvel" plural="-" />
-        <word name="Masquerade" plural="-" />
-        <word name="Mass" plural="-" />
+        <word name="Martyrdom" plural="" />
+        <word name="Marvel" />
+        <word name="Masquerade" />
+        <word name="Mass" />
         <word name="Matrix" plural="1ces" />
-        <word name="Mayhem" />
-        <word name="Meaning" plural="-" />
-        <word name="Melody" plural="-" />
-        <word name="Memory" plural="-" />
-        <word name="Menace" plural="-" />
-        <word name="Mercy" />
-        <word name="Mess" plural="-" />
-        <word name="Metamorphosis" />
-        <word name="Method" plural="-" />
-        <word name="Might" plural="-" />
-        <word name="Milestone" plural="-" />
-        <word name="Mind" plural="-" />
+        <word name="Mayhem" plural="" />
+        <word name="Meaning" />
+        <word name="Memory" />
+        <word name="Menace" />
+        <word name="Mercy" plural="" />
+        <word name="Metamorphosis" plural="" />
+        <word name="Method" />
+        <word name="Might" />
+        <word name="Milestone" />
+        <word name="Mind" />
         <word name="Minus" />
-        <word name="Miracle" plural="-" />
-        <word name="Mischief" plural="-" />
-        <word name="Misery" />
-        <word name="Misfortune" plural="-" />
-        <word name="Mission" plural="-" />
-        <word name="Mistake" plural="-" />
-        <word name="Mobility" />
-        <word name="Mockery" plural="-" />
-        <word name="Mod" plural="-" />
-        <word name="Mode" plural="-" />
-        <word name="Mood" plural="-" />
-        <word name="Mutation" plural="-" />
-        <word name="Mystery" plural="-" />
-        <word name="Mystique" />
-        <word name="Myth" plural="-" />
-        <word name="Narrative" plural="-" />
-        <word name="Nature" plural="-" />
-        <word name="Network" plural="-" />
-        <word name="Neutrality" plural="-" />
-        <word name="Nexus" />
-        <word name="Nightmare" plural="-" />
+        <word name="Miracle" />
+        <word name="Mischief" />
+        <word name="Misery" plural="" />
+        <word name="Misfortune" />
+        <word name="Mistake" />
+        <word name="Mobility" plural="" />
+        <word name="Mockery" />
+        <word name="Mod" />
+        <word name="Mode" />
+        <word name="Mood" />
+        <word name="Mutation" />
+        <word name="Mystery" />
+        <word name="Mystique" plural="" />
+        <word name="Narrative" />
+        <word name="Nature" />
+        <word name="Network" />
+        <word name="Neutrality" />
+        <word name="Nexus" plural="" />
+        <word name="Nightmare" />
+        <word name="Nobility" />
         <word name="Nocturne" />
-        <word name="None" />
-        <word name="Nostalgia" />
-        <word name="Nothing" plural="-" />
-        <word name="Notoriety" />
-        <word name="Oath" plural="-" />
-        <word name="Oblivion" />
-        <word name="Obscurity" />
+        <word name="None" plural="" />
+        <word name="Nostalgia" plural="" />
+        <word name="Nothingness" plural="" />
+        <word name="Notoriety" plural="" />
+        <word name="Oath" />
+        <word name="Oblivion" plural="" />
+        <word name="Obscurity" plural="" />
         <word name="Odyssey" plural="s" />
-        <word name="Omen" plural="-" />
+        <word name="Omen" />
         <word name="Onward" />
-        <word name="Opportunity" plural="-" />
-        <word name="Opposition" plural="-" />
-        <word name="Option" plural="-" />
+        <word name="Opportunity" />
+        <word name="Opposition" />
+        <word name="Option" />
         <word name="Orientation" />
-        <word name="Origin" plural="-" />
-        <word name="Outro" plural="-" />
+        <word name="Origin" />
+        <word name="Outcome" />
+        <word name="Outro" />
         <word name="Overdrive" />
-        <word name="Pact" plural="-" />
-        <word name="Pain" plural="-" />
-        <word name="Pandemic" plural="-" />
-        <word name="Panic" plural="-" />
-        <word name="Paradigm" plural="-" />
-        <word name="Paragon" plural="-" />
-        <word name="Paranoia" />
-        <word name="Payback" plural="-" />
-        <word name="Peace" />
-        <word name="Peak" plural="-" />
+        <word name="Pact" />
+        <word name="Pain" />
+        <word name="Pandemic" />
+        <word name="Panic" />
+        <word name="Paradigm" />
+        <word name="Paragon" />
+        <word name="Paranoia" plural="" />
+        <word name="Passing" />
+        <word name="Payback" />
+        <word name="Peace" plural="" />
+        <word name="Peak" />
         <word name="Perfection" />
-        <word name="Perimeter" plural="-" />
+        <word name="Perimeter" />
         <word name="Phenomenon" plural="2a" />
-        <word name="Philosophy" plural="-" />
-        <word name="Physics" />
-        <word name="Pinnacle" plural="-" />
-        <word name="Pity" plural="-" />
-        <word name="Plague" plural="-" />
-        <word name="Pleasure" plural="-" />
-        <word name="Plight" plural="-" />
+        <word name="Philosophy" />
+        <word name="Physics" plural="" />
+        <word name="Pinnacle" />
+        <word name="Pity" />
+        <word name="Plague" />
+        <word name="Pleasure" />
+        <word name="Plight" />
         <word name="Plus" />
-        <word name="Possibility" plural="-" />
-        <word name="Power" plural="-" />
-        <word name="Praxis" />
-        <word name="Prediction" plural="-" />
-        <word name="Prejudice" plural="-" />
+        <word name="Possibility" />
+        <word name="Power" />
+        <word name="Praxis" plural="" />
+        <word name="Prediction" />
+        <word name="Prejudice" />
         <word name="Prelude" />
-        <word name="Premiere" plural="-" />
-        <word name="Presence" plural="-" />
-        <word name="Pressure" plural="-" />
-        <word name="Prestige" plural="-" />
+        <word name="Premiere" />
+        <word name="Presence" />
+        <word name="Pressure" />
+        <word name="Prestige" />
         <word name="Pride" />
-        <word name="Privilege" plural="-" />
-        <word name="Problem" plural="-" />
-        <word name="Procedure" plural="-" />
+        <word name="Privilege" />
+        <word name="Problem" />
+        <word name="Procedure" />
         <word name="Process" />
-        <word name="Promise" plural="-" />
-        <word name="Proof" plural="-" />
-        <word name="Prophecy" plural="-" />
-        <word name="Proximity" />
-        <word name="Psyche" plural="-" />
-        <word name="Pulse" plural="-" />
-        <word name="Punishment" plural="-" />
+        <word name="Promise" />
+        <word name="Proof" />
+        <word name="Property" />
+        <word name="Prophecy" />
+        <word name="Proximity" plural="" />
+        <word name="Psyche" />
+        <word name="Psychopathy" plural="" />
+        <word name="Pulse" />
+        <word name="Punishment" />
         <word name="Punk" />
-        <word name="Purity" plural="-" />
-        <word name="Purpose" plural="-" />
-        <word name="Puzzle" plural="-" />
-        <word name="Quality" plural="-" />
-        <word name="Quantity" plural="-" />
-        <word name="Quest" plural="-" />
-        <word name="Radiance" />
+        <word name="Purity" />
+        <word name="Purpose" />
+        <word name="Puzzle" prtc="-" />
+        <word name="Quality" />
+        <word name="Quantity" />
+        <word name="Quest" />
+        <word name="Radiance" plural="" />
         <word name="Rage" />
-        <word name="Rampage" plural="-" />
-        <word name="Range" plural="-" />
-        <word name="Rank" plural="-" />
+        <word name="Rampage" />
+        <word name="Range" />
+        <word name="Rank" />
         <word name="Ransom" />
         <word name="Rapture" />
-        <word name="Rate" plural="-" />
+        <word name="Rate" />
         <word name="Reality" />
-        <word name="Reason" plural="-" />
-        <word name="Rebellion" plural="-" />
-        <word name="Rebirth" plural="-" />
-        <word name="Regime" plural="-" />
-        <word name="Regret" plural="-" />
-        <word name="Relationship" plural="-" />
-        <word name="Remedy" plural="-" />
-        <word name="Remnant" plural="-" />
-        <word name="Remorse" />
-        <word name="Renown" />
-        <word name="Reputation" plural="-" />
+        <word name="Reason" />
+        <word name="Rebellion" />
+        <word name="Rebirth" />
+        <word name="Regime" />
+        <word name="Regret" />
+        <word name="Relationship" />
+        <word name="Relief" />
+        <word name="Remedy" />
+        <word name="Remnant" />
+        <word name="Remorse" plural="" />
+        <word name="Renown" plural="" />
+        <word name="Reputation" />
         <word name="Requiem" />
         <word name="Resistance" />
-        <word name="Resolution" plural="-" />
-        <word name="Resolve" plural="-" />
-        <word name="Resource" plural="-" />
-        <word name="Respect" plural="-" />
-        <word name="Respite" />
-        <word name="Responsibility" plural="-" />
-        <word name="Restraint" plural="-" />
-        <word name="Result" plural="-" />
-        <word name="Retribution" plural="-" />
-        <word name="Revenge" plural="-" />
-        <word name="Revolt" plural="-" />
-        <word name="Revolution" plural="-" />
-        <word name="Rhapsody" plural="-" />
-        <word name="Rhythm" plural="-" />
-        <word name="Riddle" plural="-" />
-        <word name="Rift" plural="-" />
-        <word name="Righteousness" />
-        <word name="Rim" plural="-" />
-        <word name="Risk" plural="-" />
-        <word name="Romance" plural="-" />
-        <word name="Ruin" plural="-" />
-        <word name="Rule" plural="-" />
+        <word name="Resolution" />
+        <word name="Resolve" />
+        <word name="Resource" />
+        <word name="Respect" />
+        <word name="Respite" plural="" />
+        <word name="Responsibility" />
+        <word name="Restraint" />
+        <word name="Result" />
+        <word name="Retribution" />
+        <word name="Revenge" />
+        <word name="Reverence" plural="" />
+        <word name="Revolt" />
+        <word name="Revolution" />
+        <word name="Rhapsody" />
+        <word name="Rhythm" />
+        <word name="Riddle" />
+        <word name="Rift" />
+        <word name="Righteousness" plural="" />
+        <word name="Rim" />
+        <word name="Risk" />
+        <word name="Romance" />
+        <word name="Ruin" />
+        <word name="Rule" />
         <word name="Ruse" />
-        <word name="Sacrifice" plural="-" />
-        <word name="Sadness" />
-        <word name="Safety" />
-        <word name="Salvation" plural="-" />
-        <word name="Scape" plural="-" />
-        <word name="Scapegoat" plural="-" />
-        <word name="Scenario" plural="-" />
-        <word name="Scheme" plural="-" />
-        <word name="Science" plural="-" />
+        <word name="Sacrifice" />
+        <word name="Sacrilege" />
+        <word name="Sadness" plural="" />
+        <word name="Safety" plural="" />
+        <word name="Salvation" />
+        <word name="Scapegoat" />
+        <word name="Scenario" />
+        <word name="Science" />
         <word name="Scorn" />
-        <word name="Scourge" plural="-" />
-        <word name="Scum" />
-        <word name="Secret" plural="-" />
-        <word name="Security" />
-        <word name="Self" />
-        <word name="Sense" plural="-" />
-        <word name="Sequence" plural="-" />
-        <word name="Series" />
-        <word name="Service" plural="-" />
-        <word name="Shame" />
-        <word name="Showdown" plural="-" />
-        <word name="Shroud" plural="-" />
-        <word name="Sickness" plural="-" />
-        <word name="Side" plural="-" />
-        <word name="Sight" plural="-" />
-        <word name="Simplicity" plural="-" />
-        <word name="Sin" plural="-" />
-        <word name="Size" plural="-" />
-        <word name="Skill" plural="-" />
-        <word name="Slavery" />
+        <word name="Scourge" />
+        <word name="Scum" plural="" />
+        <word name="Secret" />
+        <word name="Security" plural="" />
+        <word name="Self" plural="" />
+        <word name="Sense" />
+        <word name="Sequence" />
+        <word name="Series" plural="" />
+        <word name="Service" />
+        <word name="Servitude" plural="" />
+        <word name="Shame" plural="" />
+        <word name="Shenanigans" plural="" />
+        <word name="Showdown" />
+        <word name="Shroud" />
+        <word name="Sickness" />
+        <word name="Side" />
+        <word name="Sight" />
+        <word name="Simplicity" />
+        <word name="Sin" />
+        <word name="Size" />
+        <word name="Skill" />
+        <word name="Skulduggery" plural="" />
+        <word name="Slavery" plural="" />
         <word name="Sleight" />
         <word name="Solace" />
-        <word name="Solitude" />
-        <word name="Solstice" plural="-" />
-        <word name="Solution" plural="-" />
-        <word name="Sorrow" plural="-" />
-        <word name="Soul" plural="-" />
-        <word name="Source" plural="-" />
-        <word name="Spectrum" plural="-" />
-        <word name="Speed" plural="-" />
-        <word name="Spirit" plural="-" />
-        <word name="Spite" />
+        <word name="Solitude" plural="" />
+        <word name="Solution" />
+        <word name="Sorrow" />
+        <word name="Soul" />
+        <word name="Source" />
+        <word name="Spectrum" />
+        <word name="Speed" />
+        <word name="Spirit" />
+        <word name="Spite" plural="" />
         <word name="Splendor" />
-        <word name="Stage" plural="-" />
-        <word name="Stain" plural="-" />
-        <word name="Stalemate" plural="-" />
-        <word name="Stamina" />
-        <word name="State" plural="-" />
-        <word name="Status" plural="-" />
-        <word name="Stench" plural="-" />
-        <word name="Strain" plural="-" />
-        <word name="Strength" plural="-" />
-        <word name="Strife" plural="-" />
-        <word name="Style" plural="-" />
-        <word name="Subterfuge" />
-        <word name="Success" plural="-" />
-        <word name="Support" plural="-" />
+        <word name="Stage" />
+        <word name="Stain" />
+        <word name="Stalemate" />
+        <word name="Stamina" plural="" />
+        <word name="State" />
+        <word name="Status" />
+        <word name="Stench" />
+        <word name="Strain" />
+        <word name="Strength" />
+        <word name="Strife" />
+        <word name="Style" />
+        <word name="Subterfuge" plural="" />
+        <word name="Success" />
+        <word name="Suffering" />
+        <word name="Support" />
         <word name="Supremacy" />
-        <word name="Surprise" plural="-" />
-        <word name="System" plural="-" />
-        <word name="Talent" plural="-" />
-        <word name="Target" plural="-" />
-        <word name="Tech" />
-        <word name="Technique" plural="-" />
-        <word name="Technology" plural="-" />
-        <word name="Temperance" />
-        <word name="Tempest" />
-        <word name="Temptation" plural="-" />
-        <word name="Tension" plural="-" />
+        <word name="Surprise" />
+        <word name="System" />
+        <word name="Talent" />
+        <word name="Target" />
+        <word name="Technology" />
+        <word name="Telepathy" plural="" />
+        <word name="Temperance" plural="" />
+        <word name="Temptation" />
+        <word name="Tension" />
         <word name="Termination" />
-        <word name="Terror" plural="-" />
-        <word name="Theory" plural="-" />
-        <word name="Thought" plural="-" />
-        <word name="Threat" plural="-" />
-        <word name="Threshold" plural="-" />
-        <word name="Time" plural="-" />
-        <word name="Together" />
-        <word name="Topside" plural="-" />
-        <word name="Torment" plural="-" />
-        <word name="Torrent" plural="-" />
-        <word name="Tournament" plural="-" />
-        <word name="Trace" plural="-" />
-        <word name="Tradition" plural="-" />
-        <word name="Tragedy" plural="-" />
-        <word name="Tranquility" />
-        <word name="Trauma" plural="-" />
-        <word name="Travesty" plural="-" />
-        <word name="Trial" plural="-" />
-        <word name="Tribute" plural="-" />
+        <word name="Terror" />
+        <word name="Theory" />
+        <word name="Thought" />
+        <word name="Threat" />
+        <word name="Threshold" />
+        <word name="Time" />
+        <word name="Together" plural="" />
+        <word name="Topside" />
+        <word name="Torment" />
+        <word name="Torrent" />
+        <word name="Trace" />
+        <word name="Tradition" />
+        <word name="Tragedy" />
+        <word name="Tranquility" plural="" />
+        <word name="Trauma" />
+        <word name="Travesty" />
+        <word name="Tribute" />
         <word name="Trinity" />
-        <word name="Triumph" plural="-" />
-        <word name="Trust" plural="-" />
-        <word name="Truth" plural="-" />
-        <word name="Turmoil" plural="-" />
-        <word name="Type" plural="-" />
-        <word name="Tyranny" plural="-" />
-        <word name="Ultimatum" plural="-" />
-        <word name="Underside" plural="-" />
+        <word name="Triumph" />
+        <word name="Trust" />
+        <word name="Truth" />
+        <word name="Turmoil" />
+        <word name="Type" />
+        <word name="Tyranny" />
+        <word name="Ultimatum" />
+        <word name="Underside" />
         <word name="Union" />
-        <word name="Unity" plural="-" />
-        <word name="Unless" />
-        <word name="Upon" />
-        <word name="Upward" />
-        <word name="Urge" plural="-" />
+        <word name="Unity" />
+        <word name="Unless" plural="" />
+        <word name="Upon" plural="" />
+        <word name="Urge" />
         <word name="Utility" />
-        <word name="Valentine" plural="-" />
+        <word name="Valentine" />
         <word name="Valor" />
-        <word name="Value" plural="-" />
+        <word name="Value" />
         <word name="Vanity" />
-        <word name="Vantage" plural="-" />
-        <word name="Vector" plural="-" />
-        <word name="Veil" plural="-" />
-        <word name="Velocity" plural="-" />
-        <word name="Vendetta" plural="-" />
+        <word name="Vantage" />
+        <word name="Vector" />
+        <word name="Veil" />
+        <word name="Velocity" />
+        <word name="Vendetta" />
         <word name="Vengeance" />
-        <word name="Verge" plural="-" />
-        <word name="Version" plural="-" />
-        <word name="Versus" />
-        <word name="Vice" plural="-" />
-        <word name="Victory" plural="-" />
-        <word name="Vigilance" />
-        <word name="Violence" />
-        <word name="Virtue" plural="-" />
-        <word name="Visage" plural="-" />
-        <word name="Vision" plural="-" />
-        <word name="Vita" />
-        <word name="Vitality" />
-        <word name="Vitriol" />
-        <word name="Voltage" plural="-" />
-        <word name="Volume" plural="-" />
-        <word name="Vow" plural="-" />
-        <word name="Wake" />
-        <word name="Weakness" plural="-" />
-        <word name="Weight" plural="-" />
-        <word name="What" />
-        <word name="Why" />
-        <word name="Will" plural="-" />
-        <word name="Wisdom" plural="-" />
-        <word name="Wish" plural="-" />
-        <word name="Wit" plural="-" />
-        <word name="With" />
-        <word name="Wonder" plural="-" />
-        <word name="Worth" plural="-" />
-        <word name="Wrath" plural="-" />
-        <word name="Yes" />
-        <word name="Zealotry" />
-        <word name="Zodiac" plural="-" />
+        <word name="Verge" />
+        <word name="Version" />
+        <word name="Versus" plural="" />
+        <word name="Vice" />
+        <word name="Victimhood" plural="" />
+        <word name="Victory" />
+        <word name="Vigilance" plural="" />
+        <word name="Violence" plural="" />
+        <word name="Virtue" />
+        <word name="Visage" />
+        <word name="Vision" />
+        <word name="Vita" plural="" />
+        <word name="Vitality" plural="" />
+        <word name="Vitriol" plural="" />
+        <word name="Voltage" />
+        <word name="Volume" />
+        <word name="Vow" />
+        <word name="Wake" plural="" />
+        <word name="Warfare" plural="" />
+        <word name="Weakness" />
+        <word name="Weight" />
+        <word name="What" plural="" />
+        <word name="Why" plural="" />
+        <word name="Will" />
+        <word name="Wisdom" />
+        <word name="Wish" />
+        <word name="Wit" />
+        <word name="With" plural="" />
+        <word name="Wonder" />
+        <word name="Worth" />
+        <word name="Wrath" />
+        <word name="Yes" plural="" />
+        <word name="Zealotry" plural="" />
+        <word name="Zodiac" />
     </category>
     <category id="2" name="Substance" shortName="su">
         <word name="Acid" />
@@ -1650,8 +1698,9 @@
         <word name="Bamboo" />
         <word name="Basalt" />
         <word name="Bio" />
+        <word name="Birch" plural="-" />
         <word name="Black" />
-        <word name="Blaze" inf="-" />
+        <word name="Blaze" prtc="-" />
         <word name="Blob" plural="-" />
         <word name="Blood" />
         <word name="Blue" />
@@ -1715,7 +1764,7 @@
         <word name="Filth" />
         <word name="Fire" plural="-" />
         <word name="Fission" />
-        <word name="Flame" plural="-" />
+        <word name="Flame" plural="-" prtc="-" />
         <word name="Fleece" />
         <word name="Flesh" />
         <word name="Flint" />
@@ -1782,6 +1831,7 @@
         <word name="Mineral" plural="-" />
         <word name="Mist" />
         <word name="Mold" />
+        <word name="Molecule" plural="-" />
         <word name="Moonlight" />
         <word name="Mosaic" />
         <word name="Mud" />
@@ -1870,6 +1920,7 @@
         <word name="Sunlight" />
         <word name="Tan" />
         <word name="Tar" />
+        <word name="Tech" />
         <word name="Tera" />
         <word name="Thunder" />
         <word name="Tin" />
@@ -1901,11 +1952,11 @@
         <word name="Yarn" />
         <word name="Yellow" />
         <word name="Zircon" />
+        <word name="[Color]" />
     </category>
-    <category id="3" name="Thing" shortName="th">
-        <word name="Rite" />
-        <word name="Ritual" />
+    <category id="3" name="Thing" shortName="th" implicitPlural="true">
         <word name="Accelerator" />
+        <word name="Act" />
         <word name="Alarm" />
         <word name="Ammo" plural="" />
         <word name="Ammunition" plural="" />
@@ -1916,6 +1967,7 @@
         <word name="Answer" />
         <word name="Anvil" />
         <word name="Apple" />
+        <word name="Appliance" />
         <word name="Arc" />
         <word name="Arch" />
         <word name="Arm" />
@@ -2022,7 +2074,7 @@
         <word name="Clover" />
         <word name="Coat" />
         <word name="Cocoon" />
-        <word name="Codex" plural="" />
+        <word name="Codex" plural="2ices" />
         <word name="Coffin" />
         <word name="Cog" />
         <word name="Coil" />
@@ -2033,6 +2085,7 @@
         <word name="Coma" />
         <word name="Comet" />
         <word name="Compass" />
+        <word name="Composition" />
         <word name="Computer" />
         <word name="Concussion" />
         <word name="Constellation" />
@@ -2040,6 +2093,7 @@
         <word name="Contract" />
         <word name="Convoy" plural="s" />
         <word name="Coordinates" plural="" />
+        <word name="Coronation" />
         <word name="Corpse" />
         <word name="Corvette" />
         <word name="Crack" />
@@ -2054,6 +2108,7 @@
         <word name="Crusade" />
         <word name="Cube" />
         <word name="Cup" />
+        <word name="Currency" />
         <word name="Curtain" />
         <word name="Curve" />
         <word name="Cutlass" />
@@ -2066,6 +2121,8 @@
         <word name="Device" />
         <word name="Dice" plural="" />
         <word name="Dinner" />
+        <word name="Direction" />
+        <word name="Dirge" />
         <word name="Disc" />
         <word name="Disguise" />
         <word name="Document" />
@@ -2203,7 +2260,7 @@
         <word name="Ingredient" />
         <word name="Inheritance" />
         <word name="Insignia" plural="" />
-        <word name="It" plural="!They" />
+        <word name="It" plural="!They" poss="s" />
         <word name="Item" />
         <word name="Jacket" />
         <word name="Jazz" plural="" />
@@ -2249,13 +2306,16 @@
         <word name="Map" />
         <word name="Mark" />
         <word name="Marker" />
+        <word name="Marking" />
         <word name="Mask" />
         <word name="Maw" />
         <word name="Meal" />
         <word name="Mechanism" />
         <word name="Medal" />
         <word name="Media" plural="" />
+        <word name="Melody" />
         <word name="Meltdown" />
+        <word name="Mess"/>
         <word name="Message" />
         <word name="Meteor" />
         <word name="Meter" />
@@ -2264,6 +2324,7 @@
         <word name="Mirage" />
         <word name="Mirror" />
         <word name="Missile" />
+        <word name="Mission" />
         <word name="Mjölnir" plural="" />
         <word name="Model" />
         <word name="Module" />
@@ -2275,22 +2336,27 @@
         <word name="Mouth" />
         <word name="Mug" />
         <word name="Mushroom" />
+        <word name="Myth" />
         <word name="Nail" />
         <word name="Name" />
         <word name="Nebula" />
         <word name="Needle" />
         <word name="Net" />
         <word name="Nettle" />
+        <word name="News" plural="" />
         <word name="Note" />
+        <word name="Nothing" />
         <word name="Notice" />
         <word name="Number" />
         <word name="Obelisk" />
         <word name="Object" />
         <word name="Octagon" />
+        <word name="Offering" />
         <word name="Opera" />
         <word name="Operation" />
         <word name="Orb" />
         <word name="Organ" />
+        <word name="Oval" />
         <word name="Pack" />
         <word name="Packet" />
         <word name="Page" />
@@ -2317,6 +2383,7 @@
         <word name="Piece" />
         <word name="Piercer" />
         <word name="Pike" />
+        <word name="Pile"/>
         <word name="Pilgrimage" />
         <word name="Pillar" />
         <word name="Pin" />
@@ -2326,6 +2393,8 @@
         <word name="Plane" />
         <word name="Plant" />
         <word name="Plate" />
+        <word name="Play" />
+        <word name="Plot" />
         <word name="Plug" />
         <word name="Pod" />
         <word name="Point" />
@@ -2357,6 +2426,7 @@
         <word name="Rally" />
         <word name="Ramp" />
         <word name="Rapier" />
+        <word name="Rating" />
         <word name="Rations" plural="" />
         <word name="Ray" plural="s" />
         <word name="Razor" />
@@ -2372,6 +2442,8 @@
         <word name="Rig" />
         <word name="Ring" />
         <word name="Ripple" />
+        <word name="Rite" />
+        <word name="Ritual" />
         <word name="Rivet" />
         <word name="Robe" />
         <word name="Rocket" />
@@ -2395,8 +2467,10 @@
         <word name="Scanner" />
         <word name="Scar" />
         <word name="Scarecrow" />
+        <word name="Scheme" />
         <word name="Scimitar" />
         <word name="Scope" />
+        <word name="Score" plural="" />
         <word name="Screen" />
         <word name="Screw" />
         <word name="Script" />
@@ -2430,6 +2504,8 @@
         <word name="Sledgehammer" />
         <word name="Slit" />
         <word name="Snack" />
+        <word name="Software" plural="" />
+        <word name="Solstice" />
         <word name="Something" plural="" />
         <word name="Song" />
         <word name="Spade" />
@@ -2437,6 +2513,7 @@
         <word name="Spell" />
         <word name="Sphere" />
         <word name="Spike" />
+        <word name="Spindle" />
         <word name="Spine" />
         <word name="Spiral" />
         <word name="Spire" />
@@ -2445,6 +2522,7 @@
         <word name="Sport" />
         <word name="Spot" />
         <word name="Spotlight" />
+        <word name="Spring" />
         <word name="Sprout" />
         <word name="Spyglass" />
         <word name="Square" />
@@ -2457,6 +2535,7 @@
         <word name="Statuette" />
         <word name="Stew" />
         <word name="Stick" />
+        <word name="Stitch" />
         <word name="Stock" />
         <word name="Storm" />
         <word name="Story" />
@@ -2485,6 +2564,8 @@
         <word name="Tape" />
         <word name="Tarot" />
         <word name="Tear" />
+        <word name="Technique" />
+        <word name="Tempest" />
         <word name="Tendril" />
         <word name="Tent" />
         <word name="Tentacle" />
@@ -2493,6 +2574,7 @@
         <word name="Tether" />
         <word name="Text" />
         <word name="That" plural="!They" />
+        <word name="They" plural="" poss="1ir" />
         <word name="Thing" />
         <word name="Thorn" />
         <word name="Thread" />
@@ -2516,11 +2598,13 @@
         <word name="Treads" plural="" />
         <word name="Treasure" />
         <word name="Tree" />
+        <word name="Trial" />
         <word name="Triangle" />
         <word name="Trigger" />
         <word name="Trip" />
         <word name="Triskelion" />
         <word name="Trophy" />
+        <word name="Truce" />
         <word name="Truck" />
         <word name="Tube" />
         <word name="Twister" />
@@ -2551,6 +2635,7 @@
         <word name="Weather" />
         <word name="Web" />
         <word name="Wedding" />
+        <word name="Well" />
         <word name="Wheel" />
         <word name="Whip" />
         <word name="Whisky" />
@@ -2561,7 +2646,7 @@
         <word name="Wound" />
         <word name="Zephyr" />
     </category>
-    <category id="4" name="People &amp; Creatures" shortName="pc">
+    <category id="4" name="Person &amp; Creature" shortName="pc" implicitPlural="true">
         <word name="Ace" />
         <word name="Actor" />
         <word name="Actress" />
@@ -2617,6 +2702,7 @@
         <word name="Bird" />
         <word name="Bishop" />
         <word name="Bison" />
+        <word name="Bloke" />
         <word name="Boss" />
         <word name="Bot" />
         <word name="Boy" plural="s" />
@@ -2693,6 +2779,7 @@
         <word name="Crowd" />
         <word name="Crusader" />
         <word name="Cult" />
+        <word name="Dad" />
         <word name="Dame" />
         <word name="Dancer" />
         <word name="Daughter" />
@@ -2705,6 +2792,7 @@
         <word name="Devil" />
         <word name="Devourer" />
         <word name="Dinosaur" />
+        <word name="Dirtbag" />
         <word name="Diver" />
         <word name="Division" />
         <word name="Doctor" />
@@ -2737,6 +2825,7 @@
         <word name="Falcon" />
         <word name="Family" />
         <word name="Fanatic" />
+        <word name="Farmer" />
         <word name="Father" />
         <word name="Fauna" plural="" />
         <word name="Federation" />
@@ -2815,7 +2904,7 @@
         <word name="Husband" />
         <word name="Hydra" />
         <word name="Hyena" />
-        <word name="I" plural="!We" />
+        <word name="I" plural="!We" poss="!My" />
         <word name="Iconoclast" />
         <word name="Immigrant" />
         <word name="Immortal" />
@@ -2859,8 +2948,8 @@
         <word name="Magician" />
         <word name="Maiden" />
         <word name="Maker" />
-        <word name="Mama" plural="" />
-        <word name="Man" plural="2en" />
+        <word name="Mama" />
+        <word name="Man" plural="!Men" />
         <word name="Mancer" />
         <word name="Mankind" plural="" />
         <word name="Mantis" />
@@ -2875,11 +2964,14 @@
         <word name="Me" plural="!Us" />
         <word name="Mech" />
         <word name="Medic" />
+        <word name="Medium" />
         <word name="Medusa" plural="" />
         <word name="Member" />
         <word name="Mentor" />
         <word name="Mercenary" />
         <word name="Merchant" />
+        <word name="Midwife" plural="2ves" />
+        <word name="Migrant" />
         <word name="Military" plural="" />
         <word name="Militia" plural="" />
         <word name="Miller" />
@@ -2887,6 +2979,7 @@
         <word name="Mistress" />
         <word name="Mob" />
         <word name="Mole" />
+        <word name="Mom" />
         <word name="Monk" />
         <word name="Monster" />
         <word name="Mortal" />
@@ -2898,6 +2991,7 @@
         <word name="Murderer" />
         <word name="Mustang" />
         <word name="Mutant" />
+        <word name="My" plural="!Our" />
         <word name="Myself" plural="!Ourselves" />
         <word name="Mystic" />
         <word name="Nation" />
@@ -2906,14 +3000,17 @@
         <word name="Navy" plural="" />
         <word name="Necromancer" />
         <word name="Nemesis" plural="2es" />
+        <word name="No One" />
         <word name="Nobody" />
         <word name="Nomad" />
         <word name="Nun" />
+        <word name="Nurse" />
         <word name="Octopus" />
         <word name="Odin" plural="" />
         <word name="Officer" />
         <word name="Omnivore" />
         <word name="Operative" />
+        <word name="Opponent" />
         <word name="Oppressor" />
         <word name="Oracle" />
         <word name="Orc" />
@@ -2929,9 +3026,10 @@
         <word name="Paladin" />
         <word name="Pantheon" />
         <word name="Panther" />
-        <word name="Papa" plural="" />
+        <word name="Papa" />
         <word name="Parasite" />
         <word name="Pariah" />
+        <word name="Patient" />
         <word name="Patron" />
         <word name="Person" plural="!People" />
         <word name="Phantom" />
@@ -2964,6 +3062,7 @@
         <word name="Prophet" />
         <word name="Protector" />
         <word name="Psychic" />
+        <word name="Psychopath" />
         <word name="Punisher" />
         <word name="Puppy" />
         <word name="Pursuer" />
@@ -2987,6 +3086,7 @@
         <word name="Revenant" />
         <word name="Rider" />
         <word name="Rival" />
+        <word name="Robber" />
         <word name="Robot" />
         <word name="Rockstar" />
         <word name="Rogue" />
@@ -3018,6 +3118,7 @@
         <word name="Shark" />
         <word name="Sheep" plural="" />
         <word name="Shifter" />
+        <word name="Shoemaker" />
         <word name="Sinner" />
         <word name="Sister" />
         <word name="Slave" />
@@ -3054,6 +3155,7 @@
         <word name="Tarantula" />
         <word name="Teacher" />
         <word name="Team" />
+        <word name="Telepath" />
         <word name="Termite" />
         <word name="Thief" plural="1ves" />
         <word name="Thor" plural="" />
@@ -3079,6 +3181,7 @@
         <word name="Tycoon" />
         <word name="Tyrant" />
         <word name="Unicorn" />
+        <word name="Urchin" />
         <word name="Vagabond" />
         <word name="Valkyrie" />
         <word name="Vampire" />
@@ -3100,7 +3203,8 @@
         <word name="Wasp" />
         <word name="Watcher" />
         <word name="Watchman" plural="2en" />
-        <word name="Weaver" />
+        <word name="We" plural="" poss="Our" />
+        <word name="Welder" />
         <word name="Wendigo" plural="" />
         <word name="Werewolf" plural="1ves" />
         <word name="Whale" />
@@ -3117,13 +3221,13 @@
         <word name="Worm" />
         <word name="Wraith" />
         <word name="Writer" />
-        <word name="You" plural="" />
+        <word name="You" plural="" poss="r" />
         <word name="Zealot" />
         <word name="Zeus" plural="" />
         <word name="Zombie" />
         <word name="[Character's Name]" plural="" />
     </category>
-    <category id="5" name="Action" shortName="ac">
+    <category id="5" name="Action" shortName="ac" implicitPlural="true">
         <word name="Abandon" noun="ment" />
         <word name="Abduct" noun="-" />
         <word name="Abolish" noun="ment" />
@@ -3135,12 +3239,13 @@
         <word name="Accomplish" noun="ment" />
         <word name="Achieve" noun="ment" />
         <word name="Act" noun="-" />
-        <word name="Action" plural="-" pres="" past="" />
+        <word name="Action" pres="" past="" />
+        <word name="Activate" noun="-" />
         <word name="Adapt" noun="ation" />
         <word name="Add" noun="ition" />
-        <word name="Advance" plural="-" noun="ment" />
-        <word name="Adventure" plural="-" />
-        <word name="Affect" />
+        <word name="Advance" noun="ment" />
+        <word name="Adventure" />
+        <word name="Affect" noun="!Effect" />
         <word name="Agree" noun="ment" />
         <word name="Aim" />
         <word name="Allow" noun="ance" />
@@ -3155,126 +3260,131 @@
         <word name="Ascend" noun="1sion" />
         <word name="Ask" noun="!Question" />
         <word name="Asleep" noun="!Sleep" />
-        <word name="Assault" plural="-" />
+        <word name="Assault" />
         <word name="Assist" noun="ance" />
-        <word name="Attack" plural="-" />
+        <word name="Attack" />
         <word name="Augment" noun="ation" />
         <word name="Avenge" noun="!Revenge" />
-        <word name="Await" />
+        <word name="Await" noun="!Wait" />
         <word name="Awaken" noun="ing" perf="!Awoken" />
-        <word name="Ban" inf="ning" past="ned" />
-        <word name="Bang" plural="-" />
+        <word name="Ban" prtc="ning" past="ned" />
+        <word name="Bang" />
         <word name="Banish" noun="ment" />
         <word name="Bash" />
         <word name="Batter" />
-        <word name="Battle" plural="-" past="" />
-        <word name="Be" plural="!Are" pres="!Is" past="!Was" perf="!Has Been" />
+        <word name="Battle" />
+        <word name="Be" noun="ing" plural="!Are" pres="!Is" past="!Was" perf="en" />
         <word name="Bear" past="!Bore" perf="!Borne" />
         <word name="Beat" noun="ing" />
         <word name="Become" past="3ame" perf="=" />
-        <word name="Beg" inf="ging" past="ged" />
-        <word name="Begin" noun="ning" inf="ning" past="2an" perf="2un" />
-        <word name="Begone" inf="" past="" />
+        <word name="Beg" prtc="ging" past="ged" />
+        <word name="Begin" noun="ning" prtc="ning" past="2an" perf="2un" />
+        <word name="Begone" prtc="" past="" />
         <word name="Behold" past="3eld" />
         <word name="Believe" noun="2f" />
-        <word name="Bet" plural="-" inf="ting" past="" />
+        <word name="Bet" prtc="ting" past="" />
         <word name="Betray" noun="al" past="ed" />
-        <word name="Bid" plural="-" inf="ding" past="" />
+        <word name="Bid" prtc="ding" past="" />
         <word name="Bind" past="!Bound" />
-        <word name="Blame" plural="-" />
-        <word name="Blast" plural="-" />
+        <word name="Blame" />
+        <word name="Blast" />
         <word name="Bleed" noun="ing" past="2d" />
         <word name="Bless" noun="ing" />
-        <word name="Blink" plural="-" />
-        <word name="Block" plural="-" />
-        <word name="Bluff" plural="-" />
-        <word name="Blur" inf="ring" past="red" />
+        <word name="Blink" />
+        <word name="Block" />
+        <word name="Bluff" />
+        <word name="Blur" prtc="ring" past="red" />
         <word name="Boil" />
         <word name="Boom" past="" />
-        <word name="Born" noun="!Birth" inf="" pres="" past="" />
+        <word name="Born" noun="!Birth" prtc="" pres="" past="" />
         <word name="Borrow" noun="!Loan" />
-        <word name="Bounce" plural="-" />
-        <word name="Bow" plural="-" />
+        <word name="Bounce" />
+        <word name="Bow" />
         <word name="Brace" />
-        <word name="Breach" plural="-" />
+        <word name="Breach" />
         <word name="Break" past="!Broke" perf="!Broken" />
         <word name="Breathe" noun="1" />
         <word name="Bring" past="!Brought" />
-        <word name="Bubble" plural="-" />
+        <word name="Bubble" />
         <word name="Build" noun="ing" past="1t" />
         <word name="Burgle" noun="1ary" />
-        <word name="Burn" noun="ing" perf="t" />
-        <word name="Burst" plural="-" />
+        <word name="Burn" perf="t" />
+        <word name="Burst" />
         <word name="Bury" noun="1ial" />
         <word name="Buy" past="!Bought" />
-        <word name="Buzz" plural="-" />
-        <word name="Call" plural="-" />
-        <word name="Cancel" noun="lation" inf="ling" past="led" />
-        <word name="Cannot" inf="" pres="" past="" />
+        <word name="Buzz" />
+        <word name="Call" />
+        <word name="Can" plural="" prtc="!Being Able" pres="" past="!Could" />
+        <word name="Can't" plural="" prtc="!Not Being Able" pres="" past="!Couldn't" />
+        <word name="Cancel" noun="lation" prtc="ling" past="led" />
+        <word name="Cannot" plural="" prtc="!Not Being Able" pres="" past="" />
         <word name="Capture" noun="-" />
         <word name="Care" />
-        <word name="Carry" noun="1iage" />
-        <word name="Carve" noun="-" perf="-" />
-        <word name="Cascade" plural="-" />
-        <word name="Cast" plural="-" past="" />
-        <word name="Catch" plural="-" past="!Caught" />
-        <word name="Cause" plural="-" />
-        <word name="Celebrate" />
-        <word name="Change" plural="-" />
-        <word name="Chant" plural="-" />
-        <word name="Char" inf="ring" past="red" />
-        <word name="Charge" plural="-" />
-        <word name="Chase" plural="-" />
-        <word name="Chat" inf="ting" past="ted" />
-        <word name="Cheer" plural="-" />
+        <word name="Carry" />
+        <word name="Carve" noun="1ing" perf="-" />
+        <word name="Cascade" />
+        <word name="Cast" past="" />
+        <word name="Catch" past="!Caught" />
+        <word name="Cause" />
+        <word name="Celebrate" noun="-" />
+        <word name="Change" />
+        <word name="Chant" />
+        <word name="Char" prtc="ring" past="red" />
+        <word name="Charge" />
+        <word name="Chase" />
+        <word name="Chat" prtc="ting" past="ted" />
+        <word name="Cheer" />
         <word name="Choke" />
-        <word name="Choose" past="3se" perf="3sen" />
-        <word name="Cipher" plural="-" />
-        <word name="Clang" plural="-" />
-        <word name="Clash" plural="-" />
+        <word name="Choose" plural="3ice" past="3se" perf="3sen" />
+        <word name="Cipher" />
+        <word name="Clang" />
+        <word name="Clash" />
         <word name="Cleave" noun="3ft" />
-        <word name="Click" plural="-" />
+        <word name="Click" />
         <word name="Climb" />
         <word name="Cling" />
         <word name="Close" past="d" />
-        <word name="Clutch" plural="-" />
+        <word name="Clutch" />
         <word name="Collaborate" noun="-" />
         <word name="Collect" noun="-" />
-        <word name="Combat" inf="" pres="" past="" />
+        <word name="Combat" prtc="" pres="" past="" />
         <word name="Combine" noun="1ation" />
         <word name="Come" past="!Came" perf="=" />
-        <word name="Command" plural="-" noun="ment" />
+        <word name="Command" noun="ment" />
         <word name="Condemn" noun="ation" />
         <word name="Configure" noun="1ation" />
         <word name="Confuse" noun="-" />
         <word name="Congregate" noun="-" />
         <word name="Connect" noun="-" />
-        <word name="Conquest" plural="-" />
-        <word name="Conspire" />
-        <word name="Construct" plural="-" noun="-" />
-        <word name="Contact" plural="-" />
+        <word name="Conquest" />
+        <word name="Consider" noun="ation" />
+        <word name="Consist" noun="ency" />
+        <word name="Conspire" noun="1acy" />
+        <word name="Construct" noun="-" />
+        <word name="Contact" />
         <word name="Contradict" noun="-" />
         <word name="Contribute" noun="-" />
-        <word name="Control" plural="-" inf="ling" past="led" />
+        <word name="Control" prtc="ling" past="led" />
         <word name="Convert" noun="1sion" />
         <word name="Cooperate" noun="-" />
-        <word name="Copy" plural="-" />
+        <word name="Copy" />
         <word name="Corrode" noun="2sion" />
-        <word name="Cough" plural="-" />
-        <word name="Cover" plural="-" />
-        <word name="Crackle" plural="-" />
-        <word name="Craft" plural="-" />
-        <word name="Crash" plural="-" />
+        <word name="Cough" />
+        <word name="Cover" />
+        <word name="Crackle" />
+        <word name="Craft" />
+        <word name="Crash" />
         <word name="Crawl" />
         <word name="Create" noun="-" />
         <word name="Cry" plural="1ies" />
         <word name="Curse" />
-        <word name="Cut" plural="-" inf="ting" past="" />
-        <word name="Dance" plural="-" />
+        <word name="Cut" prtc="ting" past="" />
+        <word name="Damn" noun="ation" />
+        <word name="Dance" />
         <word name="Dash" />
         <word name="Daze" />
         <word name="Dazzle" />
-        <word name="Deal" plural="-" past="t" />
+        <word name="Deal" past="t" />
         <word name="Deceit" noun="2ption" />
         <word name="Decide" noun="2sion" />
         <word name="Decimate" noun="-" />
@@ -3288,48 +3398,49 @@
         <word name="Define" noun="1ition" />
         <word name="Defy" noun="1iance" />
         <word name="Delete" noun="-" />
-        <word name="Delve" plural="-" />
-        <word name="Demand" plural="-" />
+        <word name="Delve" />
+        <word name="Demand" />
         <word name="Deny" noun="1ial" />
         <word name="Depart" noun="ure" />
         <word name="Deprave" noun="1ity" />
         <word name="Descend" noun="1t" />
         <word name="Deserve" noun="2t" />
-        <word name="Design" plural="-" />
+        <word name="Design" />
         <word name="Destroy" noun="2uction" past="ed" />
         <word name="Detect" noun="-" />
         <word name="Devastate" noun="-" />
         <word name="Devour" />
-        <word name="Die" noun="!Death" inf="!Dying" />
+        <word name="Die" noun="!Death" prtc="!Dying" />
         <word name="Dine" noun="!Dinner" />
         <word name="Disagree" noun="ment" />
         <word name="Discard" />
         <word name="Discover" noun="y" />
         <word name="Display" plural="s" past="ed" />
         <word name="Distract" noun="-" />
-        <word name="Dive" plural="-" past="!Dove" />
+        <word name="Dive" past="!Dove" />
         <word name="Divide" noun="2sion" />
         <word name="Do" noun="ing" pres="es" past="!Did" perf="!Done" />
         <word name="Dominate" noun="-" />
-        <word name="Don't" inf="" pres="" past="" />
-        <word name="Drain" plural="-" />
-        <word name="Draw" noun="ing" />
-        <word name="Dream" plural="-" />
-        <word name="Drift" plural="-" />
-        <word name="Drink" plural="-" past="!Drank" perf="!Drunk" />
-        <word name="Drive" plural="-" />
-        <word name="Drop" plural="-" inf="ping" past="ped" />
-        <word name="Duel" plural="-" />
+        <word name="Don't" plural="" prtc="!Not Doing" pres="" past="!Didn't Do" perf="!Not Done" />
+        <word name="Drain" />
+        <word name="Draw" noun="ing" past="!Drew" perf="-" />
+        <word name="Dream" past="t" />
+        <word name="Drift" />
+        <word name="Drink" past="!Drank" perf="!Drunk" />
+        <word name="Drive" past="!Drove" perf="-" />
+        <word name="Drop" prtc="ping" past="ped" />
+        <word name="Duel" />
         <word name="Dwell" noun="ing" />
         <word name="Eat" past="!Ate" perf="en" />
-        <word name="Ebb" plural="-" />
-        <word name="Effect" plural="-" />
+        <word name="Ebb" />
+        <word name="Effect" />
         <word name="Elevate" noun="-" />
         <word name="Emanate" noun="-" />
-        <word name="Embrace" plural="-" />
+        <word name="Embrace" />
         <word name="Emerge" noun="nce" />
-        <word name="Encounter" plural="-" />
-        <word name="End" plural="-" />
+        <word name="Enable" plural="" />
+        <word name="Encounter" />
+        <word name="End" />
         <word name="Endure" noun="1ance" />
         <word name="Engage" noun="ment" />
         <word name="Enhance" noun="ment" />
@@ -3338,7 +3449,7 @@
         <word name="Eradicate" noun="-" />
         <word name="Erase" noun="1ure" />
         <word name="Escalate" noun="-" />
-        <word name="Escape" plural="-" />
+        <word name="Escape" />
         <word name="Estimate" noun="-" />
         <word name="Etch" />
         <word name="Evacuate" noun="-" />
@@ -3349,218 +3460,235 @@
         <word name="Except" noun="-" />
         <word name="Excite" noun="ment" />
         <word name="Execute" noun="-" />
+        <word name="Exhaust" plural="ion" noun="-" />
         <word name="Exist" noun="ence" />
-        <word name="Exit" plural="-" />
+        <word name="Exit" />
         <word name="Expand" noun="1sion" />
         <word name="Expedite" noun="-" />
-        <word name="Experiment" plural="-" />
+        <word name="Experiment" />
         <word name="Explode" noun="2sion" />
-        <word name="Exploit" plural="-" />
+        <word name="Exploit" />
         <word name="Explore" noun="1ation" />
         <word name="Exterminate" noun="-" />
         <word name="Extract" noun="-" />
         <word name="Fade" />
         <word name="Fail" noun="ure" />
-        <word name="Fall" plural="-" past="!Fell" perf="en" />
+        <word name="Fall" past="!Fell" perf="en" />
         <word name="Falter" noun="ing" />
         <word name="Fantasize" noun="3y" />
-        <word name="Fear" plural="-" />
+        <word name="Fear" />
+        <word name="Feature" />
         <word name="Feed" past="!Fed" />
         <word name="Feel" past="!Felt" />
-        <word name="Feud" plural="-" />
+        <word name="Feud" />
         <word name="Fiddle" />
-        <word name="Fight" plural="-" past="!Fought" />
+        <word name="Fight" past="!Fought" />
         <word name="Fill" />
-        <word name="Find" plural="-" />
-        <word name="Fit" inf="ting" past="" />
-        <word name="Fix" plural="-" />
-        <word name="Fizzle" plural="-" />
-        <word name="Flash" plural="-" />
-        <word name="Flee" inf="ing" past="1d" />
-        <word name="Flip" inf="ping" past="ped" />
-        <word name="Flop" inf="ping" past="ped" />
-        <word name="Flow" plural="-" />
+        <word name="Find" />
+        <word name="Fit" prtc="ting" past="" />
+        <word name="Fix" />
+        <word name="Fizzle" />
+        <word name="Flash" />
+        <word name="Flee" prtc="ing" past="1d" />
+        <word name="Flip" prtc="ping" past="ped" />
+        <word name="Flop" prtc="ping" past="ped" />
+        <word name="Flow" />
         <word name="Fly" noun="!Flight" past="!Flew" perf="!Flown" />
-        <word name="Fold" plural="-" />
+        <word name="Fold" />
         <word name="Follow" noun="ing" />
         <word name="Forbid" past="2ade" perf="den" />
-        <word name="Foresee" inf="ing" past="2aw" perf="-" />
+        <word name="Foresee" noun="2ight" prtc="ing" past="2aw" perf="-" />
         <word name="Foretell" past="3old" />
-        <word name="Forget" inf="ting" past="2ot" perf="2otten" />
+        <word name="Forget" noun="!Oblivion" prtc="ting" past="2ot" perf="2otten" />
         <word name="Forgive" noun="ness" past="3ave" perf="-" />
+        <word name="Form" />
         <word name="Fray" plural="s" past="ed" />
         <word name="Freefall" past="3ell" perf="en" />
         <word name="Freeze" past="!Froze" perf="!Frozen" />
-        <word name="Fulfill" />
-        <word name="Fuse" plural="-" noun="-" />
-        <word name="Gallop" plural="-" />
-        <word name="Gamble" plural="-" />
+        <word name="Fulfill" plural="" />
+        <word name="Fuse" />
+        <word name="Gain" />
+        <word name="Gallop" />
+        <word name="Gamble" />
         <word name="Gather" noun="ing" />
         <word name="Gaze" />
-        <word name="Genocide" plural="-" inf="" pres="" past="" />
-        <word name="Get" inf="ting" past="!Got" />
-        <word name="Getaway" plural="s" inf="!Getting Away" pres="" past="!Got Away" />
-        <word name="Give" past="!Gave" perf="-" />
+        <word name="Genocide" prtc="" pres="" past="" />
+        <word name="Get" prtc="ting" past="!Got" />
+        <word name="Getaway" plural="s" prtc="!Getting Away" pres="" past="!Got Away" />
+        <word name="Give" noun="-" past="!Gave" perf="-" />
         <word name="Glide" />
-        <word name="Glimmer" plural="-" />
-        <word name="Glow" plural="-" />
+        <word name="Glimmer" />
+        <word name="Glow" />
         <word name="Gnaw" />
         <word name="Go" past="!Went" perf="!Gone" />
-        <word name="Grab" inf="bing" past="bed" />
+        <word name="Grab" prtc="bing" past="bed" />
         <word name="Grant" />
         <word name="Grasp" />
         <word name="Greet" noun="ing" />
         <word name="Grieve" noun="2f" />
-        <word name="Grin" inf="ning" past="ned" />
+        <word name="Grin" prtc="ning" past="ned" />
         <word name="Grind" />
-        <word name="Grip" inf="ping" past="ped" />
+        <word name="Grip" prtc="ping" past="ped" />
         <word name="Grow" past="2ew" perf="-" />
-        <word name="Guarantee" plural="-" inf="ing" />
-        <word name="Guess" plural="-" />
-        <word name="Hack" plural="-" />
+        <word name="Guarantee" prtc="ing" />
+        <word name="Guess" />
+        <word name="Hack" />
         <word name="Haggle" />
         <word name="Halt" />
-        <word name="Handle" noun="ing" />
+        <word name="Handle" />
         <word name="Hang" />
-        <word name="Harm" plural="-" />
-        <word name="Haul" plural="-" />
-        <word name="Have" pres="!Has" past="!Had" perf="!Has Had" />
-        <word name="He Is" inf="" past="2Was" perf="2Has Been" />
+        <word name="Harm" />
+        <word name="Hate" plural="" />
+        <word name="Haul" />
+        <word name="Have" pres="!Has" past="!Had" />
+        <word name="Have to" prtc="4ing to" pres="!Has to" past="!Had to" />
+        <word name="He Is" plural="!They Are" prtc=" Being" pres="" past="2Was" perf="2Has Been" />
         <word name="Heal" />
-        <word name="Hear" past="d" />
+        <word name="Hear" noun="ing" past="d" />
         <word name="Hide" past="1" perf="1den" />
-        <word name="Hike" plural="-" />
-        <word name="Hire" plural="-" />
-        <word name="Hit" inf="ting" past="" />
+        <word name="Hike" />
+        <word name="Hire" />
+        <word name="Hit" prtc="ting" past="" />
         <word name="Hold" past="!Held" />
-        <word name="Howl" plural="-" />
+        <word name="Howl" />
         <word name="Humiliate" noun="-" />
-        <word name="Hunt" plural="-" />
+        <word name="Hunt" />
         <word name="Hurl" />
-        <word name="Hurry" />
+        <word name="Hurry" plural="" />
         <word name="Hurt" past="" />
-        <word name="I Am" inf="" pres="" past="2Was" />
+        <word name="I Am" plural="!We Are" prtc=" Being" pres="" past="2Was" />
         <word name="Ignite" noun="-" />
         <word name="Imagine" noun="1ation" />
         <word name="Impact" />
         <word name="Imprint" />
         <word name="Incinerate" noun="-" />
+        <word name="Incite" noun="2dent" />
         <word name="Infect" noun="-" />
         <word name="Inherit" noun="ance" />
         <word name="Innovate" noun="-" />
-        <word name="Insult" plural="-" />
+        <word name="Insult" />
         <word name="Interact" noun="-" />
         <word name="Intervene" noun="1tion" />
         <word name="Introduce" noun="1tion" />
         <word name="Invade" noun="2sion" />
-        <word name="It Is" plural="!They Are" inf="" pres="" past="2Was" />
+        <word name="It Is" plural="!They Are" prtc=" Being" pres="" past="2Was" />
         <word name="Itch" />
-        <word name="Jam" inf="ming" />
+        <word name="Jam" prtc="ming" />
         <word name="Join" noun="!Union" />
-        <word name="Jolt" plural="-" />
+        <word name="Jolt" />
         <word name="Joust" />
-        <word name="Jump" plural="-" />
-        <word name="Karting" inf="" pres="" past="" />
+        <word name="Jump" />
+        <word name="Karting" prtc="" pres="" past="" />
         <word name="Keel" />
-        <word name="Kick" plural="-" />
-        <word name="Kill" plural="-" />
-        <word name="Kinesis" inf="" past="" />
-        <word name="Kiss" plural="-" />
-        <word name="Know" noun="ing" />
-        <word name="Labor" plural="-" />
+        <word name="Kick" />
+        <word name="Kill" />
+        <word name="Kinesis" prtc="" past="" />
+        <word name="Kiss" />
+        <word name="Know" noun="ing" past="!Knew" perf="-" />
+        <word name="Labor" />
         <word name="Lament" noun="ation" />
+        <word name="Last" plural="" />
         <word name="Laugh" />
-        <word name="Lay" inf="!Lying" past="1id" />
+        <word name="Lay" plural="s" prtc="!Lying" past="1id" />
         <word name="Lead" past="" />
         <word name="Lean" />
-        <word name="Leap" plural="-" past="t" />
+        <word name="Leap" past="t" />
         <word name="Learn" noun="ing" />
-        <word name="Let" inf="ting" past="" />
+        <word name="Let" noun="ting" prtc="ting" past="" />
         <word name="Liberate" noun="-" />
-        <word name="Lie" plural="-" inf="!Lying" />
-        <word name="Lift" plural="-" />
-        <word name="Listen" plural="-" />
+        <word name="Lie" prtc="!Lying" />
+        <word name="Lift" />
+        <word name="Listen" />
         <word name="Live" plural="-" noun="!Life" />
-        <word name="Load" plural="-" />
-        <word name="Loan" plural="-" inf="!Lending" />
-        <word name="Loathe" />
-        <word name="Look" plural="-" />
+        <word name="Load" />
+        <word name="Loan" prtc="!Lending" />
+        <word name="Loathe" plural="1ing" noun="1ing" />
+        <word name="Look" />
         <word name="Lose" noun="1s" past="1t" />
+        <word name="Love" plural="" />
         <word name="Lynch" noun="ing" />
         <word name="Make" past="2de" />
-        <word name="March" plural="-" />
+        <word name="Manoeuver" noun="2re" />
+        <word name="March" />
+        <word name="Mark" />
         <word name="Marry" noun="1iage" past="1ied" />
-        <word name="Mash" plural="-" />
-        <word name="Massacre" plural="-" />
+        <word name="Mash" />
+        <word name="Massacre" />
         <word name="Maul" />
-        <word name="May" inf="" past="!Might" />
+        <word name="May" prtc="" pres="" past="!Might" perf="!Might Have" />
         <word name="Meet" past="!Met" />
         <word name="Meld" />
-        <word name="Melee" inf="" past="" />
+        <word name="Melee" prtc="" past="" />
         <word name="Melt" />
-        <word name="Merge" plural="-" />
-        <word name="Misadventure" plural="-" past="" />
-        <word name="Miss" plural="-" />
-        <word name="Mix" plural="-" />
-        <word name="Mock" plural="-" />
+        <word name="Merge" />
+        <word name="Misadventure" past="" />
+        <word name="Miss" />
+        <word name="Mix" />
+        <word name="Mock" />
         <word name="Morph" />
         <word name="Mourn" noun="ing" />
         <word name="Move" noun="2tion" />
-        <word name="Murder" plural="-" />
+        <word name="Murder" />
+        <word name="Must" prtc="!Having to" pres="" past="!Had to" />
         <word name="Mutate" noun="-" />
-        <word name="Need" plural="-" />
-        <word name="Nudge" plural="-" />
+        <word name="Need" />
+        <word name="Neglect" />
+        <word name="Nudge" />
         <word name="Obey" noun="1dience" past="ed" />
+        <word name="Offer" />
         <word name="Operate" noun="-" />
         <word name="Oppose" noun="1ition" />
-        <word name="Order" plural="-" />
+        <word name="Order" />
         <word name="Oust" />
-        <word name="Overflow" plural="-" />
-        <word name="Overload" plural="-" />
+        <word name="Overflow" />
+        <word name="Overload" />
         <word name="Overtake" past="3ook" perf="-" />
-        <word name="Own" />
+        <word name="Own" noun="!Property" />
+        <word name="Pack" />
+        <word name="Part" />
         <word name="Pass" noun="age" />
-        <word name="Pause" plural="-" />
+        <word name="Pause" />
         <word name="Pay" past="1id" />
         <word name="Perish" />
-        <word name="Pick" plural="-" />
+        <word name="Pick" />
         <word name="Pierce" />
         <word name="Play" plural="s" past="ed" />
-        <word name="Plot" inf="ting" past="ted" />
-        <word name="Pop" inf="ping" past="ped" />
-        <word name="Possess" />
+        <word name="Please" noun="1ure" />
+        <word name="Plot" prtc="ting" past="ted" />
+        <word name="Pop" prtc="ping" past="ped" />
+        <word name="Possess" noun="-" />
         <word name="Pour" />
-        <word name="Practice" plural="-" />
-        <word name="Praise" plural="-" />
+        <word name="Practice" />
+        <word name="Praise" />
         <word name="Pray" noun="er" past="ed" />
-        <word name="Preach" />
+        <word name="Preach" noun="ing" />
         <word name="Predict" noun="-" />
-        <word name="Press" plural="-" />
+        <word name="Press" />
         <word name="Prevail" noun="2lence" />
-        <word name="Prey" plural="-" past="ed" />
+        <word name="Prey" plural="" past="ed" />
         <word name="Proceed" noun="2dure" />
         <word name="Produce" />
         <word name="Progress" />
         <word name="Protect" noun="-" />
         <word name="Prove" noun="2of" />
         <word name="Pry" />
-        <word name="Pull" plural="-" />
-        <word name="Punch" plural="-" />
+        <word name="Pull" />
+        <word name="Punch" />
         <word name="Punish" noun="ment" />
-        <word name="Purchase" plural="-" />
-        <word name="Purge" plural="-" />
+        <word name="Purchase" />
+        <word name="Purge" />
         <word name="Pursue" noun="1it" />
         <word name="Push" />
-        <word name="Put" />
-        <word name="Quit" inf="ting" past="" />
+        <word name="Put" plural="" />
+        <word name="Quit" prtc="ting" past="" />
         <word name="Raid" />
-        <word name="Rain" plural="-" />
+        <word name="Rain" />
         <word name="Raise" />
         <word name="Ransack" />
-        <word name="Rate" noun="1ing" />
+        <word name="Rate" />
         <word name="Rattle" />
         <word name="Rave" />
-        <word name="Reach" plural="-" />
+        <word name="Reach" />
         <word name="Reap" />
         <word name="Receive" />
         <word name="Reclaim" />
@@ -3568,632 +3696,663 @@
         <word name="Recreate" noun="-" />
         <word name="Redeem" noun="2mption" />
         <word name="Reflect" noun="-" />
-        <word name="Reform" plural="-" />
+        <word name="Reform" />
         <word name="Refract" noun="-" />
-        <word name="Regicide" plural="-" inf="" pres="" past="" />
+        <word name="Regicide" prtc="" pres="" past="" />
         <word name="Regress" />
         <word name="Rehearse" noun="1al" />
-        <word name="Reign" plural="-" />
+        <word name="Reign" />
         <word name="Reject" noun="-" />
         <word name="Relax" noun="ation" />
+        <word name="Release" />
         <word name="Reload" />
         <word name="Rely" noun="1iance" />
         <word name="Remain" noun="der" />
         <word name="Remember" noun="2rance" />
         <word name="Remix" />
         <word name="Remove" noun="1al" />
+        <word name="Rend" />
         <word name="Render" />
-        <word name="Repair" plural="-" />
+        <word name="Repair" />
         <word name="Repeat" />
         <word name="Repent" noun="ance" />
-        <word name="Request" plural="-" />
+        <word name="Request" />
         <word name="Require" noun="ment" />
         <word name="Research" />
         <word name="Reserve" noun="1ation" />
-        <word name="Reset" inf="ting" past="=" />
+        <word name="Reset" prtc="ting" past="=" />
         <word name="Resist" noun="ance" />
         <word name="Respond" noun="1se" />
-        <word name="Rest" plural="-" />
-        <word name="Restart" plural="-" />
+        <word name="Rest" />
+        <word name="Restart" />
         <word name="Restore" noun="1ation" />
         <word name="Resurrect" noun="-" />
-        <word name="Retreat" plural="-" />
-        <word name="Return" plural="-" />
-        <word name="Revel" inf="ling" past="led" />
+        <word name="Retreat" />
+        <word name="Return" />
         <word name="Reveal" noun="2lation" />
+        <word name="Revel" prtc="ling" past="led" />
         <word name="Reverse" noun="1al" />
         <word name="Revive" noun="1al" />
         <word name="Revolve" noun="2ution" />
         <word name="Rid" noun="dance" past="=" perf="den" />
-        <word name="Ride" plural="-" past="!Rode" perf="1den" />/>
-        <word name="Ring" plural="-" past="!Rang" perf="!Rung" />
-        <word name="Riot" plural="-" />
-        <word name="Rip" inf="ping" past="ped" />
+        <word name="Ride" past="!Rode" perf="1den" />/>
+        <word name="Ring" past="!Rang" perf="!Rung" />
+        <word name="Riot" />
+        <word name="Rip" prtc="ping" past="ped" />
         <word name="Rise" past="!Rose" perf="n" />
-        <word name="Roll" plural="-" />
-        <word name="Rumble" plural="-" />
-        <word name="Run" plural="-" inf="ning" past="!Ran" perf="=" />
-        <word name="Rush" plural="-" />
+        <word name="Rob" noun="bery" prtc="bing" past="bed" />
+        <word name="Roll" />
+        <word name="Rumble" />
+        <word name="Run" prtc="ning" past="!Ran" perf="=" />
+        <word name="Rush" />
         <word name="Sabotage" />
+        <word name="Sail" />
         <word name="Salvage" />
-        <word name="Save" plural="-" />
+        <word name="Save" noun="!Salvation" />
         <word name="Say" past="1id" />
-        <word name="Scan" inf="ning" past="ned" />
-        <word name="Scare" plural="-" />
-        <word name="Scrape" plural="-" />
-        <word name="Scratch" plural="-" />
-        <word name="Scream" plural="-" />
-        <word name="Screech" plural="-" />
+        <word name="Scan" prtc="ning" past="ned" />
+        <word name="Scare" />
+        <word name="Scrape" />
+        <word name="Scratch" />
+        <word name="Scream" />
+        <word name="Screech" />
         <word name="Sear" />
-        <word name="Search" plural="-" />
-        <word name="Search for" noun="4" inf="4ing for" past="4ed for" />
-        <word name="See" inf="ing" past="!Saw" perf="-" />
+        <word name="Search" />
+        <word name="Search for" noun="4" prtc="4ing for" past="4ed for" />
+        <word name="See" prtc="ing" past="!Saw" perf="-" />
         <word name="Seek" past="!Sought" />
         <word name="Seize" noun="1ure" />
         <word name="Sell" noun="!Sale" past="!Sold" />
-        <word name="Serve" noun="1itude" />
-        <word name="Set" plural="-" inf="ting" past="=" />
+        <word name="Serve" noun="1ice" />
+        <word name="Set" prtc="ting" past="=" />
         <word name="Settle" noun="ment" />
-        <word name="Shake" plural="-" past="!Shook" perf="-" />
-        <word name="Shall" inf="" past="!Should" perf="!Should Have" />
+        <word name="Shake" past="!Shook" perf="-" />
+        <word name="Shall" plural="" prtc="" past="!Should" perf="!Should Have" />
         <word name="Shapeshift" />
-        <word name="Share" plural="-" />
-        <word name="Shatter" plural="-" />
-        <word name="She Is" inf="" past="2Was" perf="2Has Been" />
+        <word name="Share" />
+        <word name="Shatter" />
+        <word name="She Is" plural="!They Are" prtc=" Being" past="2Was" perf="2Has Been" />
         <word name="Shift" />
         <word name="Shimmer" />
         <word name="Shine" past="!Shone" />
-        <word name="Shock" plural="-" />
-        <word name="Shout" plural="-" />
+        <word name="Shock" />
+        <word name="Should" plural="" prtc="" pres="" past="" perf="!Should Have" />
+        <word name="Shout" />
         <word name="Shove" />
-        <word name="Show" plural="-" perf="-" />
-        <word name="Shriek" plural="-" />
+        <word name="Show" perf="-" />
+        <word name="Shriek" />
         <word name="Shrink" noun="age" past="3ank" perf="3unken" />
         <word name="Shrivel" />
         <word name="Siege" />
+        <word name="Sift" />
         <word name="Simulate" noun="-" />
         <word name="Sing" noun="!Song" past="!Sang" perf="!Sung" />
-        <word name="Sink" plural="-" past="!Sank" perf="!Sunken" />
-        <word name="Siphon" plural="-" />
-        <word name="Sit" past="!Sat" />
-        <word name="Skin" inf="ning" past="ned" />
-        <word name="Skip" inf="ping" past="ped" />
+        <word name="Sink" past="!Sank" perf="!Sunken" />
+        <word name="Siphon" />
+        <word name="Sit" noun="ting" prtc="ting" past="!Sat" />
+        <word name="Skin" prtc="ning" past="ned" />
+        <word name="Skip" prtc="ping" past="ped" />
         <word name="Skirmish" />
-        <word name="Slam" plural="-" inf="ming" />
-        <word name="Slash" plural="-" />
+        <word name="Slam" prtc="ming" />
+        <word name="Slash" />
         <word name="Slaughter" />
-        <word name="Sleep" plural="-" past="!Slept" />
-        <word name="Slice" plural="-" />
-        <word name="Slide" plural="-" />
-        <word name="Sling" plural="-" />
-        <word name="Slip" inf="ping" past="ped" />
-        <word name="Slog" plural="-" inf="ging" past="ged" />
+        <word name="Sleep" past="!Slept" />
+        <word name="Slice" />
+        <word name="Slide" />
+        <word name="Sling" />
+        <word name="Slip" prtc="ping" past="ped" />
+        <word name="Slog" prtc="ging" past="ged" />
         <word name="Smash" />
-        <word name="Smell" plural="-" />
-        <word name="Smile" plural="-" />
-        <word name="Snap" plural="-" inf="ping" past="ped" />
-        <word name="Sneeze" plural="-" />
-        <word name="Snip" inf="ping" past="ped" />
+        <word name="Smell" />
+        <word name="Smile" />
+        <word name="Smite" past="!Smote" perf="1ten" />
+        <word name="Snap" prtc="ping" past="ped" />
+        <word name="Sneeze" />
+        <word name="Snip" prtc="ping" past="ped" />
         <word name="Soak" />
         <word name="Soar" />
-        <word name="Spare" plural="-" />
-        <word name="Spark" plural="-" />
-        <word name="Sparkle" plural="-" />
+        <word name="Sow" perf="-" />
+        <word name="Spare" />
+        <word name="Spark" />
+        <word name="Sparkle" />
         <word name="Spawn" />
         <word name="Speak" noun="2ech" />
-        <word name="Spend" />
-        <word name="Spin" plural="-" inf="ning" past="!Spun" />
+        <word name="Spend" noun="iture" />
+        <word name="Spin" prtc="ning" past="!Spun" />
         <word name="Spitter" />
         <word name="Splash" />
-        <word name="Split" inf="ting" past="" />
+        <word name="Split" prtc="ting" past="" />
         <word name="Spread" />
-        <word name="Sprint" plural="-" />
+        <word name="Sprint" />
+        <word name="Stain" />
         <word name="Stalk" />
         <word name="Stand" past="!Stood" />
         <word name="Stare" />
         <word name="Start" />
         <word name="Startle" />
         <word name="Starve" noun="1ation" />
-        <word name="Steal" noun="!Theft" perf="!Stolen" />
-        <word name="Step" plural="-" inf="ping" past="ped" />
+        <word name="Steal" noun="!Theft" past="!Stole" perf="!Stolen" />
+        <word name="Step" prtc="ping" past="ped" />
         <word name="Stick" perf="!Stuck" />
         <word name="Sting" past="!Stung" />
         <word name="Stink" past="!Stank" perf="!Stunk" />
+        <word name="Stoke" />
         <word name="Stomp" noun="!Stampede" />
-        <word name="Stop" plural="-" inf="ping" past="ped" />
+        <word name="Stop" prtc="ping" past="ped" />
         <word name="Strangle" noun="2ulation" />
         <word name="Stray" plural="s" past="ed" />
-        <word name="Stride" plural="-" past="Strode" />
-        <word name="Strike" plural="-" past="3uck" perf="2cken" />
-        <word name="Study" plural="-" />
-        <word name="Stunt" plural="-" />
+        <word name="Stride" past="Strode" />
+        <word name="Strike" past="3uck" perf="2cken" />
+        <word name="Study" />
+        <word name="Stun" prtc="ning" past="ned" />
+        <word name="Stunt" />
         <word name="Submerge" noun="2sion" />
+        <word name="Submit" noun="1ssion" prtc="ting" past="ted" />
         <word name="Substitute" noun="-" />
         <word name="Subtract" noun="-" />
+        <word name="Succeed" noun="2ss" />
         <word name="Succumb" />
-        <word name="Suicide" plural="-" inf="" pres="" past="" />
-        <word name="Summon" plural="-" />
-        <word name="Supply" plural="-" />
+        <word name="Suffer" plural="ing" noun="ing" />
+        <word name="Suicide" prtc="" pres="" past="" />
+        <word name="Summon" />
+        <word name="Supply" />
         <word name="Suppress" noun="-" />
         <word name="Surf" />
-        <word name="Surge" plural="-" />
+        <word name="Surge" />
         <word name="Surpass" />
         <word name="Surround" />
-        <word name="Survive" noun="1al" />
-        <word name="Sustain" plural="" noun="3enance" />
+        <word name="Survive" plural="1al" noun="1al" />
+        <word name="Sustain" plural="3enance" noun="3enance" />
         <word name="Swear" past="!Swore" perf="!Sworn" />
         <word name="Sweep" past="!Swept" />
         <word name="Sync" />
         <word name="Synchronize" noun="1ation" />
         <word name="Take" past="!Took" perf="-" />
-        <word name="Talk" plural="-" />
+        <word name="Talk" />
         <word name="Tamper" />
         <word name="Tarnish" />
-        <word name="Taunt" plural="-" />
+        <word name="Taunt" />
         <word name="Teach" noun="ing" past="!Taught" />
         <word name="Teleport" noun="ation" />
         <word name="Tell" past="!Told" />
         <word name="Tempt" noun="ation" />
         <word name="Tend" />
-        <word name="Test" plural="-" />
-        <word name="That Is" plural="!They Are" inf="" pres="" past="2Was" />
+        <word name="Test" />
+        <word name="That Is" plural="!They Are" prtc="" pres="" past="2Was" />
         <word name="Thrive" />
         <word name="Throw" past="2ew" perf="-" />
         <word name="Thwart" />
-        <word name="Tie" plural="-" inf="!Tying" />
-        <word name="Tilt" plural="-" />
-        <word name="Torture" plural="-" />
-        <word name="Touch" plural="-" />
+        <word name="Tie" prtc="!Tying" />
+        <word name="Tilt" />
+        <word name="Tire" plural="-" noun="dness" />
+        <word name="Torture" />
+        <word name="Touch" />
         <word name="Tow" />
-        <word name="Track" plural="-" />
-        <word name="Trade" plural="-" />
+        <word name="Track" />
+        <word name="Trade" />
         <word name="Train" noun="ing" />
         <word name="Transform" noun="ation" />
-        <word name="Transit" noun="-" inf="" past="" />
-        <word name="Transition" plural="-" />
-        <word name="Travel" plural="-" />
+        <word name="Transit" noun="-" prtc="" past="" />
+        <word name="Transition" />
+        <word name="Travel" />
         <word name="Traverse" noun="1al" />
-        <word name="Tread" plural="-" />
+        <word name="Tread" />
         <word name="Treat" noun="ment" />
-        <word name="Trick" plural="-" />
-        <word name="Truce" plural="-" inf="" pres="" past="" />
-        <word name="Try" plural="-" pres="1ies" />
-        <word name="Turn" plural="-" />
-        <word name="Twist" plural="-" />
+        <word name="Trick" />
+        <word name="Try" pres="1ies" />
+        <word name="Turn" />
+        <word name="Twist" />
         <word name="Understand" past="3ood" />
-        <word name="Unlock" plural="-" />
-        <word name="Update" plural="-" />
-        <word name="Upgrade" plural="-" />
-        <word name="Use" plural="-" />
+        <word name="Unlock" />
+        <word name="Update" />
+        <word name="Upgrade" />
+        <word name="Use" />
         <word name="Vanish" noun="ing" />
         <word name="Vanquish" />
         <word name="Vaporize" noun="1ation" />
-        <word name="View" plural="-" />
-        <word name="Wager" plural="-" />
-        <word name="Wail" plural="-" />
-        <word name="Wait" plural="-" />
+        <word name="View" />
+        <word name="Wage" />
+        <word name="Wager" />
+        <word name="Wail" />
+        <word name="Wait" />
         <word name="Wake Up" pres="3s Up" past="!Woke Up" perf="!Woken Up" />
-        <word name="Walk" plural="-" />
-        <word name="Want" plural="-" />
-        <word name="War" plural="-" inf="ring" pres="" past="" />
+        <word name="Walk" />
+        <word name="Want" />
+        <word name="War" prtc="ring" pres="" past="" />
         <word name="Warn" noun="ing" />
-        <word name="Waste" plural="-" />
-        <word name="Watch" plural="-" />
+        <word name="Waste" />
+        <word name="Watch" />
         <word name="Wear" past="!Worn" />
         <word name="Weave" past="!Woven" />
         <word name="Weld" />
-        <word name="Whack" plural="-" />
-        <word name="Whisper" plural="-" />
-        <word name="Whistle" plural="-" />
-        <word name="Win" inf="ning" past="!Won" />
-        <word name="Wipe" plural="-" />
+        <word name="Whack" />
+        <word name="Whisper" />
+        <word name="Whistle" />
+        <word name="Will" past="" />
+        <word name="Win" prtc="ning" past="!Won" />
+        <word name="Wipe" />
+        <word name="Wish" />
         <word name="Wither" />
         <word name="Withhold" past="3eld" />
-        <word name="Won't" inf="" pres="" past="" />
-        <word name="Work" plural="-" />
-        <word name="Worry" plural="-" />
-        <word name="Worship" inf="ping" past="ped" />
+        <word name="Won't" prtc="" pres="" past="" />
+        <word name="Work" />
+        <word name="Worry" />
+        <word name="Worship" prtc="ping" past="ped" />
         <word name="Wreak" />
-        <word name="Wreck" plural="-" />
+        <word name="Wreck" />
         <word name="Write" noun="1ing" past="!Wrote" perf="1ten" />
-        <word name="Yearn" plural="" noun="ing" />
+        <word name="Yearn" plural="ing" noun="ing" />
         <word name="Yield" />
-        <word name="You Are" inf="" pres="" past="3Were" perf="3Have Been" />
-        <word name="Zap" plural="-" inf="ping" past="ped" />
+        <word name="You Are" prtc="" pres="" past="3Were" perf="3Have Been" />
+        <word name="Zap" prtc="ping" past="ped" />
     </category>
-    <category id="6" name="Place &amp; Time" shortName="pt">
-        <word name="Abode" plural="-" />
-        <word name="Above" />
+    <category id="6" name="Place &amp; Time" shortName="pt" implicitPlural="true">
+        <word name="Abode" />
+        <word name="Above" plural="" />
         <word name="Abyss" />
-        <word name="Academy" plural="-" />
-        <word name="Africa" />
-        <word name="After" />
-        <word name="Afternoon" plural="-" />
-        <word name="Age" plural="-" />
+        <word name="Academy" />
+        <word name="Africa" plural="" />
+        <word name="After" plural="" />
+        <word name="Afternoon" />
+        <word name="Age" />
         <word name="Alley" plural="s" />
         <word name="Alleyway" plural="s" />
-        <word name="Altar" plural="-" />
-        <word name="Always" />
-        <word name="America" plural="-" />
-        <word name="Antarctic" />
-        <word name="Antarctica" />
-        <word name="Apartment" plural="-" />
-        <word name="Arcade" plural="-" />
-        <word name="Archive" plural="-" />
-        <word name="Arctic" />
-        <word name="Area" plural="-" />
-        <word name="Arena" plural="-" />
-        <word name="Ark" plural="-" />
-        <word name="Around" />
-        <word name="Asia" />
-        <word name="Asylum" plural="-" />
-        <word name="Atlantic" />
-        <word name="Atlantis" />
-        <word name="Atmosphere" plural="-" />
-        <word name="Atoll" plural="-" />
-        <word name="Atrium" plural="-" />
-        <word name="Attic" plural="-" />
-        <word name="Autumn" plural="-" />
-        <word name="Avalon" />
-        <word name="Avenue" plural="-" />
-        <word name="Away" />
-        <word name="Babylon" />
-        <word name="Bank" plural="-" />
-        <word name="Barrens" />
-        <word name="Base" plural="-" />
-        <word name="Basement" plural="-" />
-        <word name="Basin" plural="-" />
-        <word name="Bastion" plural="-" />
+        <word name="Altar" />
+        <word name="Always" plural="" />
+        <word name="America" />
+        <word name="Antarctic" plural="" />
+        <word name="Antarctica" plural="" />
+        <word name="Apartment" />
+        <word name="Arcade" />
+        <word name="Archive" />
+        <word name="Arctic" plural="" />
+        <word name="Area" />
+        <word name="Arena" />
+        <word name="Ark" />
+        <word name="Around" plural="" />
+        <word name="Asia" plural="" />
+        <word name="Asylum" />
+        <word name="Atlantic" plural="" />
+        <word name="Atlantis" plural="" />
+        <word name="Atmosphere" />
+        <word name="Atoll" />
+        <word name="Atrium" />
+        <word name="Attic" />
+        <word name="Autumn" />
+        <word name="Avalon" plural="" />
+        <word name="Avenue" />
+        <word name="Away" plural="" />
+        <word name="Babylon" plural="" />
+        <word name="Bank" />
+        <word name="Barrens" plural="" />
+        <word name="Base" />
+        <word name="Basement" />
+        <word name="Basin" />
+        <word name="Bastion" />
         <word name="Bay" plural="s" />
-        <word name="Beach" plural="-" />
-        <word name="Before" />
-        <word name="Below" />
-        <word name="Beneath" />
-        <word name="Beyond" />
-        <word name="Bog" plural="-" />
-        <word name="Booth" plural="-" />
-        <word name="Boulevard" plural="-" />
-        <word name="Bridge" plural="-" />
-        <word name="Brig" plural="-" />
-        <word name="Building" plural="-" />
-        <word name="Bunker" plural="-" />
-        <word name="Bureau" plural="-" />
-        <word name="Cabin" plural="-" />
-        <word name="Cache" plural="-" />
-        <word name="Camp" plural="-" />
-        <word name="Campsite" plural="-" />
-        <word name="Canyon" plural="-" />
-        <word name="Capital" plural="-" />
-        <word name="Castle" plural="-" />
-        <word name="Catacombs" />
-        <word name="Cathedral" plural="-" />
-        <word name="Cave" plural="-" />
-        <word name="Cavern" plural="-" />
-        <word name="Cell" plural="-" />
-        <word name="Cellar" plural="-" />
-        <word name="Cemetery" plural="-" />
-        <word name="Center" plural="-" />
-        <word name="Centre" plural="-" />
-        <word name="Century" plural="-" />
-        <word name="Chamber" plural="-" />
-        <word name="Chapel" plural="-" />
-        <word name="Chasm" plural="-" />
-        <word name="Church" plural="-" />
+        <word name="Beach" />
+        <word name="Before" plural="" />
+        <word name="Below" plural="" />
+        <word name="Beneath" plural="" />
+        <word name="Beyond" plural="" />
+        <word name="Bog" />
+        <word name="Booth" />
+        <word name="Boulevard" />
+        <word name="Bridge" />
+        <word name="Brig" />
+        <word name="Building" />
+        <word name="Bunker" />
+        <word name="Bureau" />
+        <word name="Cabin" />
+        <word name="Cache" />
+        <word name="Camp" />
+        <word name="Campsite" />
+        <word name="Canyon" />
+        <word name="Capital" />
+        <word name="Castle" />
+        <word name="Catacombs" plural="" />
+        <word name="Cathedral" />
+        <word name="Cave" />
+        <word name="Cavern" />
+        <word name="Cell" />
+        <word name="Cellar" />
+        <word name="Cemetery" />
+        <word name="Center" />
+        <word name="Centre" />
+        <word name="Century" />
+        <word name="Chamber" />
+        <word name="Chapel" />
+        <word name="Chasm" />
+        <word name="Church" />
         <word name="Cinema" />
-        <word name="Circus" plural="-" />
-        <word name="Citadel" plural="-" />
-        <word name="City" plural="-" />
-        <word name="Cliff" plural="-" />
-        <word name="Coast" plural="-" />
-        <word name="Coliseum" plural="-" />
-        <word name="College" plural="-" />
-        <word name="Colony" plural="-" />
-        <word name="Continent" plural="-" />
-        <word name="Convent" plural="-" />
-        <word name="Corral" plural="-" />
-        <word name="Corridor" plural="-" />
-        <word name="Cosmos" />
-        <word name="Cottage" plural="-" />
-        <word name="Country" plural="-" />
-        <word name="Countryside" plural="-" />
-        <word name="Course" plural="-" />
-        <word name="Courtyard" plural="-" />
-        <word name="Cove" plural="-" />
-        <word name="Crag" plural="-" />
-        <word name="Crater" plural="-" />
-        <word name="Creek" plural="-" />
-        <word name="Crypt" plural="-" />
-        <word name="Dale" plural="-" />
-        <word name="Dam" plural="-" />
-        <word name="Dawn" plural="-" />
+        <word name="Circus" />
+        <word name="Citadel" />
+        <word name="City" />
+        <word name="Cliff" />
+        <word name="Coast" />
+        <word name="Coliseum" />
+        <word name="College" />
+        <word name="Colony" />
+        <word name="Continent" />
+        <word name="Convent" />
+        <word name="Corral" />
+        <word name="Corridor" />
+        <word name="Cosmos" plural="" />
+        <word name="Cottage" />
+        <word name="Country" />
+        <word name="Countryside" />
+        <word name="Course" />
+        <word name="Courtyard" />
+        <word name="Cove" />
+        <word name="Crag" />
+        <word name="Crater" />
+        <word name="Creek" />
+        <word name="Crypt" />
+        <word name="Dale" />
+        <word name="Dam" />
+        <word name="Dawn" />
         <word name="Day" plural="s" />
-        <word name="Den" plural="-" />
-        <word name="Department" plural="-" />
-        <word name="Depot" plural="-" />
-        <word name="Depths" />
-        <word name="Desert" plural="-" />
-        <word name="Destination" plural="-" />
-        <word name="District" plural="-" />
-        <word name="Dock" plural="-" />
-        <word name="Domain" plural="-" />
-        <word name="Drome" plural="-" />
-        <word name="Dungeon" plural="-" />
-        <word name="Dusk" plural="-" />
-        <word name="Dwelling" plural="-" />
+        <word name="Den" />
+        <word name="Department" />
+        <word name="Depot" />
+        <word name="Depths" plural="" />
+        <word name="Desert" />
+        <word name="Destination" />
+        <word name="District" />
+        <word name="Dock" />
+        <word name="Domain" />
+        <word name="Downward" />
+        <word name="Drome" />
+        <word name="Dungeon" />
+        <word name="Dusk" />
+        <word name="Dwelling" />
         <word name="Dystopia" />
-        <word name="Earth" plural="-" />
-        <word name="East" />
-        <word name="Eden" />
-        <word name="Elevator" plural="-" />
+        <word name="Earth" />
+        <word name="East" plural="" />
+        <word name="Eden" plural="" />
+        <word name="Elevator" />
         <word name="Elsewhere" />
-        <word name="Empire" plural="-" />
-        <word name="Eon" plural="-" />
+        <word name="Empire" />
+        <word name="Eon" />
         <word name="Epoch" plural="s" />
-        <word name="Estate" plural="-" />
-        <word name="Eternity" plural="-" />
-        <word name="Europe" />
-        <word name="Eve" plural="-" />
-        <word name="Evening" plural="-" />
-        <word name="Everywhere" />
-        <word name="Facility" plural="-" />
-        <word name="Factory" plural="-" />
-        <word name="Falls" />
-        <word name="Farm" plural="-" />
-        <word name="Field" plural="-" />
-        <word name="Fjord" plural="-" />
-        <word name="Flats" />
-        <word name="Forest" plural="-" />
-        <word name="Forever" />
-        <word name="Fort" plural="-" />
-        <word name="Fortress" plural="-" />
-        <word name="Foundry" plural="-" />
-        <word name="Frigate" plural="-" />
-        <word name="Frontier" plural="-" />
-        <word name="Future" plural="-" />
-        <word name="Gaia" />
-        <word name="Galaxy" plural="-" />
-        <word name="Galleon" plural="-" />
-        <word name="Gallery" plural="-" />
-        <word name="Garden" plural="-" />
-        <word name="Glacier" plural="-" />
-        <word name="Glade" plural="-" />
-        <word name="Globe" plural="-" />
-        <word name="Graveyard" plural="-" />
-        <word name="Grotto" plural="-" />
-        <word name="Ground" plural="-" />
-        <word name="Grove" plural="-" />
-        <word name="Hall" plural="-" />
+        <word name="Equator" />
+        <word name="Estate" />
+        <word name="Eternity" />
+        <word name="Europe" plural="" />
+        <word name="Eve" />
+        <word name="Evening" />
+        <word name="Everywhere" plural="" />
+        <word name="Facility" />
+        <word name="Factory" />
+        <word name="Fall" />
+        <word name="Farm" />
+        <word name="Field" />
+        <word name="Fjord" />
+        <word name="Flats" plural="" />
+        <word name="Forest" />
+        <word name="Forever" plural="" />
+        <word name="Fort" />
+        <word name="Fortress" />
+        <word name="Foundry" />
+        <word name="Frigate" />
+        <word name="Frontier" />
+        <word name="Future" />
+        <word name="Gaia" plural="!Earths" />
+        <word name="Galaxy" />
+        <word name="Galleon" />
+        <word name="Gallery" />
+        <word name="Garden" />
+        <word name="Glacier" />
+        <word name="Glade" />
+        <word name="Globe" />
+        <word name="Graveyard" />
+        <word name="Grotto" />
+        <word name="Ground" />
+        <word name="Grove" />
+        <word name="Hall" />
         <word name="Hallway" plural="s" />
-        <word name="Hangar" plural="-" />
-        <word name="Haven" plural="-" />
-        <word name="Headquarters" />
-        <word name="Heaven" plural="-" />
-        <word name="Heights" />
-        <word name="Hell" plural="-" />
-        <word name="Here" />
-        <word name="Hideout" plural="-" />
-        <word name="Hill" plural="-" />
-        <word name="Hive" plural="-" />
-        <word name="Home" plural="-" />
-        <word name="Homestead" plural="-" />
-        <word name="Hospital" plural="-" />
-        <word name="Hour" plural="-" />
-        <word name="House" plural="-" />
-        <word name="Hut" plural="-" />
-        <word name="Igloo" plural="-" />
-        <word name="Inn" plural="-" />
+        <word name="Hangar" />
+        <word name="Haven" />
+        <word name="Headquarters" plural="" />
+        <word name="Heaven" />
+        <word name="Heights" plural="" />
+        <word name="Hell" />
+        <word name="Here" plural="" />
+        <word name="Hideout" />
+        <word name="Highway" plural="s" />
+        <word name="Hill" />
+        <word name="Hive" />
+        <word name="Home" />
+        <word name="Homestead" />
+        <word name="Hospital" />
+        <word name="Hour" />
+        <word name="House" />
+        <word name="Hut" />
+        <word name="Igloo" />
+        <word name="Inn" />
         <word name="Inside" />
-        <word name="Institute" plural="-" />
-        <word name="Institution" plural="-" />
-        <word name="Island" plural="-" />
-        <word name="Jail" plural="-" />
-        <word name="Jungle" plural="-" />
-        <word name="Jupiter" />
-        <word name="Keep" plural="-" />
-        <word name="Kingdom" plural="-" />
-        <word name="Kitchen" plural="-" />
-        <word name="Laboratory" plural="-" />
-        <word name="Labyrinth" plural="-" />
-        <word name="Lagoon" plural="-" />
-        <word name="Lair" plural="-" />
-        <word name="Lake" plural="-" />
-        <word name="Land" plural="-" />
-        <word name="Landscape" plural="-" />
-        <word name="Lane" plural="-" />
-        <word name="Library" plural="-" />
-        <word name="Lobby" plural="-" />
-        <word name="Lodge" plural="-" />
-        <word name="Lot" plural="-" />
-        <word name="Luna" />
-        <word name="Manor" plural="-" />
-        <word name="Mansion" plural="-" />
-        <word name="Market" plural="-" />
-        <word name="Mars" />
-        <word name="Marsh" plural="-" />
-        <word name="Maze" plural="-" />
-        <word name="Meadow" plural="-" />
-        <word name="Mesa" plural="-" />
-        <word name="Metro" plural="-" />
+        <word name="Institute" />
+        <word name="Institution" />
+        <word name="Inward" />
+        <word name="Island" />
+        <word name="Isle" />
+        <word name="Jail" />
+        <word name="Jungle" />
+        <word name="Jupiter" plural="" />
+        <word name="Keep" />
+        <word name="Kingdom" />
+        <word name="Kitchen" />
+        <word name="Laboratory" />
+        <word name="Labyrinth" />
+        <word name="Lagoon" />
+        <word name="Lair" />
+        <word name="Lake" />
+        <word name="Land" />
+        <word name="Landscape" />
+        <word name="Lane" />
+        <word name="Library" />
+        <word name="Lobby" />
+        <word name="Lodge" />
+        <word name="Lot" />
+        <word name="Luna" plural="!Moons" />
+        <word name="Manor" />
+        <word name="Mansion" />
+        <word name="Market" />
+        <word name="Mars" plural="" />
+        <word name="Marsh" />
+        <word name="Maze" />
+        <word name="Meadow" />
+        <word name="Mesa" />
+        <word name="Metro" />
         <word name="Metropolis" />
-        <word name="Midgard" />
-        <word name="Midnight" plural="-" />
-        <word name="Mill" plural="-" />
-        <word name="Millennium" plural="-" />
-        <word name="Mine" plural="-" />
-        <word name="Minute" plural="-" />
-        <word name="Mire" plural="-" />
-        <word name="Moment" plural="-" />
-        <word name="Monastery" plural="-" />
-        <word name="Month" plural="-" />
-        <word name="Moon" plural="-" />
-        <word name="Morgue" plural="-" />
-        <word name="Morning" plural="-" />
-        <word name="Mound" plural="-" />
-        <word name="Mountain" plural="-" />
-        <word name="Museum" plural="-" />
-        <word name="Neptune" />
-        <word name="Nest" plural="-" />
+        <word name="Midgard" plural="" />
+        <word name="Midnight" />
+        <word name="Mill" />
+        <word name="Millennium" />
+        <word name="Mine" />
+        <word name="Minute" />
+        <word name="Mire" />
+        <word name="Moment" />
+        <word name="Monastery" />
+        <word name="Month" />
+        <word name="Moon" />
+        <word name="Morgue" />
+        <word name="Morning" />
+        <word name="Mound" />
+        <word name="Mountain" />
+        <word name="Museum" />
+        <word name="Neptune" plural="" />
+        <word name="Nest" />
         <word name="Nether" />
-        <word name="Never" />
-        <word name="Night" plural="-" />
-        <word name="Noon" plural="-" />
-        <word name="North" />
-        <word name="Northeast" />
-        <word name="Northwest" />
-        <word name="Now" />
-        <word name="Nowhere" />
-        <word name="Oasis" />
-        <word name="Ocean" plural="-" />
-        <word name="Oceania" />
-        <word name="Office" plural="-" />
-        <word name="Olympus" />
-        <word name="Orbit" plural="-" />
-        <word name="Orchard" plural="-" />
-        <word name="Orphanage" plural="-" />
-        <word name="Outside" />
-        <word name="Over" />
-        <word name="Pacific" />
-        <word name="Palace" plural="-" />
-        <word name="Paradise" plural="-" />
-        <word name="Parish" plural="-" />
-        <word name="Park" plural="-" />
-        <word name="Pass" plural="-" />
-        <word name="Passage" plural="-" />
-        <word name="Past" plural="-" />
-        <word name="Path" plural="-" />
-        <word name="Pavilion" plural="-" />
-        <word name="Pit" plural="-" />
-        <word name="Place" plural="-" />
-        <word name="Plains" />
-        <word name="Planet" plural="-" />
-        <word name="Plaza" />
-        <word name="Pluto" />
-        <word name="Pond" plural="-" />
-        <word name="Pool" plural="-" />
-        <word name="Port" plural="-" />
-        <word name="Prairie" plural="-" />
-        <word name="Precipice" plural="-" />
-        <word name="Prison" plural="-" />
-        <word name="Province" plural="-" />
-        <word name="Pyramid" plural="-" />
-        <word name="Quarters" />
-        <word name="Railroad" plural="-" />
-        <word name="Ravine" plural="-" />
-        <word name="Realm" plural="-" />
-        <word name="Reef" plural="-" />
-        <word name="Region" plural="-" />
-        <word name="Reservoir" plural="-" />
-        <word name="Ridge" plural="-" />
-        <word name="River" plural="-" />
-        <word name="Road" plural="-" />
-        <word name="Room" plural="-" />
-        <word name="Route" plural="-" />
-        <word name="Ruin" plural="-" />
-        <word name="Sahara" />
-        <word name="Sanctuary" plural="-" />
-        <word name="Saturn" />
-        <word name="School" plural="-" />
-        <word name="Sea" plural="-" />
-        <word name="Season" plural="-" />
-        <word name="Second" plural="-" />
-        <word name="Sector" plural="-" />
-        <word name="Settlement" plural="-" />
-        <word name="Shack" plural="-" />
+        <word name="Never" plural="" />
+        <word name="Night" />
+        <word name="Noon" />
+        <word name="North" plural="" />
+        <word name="Northeast" plural="" />
+        <word name="Northwest" plural="" />
+        <word name="Now" plural="" />
+        <word name="Nowhere" plural="" />
+        <word name="Oasis" plural="2es" />
+        <word name="Ocean" />
+        <word name="Oceania" plural="" />
+        <word name="Office" />
+        <word name="Olympus" plural="" />
+        <word name="Orbit" />
+        <word name="Orchard" />
+        <word name="Orphanage" />
+        <word name="Outside" plural="" />
+        <word name="Outward" />
+        <word name="Over" plural="" />
+        <word name="Pacific" plural="" />
+        <word name="Palace" />
+        <word name="Paradise" />
+        <word name="Parish" />
+        <word name="Park" />
+        <word name="Pass" />
+        <word name="Passage" />
+        <word name="Past" />
+        <word name="Path" />
+        <word name="Pavilion" />
+        <word name="Peninsula" />
+        <word name="Pit" />
+        <word name="Place" />
+        <word name="Plains" plural="" />
+        <word name="Planet" />
+        <word name="Plaza" plural="" />
+        <word name="Pluto" plural="" />
+        <word name="Pond" />
+        <word name="Pool" />
+        <word name="Port" />
+        <word name="Prairie" />
+        <word name="Precipice" />
+        <word name="Prison" />
+        <word name="Province" />
+        <word name="Pyramid" />
+        <word name="Quarters" plural="" />
+        <word name="Railroad" />
+        <word name="Ravine" />
+        <word name="Realm" />
+        <word name="Reef" />
+        <word name="Region" />
+        <word name="Reservoir" />
+        <word name="Residence" />
+        <word name="Ridge" />
+        <word name="River" />
+        <word name="Road" />
+        <word name="Room" />
+        <word name="Route" />
+        <word name="Ruin" />
+        <word name="Sahara" plural="" />
+        <word name="Sanctuary" />
+        <word name="Saturn" plural="" />
+        <word name="Scape" />
+        <word name="School" />
+        <word name="Sea" />
+        <word name="Season" />
+        <word name="Second" />
+        <word name="Sector" />
+        <word name="Settlement" />
+        <word name="Shack" />
         <word name="Shanty Town" />
-        <word name="Shelter" plural="-" />
-        <word name="Ship" plural="-" />
-        <word name="Shire" plural="-" />
-        <word name="Shop" plural="-" />
-        <word name="Shrine" plural="-" />
-        <word name="Site" plural="-" />
-        <word name="Sky" plural="-" />
-        <word name="Slum" plural="-" />
-        <word name="Sol" />
-        <word name="Solar System" plural="-" />
-        <word name="South" />
-        <word name="Southeast" />
-        <word name="Southwest" />
-        <word name="Space" plural="-" />
-        <word name="Spring" plural="-" />
-        <word name="Stadium" plural="-" />
-        <word name="Star" plural="-" />
-        <word name="Starship" plural="-" />
-        <word name="Stash" plural="-" />
-        <word name="Station" plural="-" />
-        <word name="Strait" plural="-" />
-        <word name="Street" plural="-" />
-        <word name="Structure" plural="-" />
-        <word name="Studio" plural="-" />
-        <word name="Suite" plural="-" />
-        <word name="Summer" plural="-" />
-        <word name="Summit" plural="-" />
-        <word name="Sun" plural="-" />
-        <word name="Surface" plural="-" />
-        <word name="Swamp" plural="-" />
-        <word name="Tavern" plural="-" />
-        <word name="Temple" plural="-" />
-        <word name="Terra" />
-        <word name="Terrace" plural="-" />
-        <word name="Terrain" plural="-" />
-        <word name="Theater" plural="-" />
-        <word name="Theatre" plural="-" />
-        <word name="Then" />
-        <word name="There" />
-        <word name="Thicket" plural="-" />
-        <word name="Today" />
-        <word name="Tomb" plural="-" />
+        <word name="Shelter" />
+        <word name="Ship" />
+        <word name="Shire" />
+        <word name="Shop" />
+        <word name="Shrine" />
+        <word name="Sideway" plural="s" />
+        <word name="Site" />
+        <word name="Sky" />
+        <word name="Slum" />
+        <word name="Sol" plural="!Suns" />
+        <word name="Solar System" />
+        <word name="South" plural="" />
+        <word name="Southeast" plural="" />
+        <word name="Southwest" plural="" />
+        <word name="Space" />
+        <word name="Spring" />
+        <word name="Stadium" />
+        <word name="Star" />
+        <word name="Starship" />
+        <word name="Stash" />
+        <word name="Station" />
+        <word name="Storage" />
+        <word name="Store" />
+        <word name="Strait" />
+        <word name="Street" />
+        <word name="Structure" />
+        <word name="Studio" />
+        <word name="Submarine" />
+        <word name="Suite" />
+        <word name="Summer" />
+        <word name="Summit" />
+        <word name="Sun" />
+        <word name="Surface" />
+        <word name="Swamp" />
+        <word name="Tavern" />
+        <word name="Temple" />
+        <word name="Terra" plural="" />
+        <word name="Terrace" />
+        <word name="Terrain" />
+        <word name="Theater" />
+        <word name="Theatre" />
+        <word name="Then" plural="" />
+        <word name="There" plural="" />
+        <word name="Thicket" />
+        <word name="Today" plural="" />
+        <word name="Tomb" />
         <word name="Tomorrow" />
-        <word name="Tonight" />
-        <word name="Tower" plural="-" />
-        <word name="Town" plural="-" />
-        <word name="Track" plural="-" />
-        <word name="Trail" plural="-" />
-        <word name="Train" plural="-" />
-        <word name="Tropic" plural="-" />
-        <word name="Trove" plural="-" />
-        <word name="Tundra" plural="-" />
-        <word name="Tunnel" plural="-" />
-        <word name="Twilight" plural="-" />
-        <word name="Under" />
+        <word name="Tonight" plural="" />
+        <word name="Tower" />
+        <word name="Town" />
+        <word name="Track" />
+        <word name="Trail" />
+        <word name="Train" />
+        <word name="Tropic" />
+        <word name="Trove" />
+        <word name="Tundra" />
+        <word name="Tunnel" />
+        <word name="Twilight" />
+        <word name="Under" plural="" />
         <word name="Underwater" />
-        <word name="Underworld" plural="-" />
-        <word name="Universe" plural="-" />
-        <word name="University" plural="-" />
-        <word name="Until" />
-        <word name="Utopia" plural="-" />
-        <word name="Vale" plural="-" />
+        <word name="Underworld" />
+        <word name="Universe" />
+        <word name="University" />
+        <word name="Until" plural="" />
+        <word name="Upward" />
+        <word name="Utopia" />
+        <word name="Vale" />
         <word name="Valley" plural="s" />
-        <word name="Vault" plural="-" />
-        <word name="Venus" />
-        <word name="Vessel" plural="-" />
-        <word name="Village" plural="-" />
+        <word name="Vault" />
+        <word name="Venus" plural="" />
+        <word name="Vessel" />
+        <word name="Village" />
         <word name="Ville" />
-        <word name="Vista" plural="-" />
-        <word name="Volcano" plural="-" />
-        <word name="Ward" plural="-" />
-        <word name="Wasteland" plural="-" />
-        <word name="Wastes" />
-        <word name="Week" plural="-" />
-        <word name="Well" plural="-" />
-        <word name="West" />
-        <word name="When" />
-        <word name="Where" />
-        <word name="While" />
-        <word name="Wilderness" />
-        <word name="Wildlands" />
-        <word name="Wilds" />
-        <word name="Winter" plural="-" />
-        <word name="Within" />
-        <word name="Woods" />
-        <word name="Workshop" plural="-" />
-        <word name="World" plural="-" />
-        <word name="Yacht" plural="-" />
-        <word name="Yard" plural="-" />
-        <word name="Year" plural="-" />
-        <word name="Yesterday" />
-        <word name="Yggdrasil" />
-        <word name="Zone" plural="-" />
-        <word name="[Month]" />
-        <word name="[Place Name]" />
+        <word name="Vista" />
+        <word name="Volcano" />
+        <word name="Ward" />
+        <word name="Wasteland" />
+        <word name="Wastes" plural="" />
+        <word name="Week" />
+        <word name="West" plural="" />
+        <word name="When" plural="" />
+        <word name="Where" plural="" />
+        <word name="While" plural="" />
+        <word name="Wilderness" plural="" />
+        <word name="Wildlands" plural="" />
+        <word name="Wilds" plural="" />
+        <word name="Winter" />
+        <word name="Within" plural="" />
+        <word name="Woods" plural="" />
+        <word name="Workshop" />
+        <word name="World" />
+        <word name="Yacht" />
+        <word name="Yard" />
+        <word name="Year" />
+        <word name="Yesterday" plural="" />
+        <word name="Yggdrasil" plural="" />
+        <word name="Ziggurat" />
+        <word name="Zone" />
+        <word name="[Month]" plural="" />
+        <word name="[Place Name]" plural="" />
     </category>
 </resources>
