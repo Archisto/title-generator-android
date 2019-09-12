@@ -1,6 +1,7 @@
 package com.laurikosonen.titlegenerator;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Custom template
     private String customTemplate;
-    private String defaultTemplate;
     private char templateWordChar;
     private int mutatorBlockLength;
     private boolean skipSpace;
@@ -87,15 +87,7 @@ public class MainActivity extends AppCompatActivity {
         customTemplateToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enableCustomTemplate = customTemplateToggle.isChecked();
-                customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
-                if (enableCustomTemplate
-                    && (customTemplate == null
-                    || customTemplate.isEmpty()
-                    || customTemplateInput.getText().toString().isEmpty())) {
-                    customTemplate = defaultTemplate;
-                    customTemplateInput.setText(customTemplate);
-                }
+                activateCustomTemplate(customTemplateToggle.isChecked());
             }
         });
     }
@@ -134,9 +126,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCustomTemplate() {
-        defaultTemplate = getString(R.string.customTemplateExample);
+        setCustomTemplate(getString(R.string.customTemplateExample0), false);
         customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
         customTemplateInput.setVisibility(View.GONE);
+    }
+
+    private void activateCustomTemplate(boolean activate) {
+        enableCustomTemplate = activate;
+        customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
+        if (enableCustomTemplate
+            && (customTemplate == null
+            || customTemplate.isEmpty()
+            || customTemplateInput.getText().toString().isEmpty())) {
+            customTemplateInput.setText(customTemplate);
+        }
     }
 
     private void generateTitles() {
@@ -242,8 +245,9 @@ public class MainActivity extends AppCompatActivity {
 
             // TODO: Apply mutators to remove ending dash
             if (isLastChar && lastCharWasTemplateWordChar) {
-                title.append(getRandomWord(displayedCategory));
-                lastWordCategory = displayedCategory;
+                Word word = getRandomWord(displayedCategory);
+                title.append(word);
+                lastWordCategory = word.categoryId;
             }
         }
 
@@ -428,49 +432,23 @@ public class MainActivity extends AppCompatActivity {
 
         // General mutators
         boolean copyNonCatMutators = false;
+        boolean copyCategory = false;
         if (lastWordMutators != null) {
             for (String mutator : mutators) {
                 if (mutator.equals(getString(R.string.function_copyAllMutators))) {
                     mutators = lastWordMutators;
+                    copyCategory = true;
                     break;
-                } else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
+                }
+                else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
                     copyNonCatMutators = true;
                 }
+                // Copy category mutator is checked in getCategoryFromMutators()
             }
         }
 
         // Category mutators
-        int category = displayedCategory;
-        for (String mutator : mutators) {
-            if (mutator.equals(getString(R.string.function_copyCategory))) {
-                category = lastWordCategory;
-                break;
-            } else if (mutator.equals(getString(R.string.function_catAny1)) || mutator.equals(getString(R.string.function_catAny2))) {
-                category = -1;
-                break;
-            } else if (mutator.equals(getString(R.string.number_1)) || mutator.equals(getString(R.string.category_feature_short))) {
-                category = 0;
-                break;
-            } else if (mutator.equals(getString(R.string.number_2)) || mutator.equals(getString(R.string.category_concept_short))) {
-                category = 1;
-                break;
-            } else if (mutator.equals(getString(R.string.number_3)) || mutator.equals(getString(R.string.category_substance_short))) {
-                category = 2;
-                break;
-            } else if (mutator.equals(getString(R.string.number_4)) || mutator.equals(getString(R.string.category_thing_short))) {
-                category = 3;
-                break;
-            } else if (mutator.equals(getString(R.string.number_5)) || mutator.equals(getString(R.string.category_peopleAndCreatures_short))) {
-                category = 4;
-                break;
-            } else if (mutator.equals(getString(R.string.number_6)) || mutator.equals(getString(R.string.category_action_short))) {
-                category = 5;
-                break;
-            } else if (mutator.equals(getString(R.string.number_7)) || mutator.equals(getString(R.string.category_placeAndTime_short))) {
-                category = 5;
-                break;
-            }
-        }
+        int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
 
         Word word = getRandomWord(category);
         result = word.toString();
@@ -481,7 +459,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Word form mutators
         StringBuilder newResult = new StringBuilder(result);
-        char lastLetter = newResult.charAt(result.length() - 1);
         boolean possessive = false;
 
         for (String mutator : mutators) {
@@ -491,8 +468,8 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_noun))) {
                 newResult = new StringBuilder(word.getNoun());
             }
-            else if (mutator.equals(getString(R.string.function_infinitive1)) || mutator.equals(getString(R.string.function_infinitive2))) {
-                newResult = new StringBuilder(word.getInfinitive());
+            else if (mutator.equals(getString(R.string.function_presentParticiple))) {
+                newResult = new StringBuilder(word.getPresentParticiple());
             }
             else if (mutator.equals(getString(R.string.function_presentTense))) {
                 newResult = new StringBuilder(word.getPresentTense());
@@ -518,10 +495,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (possessive) {
-            if (lastLetter == 's')
-                newResult.append("'");
-            else
-                newResult.append("'s");
+            newResult.replace(0, newResult.length(), word.getPossessive(newResult.toString()));
         }
 
         result = newResult.toString();
@@ -556,6 +530,32 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
+    private int getCategoryFromMutators(String[] mutators) {
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_copyCategory))) {
+                return lastWordCategory;
+            } else if (mutator.equals(getString(R.string.function_catAny1)) || mutator.equals(getString(R.string.function_catAny2))) {
+                return -1;
+            } else if (mutator.equals(getString(R.string.number_1)) || mutator.equals(getString(R.string.category_kind_short))) {
+                return 0;
+            } else if (mutator.equals(getString(R.string.number_2)) || mutator.equals(getString(R.string.category_concept_short))) {
+                return 1;
+            } else if (mutator.equals(getString(R.string.number_3)) || mutator.equals(getString(R.string.category_substance_short))) {
+                return 2;
+            } else if (mutator.equals(getString(R.string.number_4)) || mutator.equals(getString(R.string.category_thing_short))) {
+                return 3;
+            } else if (mutator.equals(getString(R.string.number_5)) || mutator.equals(getString(R.string.category_personAndCreature_short))) {
+                return 4;
+            } else if (mutator.equals(getString(R.string.number_6)) || mutator.equals(getString(R.string.category_action_short))) {
+                return 5;
+            } else if (mutator.equals(getString(R.string.number_7)) || mutator.equals(getString(R.string.category_placeAndTime_short))) {
+                return 6;
+            }
+        }
+
+        return displayedCategory;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -587,7 +587,7 @@ public class MainActivity extends AppCompatActivity {
         currentDisplayedCatItem.setEnabled(false);
 
         menu.findItem(R.id.action_displayCategory0).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_feature),getString(R.string.category_feature_short)));
+            getString(R.string.action_displayCategory), getString(R.string.category_kind), getString(R.string.category_kind_short)));
         menu.findItem(R.id.action_displayCategory1).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_concept), getString(R.string.category_concept_short)));
         menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
@@ -595,7 +595,7 @@ public class MainActivity extends AppCompatActivity {
         menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_thing), getString(R.string.category_thing_short)));
         menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_peopleAndCreatures), getString(R.string.category_peopleAndCreatures_short)));
+            getString(R.string.action_displayCategory), getString(R.string.category_personAndCreature), getString(R.string.category_personAndCreature_short)));
         menu.findItem(R.id.action_displayCategory5).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
         menu.findItem(R.id.action_displayCategory6).setTitle(String.format(
@@ -622,6 +622,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if (handleRandomTitleLengthActivation(id)) {
+            return true;
+        }
+        else if (handleCustomTemplateExampleOptions(id)) {
             return true;
         }
 
@@ -718,6 +721,43 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    private boolean handleCustomTemplateExampleOptions(int id) {
+        switch (id) {
+            case R.id.action_exampleTemplate1: {
+                return setCustomTemplate(getString(R.string.customTemplateExample1), true);
+            }
+            case R.id.action_exampleTemplate2: {
+                return setCustomTemplate(getString(R.string.customTemplateExample2), true);
+            }
+            case R.id.action_exampleTemplate3: {
+                return setCustomTemplate(getString(R.string.customTemplateExample3), true);
+            }
+            case R.id.action_exampleTemplate4: {
+                return setCustomTemplate(getString(R.string.customTemplateExample4), true);
+            }
+            case R.id.action_exampleTemplate5: {
+                return setCustomTemplate(getString(R.string.customTemplateExample5), true);
+            }
+            case R.id.action_exampleTemplate6: {
+                return setCustomTemplate(getString(R.string.customTemplateExample6), true);
+            }
+            case R.id.action_exampleTemplate7: {
+                return setCustomTemplate(getString(R.string.customTemplateExample7), true);
+            }
+            case R.id.action_exampleTemplate8: {
+                return setCustomTemplate(getString(R.string.customTemplateExample8), true);
+            }
+            case R.id.action_exampleTemplate9: {
+                return setCustomTemplate(getString(R.string.customTemplateExample9), true);
+            }
+            case R.id.action_exampleTemplate10: {
+                return setCustomTemplate(getString(R.string.customTemplateExample10), true);
+            }
+        }
+
+        return false;
+    }
+
     private boolean handleTitleDecorationsActivation(int id) {
         if (id == R.id.action_titleDecorations) {
             enableTitleDecorations = !enableTitleDecorations;
@@ -783,6 +823,27 @@ public class MainActivity extends AppCompatActivity {
             currentDisplayedCatItem = item;
 
             generateTitles();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean setCustomTemplate(String template, boolean activateCustomTemplate) {
+        if (template != null) {
+            customTemplate = template;
+
+            if (activateCustomTemplate) {
+                if (!enableCustomTemplate) {
+                    activateCustomTemplate(true);
+                }
+                else {
+                    customTemplateInput.setText(customTemplate);
+                }
+
+                generateTitles();
+            }
 
             return true;
         }

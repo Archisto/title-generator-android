@@ -6,18 +6,18 @@
     <string name="form_X_and_Y">" and "</string>
     <string name="form_X_and_the_Y">" and the "</string>
     <string name="form_Xs_Y">"'s "</string>
-    <string name="category_feature">Feature</string>
+    <string name="category_kind">Kind</string>
     <string name="category_concept">Concept</string>
     <string name="category_substance">Substance</string>
     <string name="category_thing">Thing</string>
-    <string name="category_peopleAndCreatures">People &amp; Creatures</string>
+    <string name="category_personAndCreature">Person &amp; Creature</string>
     <string name="category_action">Action</string>
     <string name="category_placeAndTime">Place &amp; Time</string>
-    <string name="category_feature_short">ft</string>
+    <string name="category_kind_short">ki</string>
     <string name="category_concept_short">co</string>
     <string name="category_substance_short">su</string>
     <string name="category_thing_short">th</string>
-    <string name="category_peopleAndCreatures_short">pc</string>
+    <string name="category_personAndCreature_short">pc</string>
     <string name="category_action_short">ac</string>
     <string name="category_placeAndTime_short">pt</string>
     <string name="titleNumber">%d)</string>
@@ -25,12 +25,24 @@
     <string name="titleWordCount">Words in a title: %d</string>
     <string name="totalWordCount">Words in total: %d</string>
     <string name="action_titleDecorations">Title decorations</string>
+    <string name="action_randomTitleLength">Random title length</string>
     <string name="action_displayAll">Display all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom Template</string>
+    <string name="action_exampleTemplates">Example Templates</string>
     <string name="customTemplate_on">Custom template ON</string>
     <string name="customTemplate_off">Custom template OFF</string>
-    <string name="customTemplateExample"># Example: # #</string>
+    <string name="customTemplateExample0"># Example: # #</string>
+    <string name="customTemplateExample1">#: The #(ki) #</string>
+    <string name="customTemplateExample2">#(pc|\') #</string>
+    <string name="customTemplateExample3">#(th) of #(su)</string>
+    <string name="customTemplateExample4">#(ki|>>) #(th)</string>
+    <string name="customTemplateExample5">#(+) and #(=)</string>
+    <string name="customTemplateExample6">##(ac|n|a)</string>
+    <string name="customTemplateExample7">#(ac|ing) #(th|+)</string>
+    <string name="customTemplateExample8">#(ki|ly) #(ac|ed)</string>
+    <string name="customTemplateExample9">The #(pt) of the #(ac|pp)</string>
+    <string name="customTemplateExample10">#(co) #(ac|pr) for No #(pc)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -42,8 +54,7 @@
     <string name="function_lowercase">a</string>
     <string name="function_initialism">.</string>
     <string name="function_noun">n</string>
-    <string name="function_infinitive1">i</string>
-    <string name="function_infinitive2">in</string>
+    <string name="function_presentParticiple">ing</string>
     <string name="function_presentTense">pr</string>
     <string name="function_pastTense1">d</string>
     <string name="function_pastTense2">ed</string>
@@ -51,7 +62,7 @@
     <string name="function_possessive">\'</string>
     <string name="function_comparative">></string>
     <string name="function_superlative">>></string>
-    <string name="function_manner">m</string>
+    <string name="function_manner">ly</string>
     <string name="function_emptyChance1">x</string>
     <string name="function_copyAllMutators">=</string>
     <string name="function_copyNonCatMutators">#</string>
@@ -70,7 +81,6 @@
     <string name="number_8">8</string>
     <string name="number_9">9</string>
     <string name="number_10">10</string>
-    <string name="action_randomTitleLength">Random title length</string>
     <string name="form_X__The_Y">": The "</string>
     <string name="form_Xs_Y2">"' "</string>
 </resources>

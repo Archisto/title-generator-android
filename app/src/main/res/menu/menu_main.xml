@@ -81,6 +81,48 @@
         android:checkable="true"
         android:title="@string/action_randomTitleLength" />
 
+    <item
+        android:id="@+id/submenu_exampleTemplates"
+        android:enabled="true"
+        android:title="@string/action_exampleTemplates"
+        android:titleCondensed="@string/action_exampleTemplates"
+        android:visible="true">
+        <menu
+            android:id="@+id/menu_exampleTemplates"
+            android:title="@string/titleWordCount">
+            <item
+                android:id="@+id/action_exampleTemplate1"
+                android:title="@string/customTemplateExample1" />
+            <item
+                android:id="@+id/action_exampleTemplate2"
+                android:title="@string/customTemplateExample2" />
+            <item
+                android:id="@+id/action_exampleTemplate3"
+                android:title="@string/customTemplateExample3" />
+            <item
+                android:id="@+id/action_exampleTemplate4"
+                android:title="@string/customTemplateExample4" />
+            <item
+                android:id="@+id/action_exampleTemplate5"
+                android:title="@string/customTemplateExample5" />
+            <item
+                android:id="@+id/action_exampleTemplate6"
+                android:title="@string/customTemplateExample6" />
+            <item
+                android:id="@+id/action_exampleTemplate7"
+                android:title="@string/customTemplateExample7" />
+            <item
+                android:id="@+id/action_exampleTemplate8"
+                android:title="@string/customTemplateExample8" />
+            <item
+                android:id="@+id/action_exampleTemplate9"
+                android:title="@string/customTemplateExample9" />
+            <item
+                android:id="@+id/action_exampleTemplate10"
+                android:title="@string/customTemplateExample10" />
+        </menu>
+    </item>
+
     <group android:id="@+id/group_displayCategories" >
         <item
             android:id="@+id/action_displayAll"
