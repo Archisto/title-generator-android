@@ -244,7 +244,12 @@ public class Word {
 
         if (modifier.equals(defaultModifierMarker)) {
             char lastChar = word.charAt(word.length() - 1);
-            if (lastChar == 'e') {
+            char secondToLastChar = '_';
+            if (word.length() >= 2) {
+                secondToLastChar = word.charAt(word.length() - 2);
+            }
+
+            if (lastChar == 'e' && secondToLastChar != 'e') {
                 modifier = "1ing"; // Remove one char, add "ING"
             }
             else {

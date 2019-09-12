@@ -32,17 +32,17 @@
     <string name="action_exampleTemplates">Example Templates</string>
     <string name="customTemplate_on">Custom template ON</string>
     <string name="customTemplate_off">Custom template OFF</string>
-    <string name="customTemplateExample0"># Example: # #</string>
+    <string name="customTemplateExample0">Example #: #</string>
     <string name="customTemplateExample1">#: The #(ki) #</string>
-    <string name="customTemplateExample2">#(pc|\') #</string>
-    <string name="customTemplateExample3">#(th) of #(su)</string>
-    <string name="customTemplateExample4">#(ki|>>) #(th)</string>
+    <string name="customTemplateExample2">#(pc, \') #</string>
+    <string name="customTemplateExample3">#(th, +) of #(su)</string>
+    <string name="customTemplateExample4">#(ki, >>) #(th)</string>
     <string name="customTemplateExample5">#(+) and #(=)</string>
-    <string name="customTemplateExample6">##(ac|n|a)</string>
-    <string name="customTemplateExample7">#(ac|ing) #(th|+)</string>
-    <string name="customTemplateExample8">#(ki|ly) #(ac|ed)</string>
-    <string name="customTemplateExample9">The #(pt) of the #(ac|pp)</string>
-    <string name="customTemplateExample10">#(co) #(ac|pr) for No #(pc)</string>
+    <string name="customTemplateExample6">##(ac, n, a)</string>
+    <string name="customTemplateExample7">#(co) #(ac, pr)</string>
+    <string name="customTemplateExample8">#(ki, ly) #(ac, ed)</string>
+    <string name="customTemplateExample9">The #(pt) of the #(ac, pp)</string>
+    <string name="customTemplateExample10">#(ac, ing, x) Without #(co)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -67,7 +67,7 @@
     <string name="function_copyAllMutators">=</string>
     <string name="function_copyNonCatMutators">#</string>
     <string name="function_copyCategory">c</string>
-    <string name="function_chainMutators">|</string>
+    <string name="function_mutatorSeparator">,</string>
     <string name="function_catAny1">0</string>
     <string name="function_catAny2">*</string>
     <string name="number_0">0</string>

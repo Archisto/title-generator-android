@@ -1,7 +1,6 @@
 package com.laurikosonen.titlegenerator;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -425,109 +424,56 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getWordWithAppliedMutators(StringBuilder mutatorString) {
-        // TODO: Mutators
-
-        String result = "";
-        String[] mutators = mutatorString.toString().split("[|]"); // R.string.function_chainMutators
+        String mutatorSeparator = getString(R.string.function_mutatorSeparator);
+        String[] mutators = mutatorString.toString().
+            split("[" + mutatorSeparator + "]");
 
         // General mutators
-        boolean copyNonCatMutators = false;
         boolean copyCategory = false;
-        if (lastWordMutators != null) {
-            for (String mutator : mutators) {
-                if (mutator.equals(getString(R.string.function_copyAllMutators))) {
+        boolean copyNonCategoryMutators = false;
+        boolean optionalWord = false;
+
+        for (int i = 0; i < mutators.length; i++) {
+            mutators[i] = mutators[i].trim();
+
+            if (lastWordMutators != null) {
+                if (mutators[i].equals(getString(R.string.function_copyAllMutators))) {
                     mutators = lastWordMutators;
                     copyCategory = true;
                     break;
                 }
-                else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
-                    copyNonCatMutators = true;
+                else if (mutators[i].equals(getString(R.string.function_copyNonCatMutators))) {
+                    copyNonCategoryMutators = true;
                 }
                 // Copy category mutator is checked in getCategoryFromMutators()
             }
-        }
 
-        // Category mutators
-        int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
-
-        Word word = getRandomWord(category);
-        result = word.toString();
-
-        if (copyNonCatMutators) {
-            mutators = lastWordMutators;
-        }
-
-        // Word form mutators
-        StringBuilder newResult = new StringBuilder(result);
-        boolean possessive = false;
-
-        for (String mutator : mutators) {
-            if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
-                newResult = new StringBuilder(word.getPlural());
-            }
-            else if (mutator.equals(getString(R.string.function_noun))) {
-                newResult = new StringBuilder(word.getNoun());
-            }
-            else if (mutator.equals(getString(R.string.function_presentParticiple))) {
-                newResult = new StringBuilder(word.getPresentParticiple());
-            }
-            else if (mutator.equals(getString(R.string.function_presentTense))) {
-                newResult = new StringBuilder(word.getPresentTense());
-            }
-            else if (mutator.equals(getString(R.string.function_pastTense1)) || mutator.equals(getString(R.string.function_pastTense2))) {
-                newResult = new StringBuilder(word.getPastTense());
-            }
-            else if (mutator.equals(getString(R.string.function_pastPerfectTense))) {
-                newResult = new StringBuilder(word.getPastPerfectTense());
-            }
-            else if (mutator.equals(getString(R.string.function_comparative))) {
-                newResult = new StringBuilder(word.getComparative());
-            }
-            else if (mutator.equals(getString(R.string.function_superlative))) {
-                newResult = new StringBuilder(word.getSuperlative());
-            }
-            else if (mutator.equals(getString(R.string.function_manner))) {
-                newResult = new StringBuilder(word.getManner());
-            }
-            else if (mutator.equals(getString(R.string.function_possessive))) {
-                possessive = true;
-            }
-        }
-
-        if (possessive) {
-            newResult.replace(0, newResult.length(), word.getPossessive(newResult.toString()));
-        }
-
-        result = newResult.toString();
-
-        // Visual mutators
-        boolean optionalWord = false;
-        for (String mutator : mutators) {
-            if (mutator.equals(getString(R.string.function_uppercase))) {
-                result = result.toUpperCase();
-            }
-            else if (mutator.equals(getString(R.string.function_lowercase))) {
-                result = result.toLowerCase();
-            }
-            else if (mutator.equals(getString(R.string.function_initialism))) {
-                newResult = new StringBuilder();
-                for (int i = 0; i < result.length(); i++) {
-                    newResult.append(result.charAt(i)).append('.');
-                }
-                result = newResult.toString().toUpperCase();
-            }
-            else if (mutator.equals(getString(R.string.function_emptyChance1))) {
+            if (mutators[i].equals(getString(R.string.function_emptyChance1))) {
                 optionalWord = true;
             }
         }
 
         // 50 % chance for an empty result
         if (optionalWord && Math.random() < 0.5) {
-            result = "";
+            return "";
         }
 
+        int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
+
+        if (copyNonCategoryMutators) {
+            mutators = lastWordMutators;
+        }
+
+        Word word = getRandomWord(category);
+        StringBuilder result = new StringBuilder(getWordFormFromMutators(word, mutators));
+        applyVisualMutators(result, mutators);
+
         lastWordMutators = mutators;
-        return result;
+        return result.toString();
+    }
+
+    private void replaceStringBuilderString(StringBuilder sb, String str) {
+        sb.replace(0, sb.length(), str);
     }
 
     private int getCategoryFromMutators(String[] mutators) {
@@ -554,6 +500,69 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return displayedCategory;
+    }
+
+    private String getWordFormFromMutators(Word word, String[] mutators) {
+        StringBuilder result = new StringBuilder(word.toString());
+
+        boolean possessive = false;
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
+                replaceStringBuilderString(result, word.getPlural());
+            }
+            else if (mutator.equals(getString(R.string.function_noun))) {
+                replaceStringBuilderString(result, word.getNoun());
+            }
+            else if (mutator.equals(getString(R.string.function_presentParticiple))) {
+                replaceStringBuilderString(result, word.getPresentParticiple());
+            }
+            else if (mutator.equals(getString(R.string.function_presentTense))) {
+                replaceStringBuilderString(result, word.getPresentTense());
+            }
+            else if (mutator.equals(getString(R.string.function_pastTense1)) || mutator.equals(getString(R.string.function_pastTense2))) {
+                replaceStringBuilderString(result, word.getPastTense());
+            }
+            else if (mutator.equals(getString(R.string.function_pastPerfectTense))) {
+                replaceStringBuilderString(result, word.getPastPerfectTense());
+            }
+            else if (mutator.equals(getString(R.string.function_comparative))) {
+                replaceStringBuilderString(result, word.getComparative());
+            }
+            else if (mutator.equals(getString(R.string.function_superlative))) {
+                replaceStringBuilderString(result, word.getSuperlative());
+            }
+            else if (mutator.equals(getString(R.string.function_manner))) {
+                replaceStringBuilderString(result, word.getManner());
+            }
+            else if (mutator.equals(getString(R.string.function_possessive))) {
+                possessive = true;
+            }
+        }
+
+        if (possessive) {
+            replaceStringBuilderString(result, word.getPossessive(result.toString()));
+        }
+
+        return result.toString();
+    }
+
+    private void applyVisualMutators(StringBuilder sb, String[] mutators) {
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_uppercase))) {
+                replaceStringBuilderString(sb, sb.toString().toUpperCase());
+            }
+            else if (mutator.equals(getString(R.string.function_lowercase))) {
+                replaceStringBuilderString(sb, sb.toString().toLowerCase());
+            }
+            else if (mutator.equals(getString(R.string.function_initialism))) {
+                String str = sb.toString();
+                sb.delete(0, sb.length());
+                for (int i = 0; i < str.length(); i++) {
+                    sb.append(str.charAt(i)).append('.');
+                }
+                sb.append(sb.toString().toUpperCase());
+            }
+        }
     }
 
     @Override
