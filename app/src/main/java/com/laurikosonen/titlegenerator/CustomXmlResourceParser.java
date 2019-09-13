@@ -20,6 +20,7 @@ class CustomXmlResourceParser {
     private static final String pluralStr = "plural";
     private static final String nounStr = "noun";
     private static final String presParticipleStr = "prtc";
+    private static final String duplicateConsonantStr = "dupcon";
     private static final String presentTenseStr = "pres";
     private static final String pastTenseStr = "past";
     private static final String pastPerfTenseStr = "perf";
@@ -135,9 +136,11 @@ class CustomXmlResourceParser {
 
         word.setNoun(parser.getAttributeValue(null, nounStr));
         word.setPlural(parser.getAttributeValue(null, pluralStr));
-        word.setPresentParticiple(parser.getAttributeValue(null, presParticipleStr));
+        word.setPresentParticiple(parser.getAttributeValue(null, presParticipleStr),
+            parser.getAttributeValue(null, duplicateConsonantStr));
         word.setPresentTense(parser.getAttributeValue(null, presentTenseStr));
-        word.setPastTense(parser.getAttributeValue(null, pastTenseStr));
+        word.setPastTense(parser.getAttributeValue(null, pastTenseStr),
+            parser.getAttributeValue(null, duplicateConsonantStr));
         word.setPastPerfectTense(parser.getAttributeValue(null, pastPerfTenseStr));
         word.setComparative(parser.getAttributeValue(null, comparativeStr));
         word.setSuperlative(parser.getAttributeValue(null, superlativeStr));

@@ -236,8 +236,14 @@ public class Word {
         noun = getModifiedWord(word, modifier);
     }
 
-    void setPresentParticiple(String modifier) {
-        if (category == Category.action && modifier == null)
+    void setPresentParticiple(String modifier, String duplicatedConsonant) {
+        String defaultModifier = "ing";
+
+        // Duplicated consonants
+        if (modifier == null && duplicatedConsonant != null)
+            modifier = duplicatedConsonant + defaultModifier;
+        // Action words have implicit present participle forms
+        else if (category == Category.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -250,10 +256,10 @@ public class Word {
             }
 
             if (lastChar == 'e' && secondToLastChar != 'e') {
-                modifier = "1ing"; // Remove one char, add "ING"
+                modifier = "1" + defaultModifier; // Remove one char, add "ING"
             }
             else {
-                modifier = "ing";
+                modifier = defaultModifier;
             }
         }
 
@@ -261,6 +267,8 @@ public class Word {
     }
 
     void setPresentTense(String modifier) {
+
+        // Action words have implicit present forms
         if (category == Category.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
@@ -286,8 +294,13 @@ public class Word {
         presentTense = getModifiedWord(word, modifier);
     }
 
-    void setPastTense(String modifier) {
-        if (category == Category.action && modifier == null)
+    void setPastTense(String modifier, String duplicatedConsonant) {
+
+        // Duplicated consonants
+        if (modifier == null && duplicatedConsonant != null)
+            modifier = duplicatedConsonant + "ed";
+        // Action words have implicit past forms
+        else if (category == Category.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -309,7 +322,9 @@ public class Word {
     }
 
     void setPastPerfectTense(String modifier) {
-        // Sets the past perfect tense to be same as the past tense for Action words;
+
+        // Action words have implicit present participle forms.
+        // Sets the past perfect tense to be same as the past tense;
         // past tense must be set first!
         if (category == Category.action && modifier == null && pastTense != null) {
             pastPerfectTense = pastTense;

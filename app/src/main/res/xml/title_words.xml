@@ -469,6 +469,7 @@
         <word name="Industrial" />
         <word name="Ineffective" />
         <word name="Inert" />
+        <word name="Inevitable" />
         <word name="Infamous" />
         <word name="Infected" />
         <word name="Infernal" />
@@ -815,7 +816,7 @@
         <word name="Sole" manner="ly" />
         <word name="Solo" manner="1ely" />
         <word name="Somber" />
-        <word name="Some" manner="" />
+        <word name="Some" compa="!Fewer" super="!Fewest" manner="" />
         <word name="Sorry" compa="-" super="-" />
         <word name="Sour" compa="-" super="-" />
         <word name="Southern" />
@@ -848,7 +849,7 @@
         <word name="Stubborn" />
         <word name="Stupid" compa="-" super="-" />
         <word name="Stygian" />
-        <word name="Sub" manner="" />
+        <word name="Sub" compa="!Less" super="!Least" manner="" />
         <word name="Substantial" />
         <word name="Subterranean" />
         <word name="Succumbed" />
@@ -1678,6 +1679,7 @@
         <word name="Volume" />
         <word name="Vow" />
         <word name="Wake" plural="" />
+        <word name="War" />
         <word name="Warfare" plural="" />
         <word name="Weakness" />
         <word name="Weight" />
@@ -2115,6 +2117,7 @@
         <word name="Computer" />
         <word name="Concussion" />
         <word name="Cone" />
+        <word name="Conquest" />
         <word name="Constellation" />
         <word name="Constructor" />
         <word name="Contract" />
@@ -2856,6 +2859,7 @@
         <word name="Doctor" />
         <word name="Dog" />
         <word name="Dolphin" />
+        <word name="Dove" />
         <word name="Dragon" />
         <word name="Drifter" />
         <word name="Driver" />
@@ -3329,9 +3333,10 @@
         <word name="Attack" />
         <word name="Augment" noun="ation" />
         <word name="Avenge" noun="!Revenge" />
+        <word name="Avoid" noun="!Aversion" />
         <word name="Await" noun="!Wait" />
         <word name="Awaken" noun="ing" perf="!Awoken" />
-        <word name="Ban" prtc="ning" past="ned" />
+        <word name="Ban" dupcon="n" />
         <word name="Bang" />
         <word name="Banish" noun="ment" />
         <word name="Bash" />
@@ -3341,16 +3346,17 @@
         <word name="Bear" past="!Bore" perf="!Borne" />
         <word name="Beat" past="=" perf="en" />
         <word name="Become" past="3ame" perf="=" />
-        <word name="Beg" prtc="ging" past="ged" />
-        <word name="Begin" noun="ning" prtc="ning" past="2an" perf="2un" />
+        <word name="Beg" dupcon="g" />
+        <word name="Begin" noun="ning" dupcon="n" past="2an" perf="2un" />
         <word name="Begone" prtc="" past="" />
         <word name="Behold" past="3eld" />
         <word name="Believe" noun="2f" />
         <word name="Belong" noun="ing" />
-        <word name="Bet" prtc="ting" past="" />
+        <word name="Bet" dupcon="t" past="" />
         <word name="Betray" noun="al" past="ed" />
-        <word name="Bid" prtc="ding" past="" />
+        <word name="Bid" dupcon="d" past="" />
         <word name="Bind" past="!Bound" />
+        <word name="Bite" past="1" perf="1ten" />
         <word name="Blame" />
         <word name="Blast" />
         <word name="Bleed" noun="ing" past="2d" />
@@ -3359,7 +3365,7 @@
         <word name="Block" />
         <word name="Bloom" />
         <word name="Bluff" />
-        <word name="Blur" prtc="ring" past="red" />
+        <word name="Blur" dupcon="r" />
         <word name="Boil" />
         <word name="Bolster" />
         <word name="Boom" />
@@ -3383,7 +3389,7 @@
         <word name="Call" />
         <word name="Can" plural="" prtc="!Being Able" pres="" past="!Could" />
         <word name="Can't" plural="" prtc="!Not Being Able" pres="" past="!Couldn't" />
-        <word name="Cancel" noun="lation" prtc="ling" past="led" />
+        <word name="Cancel" noun="lation" dupcon="l" />
         <word name="Cannot" plural="" prtc="!Not Being Able" pres="" past="" />
         <word name="Capture" noun="-" />
         <word name="Care" />
@@ -3396,10 +3402,10 @@
         <word name="Celebrate" noun="-" />
         <word name="Change" />
         <word name="Chant" />
-        <word name="Char" prtc="ring" past="red" />
+        <word name="Char" dupcon="r" />
         <word name="Charge" />
         <word name="Chase" />
-        <word name="Chat" prtc="ting" past="ted" />
+        <word name="Chat" dupcon="t" />
         <word name="Cheer" />
         <word name="Choke" />
         <word name="Choose" plural="3ice" past="3se" perf="3sen" />
@@ -3418,13 +3424,14 @@
         <word name="Combine" noun="1ation" />
         <word name="Come" past="!Came" perf="=" />
         <word name="Command" noun="ment" />
+        <word name="Compare" noun="1ison" />
         <word name="Condemn" noun="ation" />
+        <word name="Confess" noun="-" />
         <word name="Configure" noun="1ation" />
         <word name="Confuse" noun="-" />
         <word name="Congregate" noun="-" />
         <word name="Connect" noun="-" />
-        <word name="Conquer" />
-        <word name="Conquest" />
+        <word name="Conquer" noun="1st" />
         <word name="Consider" noun="ation" />
         <word name="Consist" noun="ency" />
         <word name="Conspire" noun="1acy" />
@@ -3432,7 +3439,7 @@
         <word name="Contact" />
         <word name="Contradict" noun="-" />
         <word name="Contribute" noun="-" />
-        <word name="Control" prtc="ling" past="led" />
+        <word name="Control" dupcon="l" />
         <word name="Convert" noun="1sion" />
         <word name="Cooperate" noun="-" />
         <word name="Copy" />
@@ -3447,9 +3454,10 @@
         <word name="Crush" />
         <word name="Cry" plural="1ies" />
         <word name="Curse" />
-        <word name="Cut" prtc="ting" past="" />
+        <word name="Cut" dupcon="t" past="" />
         <word name="Damn" noun="ation" />
         <word name="Dance" />
+        <word name="Dare" />
         <word name="Dash" />
         <word name="Daze" />
         <word name="Dazzle" />
@@ -3491,7 +3499,8 @@
         <word name="Display" plural="s" past="ed" />
         <word name="Distract" noun="-" />
         <word name="Disturb" noun="ance" />
-        <word name="Dive" past="!Dove" />
+        <word name="Dive" past="!Dove" perf="d" />
+        <word name="Divert" noun="1sion" />
         <word name="Divide" noun="2sion" />
         <word name="Do" noun="ing" pres="es" past="!Did" perf="!Done" />
         <word name="Dominate" noun="-" />
@@ -3503,7 +3512,8 @@
         <word name="Drift" />
         <word name="Drink" past="!Drank" perf="!Drunk" />
         <word name="Drive" past="!Drove" perf="-" />
-        <word name="Drop" prtc="ping" past="ped" />
+        <word name="Drop" dupcon="p" />
+        <word name="Drown" noun="ing" />
         <word name="Duel" />
         <word name="Dwell" noun="ing" />
         <word name="Eat" past="!Ate" perf="en" />
@@ -3561,13 +3571,13 @@
         <word name="Fight" past="!Fought" />
         <word name="Fill" />
         <word name="Find" />
-        <word name="Fit" prtc="ting" past="" />
+        <word name="Fit" dupcon="t" past="" />
         <word name="Fix" />
         <word name="Fizzle" />
         <word name="Flash" />
         <word name="Flee" past="1d" />
-        <word name="Flip" prtc="ping" past="ped" />
-        <word name="Flop" prtc="ping" past="ped" />
+        <word name="Flip" dupcon="p" />
+        <word name="Flop" dupcon="p" />
         <word name="Flow" />
         <word name="Fly" noun="!Flight" past="!Flew" perf="!Flown" />
         <word name="Fold" />
@@ -3575,7 +3585,7 @@
         <word name="Forbid" past="2ade" perf="den" />
         <word name="Foresee" noun="2ight" past="2aw" perf="-" />
         <word name="Foretell" past="3old" />
-        <word name="Forget" noun="!Oblivion" prtc="ting" past="2ot" perf="2otten" />
+        <word name="Forget" noun="!Oblivion" dupcon="t" past="2ot" perf="2otten" />
         <word name="Forgive" noun="ness" past="3ave" perf="-" />
         <word name="Form" />
         <word name="Fray" plural="s" past="ed" />
@@ -3590,7 +3600,7 @@
         <word name="Gaze" />
         <word name="Generate" noun="-" />
         <word name="Genocide" prtc="" pres="" past="" />
-        <word name="Get" prtc="ting" past="!Got" />
+        <word name="Get" dupcon="t" past="!Got" />
         <word name="Getaway" plural="s" prtc="!Getting Away" pres="" past="!Got Away" />
         <word name="Giggle" />
         <word name="Give" noun="!Gift" past="!Gave" perf="-" />
@@ -3599,14 +3609,14 @@
         <word name="Glow" />
         <word name="Gnaw" />
         <word name="Go" past="!Went" perf="!Gone" />
-        <word name="Grab" prtc="bing" past="bed" />
+        <word name="Grab" dupcon="b" />
         <word name="Grant" />
         <word name="Grasp" />
         <word name="Greet" noun="ing" />
         <word name="Grieve" noun="2f" />
-        <word name="Grin" prtc="ning" past="ned" />
+        <word name="Grin" dupcon="n" />
         <word name="Grind" />
-        <word name="Grip" prtc="ping" past="ped" />
+        <word name="Grip" dupcon="p" />
         <word name="Grow" past="2ew" perf="-" />
         <word name="Guarantee" />
         <word name="Guess" />
@@ -3626,7 +3636,7 @@
         <word name="Hide" past="1" perf="1den" />
         <word name="Hike" />
         <word name="Hire" />
-        <word name="Hit" prtc="ting" past="" />
+        <word name="Hit" dupcon="t" past="" />
         <word name="Hold" past="!Held" />
         <word name="Howl" />
         <word name="Humiliate" noun="-" />
@@ -3653,7 +3663,7 @@
         <word name="Isolate" noun="-" />
         <word name="It Is" plural="!They Are" prtc=" Being" pres="" past="2Was" perf="2Has Been" />
         <word name="Itch" />
-        <word name="Jam" prtc="ming" />
+        <word name="Jam" dupcon="m" />
         <word name="Jiggle" />
         <word name="Jingle" />
         <word name="Join" noun="!Union" />
@@ -3678,7 +3688,7 @@
         <word name="Lean" />
         <word name="Leap" past="t" />
         <word name="Learn" noun="ing" />
-        <word name="Let" noun="ting" prtc="ting" past="=" />
+        <word name="Let" noun="ting" dupcon="t" past="=" />
         <word name="Liberate" noun="-" />
         <word name="Lie" prtc="!Lying" />
         <word name="Lift" />
@@ -3736,15 +3746,15 @@
         <word name="Part" />
         <word name="Pass" noun="age" />
         <word name="Pause" />
-        <word name="Pay" past="1id" />
+        <word name="Pay" plural="s" past="1id" />
         <word name="Perform" noun="ance" />
         <word name="Perish" />
         <word name="Pick" />
         <word name="Pierce" />
         <word name="Play" plural="s" past="ed" />
         <word name="Please" noun="1ure" />
-        <word name="Plot" prtc="ting" past="ted" />
-        <word name="Pop" prtc="ping" past="ped" />
+        <word name="Plot" dupcon="t" />
+        <word name="Pop" dupcon="p" />
         <word name="Possess" noun="-" />
         <word name="Pour" />
         <word name="Practice" />
@@ -3752,6 +3762,7 @@
         <word name="Pray" noun="er" past="ed" />
         <word name="Preach" noun="ing" />
         <word name="Predict" noun="-" />
+        <word name="Prepare" noun="1ation" />
         <word name="Press" />
         <word name="Prevail" noun="2lence" />
         <word name="Prey" plural="" past="ed" />
@@ -3768,8 +3779,8 @@
         <word name="Purge" />
         <word name="Pursue" noun="1it" />
         <word name="Push" />
-        <word name="Put" plural="" prtc="ting" past="=" />
-        <word name="Quit" prtc="ting" past="" />
+        <word name="Put" plural="" dupcon="t" past="=" />
+        <word name="Quit" dupcon="t" past="" />
         <word name="Rage" />
         <word name="Raid" />
         <word name="Rain" />
@@ -3811,7 +3822,7 @@
         <word name="Require" noun="ment" />
         <word name="Research" />
         <word name="Reserve" noun="1ation" />
-        <word name="Reset" prtc="ting" past="=" />
+        <word name="Reset" dupcon="t" past="=" />
         <word name="Resist" noun="ance" />
         <word name="Respond" noun="1se" />
         <word name="Rest" />
@@ -3821,7 +3832,7 @@
         <word name="Retreat" />
         <word name="Return" />
         <word name="Reveal" noun="2lation" />
-        <word name="Revel" prtc="ling" past="led" />
+        <word name="Revel" dupcon="l" />
         <word name="Reverse" noun="1al" />
         <word name="Revive" noun="1al" />
         <word name="Revolve" noun="2ution" />
@@ -3829,19 +3840,19 @@
         <word name="Ride" past="!Rode" perf="1den" />/>
         <word name="Ring" past="!Rang" perf="!Rung" />
         <word name="Riot" />
-        <word name="Rip" prtc="ping" past="ped" />
+        <word name="Rip" dupcon="p" />
         <word name="Rise" past="!Rose" perf="n" />
-        <word name="Rob" noun="bery" prtc="bing" past="bed" />
+        <word name="Rob" noun="bery" dupcon="b" />
         <word name="Roll" />
         <word name="Rumble" />
-        <word name="Run" prtc="ning" past="!Ran" perf="=" />
+        <word name="Run" dupcon="n" past="!Ran" perf="=" />
         <word name="Rush" />
         <word name="Sabotage" />
         <word name="Sail" />
         <word name="Salvage" />
         <word name="Save" noun="!Salvation" />
-        <word name="Say" past="1id" />
-        <word name="Scan" prtc="ning" past="ned" />
+        <word name="Say" plural="s" past="1id" />
+        <word name="Scan" dupcon="n" />
         <word name="Scare" />
         <word name="Scrape" />
         <word name="Scratch" />
@@ -3855,7 +3866,7 @@
         <word name="Seize" noun="1ure" />
         <word name="Sell" noun="!Sale" past="!Sold" />
         <word name="Serve" noun="1ice" />
-        <word name="Set" prtc="ting" past="=" />
+        <word name="Set" dupcon="t" past="=" />
         <word name="Settle" noun="ment" />
         <word name="Shake" past="!Shook" perf="-" />
         <word name="Shall" plural="" prtc="" pres="" past="!Should" perf="!Should Have" />
@@ -3881,26 +3892,26 @@
         <word name="Sing" noun="!Song" past="!Sang" perf="!Sung" />
         <word name="Sink" past="!Sank" perf="!Sunken" />
         <word name="Siphon" />
-        <word name="Sit" noun="ting" prtc="ting" past="!Sat" />
-        <word name="Skin" prtc="ning" past="ned" />
-        <word name="Skip" prtc="ping" past="ped" />
+        <word name="Sit" noun="ting" dupcon="t" past="!Sat" />
+        <word name="Skin" dupcon="n" />
+        <word name="Skip" dupcon="p" />
         <word name="Skirmish" />
-        <word name="Slam" prtc="ming" />
+        <word name="Slam" dupcon="m" />
         <word name="Slash" />
         <word name="Slaughter" />
         <word name="Sleep" past="!Slept" />
         <word name="Slice" />
         <word name="Slide" />
         <word name="Sling" />
-        <word name="Slip" prtc="ping" past="ped" />
-        <word name="Slog" prtc="ging" past="ged" />
+        <word name="Slip" dupcon="p" />
+        <word name="Slog" dupcon="g" />
         <word name="Smash" />
         <word name="Smell" />
         <word name="Smile" />
         <word name="Smite" past="!Smote" perf="1ten" />
-        <word name="Snap" prtc="ping" past="ped" />
+        <word name="Snap" dupcon="p" />
         <word name="Sneeze" />
-        <word name="Snip" prtc="ping" past="ped" />
+        <word name="Snip" dupcon="p" />
         <word name="Soak" />
         <word name="Soar" />
         <word name="Sow" perf="-" />
@@ -3910,9 +3921,9 @@
         <word name="Spawn" />
         <word name="Speak" noun="2ech" />
         <word name="Spend" noun="iture" past="1t" />
-        <word name="Spin" prtc="ning" past="!Spun" />
+        <word name="Spin" dupcon="n" past="!Spun" />
         <word name="Splash" />
-        <word name="Split" prtc="ting" past="" />
+        <word name="Split" dupcon="t" past="" />
         <word name="Spread" />
         <word name="Sprint" />
         <word name="Stain" />
@@ -3923,24 +3934,26 @@
         <word name="Start" />
         <word name="Startle" />
         <word name="Starve" noun="1ation" />
+        <word name="Stay" plural="s" past="1id" />
         <word name="Steal" noun="!Theft" past="!Stole" perf="!Stolen" />
-        <word name="Step" prtc="ping" past="ped" />
+        <word name="Step" dupcon="p" />
         <word name="Stick" perf="!Stuck" />
         <word name="Sting" past="!Stung" />
         <word name="Stink" past="!Stank" perf="!Stunk" />
         <word name="Stoke" />
         <word name="Stomp" noun="!Stampede" />
-        <word name="Stop" prtc="ping" past="ped" />
+        <word name="Stop" dupcon="p" />
+        <word name="Storm" />
         <word name="Strand" />
         <word name="Strangle" noun="2ulation" />
         <word name="Stray" plural="s" past="ed" />
         <word name="Stride" past="Strode" />
         <word name="Strike" past="3uck" perf="2cken" />
         <word name="Study" />
-        <word name="Stun" prtc="ning" past="ned" />
+        <word name="Stun" dupcon="n" />
         <word name="Stunt" />
         <word name="Submerge" noun="2sion" />
-        <word name="Submit" noun="1ssion" prtc="ting" past="ted" />
+        <word name="Submit" noun="1ssion" dupcon="t" />
         <word name="Substitute" noun="-" />
         <word name="Subtract" noun="-" />
         <word name="Succeed" noun="2ss" />
@@ -3991,6 +4004,7 @@
         <word name="Traverse" noun="1al" />
         <word name="Tread" />
         <word name="Treat" noun="ment" />
+        <word name="Trek" dupcon="k" />
         <word name="Trick" />
         <word name="Trudge" />
         <word name="Try" pres="1ies" />
@@ -4013,18 +4027,18 @@
         <word name="Wake Up" pres="3s Up" past="!Woke Up" perf="!Woken Up" />
         <word name="Walk" />
         <word name="Want" />
-        <word name="War" prtc="ring" pres="" past="" />
+        <word name="War" dupcon="r" pres="" past="" />
         <word name="Warn" noun="ing" />
         <word name="Waste" />
         <word name="Watch" />
-        <word name="Wear" past="!Worn" />
+        <word name="Wear" past="!Wore" perf="!Worn" />
         <word name="Weave" past="!Woven" />
         <word name="Weld" />
         <word name="Whack" />
         <word name="Whisper" />
         <word name="Whistle" />
         <word name="Will" past="" />
-        <word name="Win" prtc="ning" past="!Won" />
+        <word name="Win" dupcon="n" past="!Won" />
         <word name="Wipe" />
         <word name="Wish" />
         <word name="Wither" />
@@ -4033,14 +4047,14 @@
         <word name="Work" />
         <word name="Worry" />
         <word name="Worsen" noun="ing" />
-        <word name="Worship" prtc="ping" past="ped" />
+        <word name="Worship" dupcon="p" />
         <word name="Wreak" />
         <word name="Wreck" />
         <word name="Write" noun="1ing" past="!Wrote" perf="1ten" />
         <word name="Yearn" plural="ing" noun="ing" />
         <word name="Yield" />
         <word name="You Are" prtc="" pres="" past="3Were" perf="3Have Been" />
-        <word name="Zap" prtc="ping" past="ped" />
+        <word name="Zap" dupcon="p" />
         <word name="Zoom" />
     </category>
     <category id="6" name="Place &amp; Time" shortName="pt" implicitPlural="true">
