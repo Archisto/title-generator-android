@@ -227,7 +227,11 @@ public class Word {
                 || (secondToLastChar == 'c' && lastChar == 'h')
                 || (secondToLastChar == 's' && lastChar == 'h')) {
                 modifier = "es";
-            } else if (lastChar == 'y') {
+            } else if (lastChar == 'y'
+                       && secondToLastChar != 'a'
+                       && secondToLastChar != 'e'
+                       && secondToLastChar != 'o'
+                       && secondToLastChar != 'u') {
                 modifier = "1ies"; // Remove one char, add "IES"
             }
             else {
