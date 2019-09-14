@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -153,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         int wordsPerTitle = titleWordCount;
 
         for (int i = 0; i < titleSlots.size(); i++) {
-            // TODO: Skip space in non-custom template titles
             skipSpace = false;
 
             boolean emptySlot = i >= displayedTitleCount;
@@ -188,17 +188,20 @@ public class MainActivity extends AppCompatActivity {
                 title.append(getString(R.string.str_the)).append(' ');
             }
 
+            // The index of the word which will get the only decoration of the title
             int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
 
             for (int j = 0; j < wordsPerTitle; j++) {
                 boolean isLastWord = j == wordsPerTitle - 1;
+                boolean hasDecoration =
+                    enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
 
-                title.append(getRandomWord(displayedCategory).getRandomWordForm());
+                appendStringToTitle(title, getRandomWord(displayedCategory).getRandomWordForm());
 
-                if (enableTitleDecorations && j == formPlaceWordIndex && wordsPerTitle > 1) {
+                if (hasDecoration) {
                     applyTitleDecoration(getRandomTitleDecoration(), title);
                 }
-                else if (!isLastWord) {
+                else if (!isLastWord && !skipSpace) {
                     applyTitleDecoration(TitleDecoration.X_Y, title);
                 }
             }
@@ -207,51 +210,37 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void applyCustomTemplate(StringBuilder title) {
-        lastWordCategory = -1;
+    private void replaceStringBuilderString(StringBuilder sb, String str) {
+        sb.replace(0, sb.length(), str);
+    }
 
-        for (int i = 0; i < customTemplate.length(); i++) {
-            if (mutatorBlockLength > 0) {
-                mutatorBlockLength--;
-                continue;
-            }
-
-            char currentChar = customTemplate.charAt(i);
-            boolean isLastChar = i == customTemplate.length() - 1;
-
-            // When a template word character is hit, a word isn't yet added to the title.
-            // Instead, it is checked if the word has any mutators after it.
-            // (Unless there are consecutive template word chars in which case a word is added
-            // to the title.)
-            if (currentChar == templateWordChar) {
-                if (lastCharWasTemplateWordChar) {
-                    title.append(getRandomWord(displayedCategory));
-                }
-
-                lastCharWasTemplateWordChar = true;
-            }
-            else if (lastCharWasTemplateWordChar) {
-                appendWordWithMutatorsToTitle(title, i);
-                lastCharWasTemplateWordChar = false;
-            }
-            else if (!skipSpace || currentChar != ' ') {
-                title.append(currentChar);
-            }
-
-            if (skipSpace && currentChar == ' ') {
-                skipSpace = false;
-            }
-
-            // TODO: Apply mutators to remove ending dash
-            if (isLastChar && lastCharWasTemplateWordChar) {
-                Word word = getRandomWord(displayedCategory);
-                title.append(word);
-                lastWordCategory = word.categoryId;
-            }
+    private void appendWordToTitle(StringBuilder title, Word word) {
+        String wordStr = word.toString();
+        if (word.getLastChar() == '-') {
+            wordStr = wordStr.substring(0, wordStr.length() - 1);
         }
 
-        lastCharWasTemplateWordChar = false;
-        mutatorBlockLength = 0;
+        title.append(wordStr);
+    }
+
+    private void appendStringToTitle(StringBuilder title, String str) {
+        if (Word.getLastChar(str) == '-') {
+            str = str.substring(0, str.length() - 1);
+        }
+
+        title.append(str);
+    }
+
+    private void appendDecorationToTitle(StringBuilder title, String decoration) {
+        title.append(decoration);
+        skipSpace = false;
+    }
+
+    private void appendSpaceToTitleIfNotSkipped(StringBuilder title) {
+        if (!skipSpace)
+            title.append(" ");
+        else
+            skipSpace = false;
     }
 
     private Word getRandomWord(int wordCategoryId) {
@@ -264,6 +253,10 @@ public class MainActivity extends AppCompatActivity {
         int wordIndex = (int) (Math.random() * wordList.size());
         Word word = wordList.get(wordIndex);
         lastWordCategory = word.categoryId;
+
+        if (word.getLastChar() == '-') {
+            skipSpace = true;
+        }
 
         return word;
     }
@@ -298,101 +291,145 @@ public class MainActivity extends AppCompatActivity {
 
     private void applyTitleDecoration(TitleDecoration decoration, StringBuilder title) {
         if (decoration == null) {
-            title.append(" ");
+            appendSpaceToTitleIfNotSkipped(title);
             return;
         }
 
         switch (decoration) {
             case X_Y:
-                title.append(" ");
+                appendSpaceToTitleIfNotSkipped(title);
                 break;
             case X_colon_Y:
-                title.append(getString(R.string.form_X__Y));
+                appendDecorationToTitle(title, getString(R.string.form_X__Y));
                 break;
             case X_colon_theY:
-                title.append(getString(R.string.form_X__The_Y));
+                appendDecorationToTitle(title, getString(R.string.form_X__The_Y));
                 break;
             case XofY:
-                title.append(getString(R.string.form_X_of_Y));
+                appendDecorationToTitle(title, getString(R.string.form_X_of_Y));
                 break;
             case XoftheY:
-                title.append(getString(R.string.form_X_of_the_Y));
+                appendDecorationToTitle(title, getString(R.string.form_X_of_the_Y));
                 break;
             case XandY:
-                title.append(getString(R.string.form_X_and_Y));
+                appendDecorationToTitle(title, getString(R.string.form_X_and_Y));
                 break;
             case XandtheY:
-                title.append(getString(R.string.form_X_and_the_Y));
+                appendDecorationToTitle(title, getString(R.string.form_X_and_the_Y));
                 break;
             case XsY:
                 if (title.charAt(title.length() - 1) == 's'
                     || title.charAt(title.length() - 1) == 'z')
-                    title.append(getString(R.string.form_Xs_Y2));
+                    appendDecorationToTitle(title, getString(R.string.form_Xs_Y2));
                 else
-                    title.append(getString(R.string.form_Xs_Y));
+                    appendDecorationToTitle(title, getString(R.string.form_Xs_Y));
                 break;
             default:
-                title.append(" ");
+                appendSpaceToTitleIfNotSkipped(title);
                 break;
         }
+    }
+
+    private void applyCustomTemplate(StringBuilder title) {
+        lastWordCategory = -1;
+
+        for (int i = 0; i < customTemplate.length(); i++) {
+            if (mutatorBlockLength > 0) {
+                mutatorBlockLength--;
+                continue;
+            }
+
+            char currentChar = customTemplate.charAt(i);
+            boolean isLastChar = i == customTemplate.length() - 1;
+
+            char nextChar = '_';
+            if (!isLastChar) {
+                nextChar = customTemplate.charAt(i + 1);
+            }
+
+            boolean anyCharCanBeAppended =
+                !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
+
+            // When a template word character is hit, a word isn't yet added to the title.
+            // Instead, it is checked if the word has any mutators after it.
+            // (Unless there are consecutive template word chars in which case a word is added
+            // to the title.)
+            if (currentChar == templateWordChar) {
+                if (lastCharWasTemplateWordChar) {
+                    appendWordToTitle(title, getRandomWord(displayedCategory));
+                    skipSpace = false;
+                }
+
+                lastCharWasTemplateWordChar = true;
+            }
+            // The character immediately following a word template char
+            else if (lastCharWasTemplateWordChar) {
+                appendWordWithMutatorsToTitle(title, i);
+
+                // Evaluated again because the value of skipSpace may have changed
+                anyCharCanBeAppended =
+                    !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
+
+                if (mutatorBlockLength == 0 && anyCharCanBeAppended) {
+                    title.append(currentChar);
+                    skipSpace = false;
+                }
+
+                lastCharWasTemplateWordChar = false;
+            }
+            else if (anyCharCanBeAppended) {
+                title.append(currentChar);
+                skipSpace = false;
+            }
+
+            if (skipSpace && currentChar == ' ') {
+                skipSpace = false;
+            }
+
+            if (isLastChar && lastCharWasTemplateWordChar) {
+                Word word = getRandomWord(displayedCategory);
+                appendWordToTitle(title, word);
+                lastWordCategory = word.categoryId;
+            }
+        }
+
+        lastCharWasTemplateWordChar = false;
+        skipSpace = false;
+        mutatorBlockLength = 0;
     }
 
     private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
-        // TODO: Better mutator parsing
-//        StringBuilder mutators = parseMutators(customTemplateIndex);
-//        title.append(getRandomStringWithAppliedMutators(mutators))
-//            .append(mutatorBlockLength == 0 ? customTemplate.charAt(customTemplateIndex) : "");
+        StringBuilder mutators = parseMutators(customTemplateIndex);
+        String wordWithMutators;
+        if (mutators == null)
+            wordWithMutators = getRandomWord(displayedCategory).toString();
+        else
+            wordWithMutators = getWordWithAppliedMutators(mutators);
 
-        String wordWithMutators = getRandomWordAndParseMutators(customTemplateIndex);
-
-        boolean appendWord = true;
-        if (wordWithMutators.length() == 0) {
-            appendWord = false;
+        if (wordWithMutators.length() == 0)
             skipSpace = true;
-        }
-        else if (wordWithMutators.charAt(wordWithMutators.length() - 1) == '-') {
-            // TODO: The last word shouldn't have a dash at the end
-            wordWithMutators = wordWithMutators.substring(0, wordWithMutators.length() - 1);
-            skipSpace = true;
-        }
-
-        if (appendWord) {
-            title.append(wordWithMutators);
-        }
-
-        // The character immediately following the word template char is added to the title
-        // if there's no mutator block and, if the char's a space, it's not skipped
-        if (mutatorBlockLength == 0
-              && (!skipSpace || customTemplate.charAt(customTemplateIndex) != ' ')) {
-            title.append(customTemplate.charAt(customTemplateIndex));
-        }
+        else
+            appendStringToTitle(title, wordWithMutators);
     }
 
-//    private StringBuilder parseMutators(int customTemplateIndex) {
-//
-//    }
-//
-//    private String getRandomStringWithAppliedMutators(StringBuilder mutators) {
-//
-//    }
-
-   /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
-    * Mutators: uppercase, lowercase, plural, possessive, noun, infinitive, present tense, past tense,
-    * initialism, comparative, superlative, 50 % chance for no word, same mutators as the last,
-    * same non-category mutators, same category, same category options and mutator chaining.
-    *
-    * @param index  The index on the custom template.
-    * @returns      A word string with applied mutators.
-    */
-    private String getRandomWordAndParseMutators(int index) {
+    /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
+     * Mutators: uppercase, lowercase, plural, possessive, noun, present participle, present tense, past tense,
+     * initialism, comparative, superlative, 50 % chance for no word, same mutators as the last,
+     * same non-category mutators, same category, same category options and mutator chaining.
+     *
+     * @param index  The index on the custom template.
+     * @returns      A string array of mutators.
+     */
+    private StringBuilder parseMutators(int index) {
         StringBuilder mutators = new StringBuilder();
         boolean mutatorsActive = false;
+        mutatorBlockLength = 0;
+
         for (int i = index; i < customTemplate.length(); i++) {
 
-            // There is no mutator block; returns a random word
+            // There is no mutator block
             if (i == index && customTemplate.charAt(i) != getString(R.string.function_mutatorBlockStart).charAt(0)) {
-                mutatorBlockLength = 0;
-                return getRandomWord(displayedCategory).toString();
+                return null;
             }
             // The start of the mutator block
             else if (i == index) {
@@ -410,17 +447,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // The mutator block misses an end char and thus is considered null and void; returns a random word
-        if (mutatorsActive) {
-            mutatorBlockLength = 0;
-            return getRandomWord(displayedCategory).toString();
-        }
-        // No mutators in otherwise valid mutator block
-        else if (mutators.length() == 0) {
-            return getRandomWord(displayedCategory).toString();
-        }
+        // The mutator block misses an end char and thus is considered null and void
+        // or there are no mutators
+        if (mutatorsActive || mutators.length() == 0)
+            return null;
 
-        return getWordWithAppliedMutators(mutators);
+        return mutators;
     }
 
     private String getWordWithAppliedMutators(StringBuilder mutatorString) {
@@ -470,10 +502,6 @@ public class MainActivity extends AppCompatActivity {
 
         lastWordMutators = mutators;
         return result.toString();
-    }
-
-    private void replaceStringBuilderString(StringBuilder sb, String str) {
-        sb.replace(0, sb.length(), str);
     }
 
     private int getCategoryFromMutators(String[] mutators) {

@@ -14,7 +14,6 @@ class CustomXmlResourceParser {
     private static final String categoryStr = "category";
     private static final String wordStr = "word";
     private static final String nameStr = "name";
-    private static final String shortNameStr = "shortName";
     private static final String idStr = "id";
     private static final String implicitPluralStr = "implicitPlural";
     private static final String pluralStr = "plural";
@@ -58,8 +57,6 @@ class CustomXmlResourceParser {
             parser.next();
             int eventType = parser.getEventType();
             String startTagName = "_";
-            String categoryName = "ERROR";
-            String categoryShortName = "ERR";
             int categoryId = 0;
             boolean isImplicitPlural = false;
 
@@ -71,8 +68,6 @@ class CustomXmlResourceParser {
                     // Parses the category
                     if (startTagName.equalsIgnoreCase(categoryStr)) {
                         String strId = parser.getAttributeValue(null, idStr);
-                        categoryName = parser.getAttributeValue(null, nameStr);
-                        categoryShortName = parser.getAttributeValue(null, shortNameStr);
                         categoryId = parseInt(strId);
                         isImplicitPlural =
                             parser.getAttributeValue(null, implicitPluralStr) != null;
@@ -85,8 +80,7 @@ class CustomXmlResourceParser {
                     }
                     else if (startTagName.equalsIgnoreCase(wordStr)) {
                         // Creates a new word
-                        Word word = getParsedWord(
-                            parser, categoryName, categoryShortName, categoryId, isImplicitPlural);
+                        Word word = getParsedWord(parser, categoryId, isImplicitPlural);
                         if (word != null) {
                             pools.get(categoryId).add(word);
                             poolAll.add(word);
@@ -110,29 +104,18 @@ class CustomXmlResourceParser {
 
     /**
      * Creates and returns a Word object.
-     * @param categoryName      The Word's category's name
-     * @param categoryShortName The Word's category's short name
-     * @param id                The Word's category's id
-     * @return                  The Word object
+     * @param categoryId    The word's category's id
+     * @return              The Word object
      */
     private static Word getParsedWord(XmlResourceParser parser,
-                                      String categoryName,
-                                      String categoryShortName,
-                                      int id,
+                                      int categoryId,
                                       boolean isImplicitPlural) {
         String text = parser.getAttributeValue(null, nameStr);
         if (text == null || text.isEmpty()) {
             return null;
         }
 
-        Word.Category wordCategory =
-            categoryShortName.equals(catKindShortStr) ? Word.Category.kind :
-            categoryShortName.equals(catThingShortStr) ? Word.Category.thing :
-            categoryShortName.equals(catPersonAndCreatureShortStr) ? Word.Category.peopleAndCreatures :
-            categoryShortName.equals(catActionShortStr) ? Word.Category.action :
-            Word.Category.unknown;
-        Word word = new Word(
-            text, categoryName, categoryShortName, id, wordCategory, isImplicitPlural);
+        Word word = new Word(text, categoryId, isImplicitPlural);
 
         word.setNoun(parser.getAttributeValue(null, nounStr));
         word.setPlural(parser.getAttributeValue(null, pluralStr));

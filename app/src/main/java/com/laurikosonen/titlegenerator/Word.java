@@ -7,10 +7,8 @@ import java.util.ArrayList;
 public class Word {
     private final String defaultModifierMarker = "-";
     private final char replaceWordMarker = '!';
-    private final String moreStr = "More";
-    private final String mostStr = "Most";
 
-    public String word;
+    private String word;
     private String plural;
     private String noun;
     private String presentParticiple;
@@ -22,10 +20,8 @@ public class Word {
     private String manner;
     private String possessive;
 
-    public String categoryName;
-    public String categoryShortName;
-    public int categoryId;
     public Category category;
+    public int categoryId;
     public boolean implicitPlural;
     private ArrayList<String> wordForms;
 
@@ -34,23 +30,18 @@ public class Word {
         concept,
         substance,
         thing,
-        peopleAndCreatures,
+        personAndCreature,
         action,
         placeAndTime,
         unknown
     }
 
     public Word(String word,
-                String categoryName,
-                String categoryShortName,
                 int categoryId,
-                Category category,
                 boolean implicitPlural) {
         this.word = capitalizeFirstLetter(word);
-        this.categoryName = categoryName;
-        this.categoryShortName = categoryShortName;
         this.categoryId = categoryId;
-        this.category = category;
+        category = getCategoryFromInt(categoryId);
         this.implicitPlural = implicitPlural;
     }
 
@@ -112,21 +103,49 @@ public class Word {
 //        }
     }
 
+    static Category getCategoryFromInt(int number) {
+        return
+            number == 0 ? Category.kind :
+            number == 1 ? Category.concept :
+            number == 2 ? Category.substance :
+            number == 3 ? Category.thing :
+            number == 4 ? Category.personAndCreature :
+            number == 5 ? Category.action :
+            number == 6 ? Category.placeAndTime :
+            Category.unknown;
+    }
+
     String getRandomWordForm() {
         float baseWordChance =
+            category == Category.kind ? 0.85f :
             category == Category.thing ? 0.7f :
-            category == Category.peopleAndCreatures ? 0.6f :
+            category == Category.personAndCreature ? 0.6f :
             category == Category.action ? 0.6f :
             0.5f;
-//        float baseWordChance = 0f;
+
         if (wordForms == null || wordForms.size() == 0 || Math.random() < baseWordChance) {
             return word;
         }
 
-        //return getPresentParticiple();
+        if (wordForms.size() == 1) {
+            return wordForms.get(0);
+        }
+        else {
+            int index = (int) (Math.random() * wordForms.size());
+            return wordForms.get(index);
+        }
+    }
 
-        int index = (int) (Math.random() * wordForms.size());
-        return wordForms.get(index);
+    char getLastChar() {
+        return getCharFromEnd(word, 1);
+    }
+
+    static char getLastChar(String str) {
+        return getCharFromEnd(str, 1);
+    }
+
+    static char getCharFromEnd(String str, int charsFromEnd) {
+        return str.charAt(str.length() - charsFromEnd);
     }
 
     String getPlural() {
@@ -198,10 +217,10 @@ public class Word {
         }
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = baseWord.charAt(baseWord.length() - 1);
+            char lastChar = getLastChar(baseWord);
             char secondToLastChar = '_';
             if (baseWord.length() >= 2) {
-                secondToLastChar = baseWord.charAt(baseWord.length() - 2);
+                secondToLastChar = getCharFromEnd(baseWord, 2);
             }
 
             if (lastChar == 's' || lastChar == 'x' || lastChar == 'z'
@@ -224,7 +243,7 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             if (lastChar == 'e') {
                 modifier = "1ion"; // Remove one char, add "ION"
             }
@@ -249,10 +268,10 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             char secondToLastChar = '_';
             if (word.length() >= 2) {
-                secondToLastChar = word.charAt(word.length() - 2);
+                secondToLastChar = getCharFromEnd(word, 2);
             }
 
             if (lastChar == 'e' && secondToLastChar != 'e') {
@@ -275,10 +294,10 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             char secondToLastChar = '_';
             if (word.length() >= 2) {
-                secondToLastChar = word.charAt(word.length() - 2);
+                secondToLastChar = getCharFromEnd(word, 2);
             }
 
             if (lastChar == 's' || lastChar == 'x' || lastChar == 'z'
@@ -306,7 +325,7 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             if (lastChar == 'e') {
                 modifier = "d";
             }
@@ -341,6 +360,8 @@ public class Word {
     }
 
     void setComparative(String modifier) {
+        final String moreStr = "More";
+
         if ((category != Category.kind && modifier == null)
             || (modifier != null && modifier.length() == 0))
             return;
@@ -350,7 +371,7 @@ public class Word {
             return;
         }
         else if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             if (lastChar == 'e') {
                 modifier = "r";
             }
@@ -366,6 +387,8 @@ public class Word {
     }
 
     void setSuperlative(String modifier) {
+        final String mostStr = "Most";
+
         if ((category != Category.kind && modifier == null)
             || (modifier != null && modifier.length() == 0))
             return;
@@ -375,7 +398,7 @@ public class Word {
             return;
         }
         else if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             if (lastChar == 'y') {
                 modifier = "1iest"; // Remove one char, add "IEST"
             }
@@ -397,10 +420,10 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = word.charAt(word.length() - 1);
+            char lastChar = getLastChar();
             char secondToLastChar = '_';
             if (word.length() >= 2) {
-                secondToLastChar = word.charAt(word.length() - 2);
+                secondToLastChar = getCharFromEnd(word, 2);
             }
 
             if (secondToLastChar == 'l' && lastChar == 'e') {

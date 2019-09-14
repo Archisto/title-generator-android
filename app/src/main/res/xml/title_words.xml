@@ -116,8 +116,6 @@
         <word name="Candid" />
         <word name="Careful" plural="-" />
         <word name="Careless" />
-        <word name="Carved" />
-        <word name="Carven" />
         <word name="Casual" />
         <word name="Caustic" />
         <word name="Celestial" plural="-" />
@@ -352,7 +350,6 @@
         <word name="Forced" />
         <word name="Fore" compa="" super="most" manner="" />
         <word name="Foreign" />
-        <word name="Forgiven" />
         <word name="Forgotten" />
         <word name="Forlorn" />
         <word name="Forsaken" />
@@ -552,12 +549,12 @@
         <word name="Massive" />
         <word name="Mauled" />
         <word name="Max" manner="" />
-        <word name="Maximum" manner="2ally" />
+        <word name="Maximum" compa="" super="" manner="2ally" />
         <word name="Maybe" compa="!More Possible" super="!Most Possible" manner="!Possibly" />
         <word name="Mean" compa="-" super="-" />
         <word name="Mechanical" />
         <word name="Medical" />
-        <word name="Medium" />
+        <word name="Medium" compa="" super="" manner="2ally" />
         <word name="Meek" compa="-" super="-" />
         <word name="Mellow" />
         <word name="Menacing" />
@@ -571,7 +568,7 @@
         <word name="Million" plural="-" compa="" super="" manner="" />
         <word name="Mindless" />
         <word name="Mini" />
-        <word name="Minimum" />
+        <word name="Minimum" compa="" super="" manner="2ally" />
         <word name="Miraculous" />
         <word name="Missing" />
         <word name="Mobile" />
@@ -831,9 +828,6 @@
         <word name="Stale" />
         <word name="Stalwart" />
         <word name="Standard" plural="-" />
-        <word name="Startled" />
-        <word name="Startling" />
-        <word name="Starved" />
         <word name="Starving" />
         <word name="Static" />
         <word name="Stellar" />
@@ -852,7 +846,6 @@
         <word name="Sub" compa="!Less" super="!Least" manner="" />
         <word name="Substantial" />
         <word name="Subterranean" />
-        <word name="Succumbed" />
         <word name="Sudden" />
         <word name="Sunken" />
         <word name="Sunny" compa="-" super="-" />
@@ -958,7 +951,6 @@
         <word name="Valiant" />
         <word name="Valuable" />
         <word name="Vapid" />
-        <word name="Vaporized" />
         <word name="Veiled" />
         <word name="Venomous" />
         <word name="Versatile" />
@@ -1395,6 +1387,7 @@
         <word name="Matrix" plural="1ces" />
         <word name="Mayhem" plural="" />
         <word name="Meaning" />
+        <word name="Median" />
         <word name="Memory" />
         <word name="Menace" />
         <word name="Mercy" plural="" />
@@ -1734,7 +1727,6 @@
         <word name="Carrion" />
         <word name="Cement" />
         <word name="Ceramic" plural="-" />
-        <word name="Chain" plural="-" />
         <word name="Chemical" plural="-" />
         <word name="Cherry" plural="-" />
         <word name="Chestnut" plural="-" />
@@ -2080,6 +2072,7 @@
         <word name="Case" />
         <word name="Cash" plural="" />
         <word name="Centrifuge" />
+        <word name="Chain" />
         <word name="Chainsaw" />
         <word name="Chair" />
         <word name="Chalice" />
