@@ -120,6 +120,9 @@
             <item
                 android:id="@+id/action_exampleTemplate10"
                 android:title="@string/customTemplateExample10" />
+            <item
+                android:id="@+id/action_exampleTemplate11"
+                android:title="@string/customTemplateExample11" />
         </menu>
     </item>
 

@@ -383,7 +383,7 @@
         <word name="Generic" plural="-" />
         <word name="Generous" />
         <word name="Genetic" />
-        <word name="Gentle" />
+        <word name="Gentle" compa="-" super="-" />
         <word name="Genuine" />
         <word name="Ghostly" compa="-" super="-" manner="2ily" />
         <word name="Giant" compa="-" super="-" />
@@ -410,7 +410,7 @@
         <word name="Guaranteed" />
         <word name="Guiding" />
         <word name="Guilty" compa="-" super="-" />
-        <word name="Half" />
+        <word name="Half" compa="" super="" />
         <word name="Hallowed" />
         <word name="Handsome" compa="-" super="-" />
         <word name="Hanged" />
@@ -510,7 +510,7 @@
         <word name="Kind" compa="-" super="-" />
         <word name="Kinetic" />
         <word name="Known" manner="1ingly" />
-        <word name="Last" />
+        <word name="Last" compa="!Later" super="" />
         <word name="Late" compa="-" super="-" />
         <word name="Lavish" />
         <word name="Law-Abiding" />
@@ -1807,7 +1807,6 @@
         <word name="Cement" />
         <word name="Ceramic" plural="-" />
         <word name="Chemical" plural="-" />
-        <word name="Cherry" plural="-" />
         <word name="Chestnut" plural="-" />
         <word name="Chili" />
         <word name="Choco" />
@@ -1901,6 +1900,7 @@
         <word name="Kilo" />
         <word name="Laser" plural="-" />
         <word name="Lava" />
+        <word name="Lead" />
         <word name="Leather" />
         <word name="Light" plural="-" />
         <word name="Lightning" />
@@ -2172,6 +2172,8 @@
         <word name="Chalice" />
         <word name="Chapter" />
         <word name="Chariot" />
+        <word name="Cherry" />
+        <word name="Chess" plural="" />
         <word name="Chest" />
         <word name="Chord" />
         <word name="Chronicles" plural="" />
@@ -3943,7 +3945,7 @@
         <word name="Part" prepos="With" />
         <word name="Pass" noun="age" actor="er" />
         <word name="Patrol" dupcon="l" />
-        <word name="Pause" />
+        <word name="Pause" prepos="at" />
         <word name="Pay" past="1id" prepos="for" />
         <word name="Perform" noun="ance" />
         <word name="Perish" prepos="From" />
@@ -3956,7 +3958,7 @@
         <word name="Pop" dupcon="p" />
         <word name="Possess" noun="-" />
         <word name="Pour" prepos="in, on" />
-        <word name="Practice" />
+        <word name="Practice" prepos="for" />
         <word name="Praise" />
         <word name="Prank" actor="ster" />
         <word name="Pray" noun="er" prepos="for" />
@@ -3983,9 +3985,9 @@
         <word name="Put" plural="" dupcon="t" past="=" />
         <word name="Quit" dupcon="t" past="" />
         <word name="Race" prepos="Towards" />
-        <word name="Rage" prepos="at" />
+        <word name="Rage" prepos="at, on" />
         <word name="Raid" />
-        <word name="Rain" />
+        <word name="Rain" prepos="on" />
         <word name="Raise" prepos="Up" />
         <word name="Ransack" />
         <word name="Rate" />
@@ -4189,7 +4191,7 @@
         <word name="Sweep" past="!Swept" />
         <word name="Sync" prepos="With" />
         <word name="Synchronize" noun="1ation" prepos="With" />
-        <word name="Take" past="!Took" perf="-" prepos="From, on, to" />
+        <word name="Take" past="!Took" perf="-" prepos="Away, From, on, to" />
         <word name="Talk" prepos="About, to, With" />
         <word name="Tamper" prepos="With" />
         <word name="Tap" dupcon="p" />
@@ -4200,9 +4202,9 @@
         <word name="Tell" past="!Told" prepos="to" />
         <word name="Tempt" noun="ation" prepos="to" />
         <word name="Tend" prepos="to" />
-        <word name="Test" />
-        <word name="That Is" plural="!They Are" prtc=" Being" pres="" past="2Was" perf="2Has Been" />
-        <word name="Thrive" />
+        <word name="Test" prepos="for" />
+        <word name="That Is" plural="!They Are" prtc=" Being" pres="" past="2Was" perf="2Has Been" actor="3" />
+        <word name="Thrive" prepos="on" />
         <word name="Throw" past="2ew" perf="-" />
         <word name="Thwart" />
         <word name="Tie" prtc="!Tying" />
@@ -4226,7 +4228,7 @@
         <word name="Trick" />
         <word name="Trudge" prepos="Through" />
         <word name="Try" pres="1ies" prepos="to" />
-        <word name="Turn" />
+        <word name="Turn" prepos="Down, Up" />
         <word name="Twist" />
         <word name="Understand" past="3ood" />
         <word name="Undo" noun="ing" pres="es" past="1id" perf="ne" />
@@ -4240,7 +4242,7 @@
         <word name="Venture" />
         <word name="View" />
         <word name="Violate" noun="-" />
-        <word name="Wage" />
+        <word name="Wage" prepos="Against, on" />
         <word name="Wager" />
         <word name="Wail" />
         <word name="Wait" prepos="for" />
@@ -4311,7 +4313,6 @@
         <word name="Autumn" />
         <word name="Avalon" plural="" />
         <word name="Avenue" />
-        <word name="Away" plural="" />
         <word name="Babylon" plural="" />
         <word name="Bank" />
         <word name="Barrens" plural="" />
@@ -4701,6 +4702,7 @@
         <word name="Against" />
         <word name="Anymore" />
         <word name="Around" />
+        <word name="Away" />
         <word name="Back" />
         <word name="Backward" />
         <word name="Because" />

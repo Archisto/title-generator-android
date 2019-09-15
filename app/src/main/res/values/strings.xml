@@ -29,20 +29,21 @@
     <string name="action_displayAll">Display all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom Template</string>
-    <string name="action_exampleTemplates">Example Templates</string>
+    <string name="action_exampleTemplates">Custom Template Examples</string>
     <string name="customTemplate_on">Custom template ON</string>
     <string name="customTemplate_off">Custom template OFF</string>
     <string name="customTemplateExample0">Example #: #</string>
-    <string name="customTemplateExample1">#: The #(ki) #</string>
-    <string name="customTemplateExample2">#(pc, \') #</string>
-    <string name="customTemplateExample3">#(th, +) of #(su)</string>
-    <string name="customTemplateExample4">#(ki, >>) #(th)</string>
-    <string name="customTemplateExample5">#(+) and #(=)</string>
-    <string name="customTemplateExample6">##(ac, n, a)</string>
-    <string name="customTemplateExample7">#(co) #(ac, pr)</string>
-    <string name="customTemplateExample8">#(ki, ly) #(ac, ed)</string>
-    <string name="customTemplateExample9">The #(pt) of the #(ac, pp)</string>
-    <string name="customTemplateExample10">#(ac, ing, x) Without #(co)</string>
+    <string name="customTemplateExample1">#: The #(su) #</string>
+    <string name="customTemplateExample2">#(co) #(pt)</string>
+    <string name="customTemplateExample3">#(pc, \') #</string>
+    <string name="customTemplateExample4">#(th, +) of #(su)</string>
+    <string name="customTemplateExample5">#(ki, >>) #(th)</string>
+    <string name="customTemplateExample6">#(+) and #(=)</string>
+    <string name="customTemplateExample7">##(ac, n, a)</string>
+    <string name="customTemplateExample8">#(pc) #(ac, pr) #(*, +, x)</string>
+    <string name="customTemplateExample9">#(ki, ly) #(ac, ed)</string>
+    <string name="customTemplateExample10">The #(pt) of the #(ac, pp)</string>
+    <string name="customTemplateExample11">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -50,6 +51,7 @@
     <string name="function_mutatorBlockEnd">)</string>
     <string name="function_plural1">+</string>
     <string name="function_plural2">s</string>
+    <string name="function_pluralChance">~</string>
     <string name="function_uppercase">A</string>
     <string name="function_lowercase">a</string>
     <string name="function_initialism">.</string>

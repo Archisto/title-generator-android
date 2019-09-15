@@ -476,14 +476,11 @@ public class MainActivity extends AppCompatActivity {
                 // Copy category mutator is checked in getCategoryFromMutators()
             }
 
-            if (mutators[i].equals(getString(R.string.function_emptyChance1))) {
-                optionalWord = true;
+            // 50 % chance for an empty result
+            if (mutators[i].equals(getString(R.string.function_emptyChance1)) && Math.random() < 0.5) {
+                lastWordMutators = mutators;
+                return "";
             }
-        }
-
-        // 50 % chance for an empty result
-        if (optionalWord && Math.random() < 0.5) {
-            return "";
         }
 
         int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
@@ -533,6 +530,12 @@ public class MainActivity extends AppCompatActivity {
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
                 replaceStringBuilderString(result, word.getPlural());
+            }
+            else if (mutator.equals(getString(R.string.function_pluralChance))) {
+                // 50 % chance for plural form
+                if (Math.random() < 0.5) {
+                    replaceStringBuilderString(result, word.getPlural());
+                }
             }
             else if (mutator.equals(getString(R.string.function_noun))) {
                 replaceStringBuilderString(result, word.getNoun());
@@ -788,6 +791,9 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.action_exampleTemplate10: {
                 return setCustomTemplate(getString(R.string.customTemplateExample10), true);
+            }
+            case R.id.action_exampleTemplate11: {
+                return setCustomTemplate(getString(R.string.customTemplateExample11), true);
             }
         }
 
