@@ -188,8 +188,7 @@ public class Word {
         if (possessive != null)
             return possessive;
 
-        char lastLetter = str.charAt(str.length() - 1);
-        if (lastLetter == 's')
+        if (getLastChar(str) == 's')
             return str + "'";
         else
             return str + "'s";
@@ -217,26 +216,7 @@ public class Word {
         }
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = getLastChar(baseWord);
-            char secondToLastChar = '_';
-            if (baseWord.length() >= 2) {
-                secondToLastChar = getCharFromEnd(baseWord, 2);
-            }
-
-            if (lastChar == 's' || lastChar == 'x' || lastChar == 'z'
-                || (secondToLastChar == 'c' && lastChar == 'h')
-                || (secondToLastChar == 's' && lastChar == 'h')) {
-                modifier = "es";
-            } else if (lastChar == 'y'
-                       && secondToLastChar != 'a'
-                       && secondToLastChar != 'e'
-                       && secondToLastChar != 'o'
-                       && secondToLastChar != 'u') {
-                modifier = "1ies"; // Remove one char, add "IES"
-            }
-            else {
-                modifier = "s";
-            }
+            modifier = getModifierEndingWithS(baseWord);
         }
 
         plural = getModifiedWord(baseWord, modifier);
@@ -298,20 +278,7 @@ public class Word {
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
-            char lastChar = getLastChar();
-            char secondToLastChar = '_';
-            if (word.length() >= 2) {
-                secondToLastChar = getCharFromEnd(word, 2);
-            }
-
-            if (lastChar == 's' || lastChar == 'x' || lastChar == 'z'
-                || (secondToLastChar == 'c' && lastChar == 'h')
-                || (secondToLastChar == 's' && lastChar == 'h')) {
-                modifier = "es";
-            }
-            else {
-                modifier = "s";
-            }
+            modifier = getModifierEndingWithS(word);
         }
 
         presentTense = getModifiedWord(word, modifier);
@@ -455,6 +422,34 @@ public class Word {
             possessive = null;
         else
             possessive = getModifiedWord(word, modifier);
+    }
+
+    private String getModifierEndingWithS(String str) {
+        if (str == null || str.length() == 0)
+            return "S_ERROR";
+
+        char lastChar = getLastChar(str);
+        char secondToLastChar = '_';
+        if (str.length() >= 2) {
+            secondToLastChar = getCharFromEnd(str, 2);
+        }
+
+        if (lastChar == 's' || lastChar == 'x' || lastChar == 'z'
+            || (secondToLastChar == 'c' && lastChar == 'h')
+            || (secondToLastChar == 's' && lastChar == 'h')) {
+            str = "es";
+        } else if (lastChar == 'y'
+            && secondToLastChar != 'a'
+            && secondToLastChar != 'e'
+            && secondToLastChar != 'o'
+            && secondToLastChar != 'u') {
+            str = "1ies"; // Remove one char, add "IES"
+        }
+        else {
+            str = "s";
+        }
+
+        return str;
     }
 
     private String getModifiedWord(String baseWord, String modifier) {
