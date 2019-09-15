@@ -5,7 +5,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -318,7 +317,8 @@ public class MainActivity extends AppCompatActivity {
                 appendDecorationToTitle(title, getString(R.string.form_X_and_the_Y));
                 break;
             case XsY:
-                appendDecorationToTitle(title, Word.getStringPossessive(title.toString()));
+                appendDecorationToTitle(
+                    title, Word.getPossessiveEnding(title.toString()) + " ");
                 break;
             default:
                 appendSpaceToTitleIfNotSkipped(title);

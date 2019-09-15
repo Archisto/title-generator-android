@@ -195,14 +195,14 @@ public class Word {
         if (possessive != null)
             return possessive;
 
-        return getStringPossessive(str);
+        return str + getPossessiveEnding(str);
     }
 
-    static String getStringPossessive(String str) {
+    static String getPossessiveEnding(String str) {
         if (getLastChar(str) == 's')
-            return str + "'";
+            return "'";
         else
-            return str + "'s";
+            return "'s";
     }
 
     void setPlural(String modifier) {
