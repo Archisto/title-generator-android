@@ -15,6 +15,7 @@ public class Word {
     private String presentTense;
     private String pastTense;
     private String pastPerfectTense;
+    private String actor;
     private String comparative;
     private String superlative;
     private String manner;
@@ -80,6 +81,9 @@ public class Word {
         if (pastPerfectTense != null) {
             wordForms.add(pastPerfectTense);
         }
+        if (actor != null) {
+            wordForms.add(actor);
+        }
         if (comparative != null) {
             wordForms.add(comparative);
         }
@@ -118,10 +122,9 @@ public class Word {
     String getRandomWordForm() {
         float baseWordChance =
             category == Category.kind ? 0.85f :
-            category == Category.thing ? 0.7f :
             category == Category.personAndCreature ? 0.6f :
             category == Category.action ? 0.6f :
-            0.5f;
+            0.66f;
 
         if (wordForms == null || wordForms.size() == 0 || Math.random() < baseWordChance) {
             return word;
@@ -172,6 +175,10 @@ public class Word {
         return pastPerfectTense != null ? pastPerfectTense : getPastTense();
     }
 
+    String getActor() {
+        return actor != null ? actor : word;
+    }
+
     String getComparative() {
         return comparative != null ? comparative : word;
     }
@@ -188,6 +195,10 @@ public class Word {
         if (possessive != null)
             return possessive;
 
+        return getStringPossessive(str);
+    }
+
+    static String getStringPossessive(String str) {
         if (getLastChar(str) == 's')
             return str + "'";
         else
@@ -300,7 +311,7 @@ public class Word {
             if (lastChar == 'e') {
                 modifier = "d";
             }
-            else if (lastChar == 'y') {
+            else if (endsInYWhichIsNotPrecededByVowel(word)) {
                 modifier = "1ied"; // Remove one char, add "IED"
             }
             else {
@@ -328,6 +339,44 @@ public class Word {
         }
 
         pastPerfectTense = getModifiedWord(word, modifier);
+    }
+
+    void setActor(String modifier, String duplicatedConsonant) {
+        // Duplicated consonants
+        if (modifier == null && duplicatedConsonant != null)
+            modifier = duplicatedConsonant + "er";
+        // Action words have implicit actor forms
+        else if (category == Category.action && modifier == null)
+            modifier = defaultModifierMarker;
+        else if (modifier == null || modifier.length() == 0)
+            return;
+
+        if (modifier.equals(defaultModifierMarker)) {
+            char lastChar = getLastChar();
+            char secondToLastChar = '_';
+            if (word.length() >= 2) {
+                secondToLastChar = getCharFromEnd(word, 2);
+            }
+
+            if ((secondToLastChar == 's' && lastChar == 's')
+                || (secondToLastChar == 'c' && lastChar == 't')) {
+                modifier = "or";
+            }
+            else if (secondToLastChar == 't' && lastChar == 'e') {
+                modifier = "1or"; // Remove one char, add "OR"
+            }
+            else if (lastChar == 'e') {
+                modifier = "r";
+            }
+            else if (endsInYWhichIsNotPrecededByVowel(secondToLastChar, lastChar)) {
+                modifier = "1ier"; // Remove one char, add "IER"
+            }
+            else {
+                modifier = "er";
+            }
+        }
+
+        actor = getModifiedWord(word, modifier);
     }
 
     void setComparative(String modifier) {
@@ -438,11 +487,7 @@ public class Word {
             || (secondToLastChar == 'c' && lastChar == 'h')
             || (secondToLastChar == 's' && lastChar == 'h')) {
             str = "es";
-        } else if (lastChar == 'y'
-            && secondToLastChar != 'a'
-            && secondToLastChar != 'e'
-            && secondToLastChar != 'o'
-            && secondToLastChar != 'u') {
+        } else if (endsInYWhichIsNotPrecededByVowel(secondToLastChar, lastChar)) {
             str = "1ies"; // Remove one char, add "IES"
         }
         else {
@@ -450,6 +495,24 @@ public class Word {
         }
 
         return str;
+    }
+
+    private boolean endsInYWhichIsNotPrecededByVowel(String str) {
+        char lastChar = getLastChar(str);
+        char secondToLastChar = '_';
+        if (str.length() >= 2) {
+            secondToLastChar = getCharFromEnd(str, 2);
+        }
+
+        return endsInYWhichIsNotPrecededByVowel(secondToLastChar, lastChar);
+    }
+
+    private boolean endsInYWhichIsNotPrecededByVowel(char secondToLastChar, char lastChar) {
+        return (lastChar == 'y'
+                && secondToLastChar != 'a'
+                && secondToLastChar != 'e'
+                && secondToLastChar != 'o'
+                && secondToLastChar != 'u');
     }
 
     private String getModifiedWord(String baseWord, String modifier) {

@@ -23,6 +23,7 @@ class CustomXmlResourceParser {
     private static final String presentTenseStr = "pres";
     private static final String pastTenseStr = "past";
     private static final String pastPerfTenseStr = "perf";
+    private static final String actorStr = "actor";
     private static final String comparativeStr = "compa";
     private static final String superlativeStr = "super";
     private static final String mannerStr = "manner";
@@ -125,6 +126,8 @@ class CustomXmlResourceParser {
         word.setPastTense(parser.getAttributeValue(null, pastTenseStr),
             parser.getAttributeValue(null, duplicateConsonantStr));
         word.setPastPerfectTense(parser.getAttributeValue(null, pastPerfTenseStr));
+        word.setActor(parser.getAttributeValue(null, actorStr),
+            parser.getAttributeValue(null, duplicateConsonantStr));
         word.setComparative(parser.getAttributeValue(null, comparativeStr));
         word.setSuperlative(parser.getAttributeValue(null, superlativeStr));
         word.setManner(parser.getAttributeValue(null, mannerStr));

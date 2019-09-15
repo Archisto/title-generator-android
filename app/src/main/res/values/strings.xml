@@ -59,6 +59,7 @@
     <string name="function_pastTense1">d</string>
     <string name="function_pastTense2">ed</string>
     <string name="function_pastPerfectTense">pp</string>
+    <string name="function_actor">er</string>
     <string name="function_possessive">\'</string>
     <string name="function_comparative">></string>
     <string name="function_superlative">>></string>

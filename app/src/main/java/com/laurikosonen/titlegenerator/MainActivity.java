@@ -318,11 +318,7 @@ public class MainActivity extends AppCompatActivity {
                 appendDecorationToTitle(title, getString(R.string.form_X_and_the_Y));
                 break;
             case XsY:
-                if (title.charAt(title.length() - 1) == 's'
-                    || title.charAt(title.length() - 1) == 'z')
-                    appendDecorationToTitle(title, getString(R.string.form_Xs_Y2));
-                else
-                    appendDecorationToTitle(title, getString(R.string.form_Xs_Y));
+                appendDecorationToTitle(title, Word.getStringPossessive(title.toString()));
                 break;
             default:
                 appendSpaceToTitleIfNotSkipped(title);
@@ -552,6 +548,9 @@ public class MainActivity extends AppCompatActivity {
             }
             else if (mutator.equals(getString(R.string.function_pastPerfectTense))) {
                 replaceStringBuilderString(result, word.getPastPerfectTense());
+            }
+            else if (mutator.equals(getString(R.string.function_actor))) {
+                replaceStringBuilderString(result, word.getActor());
             }
             else if (mutator.equals(getString(R.string.function_comparative))) {
                 replaceStringBuilderString(result, word.getComparative());
