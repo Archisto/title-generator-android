@@ -3530,7 +3530,7 @@
         <word name="Bicker" prepos="About, With" />
         <word name="Bid" dupcon="d" past="" />
         <word name="Bind" past="!Bound" prepos="With, to" />
-        <word name="Bite" past="1" perf="1ten" prepos="on" />
+        <word name="Bite" past="1" perf="1ten" actor="r" prepos="on" />
         <word name="Blame" prepos="for" />
         <word name="Blast" prepos="to" />
         <word name="Bleed" noun="ing" past="2d" />
@@ -3738,7 +3738,7 @@
         <word name="Exist" noun="ence" />
         <word name="Exit" prepos="From" />
         <word name="Expand" noun="1sion" />
-        <word name="Expedite" noun="-" />
+        <word name="Expedite" noun="-" actor="5lorer" />
         <word name="Experience" />
         <word name="Experiment" />
         <word name="Explode" noun="2sion" />
@@ -3820,7 +3820,7 @@
         <word name="Handle" prepos="With" />
         <word name="Hang" prepos="on, Onto" />
         <word name="Harm" />
-        <word name="Hate" plural="" prepos="to" />
+        <word name="Hate" plural="" actor="r" prepos="to" />
         <word name="Haul" />
         <word name="Have" pres="!Has" past="!Had" prepos="to" />
         <word name="He Is" plural="!They Are" noun="!Being" prtc=" Being" pres="" past="2Was" perf="2Has Been" actor="3" />
@@ -3844,7 +3844,7 @@
         <word name="Impact" prepos="on" />
         <word name="Imprint" prepos="on" />
         <word name="Incinerate" noun="-" />
-        <word name="Incite" noun="2dent" />
+        <word name="Incite" noun="2dent" actor="r" />
         <word name="Include" noun="2sion" prepos="With" />
         <word name="Infect" noun="-" prepos="With" />
         <word name="Inherit" noun="ance" actor="or" />
@@ -3990,7 +3990,7 @@
         <word name="Rain" prepos="on" />
         <word name="Raise" prepos="Up" />
         <word name="Ransack" />
-        <word name="Rate" />
+        <word name="Rate" actor="r" />
         <word name="Rattle" />
         <word name="Rave" />
         <word name="Reach" prepos="in, Up" />
@@ -4014,7 +4014,7 @@
         <word name="Rehearse" noun="1al" />
         <word name="Reign" prepos="for" />
         <word name="Reject" noun="-" />
-        <word name="Relate" noun="-" prepos="With" />
+        <word name="Relate" noun="-" actor="1ive" prepos="With" />
         <word name="Relax" noun="ation" />
         <word name="Release" prepos="From" />
         <word name="Reload" />
@@ -4123,7 +4123,7 @@
         <word name="Smash" prepos="to" />
         <word name="Smell" prepos="of" />
         <word name="Smile" prepos="to" />
-        <word name="Smite" past="!Smote" perf="1ten" />
+        <word name="Smite" past="!Smote" perf="1ten" actor="r" />
         <word name="Snap" dupcon="p" />
         <word name="Sneeze" />
         <word name="Snip" dupcon="p" />
@@ -4171,7 +4171,7 @@
         <word name="Stunt" actor="man" />
         <word name="Submerge" noun="2sion" />
         <word name="Submit" noun="1ssion" dupcon="t" prepos="to" />
-        <word name="Substitute" noun="-" prepos="for" />
+        <word name="Substitute" noun="-" actor="=" prepos="for" />
         <word name="Subtract" noun="-" prepos="From" />
         <word name="Succeed" noun="2ss" actor="2ssor" />
         <word name="Succumb" prepos="to" />
@@ -4233,7 +4233,7 @@
         <word name="Understand" past="3ood" />
         <word name="Undo" noun="ing" pres="es" past="1id" perf="ne" />
         <word name="Unlock" />
-        <word name="Update" />
+        <word name="Update" actor="r" />
         <word name="Upgrade" />
         <word name="Use" prepos="for, to" />
         <word name="Vanish" noun="ing" />
@@ -4251,7 +4251,7 @@
         <word name="Want" />
         <word name="War" dupcon="r" pres="" past="" actor="rior" />
         <word name="Warn" noun="ing" />
-        <word name="Waste" />
+        <word name="Waste" actor="r" />
         <word name="Watch" />
         <word name="Wear" past="!Wore" perf="!Worn" />
         <word name="Weave" past="!Woven" />
