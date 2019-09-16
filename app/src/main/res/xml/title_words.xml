@@ -459,6 +459,7 @@
         <word name="Hundred" plural="-" compa="" super="" manner="" />
         <word name="Hundredfold" compa="" super="" manner="" />
         <word name="Hungry" compa="-" super="-" />
+        <word name="Hunted" />
         <word name="Hyper" compa="-" super="-" manner="" />
         <word name="Idyllic" />
         <word name="Ill" super="-" manner="" />
@@ -474,7 +475,6 @@
         <word name="Important" />
         <word name="Impossible" />
         <word name="Impure" compa="-" super="-" />
-        <word name="In" compa="ner" super="nermost" manner="" />
         <word name="Incognito" />
         <word name="Incompetent" />
         <word name="Incomplete" />
@@ -494,6 +494,7 @@
         <word name="Inherent" />
         <word name="Inhospitable" />
         <word name="Inhuman" manner="ely" />
+        <word name="Inner" compa="" super="most" manner="" />
         <word name="Innocent" />
         <word name="Insane" super="-" />
         <word name="Insolent" />
@@ -675,7 +676,7 @@
         <word name="Organic" />
         <word name="Original" plural="-" />
         <word name="Other" plural="-" />
-        <word name="Out" compa="-" super="ermost" manner="" />
+        <word name="Outer" compa="" super="most" manner="" />
         <word name="Painful" />
         <word name="Painless" />
         <word name="Pale" compa="-" super="-" manner="ly" />
@@ -1326,7 +1327,7 @@
         <word name="Fringe" />
         <word name="Frontline" />
         <word name="Function" />
-        <word name="Fury" />
+        <word name="Fury" plural="" />
         <word name="Gambit" />
         <word name="Generation" />
         <word name="Generosity" plural="" />
@@ -3100,6 +3101,7 @@
         <word name="Freak" />
         <word name="Friend" />
         <word name="Fugitive" />
+        <word name="Fury" />
         <word name="Gal" />
         <word name="Gang" />
         <word name="Gangster" />
@@ -3901,6 +3903,7 @@
         <word name="Incite" noun="2dent" actor="r" />
         <word name="Include" noun="2sion" prepos="With" />
         <word name="Infect" noun="-" prepos="With" />
+        <word name="Inflict" noun="-" prepos="on, With" />
         <word name="Inherit" noun="ance" actor="or" />
         <word name="Innovate" noun="-" />
         <word name="Insult" />

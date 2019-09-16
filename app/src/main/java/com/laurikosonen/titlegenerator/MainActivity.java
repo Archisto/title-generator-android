@@ -227,6 +227,11 @@ public class MainActivity extends AppCompatActivity {
         title.append(str);
     }
 
+    private void appendCharToTitle(StringBuilder title, char c) {
+        if (title.length() > 0 || c != ' ')
+            title.append(c);
+    }
+
     private void appendDecorationToTitle(StringBuilder title, String decoration) {
         title.append(decoration);
         skipSpace = false;
@@ -348,11 +353,10 @@ public class MainActivity extends AppCompatActivity {
             // (Unless there are consecutive template word chars in which case a word is added
             // to the title.)
             if (currentChar == templateWordChar) {
-                if (lastCharWasTemplateWordChar) {
+                if (lastCharWasTemplateWordChar)
                     appendWordToTitle(title, getRandomWord(displayedCategory));
-                    skipSpace = false;
-                }
 
+                skipSpace = false;
                 lastCharWasTemplateWordChar = true;
             }
             // The character immediately following a word template char
@@ -364,14 +368,14 @@ public class MainActivity extends AppCompatActivity {
                     !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
 
                 if (mutatorBlockLength == 0 && anyCharCanBeAppended) {
-                    title.append(currentChar);
+                    appendCharToTitle(title, currentChar);
                     skipSpace = false;
                 }
 
                 lastCharWasTemplateWordChar = false;
             }
             else if (anyCharCanBeAppended) {
-                title.append(currentChar);
+                appendCharToTitle(title, currentChar);
                 skipSpace = false;
             }
 
@@ -389,6 +393,7 @@ public class MainActivity extends AppCompatActivity {
         lastCharWasTemplateWordChar = false;
         skipSpace = false;
         mutatorBlockLength = 0;
+        lastWordMutators = null;
     }
 
     private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
@@ -621,13 +626,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        if (reverseWord)
+        if (reverseWord) {
             reverseString(sb);
-        if (jumbleWord)
+            skipSpace = false;
+        }
+        if (jumbleWord) {
             jumbleString(sb);
+            skipSpace = false;
+        }
         if (useInitialism) {
             convertStringToInitialism(sb);
             useUppercase = true;
+            skipSpace = false;
         }
 
         if (useLowercase)
@@ -680,7 +690,8 @@ public class MainActivity extends AppCompatActivity {
             sb.delete(0, sb.length());
 
             for (int i = 0; i < str.length(); i++) {
-                sb.append(str.charAt(i)).append('.');
+                if (i < str.length() - 1 || str.charAt(i) != '-')
+                    sb.append(str.charAt(i)).append('.');
             }
         }
     }
