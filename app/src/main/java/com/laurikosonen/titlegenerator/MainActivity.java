@@ -459,7 +459,6 @@ public class MainActivity extends AppCompatActivity {
         // General mutators
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
-        boolean optionalWord = false;
 
         for (int i = 0; i < mutators.length; i++) {
             mutators[i] = mutators[i].trim();
@@ -517,6 +516,8 @@ public class MainActivity extends AppCompatActivity {
                 return 5;
             } else if (mutator.equals(getString(R.string.number_7)) || mutator.equals(getString(R.string.category_placeAndTime_short))) {
                 return 6;
+            } else if (mutator.equals(getString(R.string.number_8)) || mutator.equals(getString(R.string.category_conAndPrepos_short))) {
+                return 7;
             }
         }
 
@@ -590,7 +591,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < str.length(); i++) {
                     sb.append(str.charAt(i)).append('.');
                 }
-                sb.append(sb.toString().toUpperCase());
+                replaceStringBuilderString(sb, sb.toString().toUpperCase());
             }
         }
     }
@@ -639,6 +640,8 @@ public class MainActivity extends AppCompatActivity {
             getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
         menu.findItem(R.id.action_displayCategory6).setTitle(String.format(
             getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime), getString(R.string.category_placeAndTime_short)));
+        menu.findItem(R.id.action_displayCategory7).setTitle(String.format(
+            getString(R.string.action_displayCategory), getString(R.string.category_conAndPrepos), getString(R.string.category_conAndPrepos_short)));
     }
 
     @Override
@@ -754,6 +757,9 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.action_displayCategory6: {
                 return setDisplayedCategory(item, 6);
+            }
+            case R.id.action_displayCategory7: {
+                return setDisplayedCategory(item, 7);
             }
         }
 

@@ -159,5 +159,9 @@
             android:id="@+id/action_displayCategory6"
             android:orderInCategory="7"
             android:title="@string/action_displayCategory" />
+        <item
+            android:id="@+id/action_displayCategory7"
+            android:orderInCategory="8"
+            android:title="@string/action_displayCategory" />
     </group>
 </menu>

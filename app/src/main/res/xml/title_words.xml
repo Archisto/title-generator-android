@@ -2987,7 +2987,7 @@
         <word name="Coalition" />
         <word name="Cobra" />
         <word name="Collector" />
-        <word name="Colossus" plural="3i" />
+        <word name="Colossus" plural="2i" />
         <word name="Colt" />
         <word name="Commander" />
         <word name="Commando" />
@@ -4121,7 +4121,7 @@
         <word name="Screech" prepos="at" />
         <word name="Sear" />
         <word name="Search" prepos="for" />
-        <word name="See" past="!Saw" perf="-" prepos="About, Through" />
+        <word name="See" noun="!Sight" past="!Saw" perf="-" prepos="About, Through" />
         <word name="Seek" past="!Sought" prepos="for" />
         <word name="Seem" prepos="Like" />
         <word name="Seize" noun="1ure" prepos="Up" />
