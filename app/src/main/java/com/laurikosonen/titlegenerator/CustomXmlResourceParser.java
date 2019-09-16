@@ -14,6 +14,7 @@ class CustomXmlResourceParser {
     private static final String categoryStr = "category";
     private static final String wordStr = "word";
     private static final String nameStr = "name";
+    private static final String shortNameStr = "shortName";
     private static final String idStr = "id";
     private static final String implicitPluralStr = "implicitPlural";
     private static final String pluralStr = "plural";
@@ -50,13 +51,17 @@ class CustomXmlResourceParser {
     static void parseWords(Resources resources,
                            int resourceID,
                            List<List<Word>> pools,
-                           List<Word> poolAll) {
+                           List<Word> poolAll,
+                           List<Category> categories) {
         XmlResourceParser parser = resources.getXml(resourceID);
 
         try {
             parser.next();
             int eventType = parser.getEventType();
             String startTagName = "_";
+            Category category = null;
+            String categoryName = "_";
+            String categoryShortName = "_";
             int categoryId = 0;
             boolean isImplicitPlural = false;
             String defaultPrepositions = "";
@@ -66,9 +71,11 @@ class CustomXmlResourceParser {
                     startTagName = parser.getName();
 //                    Log.d("TitleGnr", "startTagName: " + startTagName);
 
-                    // Parses the category
+                    // Parses the type
                     if (startTagName.equalsIgnoreCase(categoryStr)) {
                         String strId = parser.getAttributeValue(null, idStr);
+                        categoryName = parser.getAttributeValue(null, nameStr);
+                        categoryShortName = parser.getAttributeValue(null, shortNameStr);
                         categoryId = parseInt(strId);
                         isImplicitPlural =
                             parser.getAttributeValue(null, implicitPluralStr) != null;
@@ -76,13 +83,16 @@ class CustomXmlResourceParser {
 
                         // Increases the pool count if the ID is too large
                         if (pools.size() <= categoryId) {
-                            List<Word> newPool = new ArrayList<>();
-                            pools.add(newPool);
+                            pools.add(new ArrayList<Word>());
+
+                            // Creates a new category
+                            category = new Category(categoryName, categoryShortName, categoryId);
+                            categories.add(category);
                         }
                     }
                     else if (startTagName.equalsIgnoreCase(wordStr)) {
                         // Creates a new word
-                        Word word = getParsedWord(parser, categoryId, isImplicitPlural, defaultPrepositions);
+                        Word word = getParsedWord(parser, category, isImplicitPlural, defaultPrepositions);
                         if (word != null) {
                             pools.get(categoryId).add(word);
                             poolAll.add(word);
@@ -106,18 +116,18 @@ class CustomXmlResourceParser {
 
     /**
      * Creates and returns a Word object.
-     * @param categoryId    The word's category's id
-     * @return              The Word object
+     * @param category   A category
+     * @return           The Word object
      */
     private static Word getParsedWord(XmlResourceParser parser,
-                                      int categoryId,
+                                      Category category,
                                       boolean isImplicitPlural,
                                       String defaultPreposition) {
         String text = parser.getAttributeValue(null, nameStr);
         if (text == null || text.isEmpty())
             return null;
 
-        Word word = new Word(text, categoryId, isImplicitPlural);
+        Word word = new Word(text, category, isImplicitPlural);
 
         if (word.isPlaceholder)
             return word;

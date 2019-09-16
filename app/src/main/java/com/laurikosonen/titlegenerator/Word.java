@@ -23,25 +23,11 @@ public class Word {
     private String[] prepositions;
 
     Category category;
-    int categoryId;
-    boolean implicitPlural;
     boolean isPlaceholder;
+    private boolean implicitPlural;
     private ArrayList<String> wordForms;
 
-    enum Category {
-        kind,
-        concept,
-        substance,
-        thing,
-        personAndCreature,
-        action,
-        placeAndTime,
-        unknown
-    }
-
-    public Word(String word,
-                int categoryId,
-                boolean implicitPlural) {
+    public Word(String word, Category category, boolean implicitPlural) {
         if (word.charAt(0) == '[') {
             isPlaceholder = true;
             this.word = word;
@@ -50,8 +36,7 @@ public class Word {
             this.word = capitalizeFirstLetter(word);
         }
 
-        this.categoryId = categoryId;
-        category = getCategoryFromInt(categoryId);
+        this.category = category;
         this.implicitPlural = implicitPlural;
     }
 
@@ -121,23 +106,11 @@ public class Word {
 //        }
     }
 
-    static Category getCategoryFromInt(int number) {
-        return
-            number == 0 ? Category.kind :
-            number == 1 ? Category.concept :
-            number == 2 ? Category.substance :
-            number == 3 ? Category.thing :
-            number == 4 ? Category.personAndCreature :
-            number == 5 ? Category.action :
-            number == 6 ? Category.placeAndTime :
-            Category.unknown;
-    }
-
     String getRandomWordForm() {
         float baseWordChance =
-            category == Category.kind ? 0.85f :
-            category == Category.personAndCreature ? 0.6f :
-            category == Category.action ? 0.6f :
+            category.type == Category.Type.kind ? 0.85f :
+            category.type == Category.Type.personAndCreature ? 0.6f :
+            category.type == Category.Type.action ? 0.6f :
             0.66f;
 
         if (isPlaceholder || wordForms == null || wordForms.size() == 0
@@ -239,7 +212,7 @@ public class Word {
         if (modifier == null) {
             // Sets the plural forms of Action words to use the noun as the base;
             // noun must be set first!
-            if (category == Category.action && noun != null) {
+            if (category.type == Category.Type.action && noun != null) {
                 baseWord = noun;
                 modifier = defaultModifierMarker;
             }
@@ -285,7 +258,7 @@ public class Word {
         if (modifier == null && duplicatedConsonant != null)
             modifier = duplicatedConsonant + defaultModifier;
         // Action words have implicit present participle forms
-        else if (category == Category.action && modifier == null)
+        else if (category.type == Category.Type.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -311,7 +284,7 @@ public class Word {
     void setPresentTense(String modifier) {
 
         // Action words have implicit present forms
-        if (category == Category.action && modifier == null)
+        if (category.type == Category.Type.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -329,7 +302,7 @@ public class Word {
         if (modifier == null && duplicatedConsonant != null)
             modifier = duplicatedConsonant + "ed";
         // Action words have implicit past forms
-        else if (category == Category.action && modifier == null)
+        else if (category.type == Category.Type.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -355,7 +328,7 @@ public class Word {
         // Action words have implicit present participle forms.
         // Sets the past perfect tense to be same as the past tense;
         // past tense must be set first!
-        if (category == Category.action && modifier == null && pastTense != null) {
+        if (category.type == Category.Type.action && modifier == null && pastTense != null) {
             pastPerfectTense = pastTense;
             return;
         }
@@ -375,7 +348,7 @@ public class Word {
         if (modifier == null && duplicatedConsonant != null)
             modifier = duplicatedConsonant + "er";
         // Action words have implicit actor forms
-        else if (category == Category.action && modifier == null)
+        else if (category.type == Category.Type.action && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null || modifier.length() == 0)
             return;
@@ -414,7 +387,7 @@ public class Word {
         if (modifier != null && modifier.length() == 0)
             return;
         // Kind words have implicit comparative forms
-        else if (category == Category.kind && modifier == null) {
+        else if (category.type == Category.Type.kind && modifier == null) {
             comparative = moreStr + ' ' + word;
             return;
         }
@@ -443,7 +416,7 @@ public class Word {
         if (modifier != null && modifier.length() == 0)
             return;
         // Kind words have implicit superlative forms
-        else if (category == Category.kind && modifier == null) {
+        else if (category.type == Category.Type.kind && modifier == null) {
             superlative = mostStr + ' ' + word;
             return;
         }
@@ -470,7 +443,7 @@ public class Word {
 
         if (modifier != null && modifier.length() == 0)
             return;
-        else if (category == Category.kind && modifier == null)
+        else if (category.type == Category.Type.kind && modifier == null)
             modifier = defaultModifierMarker;
         else if (modifier == null)
             return;

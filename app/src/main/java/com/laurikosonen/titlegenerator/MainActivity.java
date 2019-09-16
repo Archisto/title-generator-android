@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<TextView> titleSlots;
     private List<TextView> titleNumberSlots;
+    private TextView displayedCategoryText;
     private MenuItem currentDisplayedCatItem;
     private MenuItem titleCountMenuItem;
     private MenuItem titleWordCountMenuItem;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
+    private List<Category> categories;
 
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         initWords();
+        initDisplayedCategoryText();
         initTitleSlots();
         initCustomTemplate();
 
@@ -94,8 +97,28 @@ public class MainActivity extends AppCompatActivity {
     private void initWords() {
         wordLists = new ArrayList<>();
         allWords = new ArrayList<>();
-        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords);
+        categories = new ArrayList<>();
+        categories.add(new Category(getString(R.string.category_all), getString(R.string.function_catAny2), -1));
+        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords, categories);
         templateWordChar = getString(R.string.function_word).charAt(0);
+    }
+
+    private void initDisplayedCategoryText() {
+        displayedCategoryText = (TextView) findViewById(R.id.displayedCategory);
+        updateDisplayedCategoryText();
+    }
+
+    private void updateDisplayedCategoryText() {
+        Category category = categories.get(displayedCategory + 1);
+
+        String text = "";
+        if (category.type == Category.Type.all)
+            text = getString(R.string.displayingAllCategories);
+        else
+            text = String.format(getString(R.string.displayingCategory),
+                displayedCategory + 1, category.name, category.shortName);
+
+        displayedCategoryText.setText(text);
     }
 
     private void initTitleSlots() {
@@ -253,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
 
         int wordIndex = (int) (Math.random() * wordList.size());
         Word word = wordList.get(wordIndex);
-        lastWordCategory = word.categoryId;
+        lastWordCategory = word.category.id;
 
         if (word.getLastChar() == '-') {
             skipSpace = true;
@@ -391,7 +414,7 @@ public class MainActivity extends AppCompatActivity {
             if (isLastChar && lastCharWasTemplateWordChar) {
                 Word word = getRandomWord(displayedCategory);
                 appendWordToTitle(title, word);
-                lastWordCategory = word.categoryId;
+                lastWordCategory = word.category.id;
             }
         }
 
@@ -521,24 +544,11 @@ public class MainActivity extends AppCompatActivity {
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_copyCategory))) {
                 return lastWordCategory;
-            } else if (mutator.equals(getString(R.string.function_catAny1)) || mutator.equals(getString(R.string.function_catAny2))) {
-                return -1;
-            } else if (mutator.equals(getString(R.string.number_1)) || mutator.equals(getString(R.string.category_kind_short))) {
-                return 0;
-            } else if (mutator.equals(getString(R.string.number_2)) || mutator.equals(getString(R.string.category_concept_short))) {
-                return 1;
-            } else if (mutator.equals(getString(R.string.number_3)) || mutator.equals(getString(R.string.category_substance_short))) {
-                return 2;
-            } else if (mutator.equals(getString(R.string.number_4)) || mutator.equals(getString(R.string.category_thing_short))) {
-                return 3;
-            } else if (mutator.equals(getString(R.string.number_5)) || mutator.equals(getString(R.string.category_personAndCreature_short))) {
-                return 4;
-            } else if (mutator.equals(getString(R.string.number_6)) || mutator.equals(getString(R.string.category_action_short))) {
-                return 5;
-            } else if (mutator.equals(getString(R.string.number_7)) || mutator.equals(getString(R.string.category_placeAndTime_short))) {
-                return 6;
-            } else if (mutator.equals(getString(R.string.number_8)) || mutator.equals(getString(R.string.category_conAndPrepos_short))) {
-                return 7;
+            }
+
+            for (Category category : categories) {
+                if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName))
+                    return category.id;
             }
         }
 
@@ -972,6 +982,7 @@ public class MainActivity extends AppCompatActivity {
             item.setEnabled(false);
             currentDisplayedCatItem.setEnabled(true);
             currentDisplayedCatItem = item;
+            updateDisplayedCategoryText();
 
             generateTitles();
 

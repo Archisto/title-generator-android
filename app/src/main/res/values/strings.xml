@@ -8,6 +8,7 @@
     <string name="form_X_and_the_Y">" and the "</string>
     <string name="form_Xs_Y">"'s "</string>
     <string name="form_Xs_Y2">"' "</string>
+    <string name="category_all">All</string>
     <string name="category_kind">Kind</string>
     <string name="category_concept">Concept</string>
     <string name="category_substance">Substance</string>
@@ -24,6 +25,8 @@
     <string name="category_action_short">ac</string>
     <string name="category_placeAndTime_short">pt</string>
     <string name="category_conAndPrepos_short">cp</string>
+    <string name="displayingCategory">Category %d: %s (%s)</string>
+    <string name="displayingAllCategories">Displaying all categories</string>
     <string name="titleNumber">%d)</string>
     <string name="titleCount">Title count: %d</string>
     <string name="titleWordCount">Words in a title: %d</string>
