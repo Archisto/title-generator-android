@@ -28,10 +28,9 @@ class CustomXmlResourceParser {
     private static final String superlativeStr = "super";
     private static final String mannerStr = "manner";
     private static final String possessiveStr = "poss";
-    private static final String catKindShortStr = "ki";
-    private static final String catThingShortStr = "th";
-    private static final String catPersonAndCreatureShortStr = "pc";
-    private static final String catActionShortStr = "ac";
+    private static final String prepositionStr = "prepos";
+    private static final String defaultPreposStr = "defaultPrepos";
+    private static final String noDefPreposStr = "noDefPrepos";
 
     private static int parseInt(String str) {
         int result = -1;
@@ -60,6 +59,7 @@ class CustomXmlResourceParser {
             String startTagName = "_";
             int categoryId = 0;
             boolean isImplicitPlural = false;
+            String defaultPreposition = "";
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
@@ -72,6 +72,7 @@ class CustomXmlResourceParser {
                         categoryId = parseInt(strId);
                         isImplicitPlural =
                             parser.getAttributeValue(null, implicitPluralStr) != null;
+                        defaultPreposition = parser.getAttributeValue(null, defaultPreposStr);
 
                         // Increases the pool count if the ID is too large
                         if (pools.size() <= categoryId) {
@@ -81,7 +82,7 @@ class CustomXmlResourceParser {
                     }
                     else if (startTagName.equalsIgnoreCase(wordStr)) {
                         // Creates a new word
-                        Word word = getParsedWord(parser, categoryId, isImplicitPlural);
+                        Word word = getParsedWord(parser, categoryId, isImplicitPlural, defaultPreposition);
                         if (word != null) {
                             pools.get(categoryId).add(word);
                             poolAll.add(word);
@@ -110,7 +111,8 @@ class CustomXmlResourceParser {
      */
     private static Word getParsedWord(XmlResourceParser parser,
                                       int categoryId,
-                                      boolean isImplicitPlural) {
+                                      boolean isImplicitPlural,
+                                      String defaultPreposition) {
         String text = parser.getAttributeValue(null, nameStr);
         if (text == null || text.isEmpty()) {
             return null;
@@ -132,6 +134,9 @@ class CustomXmlResourceParser {
         word.setSuperlative(parser.getAttributeValue(null, superlativeStr));
         word.setManner(parser.getAttributeValue(null, mannerStr));
         word.setPossessive(parser.getAttributeValue(null, possessiveStr));
+        word.setPrepositions(parser.getAttributeValue(null, prepositionStr),
+            parser.getAttributeValue(null, noDefPreposStr) != null ? null : defaultPreposition);
+
         word.initWordFormList();
         return word;
     }

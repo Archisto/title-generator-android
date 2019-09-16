@@ -41,12 +41,13 @@
     <string name="customTemplateExample4">#(th, +) of #(su)</string>
     <string name="customTemplateExample5">#(ki, >>) #(th)</string>
     <string name="customTemplateExample6">#(+) and #(=)</string>
-    <string name="customTemplateExample7">##(ac, a)</string>
+    <string name="customTemplateExample7">##(ac, n, a)</string>
     <string name="customTemplateExample8">#(ki, ly) #(ac, ed)</string>
-    <string name="customTemplateExample9">#(cp) the #(pc, +) #(ac, n)</string>
-    <string name="customTemplateExample10">#(pc) #(ac, pr) #(*, +, x)</string>
-    <string name="customTemplateExample11">The #(pt) of the #(ac, pp)</string>
-    <string name="customTemplateExample12">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
+    <string name="customTemplateExample9">#(ac, pp, on) #(co)</string>
+    <string name="customTemplateExample10">#(cp) the #(pc, +) #(ac, n)</string>
+    <string name="customTemplateExample11">#(pc) #(ac, pr) #(*, +, x)</string>
+    <string name="customTemplateExample12">The #(pt) of the #(ac, pp)</string>
+    <string name="customTemplateExample13">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -66,6 +67,7 @@
     <string name="function_pastPerfectTense">pp</string>
     <string name="function_actor">er</string>
     <string name="function_possessive">\'</string>
+    <string name="function_preposition">on</string>
     <string name="function_comparative">></string>
     <string name="function_superlative">>></string>
     <string name="function_manner">ly</string>

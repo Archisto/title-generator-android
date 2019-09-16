@@ -20,6 +20,7 @@ public class Word {
     private String superlative;
     private String manner;
     private String possessive;
+    private String[] prepositions;
 
     public Category category;
     public int categoryId;
@@ -136,6 +137,19 @@ public class Word {
         else {
             int index = (int) (Math.random() * wordForms.size());
             return wordForms.get(index);
+        }
+    }
+
+    String getRandomPreposition() {
+        if (prepositions == null)
+            return null;
+
+        if (prepositions.length == 1) {
+            return prepositions[0];
+        }
+        else {
+            int index = (int) (Math.random() * prepositions.length);
+            return prepositions[index];
         }
     }
 
@@ -471,6 +485,27 @@ public class Word {
             possessive = null;
         else
             possessive = getModifiedWord(word, modifier);
+    }
+
+    void setPrepositions(String prepositions, String defaultPreposition) {
+        if ((prepositions != null && prepositions.length() == 0)
+            || (prepositions == null
+                && (defaultPreposition == null || defaultPreposition.length() == 0))) {
+            prepositions = null;
+            return;
+        }
+
+        String separator= ",";
+
+        if (defaultPreposition != null && defaultPreposition.length() > 0) {
+            prepositions =
+                (prepositions != null ? prepositions + separator : "") + defaultPreposition;
+        }
+
+        this.prepositions = prepositions.split("[" + separator + "]");
+        for (int i = 0; i < this.prepositions.length; i++) {
+            this.prepositions[i] = this.prepositions[i].trim();
+        }
     }
 
     private String getModifierEndingWithS(String str) {

@@ -459,11 +459,12 @@ public class MainActivity extends AppCompatActivity {
         // General mutators
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
+        boolean emptyResult = false;
 
         for (int i = 0; i < mutators.length; i++) {
             mutators[i] = mutators[i].trim();
 
-            if (lastWordMutators != null) {
+            if (!emptyResult && lastWordMutators != null) {
                 if (mutators[i].equals(getString(R.string.function_copyAllMutators))) {
                     mutators = lastWordMutators;
                     copyCategory = true;
@@ -477,9 +478,13 @@ public class MainActivity extends AppCompatActivity {
 
             // 50 % chance for an empty result
             if (mutators[i].equals(getString(R.string.function_emptyChance1)) && Math.random() < 0.5) {
-                lastWordMutators = mutators;
-                return "";
+                emptyResult = true;
             }
+        }
+
+        if (emptyResult) {
+            lastWordMutators = mutators;
+            return "";
         }
 
         int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
@@ -527,7 +532,8 @@ public class MainActivity extends AppCompatActivity {
     private String getWordFormFromMutators(Word word, String[] mutators) {
         StringBuilder result = new StringBuilder(word.toString());
 
-        boolean possessive = false;
+        boolean usePossessive = false;
+        boolean usePreposition = false;
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
                 replaceStringBuilderString(result, word.getPlural());
@@ -566,12 +572,21 @@ public class MainActivity extends AppCompatActivity {
                 replaceStringBuilderString(result, word.getManner());
             }
             else if (mutator.equals(getString(R.string.function_possessive))) {
-                possessive = true;
+                usePossessive = true;
+            }
+            else if (mutator.equals(getString(R.string.function_preposition))) {
+                usePreposition = true;
             }
         }
 
-        if (possessive) {
+        if (usePossessive)
             replaceStringBuilderString(result, word.getPossessive(result.toString()));
+
+        if (usePreposition) {
+            String preposition = word.getRandomPreposition();
+            if (preposition != null) {
+                result.append(' ').append(preposition);
+            }
         }
 
         return result.toString();
@@ -800,6 +815,12 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.action_exampleTemplate11: {
                 return setCustomTemplate(getString(R.string.customTemplateExample11), true);
+            }
+            case R.id.action_exampleTemplate12: {
+                return setCustomTemplate(getString(R.string.customTemplateExample12), true);
+            }
+            case R.id.action_exampleTemplate13: {
+                return setCustomTemplate(getString(R.string.customTemplateExample13), true);
             }
         }
 
