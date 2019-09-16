@@ -329,6 +329,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyCustomTemplate(StringBuilder title) {
+        if (customTemplate.length() == 0) {
+            title.append(getString(R.string.untitled));
+            return;
+        }
+
         lastWordCategory = -1;
 
         for (int i = 0; i < customTemplate.length(); i++) {
@@ -389,6 +394,9 @@ public class MainActivity extends AppCompatActivity {
                 lastWordCategory = word.categoryId;
             }
         }
+
+        if (title.length() == 0)
+            title.append(getString(R.string.untitled));
 
         lastCharWasTemplateWordChar = false;
         skipSpace = false;
@@ -690,7 +698,7 @@ public class MainActivity extends AppCompatActivity {
             sb.delete(0, sb.length());
 
             for (int i = 0; i < str.length(); i++) {
-                if (i < str.length() - 1 || str.charAt(i) != '-')
+                if (str.charAt(i) != '\'' && (i < str.length() - 1 || str.charAt(i) != '-'))
                     sb.append(str.charAt(i)).append('.');
             }
         }

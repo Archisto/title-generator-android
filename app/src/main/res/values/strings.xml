@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Title Generator</string>
     <string name="form_X__Y">": "</string>
+    <string name="form_X__The_Y">": The "</string>
     <string name="form_X_of_Y">" of "</string>
     <string name="form_X_of_the_Y">" of the "</string>
     <string name="form_X_and_Y">" and "</string>
     <string name="form_X_and_the_Y">" and the "</string>
     <string name="form_Xs_Y">"'s "</string>
+    <string name="form_Xs_Y2">"' "</string>
     <string name="category_kind">Kind</string>
     <string name="category_concept">Concept</string>
     <string name="category_substance">Substance</string>
@@ -26,6 +28,7 @@
     <string name="titleCount">Title count: %d</string>
     <string name="titleWordCount">Words in a title: %d</string>
     <string name="totalWordCount">Words in total: %d</string>
+    <string name="untitled">Untitled</string>
     <string name="action_titleDecorations">Title decorations</string>
     <string name="action_randomTitleLength">Random title length</string>
     <string name="action_displayAll">Display all categories</string>
@@ -93,6 +96,4 @@
     <string name="number_8">8</string>
     <string name="number_9">9</string>
     <string name="number_10">10</string>
-    <string name="form_X__The_Y">": The "</string>
-    <string name="form_Xs_Y2">"' "</string>
 </resources>
