@@ -22,9 +22,10 @@ public class Word {
     private String possessive;
     private String[] prepositions;
 
-    public Category category;
-    public int categoryId;
-    public boolean implicitPlural;
+    Category category;
+    int categoryId;
+    boolean implicitPlural;
+    boolean isPlaceholder;
     private ArrayList<String> wordForms;
 
     enum Category {
@@ -41,7 +42,14 @@ public class Word {
     public Word(String word,
                 int categoryId,
                 boolean implicitPlural) {
-        this.word = capitalizeFirstLetter(word);
+        if (word.charAt(0) == '[') {
+            isPlaceholder = true;
+            this.word = word;
+        }
+        else {
+            this.word = capitalizeFirstLetter(word);
+        }
+
         this.categoryId = categoryId;
         category = getCategoryFromInt(categoryId);
         this.implicitPlural = implicitPlural;
@@ -49,9 +57,14 @@ public class Word {
 
     private String capitalizeFirstLetter(String str) {
         if (str != null && str.length() > 0) {
-            StringBuilder result = new StringBuilder(str);
-            result.setCharAt(0, ("" + str.charAt(0)).toUpperCase().charAt(0));
-            return result.toString();
+            if (str.length() == 1) {
+                return str.toUpperCase();
+            }
+            else {
+                //str = str.toLowerCase();
+                str = ("" + str.charAt(0)).toUpperCase() + str.substring(1);
+                return str;
+            }
         }
         else {
             return "ERROR";
@@ -127,7 +140,8 @@ public class Word {
             category == Category.action ? 0.6f :
             0.66f;
 
-        if (wordForms == null || wordForms.size() == 0 || Math.random() < baseWordChance) {
+        if (isPlaceholder || wordForms == null || wordForms.size() == 0
+            || Math.random() < baseWordChance) {
             return word;
         }
 
@@ -356,6 +370,7 @@ public class Word {
     }
 
     void setActor(String modifier, String duplicatedConsonant) {
+
         // Duplicated consonants
         if (modifier == null && duplicatedConsonant != null)
             modifier = duplicatedConsonant + "er";
@@ -396,12 +411,14 @@ public class Word {
     void setComparative(String modifier) {
         final String moreStr = "More";
 
-        if ((category != Category.kind && modifier == null)
-            || (modifier != null && modifier.length() == 0))
+        if (modifier != null && modifier.length() == 0)
             return;
-
-        if (modifier == null) {
+        // Kind words have implicit comparative forms
+        else if (category == Category.kind && modifier == null) {
             comparative = moreStr + ' ' + word;
+            return;
+        }
+        else if (modifier == null) {
             return;
         }
         else if (modifier.equals(defaultModifierMarker)) {
@@ -423,12 +440,14 @@ public class Word {
     void setSuperlative(String modifier) {
         final String mostStr = "Most";
 
-        if ((category != Category.kind && modifier == null)
-            || (modifier != null && modifier.length() == 0))
+        if (modifier != null && modifier.length() == 0)
             return;
-
-        if (modifier == null) {
+        // Kind words have implicit superlative forms
+        else if (category == Category.kind && modifier == null) {
             superlative = mostStr + ' ' + word;
+            return;
+        }
+        else if (modifier == null) {
             return;
         }
         else if (modifier.equals(defaultModifierMarker)) {
@@ -448,9 +467,12 @@ public class Word {
     }
 
     void setManner(String modifier) {
-        if (category == Category.kind && modifier == null)
+
+        if (modifier != null && modifier.length() == 0)
+            return;
+        else if (category == Category.kind && modifier == null)
             modifier = defaultModifierMarker;
-        else if (modifier == null || modifier.length() == 0)
+        else if (modifier == null)
             return;
 
         if (modifier.equals(defaultModifierMarker)) {
@@ -487,19 +509,20 @@ public class Word {
             possessive = getModifiedWord(word, modifier);
     }
 
-    void setPrepositions(String prepositions, String defaultPreposition) {
+    void setPrepositions(String prepositions, String defaultPrepositions) {
+
         if ((prepositions != null && prepositions.length() == 0)
             || (prepositions == null
-                && (defaultPreposition == null || defaultPreposition.length() == 0))) {
+                && (defaultPrepositions == null || defaultPrepositions.length() == 0))) {
             prepositions = null;
             return;
         }
 
         String separator= ",";
 
-        if (defaultPreposition != null && defaultPreposition.length() > 0) {
+        if (defaultPrepositions != null && defaultPrepositions.length() > 0) {
             prepositions =
-                (prepositions != null ? prepositions + separator : "") + defaultPreposition;
+                (prepositions != null ? prepositions + separator : "") + defaultPrepositions;
         }
 
         this.prepositions = prepositions.split("[" + separator + "]");

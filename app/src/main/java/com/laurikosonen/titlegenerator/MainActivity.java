@@ -133,10 +133,7 @@ public class MainActivity extends AppCompatActivity {
     private void activateCustomTemplate(boolean activate) {
         enableCustomTemplate = activate;
         customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
-        if (enableCustomTemplate
-            && (customTemplate == null
-            || customTemplate.isEmpty()
-            || customTemplateInput.getText().toString().isEmpty())) {
+        if (enableCustomTemplate) {
             customTemplateInput.setText(customTemplate);
         }
     }
@@ -494,8 +491,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Word word = getRandomWord(category);
-        StringBuilder result = new StringBuilder(getWordFormFromMutators(word, mutators));
-        applyVisualMutators(result, mutators);
+        StringBuilder result;
+        if (word.isPlaceholder) {
+            result = new StringBuilder(word.toString());
+        }
+        else {
+            result = new StringBuilder(getWordFormFromMutators(word, mutators));
+            applyVisualMutators(result, mutators);
+        }
 
         lastWordMutators = mutators;
         return result.toString();
@@ -534,6 +537,7 @@ public class MainActivity extends AppCompatActivity {
 
         boolean usePossessive = false;
         boolean usePreposition = false;
+
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
                 replaceStringBuilderString(result, word.getPlural());
@@ -593,20 +597,90 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyVisualMutators(StringBuilder sb, String[] mutators) {
+        boolean useUppercase = false;
+        boolean useLowercase = false;
+        boolean useInitialism = false;
+        boolean reverseWord = false;
+        boolean jumbleWord = false;
+
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_uppercase))) {
-                replaceStringBuilderString(sb, sb.toString().toUpperCase());
+                useUppercase = true;
             }
             else if (mutator.equals(getString(R.string.function_lowercase))) {
-                replaceStringBuilderString(sb, sb.toString().toLowerCase());
+                useLowercase = true;
             }
             else if (mutator.equals(getString(R.string.function_initialism))) {
-                String str = sb.toString();
-                sb.delete(0, sb.length());
-                for (int i = 0; i < str.length(); i++) {
-                    sb.append(str.charAt(i)).append('.');
-                }
-                replaceStringBuilderString(sb, sb.toString().toUpperCase());
+                useInitialism = true;
+            }
+            else if (mutator.equals(getString(R.string.function_reverse))) {
+                reverseWord = true;
+            }
+            else if (mutator.equals(getString(R.string.function_jumble1)) || mutator.equals(getString(R.string.function_jumble2))) {
+                jumbleWord = true;
+            }
+        }
+
+        if (reverseWord)
+            reverseString(sb);
+        if (jumbleWord)
+            jumbleString(sb);
+        if (useInitialism) {
+            convertStringToInitialism(sb);
+            useUppercase = true;
+        }
+
+        if (useLowercase)
+            replaceStringBuilderString(sb, sb.toString().toLowerCase());
+        else if (useUppercase)
+            replaceStringBuilderString(sb, sb.toString().toUpperCase());
+    }
+
+    private void reverseString(StringBuilder sb) {
+        String str = sb.toString().toLowerCase();
+        sb.delete(0, sb.length());
+
+        int startIndex = str.length() - (Word.getLastChar(str) == '-' ? 2 : 1);
+        for (int i = startIndex; i >= 0; i--) {
+            char c = str.charAt(i);
+            if (i == startIndex)
+                c = ("" + str.charAt(i)).toUpperCase().charAt(0);
+
+            sb.append(c);
+        }
+    }
+
+    private void jumbleString(StringBuilder sb) {
+        if (sb.length() < 2)
+            return;
+
+        String str = sb.toString().toLowerCase();
+        if (Word.getLastChar(str) == '-')
+            str = str.substring(0, str.length() - 1);
+
+        char[] chars = str.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            int i2 = (int) (Math.random() * chars.length);
+            char temp = chars[i];
+            chars[i] = chars[i2];
+            chars[i2] = temp;
+        }
+
+        sb.delete(0, sb.length());
+        sb.append(("" + chars[0]).toUpperCase().charAt(0));
+        for (int i = 1; i < chars.length; i++) {
+            sb.append(chars[i]);
+        }
+    }
+
+    private void convertStringToInitialism(StringBuilder sb) {
+        if (sb.length() > 1) {
+            String str = sb.toString();
+            sb.delete(0, sb.length());
+
+            for (int i = 0; i < str.length(); i++) {
+                sb.append(str.charAt(i)).append('.');
             }
         }
     }
@@ -783,45 +857,34 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean handleCustomTemplateExampleOptions(int id) {
         switch (id) {
-            case R.id.action_exampleTemplate1: {
+            case R.id.action_exampleTemplate1:
                 return setCustomTemplate(getString(R.string.customTemplateExample1), true);
-            }
-            case R.id.action_exampleTemplate2: {
+            case R.id.action_exampleTemplate2:
                 return setCustomTemplate(getString(R.string.customTemplateExample2), true);
-            }
-            case R.id.action_exampleTemplate3: {
+            case R.id.action_exampleTemplate3:
                 return setCustomTemplate(getString(R.string.customTemplateExample3), true);
-            }
-            case R.id.action_exampleTemplate4: {
+            case R.id.action_exampleTemplate4:
                 return setCustomTemplate(getString(R.string.customTemplateExample4), true);
-            }
-            case R.id.action_exampleTemplate5: {
+            case R.id.action_exampleTemplate5:
                 return setCustomTemplate(getString(R.string.customTemplateExample5), true);
-            }
-            case R.id.action_exampleTemplate6: {
+            case R.id.action_exampleTemplate6:
                 return setCustomTemplate(getString(R.string.customTemplateExample6), true);
-            }
-            case R.id.action_exampleTemplate7: {
+            case R.id.action_exampleTemplate7:
                 return setCustomTemplate(getString(R.string.customTemplateExample7), true);
-            }
-            case R.id.action_exampleTemplate8: {
+            case R.id.action_exampleTemplate8:
                 return setCustomTemplate(getString(R.string.customTemplateExample8), true);
-            }
-            case R.id.action_exampleTemplate9: {
+            case R.id.action_exampleTemplate9:
                 return setCustomTemplate(getString(R.string.customTemplateExample9), true);
-            }
-            case R.id.action_exampleTemplate10: {
+            case R.id.action_exampleTemplate10:
                 return setCustomTemplate(getString(R.string.customTemplateExample10), true);
-            }
-            case R.id.action_exampleTemplate11: {
+            case R.id.action_exampleTemplate11:
                 return setCustomTemplate(getString(R.string.customTemplateExample11), true);
-            }
-            case R.id.action_exampleTemplate12: {
+            case R.id.action_exampleTemplate12:
                 return setCustomTemplate(getString(R.string.customTemplateExample12), true);
-            }
-            case R.id.action_exampleTemplate13: {
+            case R.id.action_exampleTemplate13:
                 return setCustomTemplate(getString(R.string.customTemplateExample13), true);
-            }
+            case R.id.action_exampleTemplate14:
+                return setCustomTemplate(getString(R.string.customTemplateExample14), true);
         }
 
         return false;

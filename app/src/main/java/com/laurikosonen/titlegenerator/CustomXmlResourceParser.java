@@ -59,7 +59,7 @@ class CustomXmlResourceParser {
             String startTagName = "_";
             int categoryId = 0;
             boolean isImplicitPlural = false;
-            String defaultPreposition = "";
+            String defaultPrepositions = "";
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if (eventType == XmlPullParser.START_TAG) {
@@ -72,7 +72,7 @@ class CustomXmlResourceParser {
                         categoryId = parseInt(strId);
                         isImplicitPlural =
                             parser.getAttributeValue(null, implicitPluralStr) != null;
-                        defaultPreposition = parser.getAttributeValue(null, defaultPreposStr);
+                        defaultPrepositions = parser.getAttributeValue(null, defaultPreposStr);
 
                         // Increases the pool count if the ID is too large
                         if (pools.size() <= categoryId) {
@@ -82,7 +82,7 @@ class CustomXmlResourceParser {
                     }
                     else if (startTagName.equalsIgnoreCase(wordStr)) {
                         // Creates a new word
-                        Word word = getParsedWord(parser, categoryId, isImplicitPlural, defaultPreposition);
+                        Word word = getParsedWord(parser, categoryId, isImplicitPlural, defaultPrepositions);
                         if (word != null) {
                             pools.get(categoryId).add(word);
                             poolAll.add(word);
@@ -114,11 +114,13 @@ class CustomXmlResourceParser {
                                       boolean isImplicitPlural,
                                       String defaultPreposition) {
         String text = parser.getAttributeValue(null, nameStr);
-        if (text == null || text.isEmpty()) {
+        if (text == null || text.isEmpty())
             return null;
-        }
 
         Word word = new Word(text, categoryId, isImplicitPlural);
+
+        if (word.isPlaceholder)
+            return word;
 
         word.setNoun(parser.getAttributeValue(null, nounStr));
         word.setPlural(parser.getAttributeValue(null, pluralStr));
@@ -136,8 +138,8 @@ class CustomXmlResourceParser {
         word.setPossessive(parser.getAttributeValue(null, possessiveStr));
         word.setPrepositions(parser.getAttributeValue(null, prepositionStr),
             parser.getAttributeValue(null, noDefPreposStr) != null ? null : defaultPreposition);
-
         word.initWordFormList();
+
         return word;
     }
 }

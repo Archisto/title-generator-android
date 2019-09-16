@@ -47,7 +47,8 @@
     <string name="customTemplateExample10">#(cp) the #(pc, +) #(ac, n)</string>
     <string name="customTemplateExample11">#(pc) #(ac, pr) #(*, +, x)</string>
     <string name="customTemplateExample12">The #(pt) of the #(ac, pp)</string>
-    <string name="customTemplateExample13">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
+    <string name="customTemplateExample13">The #(ki, x) #(pt) of #(r)</string>
+    <string name="customTemplateExample14">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -59,6 +60,9 @@
     <string name="function_uppercase">A</string>
     <string name="function_lowercase">a</string>
     <string name="function_initialism">.</string>
+    <string name="function_reverse">r</string>
+    <string name="function_jumble1">j</string>
+    <string name="function_jumble2">\?</string>
     <string name="function_noun">n</string>
     <string name="function_presentParticiple">ing</string>
     <string name="function_presentTense">pr</string>

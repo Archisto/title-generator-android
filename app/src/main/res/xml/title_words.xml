@@ -75,7 +75,6 @@
         <word name="Barren" plural="-" />
         <word name="Basic" plural="-" manner="ally" />
         <word name="Beautiful" />
-        <word name="Behind" manner="" />
         <word name="Beloved" />
         <word name="Benevolent" />
         <word name="Beta" manner="" />
@@ -110,7 +109,6 @@
         <word name="Burning" />
         <word name="Burnt" />
         <word name="Busy" compa="-" super="-" />
-        <word name="By" compa="" super="" manner="" />
         <word name="Calm" compa="-" super="-" />
         <word name="Candid" />
         <word name="Careful" plural="-" />
@@ -459,6 +457,7 @@
         <word name="Humane" />
         <word name="Humble" compa="-" super="-" />
         <word name="Hundred" plural="-" compa="" super="" manner="" />
+        <word name="Hundredfold" compa="" super="" manner="" />
         <word name="Hungry" compa="-" super="-" />
         <word name="Hyper" compa="-" super="-" manner="" />
         <word name="Idyllic" />
@@ -522,7 +521,7 @@
         <word name="Last" compa="!Later" super="" />
         <word name="Late" compa="-" super="-" />
         <word name="Lavish" />
-        <word name="Law-abiding" />
+        <word name="Law-Abiding" />
         <word name="Lawful" />
         <word name="Lazy" compa="-" super="-" />
         <word name="Lead" />
@@ -634,7 +633,7 @@
         <word name="Nefarious" />
         <word name="Negative" />
         <word name="Neither" manner="" />
-        <word name="Neo-" compa="" super="" manner="!Newly" />
+        <word name="Neo-" compa="" super="" manner="" />
         <word name="Neural" />
         <word name="Neuro" manner="1ally" />
         <word name="Neutral" />
@@ -646,6 +645,7 @@
         <word name="No" compa="!Less" super="!Least" manner="!Negatively" />
         <word name="Noble" plural="-" />
         <word name="Nocturnal" />
+        <word name="Non-" compa="" super="" manner="" />
         <word name="Normal" plural="-" />
         <word name="Northern" />
         <word name="Not" manner="" />
@@ -659,12 +659,10 @@
         <word name="Obscene" />
         <word name="Obscure" compa="-" super="-" />
         <word name="Odd" compa="-" super="-" />
-        <word name="Off" manner="" />
         <word name="Official" />
         <word name="Old" compa="-" super="-" />
         <word name="Omega" manner="" />
         <word name="Omni-" compa="" super="" manner="" />
-        <word name="On" compa="" super="" manner="" />
         <word name="Once" compa="" super="" manner="" />
         <word name="One" plural="-" compa="" super="" manner="" />
         <word name="Only" compa="" super="" manner="" />
@@ -681,7 +679,7 @@
         <word name="Painful" />
         <word name="Painless" />
         <word name="Pale" compa="-" super="-" manner="ly" />
-        <word name="Para" manner="" />
+        <word name="Para-" compa="" super="" manner="" />
         <word name="Paramount" />
         <word name="Paranoid" />
         <word name="Paranormal" />
@@ -730,7 +728,7 @@
         <word name="Proper" />
         <word name="Prophetic" />
         <word name="Protective" />
-        <word name="Proto" manner="" />
+        <word name="Proto-" manner="" />
         <word name="Proud" compa="-" super="-" />
         <word name="Proven" />
         <word name="Pseudo" manner="" />
@@ -743,11 +741,12 @@
         <word name="Putrid" />
         <word name="Pyroclastic" />
         <word name="Quad" plural="-" manner="" />
-        <word name="Quadruple" plural="-" />
+        <word name="Quadruple" plural="-" manner="" />
         <word name="Quarter" plural="-" />
         <word name="Quick" compa="-" super="-" />
         <word name="Quiet" compa="-" super="-" />
-        <word name="Rad" super="dest" />
+        <word name="Rad" compa="der" super="dest" />
+        <word name="Radial" manner="" />
         <word name="Radiant" />
         <word name="Random" />
         <word name="Ranged" />
@@ -812,9 +811,11 @@
         <word name="Seething" />
         <word name="Selfish" />
         <word name="Semi-" compa="" super="" manner="" />
+        <word name="Sentient" />
         <word name="Separate" />
         <word name="Serious" />
         <word name="Seven" compa="" super="" manner="" />
+        <word name="Sevenfold" compa="" super="" manner="" />
         <word name="Several" compa="" super="" />
         <word name="Shallow" compa="-" super="-" />
         <word name="Shameful" />
@@ -914,6 +915,7 @@
         <word name="Temporary" />
         <word name="Tempting" />
         <word name="Ten" plural="-" compa="" super="" manner="" />
+        <word name="Tenfold" compa="" super="" manner="" />
         <word name="Tender" />
         <word name="Tense" />
         <word name="Terminated" />
@@ -925,7 +927,9 @@
         <word name="This" plural="2ese" manner="!Thusly" />
         <word name="Thorough" />
         <word name="Thousand" plural="-" compa="" super="" manner="" />
+        <word name="Thousandfold" compa="" super="" manner="" />
         <word name="Three" plural="-" compa="" super="" manner="" />
+        <word name="Threefold" compa="" super="" manner="" />
         <word name="Thriving" />
         <word name="Tidy" compa="-" super="-" />
         <word name="Tight" compa="-" super="-" />
@@ -958,6 +962,7 @@
         <word name="Twin" compa="" super="" manner="" />
         <word name="Twisted" />
         <word name="Two" plural="-" compa="" super="" manner="" />
+        <word name="Twofold" compa="" super="" manner="" />
         <word name="Ugly" compa="-" super="-" />
         <word name="Ultimate" />
         <word name="Ultra" manner="" />
@@ -1055,7 +1060,7 @@
         <word name="Young" compa="-" super="-" />
         <word name="Z" compa="" super="" manner="" />
         <word name="Zero" compa="" super="" manner="" />
-        <word name="[Number]" compa="" super="" manner="" />
+        <word name="[Number]" />
     </category>
     <category id="1" name="Concept" shortName="co" implicitPlural="true">
         <word name="Aberration" />
@@ -1449,6 +1454,7 @@
         <word name="Luminescence" plural="" />
         <word name="Lunacy" plural="" />
         <word name="Madness" plural="" />
+        <word name="Magic" plural="" />
         <word name="Malevolence" plural="" />
         <word name="Malfunction" />
         <word name="Manifold" plural="-" />
@@ -1646,13 +1652,13 @@
         <word name="Security" plural="" />
         <word name="Self" plural="" />
         <word name="Sense" />
+        <word name="Sentience" plural="" />
         <word name="Sequence" />
         <word name="Series" plural="" />
         <word name="Service" />
         <word name="Servitude" plural="" />
         <word name="Shame" plural="" />
         <word name="Shenanigans" plural="" />
-        <word name="Showdown" />
         <word name="Shroud" />
         <word name="Sickness" />
         <word name="Sight" />
@@ -2464,6 +2470,7 @@
         <word name="List" />
         <word name="Lock" />
         <word name="Lockbox" />
+        <word name="Lockdown" />
         <word name="Log" />
         <word name="Loop" />
         <word name="Loot" plural="" />
@@ -2634,6 +2641,7 @@
         <word name="Relic" />
         <word name="Remains" plural="" />
         <word name="Report" />
+        <word name="Rest" plural="" />
         <word name="Reverb" />
         <word name="Revolver" />
         <word name="Rifle" />
@@ -2694,6 +2702,7 @@
         <word name="Shotgun" />
         <word name="Shovel" />
         <word name="Show" />
+        <word name="Showdown" />
         <word name="Shred" />
         <word name="Sickle" />
         <word name="Side" />
@@ -3492,7 +3501,7 @@
         <word name="Zealot" />
         <word name="Zeus" plural="" />
         <word name="Zombie" />
-        <word name="[Character's Name]" plural="" />
+        <word name="[Character's Name]" />
     </category>
     <category id="5" name="Action" shortName="ac" implicitPlural="true" defaultPrepos="by">
         <word name="Abandon" noun="ment" />
@@ -3755,6 +3764,7 @@
         <word name="Entertain" noun="ment" />
         <word name="Eradicate" noun="-" />
         <word name="Erase" noun="1ure" prepos="From" />
+        <word name="Erode" noun="2sion" prepos="to" noDefPrepos="-" />
         <word name="Escalate" noun="-" />
         <word name="Escape" actor="e" prepos="From, to" noDefPrepos="-" />
         <word name="Estimate" noun="-" />
@@ -3841,17 +3851,18 @@
         <word name="Glimmer" noDefPrepos="-" />
         <word name="Glow" prepos="in" noDefPrepos="-" />
         <word name="Gnaw" prepos="on" />
-        <word name="Go" past="!Went" perf="!Gone" prepos="for, From, to" />
-        <word name="Grab" dupcon="b" />
-        <word name="Grant" />
+        <word name="Go" past="!Went" perf="!Gone" prepos="for, From, on, to" />
+        <word name="Grab" dupcon="b" prepos="on, Onto" />
+        <word name="Grant" prepos="for" />
         <word name="Grasp" prepos="on" />
         <word name="Greet" noun="ing" />
         <word name="Grieve" noun="2f" prepos="for" />
-        <word name="Grin" dupcon="n" />
+        <word name="Grin" dupcon="n" prepos="at" noDefPrepos="-" />
         <word name="Grind" prepos="on" />
         <word name="Grip" dupcon="p" />
-        <word name="Grow" past="2ew" perf="-" />
-        <word name="Growl" prepos="at" />
+        <word name="Grow" past="2ew" perf="-" prepos="for, in, to" />
+        <word name="Growl" prepos="at" noDefPrepos="-" />
+        <word name="Grumble" prepos="at" noDefPrepos="-" />
         <word name="Guarantee" actor="2or" />
         <word name="Guess" actor="er" />
         <word name="Hack" prepos="on" />
@@ -3871,7 +3882,7 @@
         <word name="Hide" past="1" perf="1den" prepos="From, in" noDefPrepos="-" />
         <word name="Hike" prepos="to" noDefPrepos="-" />
         <word name="Hire" prepos="for" />
-        <word name="Hit" dupcon="t" past="" />
+        <word name="Hit" dupcon="t" past="" prepos="on" />
         <word name="Hold" past="!Held" prepos="on, Onto" />
         <word name="Horrify" noun="3or" />
         <word name="Howl" prepos="at" />
@@ -3880,11 +3891,12 @@
         <word name="Hurl" prepos="at" />
         <word name="Hurry" plural="" prepos="to" />
         <word name="Hurt" past="" />
+        <word name="Hypnotize" plural="" noun="4sis" actor="2st" />
         <word name="I Am" plural="!We Are" noun="!Being" prtc=" Being" pres="" past="2Was" actor="3" prepos="" />
         <word name="Ignite" noun="-" actor="r" />
         <word name="Imagine" noun="1ation" actor="1ator" />
         <word name="Impact" prepos="on" />
-        <word name="Imprint" prepos="on" />
+        <word name="Imprint" prepos="on" noDefPrepos="-" />
         <word name="Incinerate" noun="-" />
         <word name="Incite" noun="2dent" actor="r" />
         <word name="Include" noun="2sion" prepos="With" />
@@ -3893,37 +3905,37 @@
         <word name="Innovate" noun="-" />
         <word name="Insult" />
         <word name="Intend" noun="1tion" prepos="to" />
-        <word name="Interact" noun="-" />
+        <word name="Interact" noun="-" prepos="With" />
         <word name="Intervene" noun="1tion" />
-        <word name="Introduce" noun="1tion" />
+        <word name="Introduce" noun="1tion" prepos="to" />
         <word name="Invade" noun="2sion" />
-        <word name="Isolate" noun="-" />
+        <word name="Isolate" noun="-" prepos="From" />
         <word name="It Is" plural="!They Are" noun="!Being" prtc=" Being" pres="" past="2Was" perf="2Has Been" actor="3" prepos="" />
         <word name="Itch" noDefPrepos="-" />
         <word name="Jam" dupcon="m" noDefPrepos="-" />
         <word name="Jiggle" noDefPrepos="-" />
         <word name="Jingle" noDefPrepos="-" />
-        <word name="Join" noun="!Union" actor="!Participant" />
+        <word name="Join" noun="!Union" actor="!Participant" prepos="With" />
         <word name="Jolt" />
         <word name="Joust" />
         <word name="Juggle" prepos="With" />
-        <word name="Jump" prepos="Up" noDefPrepos="-" />
+        <word name="Jump" prepos="on, Over, Up" noDefPrepos="-" />
         <word name="Karting" prtc="" pres="" past="" actor="3 Racer" prepos="" />
         <word name="Keel" prepos="Over" noDefPrepos="-" />
-        <word name="Kick" prepos="Down" />
+        <word name="Kick" prepos="Down, to" />
         <word name="Kill" prepos="With" />
         <word name="Kinesis" plural="" prtc="" past="" actor="" prepos="" />
         <word name="Kiss" actor="er" />
-        <word name="Know" noun="ing" past="!Knew" perf="-" />
+        <word name="Know" noun="ing" past="!Knew" perf="-" prepos="for" />
         <word name="Labor" prepos="on" noDefPrepos="-" />
         <word name="Lament" noun="ation" />
-        <word name="Land" prepos="on" noDefPrepos="-" />
+        <word name="Land" prepos="in, on" noDefPrepos="-" />
         <word name="Last" plural="" actor="" prepos="for" noDefPrepos="-" />
         <word name="Laugh" prepos="at" noDefPrepos="-" />
         <word name="Lay" prtc="!Lying" past="1id" prepos="Down, on" noDefPrepos="-" />
         <word name="Lead" past="" prepos="on" />
-        <word name="Lean" prepos="Against" noDefPrepos="-" />
-        <word name="Leap" past="t" prepos="Over" noDefPrepos="-" />
+        <word name="Lean" prepos="Against, to" noDefPrepos="-" />
+        <word name="Leap" past="t" prepos="on, Over" noDefPrepos="-" />
         <word name="Learn" noun="ing" prepos="From" />
         <word name="Lend" past="1t" />
         <word name="Let" noun="ting" dupcon="t" past="=" prepos="Down, in, on" />
@@ -3936,8 +3948,10 @@
         <word name="Load" prepos="of" />
         <word name="Loan" prtc="!Lending" actor="!Lender" />
         <word name="Loathe" plural="1ing" noun="1ing" />
-        <word name="Look" prepos="at, for, Like, Towards" />
-        <word name="Lose" noun="1s" past="1t" />
+        <word name="Lock" plural="-" prepos="in, on, Out" />
+        <word name="Look" prepos="at, for, Forward, Like, Out, Out for, Towards" />
+        <word name="Loot" />
+        <word name="Lose" noun="1s" past="1t" prepos="on" />
         <word name="Love" plural="" prepos="to" />
         <word name="Lynch" noun="ing" />
         <word name="Make" past="2de" prepos="Towards, up for" />
@@ -3945,7 +3959,7 @@
         <word name="Manoeuver" noun="2re" actor="" />
         <word name="March" prepos="on, Towards" noDefPrepos="-" />
         <word name="Mark" prepos="on" />
-        <word name="Marry" noun="1iage" past="1ied" actor="!Newly-wed" prepos="With" />
+        <word name="Marry" noun="1iage" past="1ied" actor="!Newly-Wed" prepos="With" />
         <word name="Mash" prepos="With" />
         <word name="Massacre" actor="" />
         <word name="Maul" />
@@ -3995,9 +4009,11 @@
         <word name="Pick" prepos="From" />
         <word name="Pierce" prepos="With" />
         <word name="Pilfer" />
+        <word name="Pillage" />
         <word name="Play" prepos="With" />
         <word name="Please" noun="1ure" />
         <word name="Plot" dupcon="t" prepos="Against" />
+        <word name="Plunder" />
         <word name="Pop" dupcon="p" prepos="Up" />
         <word name="Possess" noun="-" />
         <word name="Pour" prepos="in, on" />
@@ -4081,11 +4097,11 @@
         <word name="Require" noun="ment" />
         <word name="Research" prepos="for" />
         <word name="Resent" noun="ment" />
-        <word name="Reserve" noun="1ation" prepos="for" />
+        <word name="Reserve" prepos="for" />
         <word name="Reset" dupcon="t" past="=" />
         <word name="Resist" noun="ance" prepos="From" />
         <word name="Respond" noun="1se" prepos="to" />
-        <word name="Rest" prepos="at, in" noDefPrepos="-" />
+        <word name="Rest" prepos="at, in, on" noDefPrepos="-" />
         <word name="Restart" prepos="From" />
         <word name="Restore" noun="1ation" prepos="to" />
         <word name="Resurrect" noun="-" />
@@ -4105,7 +4121,7 @@
         <word name="Rob" noun="bery" dupcon="b" />
         <word name="Roll" prepos="on" />
         <word name="Root" prepos="for" />
-        <word name="Rumble" />
+        <word name="Rumble" prepos="for" noDefPrepos="-" />
         <word name="Run" dupcon="n" past="!Ran" perf="=" />
         <word name="Rush" prepos="to, Towards" />
         <word name="Sabotage" />
@@ -4145,7 +4161,7 @@
         <word name="Should" plural="" prtc="" pres="" past="" perf="!Should Have" actor="" prepos="" />
         <word name="Shout" prepos="at, to" />
         <word name="Shove" prepos="to" />
-        <word name="Show" perf="-" prepos="of, to" />
+        <word name="Show" perf="-" prepos="of, Off, to" />
         <word name="Shriek" prepos="at" noDefPrepos="-" />
         <word name="Shrink" noun="age" past="3ank" perf="3unken" noDefPrepos="-" />
         <word name="Shrivel" noDefPrepos="-" />
@@ -4245,7 +4261,7 @@
         <word name="Sweep" past="!Swept" prepos="Past, Under" />
         <word name="Sync" prepos="With" />
         <word name="Synchronize" noun="1ation" prepos="With" />
-        <word name="Take" past="!Took" perf="-" prepos="Away, From, on, to" />
+        <word name="Take" past="!Took" perf="-" prepos="Away, From, Off, on, to" />
         <word name="Talk" prepos="About, to, With" />
         <word name="Tamper" prepos="With" />
         <word name="Tap" dupcon="p" prepos="on" />
@@ -4304,7 +4320,7 @@
         <word name="Wail" prepos="for" />
         <word name="Wait" prepos="for" />
         <word name="Wake Up" noun="!Awakening" pres="3s Up" past="!Woke Up" perf="!Woken Up" actor="3r" prepos="to" />
-        <word name="Walk" prepos="in, on" />
+        <word name="Walk" prepos="in, Off, on" />
         <word name="Want" prepos="to" noDefPrepos="-" />
         <word name="War" dupcon="r" pres="" past="" actor="rior" prepos="on" noDefPrepos="-" />
         <word name="Warn" noun="ing" prepos="About" />
@@ -4451,7 +4467,6 @@
         <word name="District" />
         <word name="Dock" />
         <word name="Domain" />
-        <word name="Downward" />
         <word name="Drome" />
         <word name="Dungeon" />
         <word name="Dusk" />
@@ -4466,6 +4481,7 @@
         <word name="Eon" />
         <word name="Epoch" plural="s" />
         <word name="Equator" />
+        <word name="Era" />
         <word name="Estate" />
         <word name="Eternity" />
         <word name="Europe" plural="" />
@@ -4528,7 +4544,6 @@
         <word name="Inside" />
         <word name="Institute" />
         <word name="Institution" />
-        <word name="Inward" />
         <word name="Island" />
         <word name="Isle" />
         <word name="Jail" />
@@ -4600,8 +4615,6 @@
         <word name="Orchard" />
         <word name="Orphanage" />
         <word name="Outside" plural="" />
-        <word name="Outward" />
-        <word name="Over" plural="" />
         <word name="Pacific" plural="" />
         <word name="Palace" />
         <word name="Paradise" />
@@ -4722,7 +4735,6 @@
         <word name="Underworld" />
         <word name="Universe" />
         <word name="University" />
-        <word name="Upward" />
         <word name="Utopia" />
         <word name="Vale" />
         <word name="Valley" />
@@ -4753,8 +4765,8 @@
         <word name="Yggdrasil" plural="" />
         <word name="Ziggurat" />
         <word name="Zone" />
-        <word name="[Month]" plural="" />
-        <word name="[Place Name]" plural="" />
+        <word name="[Month]" />
+        <word name="[Place Name]" />
     </category>
     <category id="7" name="Conjunction &amp; Preposition" shortName="cp">
         <word name="About" />
@@ -4778,6 +4790,7 @@
         <word name="Beyond" />
         <word name="Despite" />
         <word name="Down" />
+        <word name="Downward" />
         <word name="During" />
         <word name="Forth" />
         <word name="Forward" />
@@ -4786,11 +4799,14 @@
         <word name="How" />
         <word name="If" />
         <word name="Into" />
+        <word name="Inward" />
         <word name="Lest" />
         <word name="Like" />
         <word name="Near" />
+        <word name="Off" />
         <word name="Onto" />
         <word name="Out" />
+        <word name="Outward" />
         <word name="Over" />
         <word name="Past" />
         <word name="Since" />
@@ -4806,6 +4822,7 @@
         <word name="Until" />
         <word name="Up" />
         <word name="Upon" />
+        <word name="Upward" />
         <word name="What" />
         <word name="When" />
         <word name="Where" />
@@ -4823,6 +4840,7 @@
         <word name="for" />
         <word name="in" />
         <word name="of" />
+        <!--<word name="off" />-->
         <word name="on" />
         <word name="or" />
         <word name="so" />
