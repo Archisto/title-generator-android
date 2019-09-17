@@ -587,6 +587,7 @@ public class MainActivity extends AppCompatActivity {
         boolean useActor = false;
         boolean usePossessive = false;
         boolean usePreposition = false;
+        boolean useRandomForm = false;
 
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
@@ -628,12 +629,18 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_possessive))) {
                 usePossessive = true;
             }
-            else if (mutator.equals(getString(R.string.function_preposition))) {
+            else if (mutator.equals(getString(R.string.function_preposition1)) || mutator.equals(getString(R.string.function_preposition2))) {
                 usePreposition = true;
+            }
+            else if (mutator.equals(getString(R.string.function_randomForm))) {
+                useRandomForm = true;
             }
         }
 
-        if (result.length() == 0) {
+        if (useRandomForm) {
+            replaceStringBuilderString(result, word.getRandomWordForm());
+        }
+        else if (result.length() == 0) {
             if (usePlural && useActor)
                 result.append(word.getActorPlural());
             else if (usePlural)
