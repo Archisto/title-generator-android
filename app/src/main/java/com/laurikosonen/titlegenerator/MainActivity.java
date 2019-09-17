@@ -239,6 +239,8 @@ public class MainActivity extends AppCompatActivity {
             else if (!isLastWord && !skipSpace) {
                 applyTitleDecoration(TitleDecoration.X_Y, title);
             }
+
+            skipSpace = false;
         }
     }
 
@@ -267,20 +269,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void appendCharToTitle(StringBuilder title, char c) {
-        if (title.length() > 0 || c != ' ')
+        if (c != ' ' || (title.length() > 0 && title.charAt(title.length() - 1) != ' '))
             title.append(c);
     }
 
     private void appendDecorationToTitle(StringBuilder title, String decoration) {
         title.append(decoration);
-        skipSpace = false;
     }
 
     private void appendSpaceToTitleIfNotSkipped(StringBuilder title) {
         if (!skipSpace)
             title.append(" ");
-        else
-            skipSpace = false;
     }
 
     private Word getRandomWord(int wordCategoryId) {
@@ -403,7 +402,6 @@ public class MainActivity extends AppCompatActivity {
                 if (lastCharWasTemplateWordChar)
                     appendWordToTitle(title, getRandomWord(displayedCategory));
 
-                skipSpace = false;
                 lastCharWasTemplateWordChar = true;
             }
             // The character immediately following a word template char
@@ -414,20 +412,13 @@ public class MainActivity extends AppCompatActivity {
                 anyCharCanBeAppended =
                     !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
 
-                if (mutatorBlockLength == 0 && anyCharCanBeAppended) {
+                if (mutatorBlockLength == 0 && anyCharCanBeAppended)
                     appendCharToTitle(title, currentChar);
-                    skipSpace = false;
-                }
 
                 lastCharWasTemplateWordChar = false;
             }
             else if (anyCharCanBeAppended) {
                 appendCharToTitle(title, currentChar);
-                skipSpace = false;
-            }
-
-            if (skipSpace && currentChar == ' ') {
-                skipSpace = false;
             }
 
             if (isLastChar && lastCharWasTemplateWordChar) {
@@ -435,6 +426,9 @@ public class MainActivity extends AppCompatActivity {
                 appendWordToTitle(title, word);
                 lastWordCategory = word.category.id;
             }
+
+            if (mutatorBlockLength == 0)
+                skipSpace = false;
         }
 
         if (title.length() == 0)
@@ -455,9 +449,7 @@ public class MainActivity extends AppCompatActivity {
         else
             wordWithMutators = getWordWithAppliedMutators(mutators);
 
-        if (wordWithMutators.length() == 0)
-            skipSpace = true;
-        else
+        if (wordWithMutators.length() > 0)
             appendStringToTitle(title, wordWithMutators);
     }
 
