@@ -31,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleDecorationsToggle;
     private MenuItem randomTitleLengthToggle;
 
+    private int[] categoryItemIds = {
+        R.id.action_displayCategory1,
+        R.id.action_displayCategory2,
+        R.id.action_displayCategory3,
+        R.id.action_displayCategory4,
+        R.id.action_displayCategory5,
+        R.id.action_displayCategory6,
+        R.id.action_displayCategory7,
+        R.id.action_displayCategory8
+    };
+
     private List<List<Word>> wordLists;
     private List<Word> allWords;
     private List<Category> categories;
@@ -98,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         wordLists = new ArrayList<>();
         allWords = new ArrayList<>();
         categories = new ArrayList<>();
-        categories.add(new Category(getString(R.string.category_all), getString(R.string.function_catAny2), -1));
+        categories.add(new Category(getString(R.string.category_all), getString(R.string.function_catAny), -1));
         CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords, categories);
         templateWordChar = getString(R.string.function_word).charAt(0);
     }
@@ -155,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void activateCustomTemplate(boolean activate) {
         enableCustomTemplate = activate;
+        customTemplateToggle.setChecked(enableCustomTemplate);
         customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
         if (enableCustomTemplate) {
             customTemplateInput.setText(customTemplate);
@@ -718,7 +730,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         initMenu(menu);
-        initCategories(menu);
+        initCategoryMenu(menu);
 
         titleDecorationsToggle = menu.findItem(R.id.action_titleDecorations);
         titleDecorationsToggle.setChecked(enableTitleDecorations);
@@ -739,26 +751,14 @@ public class MainActivity extends AppCompatActivity {
             setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
     }
 
-    private void initCategories(Menu menu) {
+    private void initCategoryMenu(Menu menu) {
         currentDisplayedCatItem = menu.findItem(R.id.action_displayAll);
         currentDisplayedCatItem.setEnabled(false);
 
-        menu.findItem(R.id.action_displayCategory0).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_kind), getString(R.string.category_kind_short)));
-        menu.findItem(R.id.action_displayCategory1).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_concept), getString(R.string.category_concept_short)));
-        menu.findItem(R.id.action_displayCategory2).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_substance), getString(R.string.category_substance_short)));
-        menu.findItem(R.id.action_displayCategory3).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_thing), getString(R.string.category_thing_short)));
-        menu.findItem(R.id.action_displayCategory4).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_personAndCreature), getString(R.string.category_personAndCreature_short)));
-        menu.findItem(R.id.action_displayCategory5).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_action), getString(R.string.category_action_short)));
-        menu.findItem(R.id.action_displayCategory6).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_placeAndTime), getString(R.string.category_placeAndTime_short)));
-        menu.findItem(R.id.action_displayCategory7).setTitle(String.format(
-            getString(R.string.action_displayCategory), getString(R.string.category_conAndPrepos), getString(R.string.category_conAndPrepos_short)));
+        for (int i = 0; i < categoryItemIds.length; i++) {
+            menu.findItem(categoryItemIds[i]).setTitle(String.format(
+                getString(R.string.action_displayCategory), categories.get(i + 1).name, categories.get(i + 1).shortName));
+        }
     }
 
     @Override
@@ -850,34 +850,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean handleDisplayedCategoryOptions(int id, MenuItem item) {
-        switch (id) {
-            case R.id.action_displayAll: {
-                return setDisplayedCategory(item, -1);
-            }
-            case R.id.action_displayCategory0: {
-                return setDisplayedCategory(item, 0);
-            }
-            case R.id.action_displayCategory1: {
-                return setDisplayedCategory(item, 1);
-            }
-            case R.id.action_displayCategory2: {
-                return setDisplayedCategory(item, 2);
-            }
-            case R.id.action_displayCategory3: {
-                return setDisplayedCategory(item, 3);
-            }
-            case R.id.action_displayCategory4: {
-                return setDisplayedCategory(item, 4);
-            }
-            case R.id.action_displayCategory5: {
-                return setDisplayedCategory(item, 5);
-            }
-            case R.id.action_displayCategory6: {
-                return setDisplayedCategory(item, 6);
-            }
-            case R.id.action_displayCategory7: {
-                return setDisplayedCategory(item, 7);
-            }
+        if (id == R.id.action_displayAll)
+            return setDisplayedCategory(item, -1);
+
+        for (int i = 0; i < categoryItemIds.length; i++) {
+            if (id == categoryItemIds[i])
+                return setDisplayedCategory(item, i);
         }
 
         return false;
