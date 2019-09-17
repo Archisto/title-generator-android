@@ -239,7 +239,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replaceStringBuilderString(StringBuilder sb, String str) {
-        sb.replace(0, sb.length(), str);
+        if (sb.length() == 0)
+            sb.append(str);
+        else
+            sb.replace(0, sb.length(), str);
     }
 
     private void appendWordToTitle(StringBuilder title, Word word) {
@@ -578,19 +581,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getWordFormFromMutators(Word word, String[] mutators) {
-        StringBuilder result = new StringBuilder(word.toString());
+        StringBuilder result = new StringBuilder();
 
+        boolean usePlural = false;
+        boolean useActor = false;
         boolean usePossessive = false;
         boolean usePreposition = false;
 
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_plural1)) || mutator.equals(getString(R.string.function_plural2))) {
-                replaceStringBuilderString(result, word.getPlural());
+                usePlural = true;
             }
             else if (mutator.equals(getString(R.string.function_pluralChance))) {
                 // 50 % chance for plural form
                 if (Math.random() < 0.5) {
-                    replaceStringBuilderString(result, word.getPlural());
+                    usePlural = true;
                 }
             }
             else if (mutator.equals(getString(R.string.function_noun))) {
@@ -609,7 +614,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceStringBuilderString(result, word.getPastPerfectTense());
             }
             else if (mutator.equals(getString(R.string.function_actor))) {
-                replaceStringBuilderString(result, word.getActor());
+                useActor = true;
             }
             else if (mutator.equals(getString(R.string.function_comparative))) {
                 replaceStringBuilderString(result, word.getComparative());
@@ -626,6 +631,17 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_preposition))) {
                 usePreposition = true;
             }
+        }
+
+        if (result.length() == 0) {
+            if (usePlural && useActor)
+                result.append(word.getActorPlural());
+            else if (usePlural)
+                result.append(word.getPlural());
+            else if (useActor)
+                result.append(word.getActor());
+            else
+                result.append(word.toString());
         }
 
         if (usePossessive)

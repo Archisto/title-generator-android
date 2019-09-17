@@ -156,6 +156,13 @@ public class Word {
         return plural != null ? plural : word;
     }
 
+    String getActorPlural() {
+        if (actor != null)
+            return getModifiedWord(actor, getModifierEndingWithS(actor));
+
+        return getPlural();
+    }
+
     String getNoun() {
         return noun != null ? noun : word;
     }
