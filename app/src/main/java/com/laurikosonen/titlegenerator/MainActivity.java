@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean skipSpace;
     private boolean lastCharWasTemplateWordChar = false;
     private boolean enableCustomTemplate = false;
+    private Word lastWord;
     private String[] lastWordMutators;
     private int lastWordCategory;
 
@@ -202,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Custom template titles:
             if (enableCustomTemplate) {
-                applyCustomTemplate(title);
+                createCustomTemplateTitle(title);
                 titleSlots.get(i).setText(title);
                 continue;
             }
@@ -294,6 +295,9 @@ public class MainActivity extends AppCompatActivity {
             skipSpace = true;
         }
 
+        if (enableCustomTemplate)
+            lastWord = word;
+
         return word;
     }
 
@@ -363,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void applyCustomTemplate(StringBuilder title) {
+    private void createCustomTemplateTitle(StringBuilder title) {
         if (customTemplate.length() == 0) {
             title.append(getString(R.string.untitled));
             return;
@@ -433,10 +437,11 @@ public class MainActivity extends AppCompatActivity {
         if (title.length() == 0)
             title.append(getString(R.string.untitled));
 
+        lastWord = null;
+        lastWordMutators = null;
+        mutatorBlockLength = 0;
         lastCharWasTemplateWordChar = false;
         skipSpace = false;
-        mutatorBlockLength = 0;
-        lastWordMutators = null;
     }
 
     private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
@@ -502,6 +507,7 @@ public class MainActivity extends AppCompatActivity {
             split("[" + mutatorSeparator + "]");
 
         // General mutators
+        boolean copyWord = false;
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
         boolean emptyResult = false;
@@ -509,11 +515,13 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mutators.length; i++) {
             mutators[i] = mutators[i].trim();
 
-            if (!emptyResult && lastWordMutators != null) {
-                if (mutators[i].equals(getString(R.string.function_copyAllMutators))) {
-                    mutators = lastWordMutators;
+            if (!emptyResult && lastWord != null) {
+                if (mutators[i].equals(getString(R.string.function_copyWord))) {
+                    copyWord = true;
+                }
+                else if (mutators[i].equals(getString(R.string.function_copyAllMutators))) {
                     copyCategory = true;
-                    break;
+                    copyNonCategoryMutators = true;
                 }
                 else if (mutators[i].equals(getString(R.string.function_copyNonCatMutators))) {
                     copyNonCategoryMutators = true;
@@ -532,13 +540,19 @@ public class MainActivity extends AppCompatActivity {
             return "";
         }
 
-        int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
+        Word word;
+        if (copyWord) {
+            word = lastWord;
+        }
+        else {
+            int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
+            word = getRandomWord(category);
+        }
 
         if (copyNonCategoryMutators) {
             mutators = lastWordMutators;
         }
 
-        Word word = getRandomWord(category);
         StringBuilder result;
         if (word.isPlaceholder) {
             result = new StringBuilder(word.toString());

@@ -83,8 +83,9 @@
     <string name="function_manner">ly</string>
     <string name="function_emptyChance1">x</string>
     <string name="function_copyAllMutators">=</string>
-    <string name="function_copyNonCatMutators">#</string>
+    <string name="function_copyNonCatMutators">&amp;</string>
     <string name="function_copyCategory">c</string>
+    <string name="function_copyWord">#</string>
     <string name="function_mutatorSeparator">,</string>
     <string name="function_catAny">*</string>
     <string name="number_0">0</string>
