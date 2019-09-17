@@ -706,9 +706,8 @@ public class MainActivity extends AppCompatActivity {
         if (sb.length() > 1) {
             String str = sb.toString();
             sb.delete(0, sb.length());
-
             for (int i = 0; i < str.length(); i++) {
-                if (str.charAt(i) != '\'' && (i < str.length() - 1 || str.charAt(i) != '-'))
+                if (str.charAt(i) != '-' && str.charAt(i) != ' ' && str.charAt(i) != '\'')
                     sb.append(str.charAt(i)).append('.');
             }
         }
