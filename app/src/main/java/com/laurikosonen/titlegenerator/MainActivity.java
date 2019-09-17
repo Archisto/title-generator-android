@@ -183,8 +183,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayTitles() {
-        int wordsPerTitle = titleWordCount;
-
         for (int i = 0; i < titleSlots.size(); i++) {
             skipSpace = false;
 
@@ -195,50 +193,48 @@ public class MainActivity extends AppCompatActivity {
                 continue;
             }
 
-            StringBuilder title = new StringBuilder();
-
             // Sets the number text before the title, e.g. "1) Title"
             String numberText = String.format(getString(R.string.titleNumber), i + 1);
             titleNumberSlots.get(i).setText(numberText);
 
-            // Custom template titles:
+            StringBuilder title = new StringBuilder();
             if (enableCustomTemplate) {
                 createCustomTemplateTitle(title);
-                titleSlots.get(i).setText(title);
-                continue;
             }
-
-            // Non-custom template titles:
-
-            if (enableRandomTitleLength) {
-                wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
-            }
-
-            // Creates the title:
-
-            if (enableTitleDecorations && Math.random() <= 0.3f) {
-                title.append(getString(R.string.str_the)).append(' ');
-            }
-
-            // The index of the word which will get the only decoration of the title
-            int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
-
-            for (int j = 0; j < wordsPerTitle; j++) {
-                boolean isLastWord = j == wordsPerTitle - 1;
-                boolean hasDecoration =
-                    enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
-
-                appendStringToTitle(title, getRandomWord(displayedCategory).getRandomWordForm());
-
-                if (hasDecoration) {
-                    applyTitleDecoration(getRandomTitleDecoration(), title);
-                }
-                else if (!isLastWord && !skipSpace) {
-                    applyTitleDecoration(TitleDecoration.X_Y, title);
-                }
+            else {
+                createTitle(title);
             }
 
             titleSlots.get(i).setText(title);
+        }
+    }
+
+    private void createTitle(StringBuilder title) {
+        int wordsPerTitle = titleWordCount;
+        if (enableRandomTitleLength) {
+            wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
+        }
+
+        if (enableTitleDecorations && Math.random() <= 0.3f) {
+            title.append(getString(R.string.str_the)).append(' ');
+        }
+
+        // The index of the word which will get the only decoration of the title
+        int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
+
+        for (int j = 0; j < wordsPerTitle; j++) {
+            boolean isLastWord = j == wordsPerTitle - 1;
+            boolean hasDecoration =
+                enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
+
+            appendStringToTitle(title, getRandomWord(displayedCategory).getRandomWordForm());
+
+            if (hasDecoration) {
+                applyTitleDecoration(getRandomTitleDecoration(), title);
+            }
+            else if (!isLastWord && !skipSpace) {
+                applyTitleDecoration(TitleDecoration.X_Y, title);
+            }
         }
     }
 
