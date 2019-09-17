@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private char templateWordChar;
     private int mutatorBlockLength;
     private boolean skipSpace;
-    private boolean lastCharWasTemplateWordChar = false;
-    private boolean enableCustomTemplate = false;
+    private boolean lastCharWasTemplateWordChar;
+    private boolean enableCustomTemplate;
     private Word lastWord;
     private String[] lastWordMutators;
     private int lastWordCategory;
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         initDisplayedCategoryText();
         initTitleSlots();
         initCustomTemplate();
+        initCustomTemplateToggle();
 
         generateTitles();
 
@@ -96,8 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        customTemplateToggle = (ToggleButton) findViewById(R.id.toggle_customTemplate);
-        customTemplateToggle.setChecked(enableCustomTemplate);
         customTemplateToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,6 +162,11 @@ public class MainActivity extends AppCompatActivity {
         setCustomTemplate(getString(R.string.customTemplateExample0), false);
         customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
         customTemplateInput.setVisibility(View.GONE);
+    }
+
+    private void initCustomTemplateToggle() {
+        customTemplateToggle = (ToggleButton) findViewById(R.id.toggle_customTemplate);
+        activateCustomTemplate(false);
     }
 
     private void activateCustomTemplate(boolean activate) {
@@ -584,6 +588,8 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder result = new StringBuilder();
 
         boolean usePlural = false;
+        boolean useNoun = false;
+        boolean usePresentParticiple = false;
         boolean useActor = false;
         boolean usePossessive = false;
         boolean usePreposition = false;
@@ -600,10 +606,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             else if (mutator.equals(getString(R.string.function_noun))) {
-                replaceStringBuilderString(result, word.getNoun());
+                useNoun = true;
             }
             else if (mutator.equals(getString(R.string.function_presentParticiple))) {
-                replaceStringBuilderString(result, word.getPresentParticiple());
+                usePresentParticiple = true;
             }
             else if (mutator.equals(getString(R.string.function_presentTense))) {
                 replaceStringBuilderString(result, word.getPresentTense());
@@ -641,10 +647,18 @@ public class MainActivity extends AppCompatActivity {
             replaceStringBuilderString(result, word.getRandomWordForm());
         }
         else if (result.length() == 0) {
-            if (usePlural && useActor)
-                result.append(word.getActorPlural());
+            if (usePlural && useNoun)
+                result.append(word.getPluralNoun());
+            else if (usePlural && usePresentParticiple)
+                result.append(word.getPluralPresentParticiple());
+            else if (usePlural && useActor)
+                result.append(word.getPluralActor());
             else if (usePlural)
                 result.append(word.getPlural());
+            else if (useNoun)
+                result.append(word.getNoun());
+            else if (usePresentParticiple)
+                result.append(word.getPresentParticiple());
             else if (useActor)
                 result.append(word.getActor());
             else
