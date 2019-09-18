@@ -529,7 +529,7 @@ public class MainActivity extends AppCompatActivity {
         boolean emptyResult = false;
 
         for (String mutator : mutators) {
-            if (!emptyResult && lastWord != null) {
+            if (!emptyResult) {
                 if (mutator.equals(getString(R.string.function_copyWord))) {
                     copyWord = true;
                 }
@@ -555,7 +555,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Word word;
-        if (copyWord) {
+        if (copyWord && lastWord != null) {
             word = lastWord;
         }
         else {
@@ -563,7 +563,7 @@ public class MainActivity extends AppCompatActivity {
             word = getRandomWord(category);
         }
 
-        if (copyNonCategoryMutators) {
+        if (copyNonCategoryMutators && lastWordMutators != null) {
             mutators = lastWordMutators;
         }
 
