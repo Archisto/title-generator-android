@@ -19,10 +19,6 @@ public class Category {
         unknown
     }
 
-    Category() {
-        init("ERROR", "ERR", -10);
-    }
-
     Category(String name, String shortName, int id) {
         init(name, shortName, id);
     }
@@ -35,16 +31,27 @@ public class Category {
     }
 
     private Category.Type getCategoryFromId(int id) {
-        return
-            id == -1 ? Category.Type.all :
-            id == 0 ? Category.Type.kind :
-            id == 1 ? Category.Type.concept :
-            id == 2 ? Category.Type.substance :
-            id == 3 ? Category.Type.thing :
-            id == 4 ? Category.Type.personAndCreature :
-            id == 5 ? Category.Type.action :
-            id == 6 ? Category.Type.placeAndTime :
-            id == 7 ? Category.Type.conjunctionAndPreposition :
-            Category.Type.unknown;
+        switch (id) {
+            case -1:
+                return Category.Type.all;
+            case 0:
+                return Category.Type.kind;
+            case 1:
+                return Category.Type.concept;
+            case 2:
+                return Category.Type.substance;
+            case 3:
+                return Category.Type.thing;
+            case 4:
+                return Category.Type.personAndCreature;
+            case 5:
+                return Category.Type.action;
+            case 6:
+                return Category.Type.placeAndTime;
+            case 7:
+                return Category.Type.conjunctionAndPreposition;
+            default:
+                return Category.Type.unknown;
+        }
     }
 }

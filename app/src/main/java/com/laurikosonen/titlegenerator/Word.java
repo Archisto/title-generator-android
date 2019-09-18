@@ -106,11 +106,21 @@ public class Word {
     }
 
     String getRandomWordForm() {
-        float baseWordChance =
-            category.type == Category.Type.kind ? 0.85f :
-            category.type == Category.Type.personAndCreature ? 0.6f :
-            category.type == Category.Type.action ? 0.6f :
-            0.66f;
+        float baseWordChance;
+        switch (category.type) {
+            case kind:
+                baseWordChance = 0.85f;
+                break;
+            case personAndCreature:
+                baseWordChance = 0.6f;
+                break;
+            case action:
+                baseWordChance = 0.6f;
+                break;
+            default:
+                baseWordChance = 0.66f;
+                break;
+        }
 
         if (isPlaceholder || wordForms == null || wordForms.size() == 0
             || Math.random() < baseWordChance) {
@@ -380,8 +390,7 @@ public class Word {
                 secondToLastChar = getCharFromEnd(word, 2);
             }
 
-            if ((secondToLastChar == 's' && lastChar == 's')
-                || (secondToLastChar == 'c' && lastChar == 't')) {
+            if (secondToLastChar == 'c' && lastChar == 't') {
                 modifier = "or";
             }
             else if (secondToLastChar == 't' && lastChar == 'e') {

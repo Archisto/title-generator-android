@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
-    private int titleWordCount = 2;
+    private int titleWordCount = 3;
     private boolean enableTitleDecorations = true;
-    private boolean enableRandomTitleLength = false;
+    private boolean enableRandomTitleLength = true;
 
     // Custom template
     private String customTemplate;

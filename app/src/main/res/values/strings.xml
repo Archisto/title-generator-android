@@ -16,7 +16,7 @@
     <string name="category_personAndCreature">Person &amp; Creature</string>
     <string name="category_action">Action</string>
     <string name="category_placeAndTime">Place &amp; Time</string>
-    <string name="category_conAndPrepos">Conjunction &amp; Preposition</string>
+    <string name="category_grammaticalParticle">Grammatical Particle</string>
     <string name="category_kind_short">ki</string>
     <string name="category_concept_short">co</string>
     <string name="category_substance_short">su</string>
@@ -24,7 +24,7 @@
     <string name="category_personAndCreature_short">pc</string>
     <string name="category_action_short">ac</string>
     <string name="category_placeAndTime_short">pt</string>
-    <string name="category_conAndPrepos_short">cp</string>
+    <string name="category_grammaticalParticle_short">gp</string>
     <string name="displayingCategory">Category %d: %s (%s)</string>
     <string name="displayingAllCategories">Displaying all categories</string>
     <string name="titleNumber">%d)</string>
@@ -52,7 +52,7 @@
     <string name="customTemplateExample7">##(ac, n, a)</string>
     <string name="customTemplateExample8">#(ki, ly) #(ac, ed)</string>
     <string name="customTemplateExample9">#(ac, pp, pre) #(co)</string>
-    <string name="customTemplateExample10">#(cp) the #(pc, +) #(ac, n)</string>
+    <string name="customTemplateExample10">#(gp) the #(pc, +) #(ac, n)</string>
     <string name="customTemplateExample11">#(pc) #(ac, pr) #(*, +, x)</string>
     <string name="customTemplateExample12">The #(pt) of the #(ac, pp)</string>
     <string name="customTemplateExample13">The #(ki, x) #(pt) of #(r)</string>
