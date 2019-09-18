@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Word {
     private final String defaultModifierMarker = "-";
-    private final char replaceWordMarker = '!';
 
     private String word;
     private String plural;
@@ -568,7 +567,8 @@ public class Word {
     }
 
     private String getModifiedWord(String baseWord, String modifier) {
-        if (modifier == null || modifier.length() == 0 || modifier.equals("=")) {
+        final String identicalWordMarker = "=";
+        if (modifier == null || modifier.length() == 0 || modifier.equals(identicalWordMarker)) {
             return baseWord;
         }
 
@@ -576,6 +576,7 @@ public class Word {
         int removedCharCount = 0;
         char modifierFirstChar = modifier.charAt(0);
 
+        char replaceWordMarker = '!';
         if (modifierFirstChar == replaceWordMarker) {
             modifiedWord = modifier.substring(1);
             return modifiedWord;
