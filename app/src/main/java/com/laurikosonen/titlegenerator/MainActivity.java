@@ -462,7 +462,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
-        StringBuilder mutators = parseMutators(customTemplateIndex);
+        String[] mutators = parseMutators(customTemplateIndex);
         String wordWithMutators;
         if (mutators == null)
             wordWithMutators = getRandomWord(displayedCategory).toString();
@@ -473,16 +473,14 @@ public class MainActivity extends AppCompatActivity {
             appendStringToTitle(title, wordWithMutators);
     }
 
-    /* Parses the custom template for mutators when an opening paren is found after a templateWordChar.
-     * Mutators: uppercase, lowercase, plural, possessive, noun, present participle, present tense, past tense,
-     * initialism, comparative, superlative, 50 % chance for no word, same mutators as the last,
-     * same non-category mutators, same category, same category options and mutator chaining.
+    /* Parses the custom template for mutators when
+     * an opening paren is found after a templateWordChar.
      *
-     * @param index  The index on the custom template.
-     * @returns      A string array of mutators.
+     * @param index  The index on the custom template
+     * @returns      A string array of mutators
      */
-    private StringBuilder parseMutators(int index) {
-        StringBuilder mutators = new StringBuilder();
+    private String[] parseMutators(int index) {
+        StringBuilder mutatorSB = new StringBuilder();
         boolean mutatorsActive = false;
         mutatorBlockLength = 0;
 
@@ -504,48 +502,49 @@ public class MainActivity extends AppCompatActivity {
             }
             // The mutators
             else {
-                mutators.append(customTemplate.charAt(i));
+                mutatorSB.append(customTemplate.charAt(i));
             }
         }
 
-        // The mutator block misses an end char and thus is considered null and void
-        // or there are no mutators
-        if (mutatorsActive || mutators.length() == 0)
-            return null;
+        // Splits the mutator string into an array and returns it
+        // if the mutator block is completed and there are mutators
+        if (!mutatorsActive && mutatorSB.length() > 0) {
+            String mutatorSeparator = getString(R.string.function_mutatorSeparator);
+            String[] mutators = mutatorSB.toString().split("[" + mutatorSeparator + "]");
 
-        return mutators;
+            for (int i = 0; i < mutators.length; i++)
+                mutators[i] = mutators[i].trim();
+
+            return mutators;
+        }
+        else {
+            return null;
+        }
     }
 
-    private String getWordWithAppliedMutators(StringBuilder mutatorString) {
-        String mutatorSeparator = getString(R.string.function_mutatorSeparator);
-        String[] mutators = mutatorString.toString().
-            split("[" + mutatorSeparator + "]");
-
-        // General mutators
+    private String getWordWithAppliedMutators(String[] mutators) {
         boolean copyWord = false;
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
         boolean emptyResult = false;
 
-        for (int i = 0; i < mutators.length; i++) {
-            mutators[i] = mutators[i].trim();
-
+        for (String mutator : mutators) {
             if (!emptyResult && lastWord != null) {
-                if (mutators[i].equals(getString(R.string.function_copyWord))) {
+                if (mutator.equals(getString(R.string.function_copyWord))) {
                     copyWord = true;
                 }
-                else if (mutators[i].equals(getString(R.string.function_copyAllMutators))) {
+                else if (mutator.equals(getString(R.string.function_copyAllMutators))) {
                     copyCategory = true;
                     copyNonCategoryMutators = true;
                 }
-                else if (mutators[i].equals(getString(R.string.function_copyNonCatMutators))) {
+                else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
                     copyNonCategoryMutators = true;
                 }
                 // Copy category mutator is checked in getCategoryFromMutators()
             }
 
             // 50 % chance for an empty result
-            if (mutators[i].equals(getString(R.string.function_emptyChance1)) && Math.random() < 0.5) {
+            if (mutator.equals(getString(R.string.function_emptyChance1)) && Math.random() < 0.5) {
                 emptyResult = true;
             }
         }
