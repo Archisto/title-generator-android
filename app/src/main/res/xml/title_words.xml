@@ -357,9 +357,7 @@
         <word name="Fixed" />
         <word name="Flat" compa="ter" super="test" />
         <word name="Flawed" />
-        <word name="Fleeing" />
         <word name="Floral" />
-        <word name="Flowing" />
         <word name="Flying" />
         <word name="Forbidden" />
         <word name="Forced" />
@@ -2014,7 +2012,6 @@
         <word name="Molecule" plural="-" />
         <word name="Moonlight" />
         <word name="Mosaic" />
-        <word name="Mucus" />
         <word name="Mud" />
         <word name="Murk" />
         <word name="Music" />

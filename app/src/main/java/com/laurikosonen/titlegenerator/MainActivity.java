@@ -219,8 +219,10 @@ public class MainActivity extends AppCompatActivity {
             wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
         }
 
+        boolean startsWithThe = false;
         if (enableTitleDecorations && Math.random() <= 0.3f) {
             title.append(getString(R.string.str_the)).append(' ');
+            startsWithThe = true;
         }
 
         // The index of the word which will get the only decoration of the title
@@ -234,10 +236,10 @@ public class MainActivity extends AppCompatActivity {
             appendStringToTitle(title, getRandomWord(displayedCategory).getRandomWordForm());
 
             if (hasDecoration) {
-                applyTitleDecoration(getRandomTitleDecoration(), title);
+                applyTitleDecoration(getRandomTitleDecoration(), title, startsWithThe);
             }
             else if (!isLastWord && !skipSpace) {
-                applyTitleDecoration(TitleDecoration.X_Y, title);
+                applyTitleDecoration(TitleDecoration.X_Y, title, startsWithThe);
             }
 
             skipSpace = false;
@@ -253,17 +255,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void appendWordToTitle(StringBuilder title, Word word) {
         String wordStr = word.toString();
-        if (word.getLastChar() == '-') {
+        if (word.getLastChar() == '-')
             wordStr = wordStr.substring(0, wordStr.length() - 1);
-        }
 
         title.append(wordStr);
     }
 
     private void appendStringToTitle(StringBuilder title, String str) {
-        if (Word.getLastChar(str) == '-') {
+        if (Word.getLastChar(str) == '-')
             str = str.substring(0, str.length() - 1);
-        }
 
         title.append(str);
     }
@@ -331,7 +331,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void applyTitleDecoration(TitleDecoration decoration, StringBuilder title) {
+    private void applyTitleDecoration(TitleDecoration decoration,
+                                      StringBuilder title,
+                                      boolean startsWithThe) {
         if (decoration == null) {
             appendSpaceToTitleIfNotSkipped(title);
             return;
@@ -345,7 +347,10 @@ public class MainActivity extends AppCompatActivity {
                 appendDecorationToTitle(title, getString(R.string.form_X__Y));
                 break;
             case X_colon_theY:
-                appendDecorationToTitle(title, getString(R.string.form_X__The_Y));
+                if (!startsWithThe)
+                    appendDecorationToTitle(title, getString(R.string.form_X__The_Y));
+                else
+                    appendDecorationToTitle(title, getString(R.string.form_X__Y));
                 break;
             case XofY:
                 appendDecorationToTitle(title, getString(R.string.form_X_of_Y));
