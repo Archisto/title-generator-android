@@ -38,7 +38,7 @@
     <string name="action_displayAll">Display all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom Template</string>
-    <string name="action_customTemplateHint">Custom template text box. Write # to get a random word in its place.</string>
+    <string name="action_customTemplateHint">Custom title template. #s are turned into random words.</string>
     <string name="action_exampleTemplates">Custom Template Examples</string>
     <string name="customTemplate_on">Custom template ON</string>
     <string name="customTemplate_off">Custom template OFF</string>

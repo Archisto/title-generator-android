@@ -28,6 +28,27 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleDecorationsToggle;
     private MenuItem randomTitleLengthToggle;
 
+    private List<List<Word>> wordLists;
+    private List<Word> allWords;
+    private List<Category> categories;
+
+    private int displayedCategory = -1;
+    private int displayedTitleCount = 10;
+    private int titleWordCount = 2;
+    private boolean enableTitleDecorations = true;
+    private boolean enableRandomTitleLength = false;
+
+    // Custom template
+    private String customTemplate;
+    private char templateWordChar;
+    private int mutatorBlockLength;
+    private boolean skipSpace;
+    private boolean lastCharWasTemplateWordChar;
+    private boolean enableCustomTemplate;
+    private Word lastWord;
+    private String[] lastWordMutators;
+    private int lastWordCategory;
+
     private int[] categoryItemIds = {
         R.id.action_displayCategory1,
         R.id.action_displayCategory2,
@@ -51,27 +72,6 @@ public class MainActivity extends AppCompatActivity {
         R.id.action_setTitleCount_9,
         R.id.action_setTitleCount_10
     };
-
-    private List<List<Word>> wordLists;
-    private List<Word> allWords;
-    private List<Category> categories;
-
-    private int displayedCategory = -1;
-    private int displayedTitleCount = 10;
-    private int titleWordCount = 2;
-    private boolean enableTitleDecorations = true;
-    private boolean enableRandomTitleLength = false;
-
-    // Custom template
-    private String customTemplate;
-    private char templateWordChar;
-    private int mutatorBlockLength;
-    private boolean skipSpace;
-    private boolean lastCharWasTemplateWordChar;
-    private boolean enableCustomTemplate;
-    private Word lastWord;
-    private String[] lastWordMutators;
-    private int lastWordCategory;
 
     private enum TitleDecoration {
         X_Y,
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCustomTemplate() {
-        setCustomTemplate(getString(R.string.customTemplateExample0), false);
+        //setCustomTemplate(getString(R.string.customTemplateExample0), false);
         customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
         customTemplateInput.setVisibility(View.GONE);
     }
@@ -183,8 +183,13 @@ public class MainActivity extends AppCompatActivity {
         enableCustomTemplate = activate;
         customTemplateToggle.setChecked(enableCustomTemplate);
         customTemplateInput.setVisibility(enableCustomTemplate ? View.VISIBLE : View.GONE);
+
         if (enableCustomTemplate) {
             customTemplateInput.setText(customTemplate);
+            customTemplateInput.requestFocus();
+        }
+        else {
+            customTemplate = customTemplateInput.getText().toString();
         }
     }
 
