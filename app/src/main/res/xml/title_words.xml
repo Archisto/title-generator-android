@@ -66,13 +66,12 @@
         <word name="Awful" />
         <word name="Bad" compa="!Worse" super="!Worst" />
         <word name="Ballistic" />
-        <word name="Banished" />
-        <word name="Barbed" />
+        <word name="Barbed" manner="" />
         <word name="Bare" compa="-" super="-" />
         <word name="Barren" plural="-" />
         <word name="Basic" plural="-" manner="ally" />
         <word name="Beautiful" />
-        <word name="Beloved" />
+        <word name="Beloved" manner="2ingly" />
         <word name="Benevolent" />
         <word name="Beta" manner="" />
         <word name="Betrayed" />
@@ -154,7 +153,6 @@
         <word name="Constant" plural="-" />
         <word name="Contra" manner="" />
         <word name="Contradictory" />
-        <word name="Converted" />
         <word name="Convex" />
         <word name="Cool" compa="-" super="-" />
         <word name="Correct" />
@@ -218,7 +216,6 @@
         <word name="Deluxe" />
         <word name="Demonic" />
         <word name="Dense" compa="-" super="-" />
-        <word name="Departed" />
         <word name="Depraved" />
         <word name="Deranged" />
         <word name="Derelict" manner="ily" />
@@ -264,6 +261,7 @@
         <word name="Dull" compa="-" super="-" />
         <word name="Dumb" compa="-" super="-" />
         <word name="Duo-" compa="" super="" manner="" />
+        <word name="Duplicate" plural="-" compa="" super="" manner="" />
         <word name="Dying" />
         <word name="Dynamic" />
         <word name="Dystopian" />
@@ -603,7 +601,7 @@
         <word name="Minimum" compa="" super="" manner="2ally" />
         <word name="Miraculous" />
         <word name="Miscellaneous" />
-        <word name="Missing" />
+        <word name="Missing" manner="" />
         <word name="Mobile" />
         <word name="Modern" />
         <word name="Molded" />
@@ -618,6 +616,7 @@
         <word name="Mortal" />
         <word name="Most" compa="!More" super="" />
         <word name="Mostly" compa="!More" super="" manner="" />
+        <word name="Moto-" compa="" super="" manner="" />
         <word name="Mournful" />
         <word name="Much" compa="!More" super="!Most" manner="!Mostly" />
         <word name="Muddy" compa="-" super="-" />
@@ -666,6 +665,7 @@
         <word name="Oblivious" />
         <word name="Obscene" />
         <word name="Obscure" compa="-" super="-" />
+        <word name="Obvious" />
         <word name="Odd" compa="-" super="-" />
         <word name="Official" />
         <word name="Old" compa="-" super="-" />
@@ -849,6 +849,7 @@
         <word name="Sick" compa="-" super="-" />
         <word name="Silent" />
         <word name="Silky" compa="-" super="-" />
+        <word name="Silly" compa="-" super="-" manner="" />
         <word name="Simple" compa="-" super="-" />
         <word name="Simulated" />
         <word name="Simultaneous" />
@@ -938,7 +939,7 @@
         <word name="Tender" />
         <word name="Tenfold" compa="" super="" manner="" />
         <word name="Tense" />
-        <word name="Terran" plural="-" />
+        <word name="Terran" plural="-" manner="!Earthly" />
         <word name="Terrible" />
         <word name="Tertiary" compa="" super="" />
         <word name="Theoretical" />
@@ -1010,6 +1011,7 @@
         <word name="Unseen" />
         <word name="Unsettling" />
         <word name="Unstable" />
+        <word name="Unwilling" />
         <word name="Unyielding" />
         <word name="Up" compa="per" />
         <word name="Upset" />
@@ -1061,6 +1063,7 @@
         <word name="Whole" manner="1ly" />
         <word name="Wicked" />
         <word name="Wild" compa="-" super="-" />
+        <word name="Willing" />
         <word name="Windy" compa="-" super="-" />
         <word name="Wired" />
         <word name="Wise" compa="-" super="-" />
@@ -1262,6 +1265,7 @@
         <word name="Designation" actor="3ed" />
         <word name="Desire" actor="d" />
         <word name="Desolation" actor="3e" />
+        <word name="Despair" actor="3erate" />
         <word name="Destiny" />
         <word name="Destruction" actor="6oyer" />
         <word name="Detail" actor="ed" />
@@ -1284,6 +1288,7 @@
         <word name="Disgrace" />
         <word name="Dishonor" actor="able" />
         <word name="Dishonour" actor="able" />
+        <word name="Disparity" />
         <word name="Distance" actor="2t" />
         <word name="Distress" plural="" />
         <word name="Divinity" actor="3e" />
@@ -1352,7 +1357,7 @@
         <word name="Flank" actor="er" />
         <word name="Flattery" actor="1er" />
         <word name="Flaw" actor="ed" />
-        <word name="Flux" plural="" />
+        <word name="Flux" />
         <word name="Folly" plural="" actor="!Fool" />
         <word name="Force" />
         <word name="Foresight" />
@@ -1504,6 +1509,7 @@
         <word name="Matrix" plural="1ces" />
         <word name="Mayhem" plural="" />
         <word name="Meaning" actor="3t" />
+        <word name="Means" plural="" />
         <word name="Median" />
         <word name="Memory" />
         <word name="Menace" />
@@ -2323,6 +2329,7 @@
         <word name="Contract" />
         <word name="Convoy" />
         <word name="Coordinates" plural="" />
+        <word name="Cord" />
         <word name="Corner" />
         <word name="Coronation" />
         <word name="Corpse" />
@@ -2704,6 +2711,7 @@
         <word name="Plane" />
         <word name="Plant" />
         <word name="Plate" />
+        <word name="Platform" />
         <word name="Play" />
         <word name="Plot" />
         <word name="Plug" />
@@ -3058,6 +3066,7 @@
         <word name="Barbarian" />
         <word name="Bard" />
         <word name="Baron" />
+        <word name="Baroness" />
         <word name="Bat" />
         <word name="Battalion" />
         <word name="Bear" />
@@ -3083,6 +3092,7 @@
         <word name="Bounty Hunter" />
         <word name="Boy" />
         <word name="Breaker" />
+        <word name="Breed" />
         <word name="Bride" />
         <word name="Brigade" />
         <word name="Bringer" />
@@ -3503,6 +3513,7 @@
         <word name="Reptile" />
         <word name="Responder" />
         <word name="Revenant" />
+        <word name="Rex" plural="" />
         <word name="Rider" />
         <word name="Rival" />
         <word name="Robber" />
@@ -3553,6 +3564,7 @@
         <word name="Son" />
         <word name="Sparrow" />
         <word name="Speaker" />
+        <word name="Species" plural="" />
         <word name="Spectre" />
         <word name="Sphinx" />
         <word name="Spider" />
@@ -3855,6 +3867,7 @@
         <word name="Dash" prepos="at" noDefPrepos="-" />
         <word name="Daze" />
         <word name="Dazzle" />
+        <word name="Deactivate" noun="-" />
         <word name="Deal" past="t" prepos="With" />
         <word name="Debate" prepos="About, With" noDefPrepos="-" />
         <word name="Decay" plural="" />
@@ -4313,7 +4326,7 @@
         <word name="Ride" past="!Rode" perf="1den" prepos="Along, Into, Off, on, Past, Through, to, Towards" />
         <word name="Ring" past="!Rang" perf="!Rung" />
         <word name="Riot" noDefPrepos="-" />
-        <word name="Rip" dupcon="p" prepos="Up" />
+        <word name="Rip" dupcon="p" prepos="Apart, Off, Out, Up" />
         <word name="Rise" past="!Rose" perf="n" prepos="Above, Up" noDefPrepos="-" />
         <word name="Roar" prepos="at" noDefPrepos="-" />
         <word name="Rob" dupcon="b" noun="bery" />
@@ -4364,6 +4377,7 @@
         <word name="Shriek" prepos="at" noDefPrepos="-" />
         <word name="Shrink" noun="age" past="3ank" perf="3unken" noDefPrepos="-" />
         <word name="Shrivel" noDefPrepos="-" />
+        <word name="Shrug" dupcon="g" prepos="at, Off" noDefPrepos="-" />
         <word name="Shut" dupcon="t" noun="down" past="=" prepos="Down, Up" noDefPrepos="-" />
         <word name="Side" prepos="With" />
         <word name="Siege" prepos="on" />
@@ -4415,7 +4429,7 @@
         <word name="Stain" prepos="With" />
         <word name="Stalk" />
         <word name="Stall" prepos="for" />
-        <word name="Stand" past="!Stood" prepos="for, on" />
+        <word name="Stand" past="!Stood" prepos="Down, for, on, Through, Up" />
         <word name="Stare" prepos="at" />
         <word name="Start" prepos="From, Over" />
         <word name="Startle" />
