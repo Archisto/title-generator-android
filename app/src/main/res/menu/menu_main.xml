@@ -2,12 +2,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.laurikosonen.titlegenerator.MainActivity">
+
+    <item
+        android:id="@+id/action_help"
+        android:enabled="true"
+        android:title="@string/action_help"
+        android:titleCondensed="@string/action_help"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/submenu_titleCount"
         android:enabled="true"
         android:title="@string/titleCount"
         android:titleCondensed="@string/titleCount"
-        android:visible="true">
+        android:visible="true"
+        app:showAsAction="never">
         <menu
             android:id="@+id/menu_titleCount"
             android:title="@string/titleCount">
@@ -49,7 +59,7 @@
         android:enabled="true"
         android:title="@string/titleWordCount"
         android:titleCondensed="@string/titleWordCount"
-        android:visible="true">
+        app:showAsAction="never">
         <menu
             android:id="@+id/menu_titleWordCount"
             android:title="@string/titleWordCount">
@@ -74,19 +84,22 @@
     <item
         android:id="@+id/action_titleDecorations"
         android:checkable="true"
-        android:title="@string/action_titleDecorations" />
+        android:title="@string/action_titleDecorations"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_randomTitleLength"
         android:checkable="true"
-        android:title="@string/action_randomTitleLength" />
+        android:title="@string/action_randomTitleLength"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/submenu_exampleTemplates"
         android:enabled="true"
         android:title="@string/action_exampleTemplates"
         android:titleCondensed="@string/action_exampleTemplates"
-        android:visible="true">
+        android:visible="true"
+        app:showAsAction="never">
         <menu
             android:id="@+id/menu_exampleTemplates"
             android:title="@string/titleWordCount">
@@ -135,7 +148,9 @@
         </menu>
     </item>
 
-    <group android:id="@+id/group_displayCategories" >
+    <group
+        android:id="@+id/group_displayCategories"
+        app:showAsAction="never" >
         <item
             android:id="@+id/action_displayAll"
             android:orderInCategory="0"

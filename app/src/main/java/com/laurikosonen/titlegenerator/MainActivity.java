@@ -17,9 +17,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int maxDisplayedTitles = 10;
-    private final int maxTitleWords = 5;
-
     private List<TextView> titleSlots;
     private List<TextView> titleNumberSlots;
     private TextView displayedCategoryText;
@@ -40,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
         R.id.action_displayCategory6,
         R.id.action_displayCategory7,
         R.id.action_displayCategory8
+    };
+
+    private int[] titleCountOptionIds = {
+        R.id.action_setTitleCount_1,
+        R.id.action_setTitleCount_2,
+        R.id.action_setTitleCount_3,
+        R.id.action_setTitleCount_4,
+        R.id.action_setTitleCount_5,
+        R.id.action_setTitleCount_6,
+        R.id.action_setTitleCount_7,
+        R.id.action_setTitleCount_8,
+        R.id.action_setTitleCount_9,
+        R.id.action_setTitleCount_10
     };
 
     private List<List<Word>> wordLists;
@@ -812,82 +822,54 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (handleSetTitleCount(id)) {
+        if (handleHelpAction(id))
             return true;
-        }
-        else if (handleSetTitleWordCount(id)) {
+        else if (handleTitleCountOptions(id))
             return true;
-        }
-        else if (handleDisplayedCategoryOptions(id, item)) {
+        else if (handleTitleWordCountOptions(id))
             return true;
-        }
-        else if (handleTitleDecorationsActivation(id)) {
+        else if (handleDisplayedCategoryOptions(id, item))
             return true;
-        }
-        else if (handleRandomTitleLengthActivation(id)) {
+        else if (handleTitleDecorationsActivation(id))
             return true;
-        }
-        else if (handleCustomTemplateExampleOptions(id)) {
+        else if (handleRandomTitleLengthActivation(id))
             return true;
-        }
+        else if (handleCustomTemplateExampleOptions(id))
+            return true;
 
         return super.onOptionsItemSelected(item);
     }
 
-    private boolean handleSetTitleCount(int id) {
-        switch (id) {
-            case R.id.action_setTitleCount_1: {
-                return setDisplayedTitleCount(1, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_2: {
-                return setDisplayedTitleCount(2, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_3: {
-                return setDisplayedTitleCount(3, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_4: {
-                return setDisplayedTitleCount(4, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_5: {
-                return setDisplayedTitleCount(5, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_6: {
-                return setDisplayedTitleCount(6, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_7: {
-                return setDisplayedTitleCount(7, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_8: {
-                return setDisplayedTitleCount(8, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_9: {
-                return setDisplayedTitleCount(9, maxDisplayedTitles);
-            }
-            case R.id.action_setTitleCount_10: {
-                return setDisplayedTitleCount(10, maxDisplayedTitles);
-            }
+    private boolean handleHelpAction(int id) {
+        if (id == R.id.action_help) {
+            generateTitles();
+            return true;
+        }
+
+        return  false;
+    }
+
+    private boolean handleTitleCountOptions(int id) {
+        for (int i = 0; i < titleCountOptionIds.length; i++) {
+            if (id == titleCountOptionIds[i])
+                return setDisplayedTitleCount(i + 1);
         }
 
         return false;
     }
 
-    private boolean handleSetTitleWordCount(int id) {
+    private boolean handleTitleWordCountOptions(int id) {
         switch (id) {
-            case R.id.action_setTitleWordCount_1: {
-                return setTitleWordCount(1, maxTitleWords);
-            }
-            case R.id.action_setTitleWordCount_2: {
-                return setTitleWordCount(2, maxTitleWords);
-            }
-            case R.id.action_setTitleWordCount_3: {
-                return setTitleWordCount(3, maxTitleWords);
-            }
-            case R.id.action_setTitleWordCount_4: {
-                return setTitleWordCount(4, maxTitleWords);
-            }
-            case R.id.action_setTitleWordCount_5: {
-                return setTitleWordCount(5, maxTitleWords);
-            }
+            case R.id.action_setTitleWordCount_1:
+                return setTitleWordCount(1);
+            case R.id.action_setTitleWordCount_2:
+                return setTitleWordCount(2);
+            case R.id.action_setTitleWordCount_3:
+                return setTitleWordCount(3);
+            case R.id.action_setTitleWordCount_4:
+                return setTitleWordCount(4);
+            case R.id.action_setTitleWordCount_5:
+                return setTitleWordCount(5);
         }
 
         return false;
@@ -968,8 +950,8 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private boolean setDisplayedTitleCount(int value, int max) {
-        if (value >= 1 && value <= max) {
+    private boolean setDisplayedTitleCount(int value) {
+        if (value >= 1) {
             displayedTitleCount = value;
             titleCountMenuItem.
                 setTitle(String.format(getString(R.string.titleCount), displayedTitleCount));
@@ -982,8 +964,8 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private boolean setTitleWordCount(int value, int max) {
-        if (value >= 1 && value <= max) {
+    private boolean setTitleWordCount(int value) {
+        if (value >= 1) {
             titleWordCount = value;
             titleWordCountMenuItem.
                 setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
