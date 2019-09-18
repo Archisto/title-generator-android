@@ -82,15 +82,15 @@
     </item>
 
     <item
-        android:id="@+id/action_titleDecorations"
-        android:checkable="true"
-        android:title="@string/action_titleDecorations"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/action_randomTitleLength"
         android:checkable="true"
         android:title="@string/action_randomTitleLength"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_titleDecorations"
+        android:checkable="true"
+        android:title="@string/action_titleDecorations"
         app:showAsAction="never" />
 
     <item

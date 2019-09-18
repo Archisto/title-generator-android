@@ -29,12 +29,12 @@
     <string name="displayingAllCategories">Displaying all categories</string>
     <string name="titleNumber">%d)</string>
     <string name="titleCount">Title count: %d</string>
-    <string name="titleWordCount">Words in a title: %d</string>
+    <string name="titleWordCount">Word count cap: %d</string>
     <string name="totalWordCount">Words in total: %d</string>
     <string name="untitled">Untitled</string>
     <string name="action_help">Help</string>
     <string name="action_titleDecorations">Title decorations</string>
-    <string name="action_randomTitleLength">Random title length</string>
+    <string name="action_randomTitleLength">Random word count</string>
     <string name="action_displayAll">Display all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom Template</string>

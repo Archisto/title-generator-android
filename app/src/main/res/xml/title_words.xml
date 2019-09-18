@@ -1447,7 +1447,6 @@
         <word name="Impunity" plural="" actor="!Punished" />
         <word name="Impurity" actor="3e" />
         <word name="Inaccuracy" actor="2te" />
-        <word name="Incident" />
         <word name="Independence" plural="" actor="2t" />
         <word name="Industry" actor="1ial" />
         <word name="Infamy" plural="" actor="1ous" />
@@ -2253,6 +2252,8 @@
         <word name="Branch" />
         <word name="Brand" />
         <word name="Breakfast" />
+        <word name="Breakthrough" />
+        <word name="Breeze" />
         <word name="Brick" />
         <word name="Brim" />
         <word name="Brush" />
@@ -2547,6 +2548,7 @@
         <word name="Image" />
         <word name="Incense" />
         <word name="Inch" />
+        <word name="Incident" />
         <word name="Incinerator" />
         <word name="Ingredient" />
         <word name="Inheritance" />
@@ -2662,6 +2664,7 @@
         <word name="Nail" />
         <word name="Name" />
         <word name="Nebula" />
+        <word name="Neck" />
         <word name="Needle" />
         <word name="Net" />
         <word name="Nettle" />
@@ -2673,6 +2676,7 @@
         <word name="Nothing" />
         <word name="Notice" />
         <word name="Number" />
+        <word name="Nut" />
         <word name="Oar" />
         <word name="Obelisk" />
         <word name="Object" />
@@ -2953,6 +2957,7 @@
         <word name="Thing" />
         <word name="Thorn" />
         <word name="Thread" />
+        <word name="Throat" />
         <word name="Throne" />
         <word name="Throttle" />
         <word name="Ticket" />
@@ -3277,6 +3282,7 @@
         <word name="Folk" plural="" />
         <word name="Follower" />
         <word name="Fool" />
+        <word name="Founder" />
         <word name="Fowl" plural="" />
         <word name="Freak" />
         <word name="Friend" />
@@ -3462,6 +3468,7 @@
         <word name="Octopus" />
         <word name="Odin" plural="" />
         <word name="Officer" />
+        <word name="Ogre" />
         <word name="Omnivore" />
         <word name="Operative" />
         <word name="Opponent" />
@@ -3749,7 +3756,7 @@
         <word name="Avenge" noun="!Revenge" />
         <word name="Avoid" noun="!Aversion" />
         <word name="Await" noun="!Wait" actor="!Waiter" prepos="for" />
-        <word name="Awaken" noun="ing" perf="!Awoken" prepos="to" />
+        <word name="Awaken" noun="ing" perf="!Awoken" actor="!Waker" prepos="to" />
         <word name="Ban" dupcon="n" prepos="From" />
         <word name="Bang" prepos="on" noDefPrepos="-" />
         <word name="Banish" noun="ment" prepos="From" />
@@ -3798,7 +3805,7 @@
         <word name="Brainwash" prepos="Into" />
         <word name="Brand" actor="" prepos="as" />
         <word name="Breach" prepos="Into" />
-        <word name="Break" past="!Broke" perf="!Broken" prepos="to" />
+        <word name="Break" past="!Broke" perf="!Broken" prepos="Into, Past, Through, to" />
         <word name="Breathe" noun="1" prepos="in, Out" noDefPrepos="-" />
         <word name="Brim" dupcon="m" prepos="With" noDefPrepos="-" />
         <word name="Bring" past="!Brought" prepos="in, on" />
@@ -3816,10 +3823,10 @@
         <word name="Bypass" />
         <word name="Calculate" noun="-" />
         <word name="Call" prepos="From, in, to" />
-        <word name="Can" plural="" prtc="!Being Able" pres="" past="!Could" actor="" />
-        <word name="Can't" plural="" prtc="!Not Being Able" pres="" past="!Couldn't" actor="" />
+        <word name="Can" noun="!Ability" prtc="!Being Able" pres="" past="!Could" actor="" />
+        <word name="Can't" noun="!Inability" prtc="!Not Being Able" pres="" past="!Couldn't" actor="" />
         <word name="Cancel" dupcon="l" noun="lation" />
-        <word name="Cannot" plural="" prtc="!Not Being Able" pres="" past="" actor="" />
+        <word name="Cannot" noun="!Inability" prtc="!Not Being Able" pres="" past="!Could Not" actor="" />
         <word name="Caper" noDefPrepos="-" />
         <word name="Capture" />
         <word name="Care" prepos="About, for" />
@@ -3841,7 +3848,7 @@
         <word name="Check" prepos="for, on, Out" />
         <word name="Cheer" prepos="for, on" noDefPrepos="-" />
         <word name="Choke" prepos="on" />
-        <word name="Choose" plural="3ice" past="3se" perf="3sen" prepos="as, From" />
+        <word name="Choose" noun="3ice" past="3se" perf="3sen" prepos="as, From" />
         <word name="Chop" dupcon="p" prepos="Down, Up" />
         <word name="Cipher" />
         <word name="Clang" prepos="on" />
@@ -3909,7 +3916,7 @@
         <word name="Deal" past="t" prepos="With" />
         <word name="Debate" prepos="About, With" noDefPrepos="-" />
         <word name="Decay" plural="" />
-        <word name="Deceit" noun="2ption" />
+        <word name="Deceit" noun="2ption" actor="1ver" />
         <word name="Decide" noun="2sion" prepos="to" />
         <word name="Decimate" noun="-" />
         <word name="Decipher" />
@@ -3951,7 +3958,7 @@
         <word name="Disturb" noun="ance" />
         <word name="Dive" past="!Dove" perf="d" prepos="in" />
         <word name="Divert" noun="1sion" prepos="From" />
-        <word name="Divide" noun="2sion" prepos="to" />
+        <word name="Divide" prepos="Into, to" />
         <word name="Do" noun="ing" pres="es" past="!Did" perf="!Done" prepos="for, With" noDefPrepos="-" />
         <word name="Dominate" noun="-" />
         <word name="Don't" plural="" prtc="!Not Doing" pres="" past="!Didn't Do" perf="!Not Done" actor="" prepos="" />
@@ -4121,7 +4128,7 @@
         <word name="Hike" prepos="to" noDefPrepos="-" />
         <word name="Hire" prepos="for" />
         <word name="Hit" dupcon="t" past="" prepos="on" />
-        <word name="Hold" past="!Held" prepos="on, Onto" />
+        <word name="Hold" past="!Held" prepos="Fast, on, Onto" />
         <word name="Hope" prepos="for" noDefPrepos="-" />
         <word name="Horrify" noun="3or" />
         <word name="Howl" prepos="at" />
@@ -4138,7 +4145,7 @@
         <word name="Import" prepos="From" />
         <word name="Imprint" prepos="on" noDefPrepos="-" />
         <word name="Incinerate" noun="-" />
-        <word name="Incite" noun="2dent" actor="r" />
+        <word name="Incite" noun="ment" actor="r" />
         <word name="Include" noun="2sion" prepos="With" />
         <word name="Infect" noun="-" prepos="With" />
         <word name="Inflict" noun="-" prepos="on, With" />
@@ -4289,7 +4296,7 @@
         <word name="Project" prepos="to" />
         <word name="Protect" noun="-" prepos="From" />
         <word name="Prove" noun="2of" perf="-" />
-        <word name="Provide" plural="2sions" noun="2sions" prepos="for" />
+        <word name="Provide" noun="2sion" prepos="for" />
         <word name="Pry" prepos="Out of" />
         <word name="Pull" prepos="From" />
         <word name="Punch" />
