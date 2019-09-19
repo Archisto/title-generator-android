@@ -1,10 +1,12 @@
 package com.laurikosonen.titlegenerator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
     private boolean enableRandomTitleLength = true;
 
     // Custom template
+    private boolean enableCustomTemplate = false;
     private String customTemplate;
     private char templateWordChar;
     private int mutatorBlockLength;
     private boolean skipSpace;
     private boolean lastCharWasTemplateWordChar;
-    private boolean enableCustomTemplate;
     private Word lastWord;
     private String[] lastWordMutators;
     private int lastWordCategory;
@@ -169,14 +171,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCustomTemplate() {
-        //setCustomTemplate(getString(R.string.customTemplateExample0), false);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null)
+            customTemplate = extras.getString("customTemplate");
+
         customTemplateInput = (EditText) findViewById(R.id.textInput_customTemplate);
-        customTemplateInput.setVisibility(View.GONE);
     }
 
     private void initCustomTemplateToggle() {
         customTemplateToggle = (ToggleButton) findViewById(R.id.toggle_customTemplate);
-        activateCustomTemplate(false);
     }
 
     private void activateCustomTemplate(boolean activate) {
@@ -191,6 +194,12 @@ public class MainActivity extends AppCompatActivity {
         else {
             customTemplate = customTemplateInput.getText().toString();
         }
+    }
+
+    private void goToHelp() {
+        Intent i = new Intent(MainActivity.this, HelpActivity.class);
+        i.putExtra("customTemplate", customTemplateInput.getText().toString());
+        startActivity(i);
     }
 
     private void generateTitles() {
@@ -646,7 +655,7 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_possessive))) {
                 usePossessive = true;
             }
-            else if (mutator.equals(getString(R.string.function_preposition1)) || mutator.equals(getString(R.string.function_preposition2))) {
+            else if (mutator.equals(getString(R.string.function_preposition))) {
                 usePreposition = true;
             }
             else if (mutator.equals(getString(R.string.function_randomForm))) {
@@ -846,7 +855,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean handleHelpAction(int id) {
         if (id == R.id.action_help) {
-            generateTitles();
+            goToHelp();
             return true;
         }
 
