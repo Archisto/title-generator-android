@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -257,14 +256,16 @@ public class MainActivity extends AppCompatActivity {
             boolean hasDecoration =
                 enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
 
-            appendStringToTitle(title, getRandomWord(displayedCategory).getRandomWordForm());
+            Word word = getRandomWord(displayedCategory);
+            appendStringToTitle(title, word.getRandomWordForm());
 
-            if (hasDecoration) {
+            if (!isLastWord && !hasDecoration && word.chanceToUsePreposition())
+                title.append(' ').append(word.getRandomPreposition(false));
+
+            if (hasDecoration)
                 applyTitleDecoration(getRandomTitleDecoration(), title, startsWithThe);
-            }
-            else if (!isLastWord && !skipSpace) {
+            else if (!isLastWord && !skipSpace)
                 applyTitleDecoration(TitleDecoration.X_Y, title, startsWithThe);
-            }
 
             skipSpace = false;
         }
@@ -689,7 +690,7 @@ public class MainActivity extends AppCompatActivity {
             replaceStringBuilderString(result, word.getPossessive(result.toString()));
 
         if (usePreposition) {
-            String preposition = word.getRandomPreposition();
+            String preposition = word.getRandomPreposition(false);
             if (preposition != null) {
                 result.append(' ').append(preposition);
             }

@@ -136,17 +136,36 @@ public class Word {
         }
     }
 
-    String getRandomPreposition() {
+    boolean chanceToUsePreposition() {
+        if (category.type != Category.Type.action) {
+            return false;
+        }
+        else {
+            double prepositionChance = 0.5;
+            return Math.random() < prepositionChance;
+        }
+    }
+
+    String getRandomPreposition(boolean isLastWord) {
         if (prepositions == null)
             return null;
 
+        String preposition;
+
         if (prepositions.length == 1) {
-            return prepositions[0];
+            preposition = prepositions[0];
         }
         else {
             int index = (int) (Math.random() * prepositions.length);
-            return prepositions[index];
+            preposition = prepositions[index];
         }
+
+        // The last word of a title is always capitalized
+        if (isLastWord) {
+            preposition = capitalizeFirstLetter(preposition);
+        }
+
+        return preposition;
     }
 
     char getLastChar() {
