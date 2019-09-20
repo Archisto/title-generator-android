@@ -85,6 +85,8 @@
     <string name="function_preposition">pre</string>
     <string name="function_startsWithVowel">:a</string>
     <string name="function_startsWithConsonant">:b</string>
+    <string name="function_removeLastVowels">/-a</string>
+    <string name="function_removeLastConsonants">/-b</string>
     <string name="function_removeCharsFromBeginning">:-</string>
     <string name="function_removeCharsFromEnd">/-</string>
     <string name="function_reverse">r</string>

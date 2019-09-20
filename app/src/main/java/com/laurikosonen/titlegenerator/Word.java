@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class Word {
     private final String defaultModifierMarker = "-";
-    private final String vowels = "aeiou";
-    private final String consonants = "bcdfghjklmnpqrstvwxyz";
+    private static final String vowels1 = "aeioué";
+    private static final String vowels2 = "aeiouyé";
+    private static final String consonants1 = "bcdfghjklmnpqrstvwxyz";
+    private static final String consonants2 = "bcdfghjklmnpqrstvwxz";
 
     private String word;
     private String plural;
@@ -58,19 +60,56 @@ public class Word {
     }
 
     boolean startsWithVowel() {
-        return startsWithAnyLetter(vowels);
+        return startsWithChar(vowels1);
     }
 
     boolean startsWithConsonant() {
-        return startsWithAnyLetter(consonants);
+        return startsWithChar(consonants1);
     }
 
-    private boolean startsWithAnyLetter(String letters) {
+    private boolean startsWithChar(String chars) {
         char startingLetter = word.toLowerCase().charAt(0);
 
-        for (int i = 0; i < letters.length(); i++) {
-            if (startingLetter == letters.charAt(i))
+        for (int i = 0; i < chars.length(); i++) {
+            if (startingLetter == chars.charAt(i))
                 return true;
+        }
+
+        return false;
+    }
+
+    private static boolean indexHasChar(StringBuilder sb, int index, String chars) {
+        for (int i = 0; i < chars.length(); i++) {
+            if (sb.charAt(index) == chars.charAt(i))
+                return true;
+        }
+
+        return false;
+    }
+
+    static boolean trimEndVowels(StringBuilder sb) {
+        return trimEndChars(sb, vowels2);
+    }
+
+    static boolean trimEndConsonants(StringBuilder sb) {
+        return trimEndChars(sb, consonants2);
+    }
+
+    private static boolean trimEndChars(StringBuilder sb, String chars) {
+        if (sb.length() > 1) {
+            if (sb.charAt(sb.length() - 1) == '-')
+                sb.deleteCharAt(sb.length() - 1);
+
+            boolean somethingWasRemoved = false;
+            for (int i = sb.length() - 1; i >= 1; i--) {
+                if (indexHasChar(sb, i, chars)) {
+                    sb.deleteCharAt(i);
+                    somethingWasRemoved = true;
+                }
+                else {
+                    return somethingWasRemoved;
+                }
+            }
         }
 
         return false;

@@ -730,6 +730,8 @@ public class MainActivity extends AppCompatActivity {
         boolean useInitialism = false;
         boolean reverseWord = false;
         boolean jumbleWord = false;
+        boolean removeLastVowels = false;
+        boolean removeLastConsonants = false;
         int charsRemovedFromBeginning = 0;
         int charsRemovedFromEnd = 0;
 
@@ -749,6 +751,12 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_jumble))) {
                 jumbleWord = true;
             }
+            else if (mutator.equals(getString(R.string.function_removeLastVowels))) {
+                removeLastVowels = true;
+            }
+            else if (mutator.equals(getString(R.string.function_removeLastConsonants))) {
+                removeLastConsonants = true;
+            }
             else if (safeSubstring(mutator, 0, 2).equals(getString(R.string.function_removeCharsFromBeginning))) {
                 charsRemovedFromBeginning = CustomXmlResourceParser.
                     parseInt(safeSubstring(mutator, 2, 3));
@@ -756,6 +764,21 @@ public class MainActivity extends AppCompatActivity {
             else if (safeSubstring(mutator, 0, 2).equals(getString(R.string.function_removeCharsFromEnd))) {
                 charsRemovedFromEnd = CustomXmlResourceParser.
                     parseInt(safeSubstring(mutator, 2, 3));
+            }
+        }
+
+        boolean removedVowels = false;
+        if (removeLastVowels) {
+            removedVowels = Word.trimEndVowels(sb);
+            skipSpace = false;
+        }
+        if (removeLastConsonants) {
+            boolean removedConsonants = Word.trimEndConsonants(sb);
+            skipSpace = false;
+
+            // Tries to remove last vowels again after consonants have been taken out of the way
+            if (removeLastVowels && !removedVowels && removedConsonants) {
+                Word.trimEndVowels(sb);
             }
         }
 
