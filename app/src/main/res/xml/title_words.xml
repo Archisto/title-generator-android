@@ -1316,6 +1316,7 @@
         <word name="Dominion" />
         <word name="Doom" />
         <word name="Doubt" actor="er" />
+        <word name="Downside" actor="r" />
         <word name="Drama" actor="tist" />
         <word name="Dread" plural="" />
         <word name="Dreadnought" />
@@ -1607,6 +1608,7 @@
         <word name="Panic" actor="ker" />
         <word name="Par" />
         <word name="Paradigm" />
+        <word name="Paradox" />
         <word name="Paragon" />
         <word name="Paranoia" plural="" actor="1d" />
         <word name="Passion" actor="ate" />
@@ -1834,6 +1836,7 @@
         <word name="Underside" />
         <word name="Union" />
         <word name="Unity" />
+        <word name="Upside" actor="r" />
         <word name="Urge" />
         <word name="Utility" />
         <word name="Valentine" />
@@ -3865,16 +3868,16 @@
         <word name="Bypass" />
         <word name="Calculate" noun="-" />
         <word name="Call" prepos="From, in, to" />
-        <word name="Can" noun="!Ability" prtc="!Being Able" pres="" past="!Could" actor="" />
-        <word name="Can't" noun="!Inability" prtc="!Not Being Able" pres="" past="!Couldn't" actor="" />
+        <word name="Can" noun="!Ability" prtc="!Being Able" pres="" past="!Could" actor="" noDefPrepos="-" />
+        <word name="Can't" noun="!Inability" prtc="!Not Being Able" pres="" past="!Couldn't" actor="" noDefPrepos="-" />
         <word name="Cancel" dupcon="l" noun="lation" />
-        <word name="Cannot" noun="!Inability" prtc="!Not Being Able" pres="" past="!Could Not" actor="" />
+        <word name="Cannot" noun="!Inability" prtc="!Not Being Able" pres="" past="!Could Not" actor="" noDefPrepos="-" />
         <word name="Caper" noDefPrepos="-" />
         <word name="Capture" />
         <word name="Care" prepos="About, for" />
         <word name="Carry" plural="" prepos="on, Through" />
         <word name="Carve" noun="1ing" perf="-" prepos="From, on" />
-        <word name="Cascade" prepos="" />
+        <word name="Cascade" prepos="" noDefPrepos="-" />
         <word name="Cast" past="" prepos="as, Away, to" />
         <word name="Catch" past="!Caught" prepos="on" />
         <word name="Cater" noun="ing" prepos="to" noDefPrepos="-" />
@@ -3906,7 +3909,7 @@
         <word name="Collide" noun="2sion" prepos="With" />
         <word name="Combat" prtc="" pres="" past="" actor="!Fighter" prepos="With" noDefPrepos="-" />
         <word name="Combine" noun="1ation" prepos="Into" />
-        <word name="Come" past="!Came" perf="=" prepos="Around, as, Forth, From, to" />
+        <word name="Come" past="!Came" perf="=" prepos="Around, as, Forth, Forward, From, to, Towards" />
         <word name="Command" noun="ment" prepos="to" />
         <word name="Compare" noun="1ison" prepos="to, With" />
         <word name="Concern" prepos="for, With" noDefPrepos="-" />
@@ -4100,7 +4103,7 @@
         <word name="Flatter" noun="y" />
         <word name="Flay" />
         <word name="Flee" past="1d" actor="r" prepos="From" noDefPrepos="-" />
-        <word name="Flip" dupcon="p" noDefPrepos="-" />
+        <word name="Flip" dupcon="p" prepos="Out, Upside Down" noDefPrepos="-" />
         <word name="Flog" dupcon="g" />
         <word name="Flop" dupcon="p" prepos="on" noDefPrepos="-" />
         <word name="Flow" prepos="Through" />
@@ -4418,7 +4421,7 @@
         <word name="Retreat" prepos="From, to" />
         <word name="Return" prepos="From, to" />
         <word name="Reveal" noun="2lation" />
-        <word name="Revel" dupcon="l" prepos="in" />
+        <word name="Revel" dupcon="l" prepos="in, With" noDefPrepos="-" />
         <word name="Reverse" noun="1al" />
         <word name="Revive" noun="1al" prepos="From" />
         <word name="Revolve" noun="2ution" prepos="Around" noDefPrepos="-" />
@@ -5172,6 +5175,7 @@
         <word name="Whether" />
         <word name="Which" />
         <word name="While" />
+        <word name="Who" />
         <word name="Why" />
         <word name="With" />
         <word name="Within" />

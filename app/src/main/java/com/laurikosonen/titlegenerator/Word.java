@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class Word {
     private final String defaultModifierMarker = "-";
+    private final String vowels = "aeiou";
+    private final String consonants = "bcdfghjklmnpqrstvwxyz";
 
     private String word;
     private String plural;
@@ -53,6 +55,25 @@ public class Word {
         else {
             return "ERROR";
         }
+    }
+
+    boolean startsWithVowel() {
+        return startsWithAnyLetter(vowels);
+    }
+
+    boolean startsWithConsonant() {
+        return startsWithAnyLetter(consonants);
+    }
+
+    private boolean startsWithAnyLetter(String letters) {
+        char startingLetter = word.toLowerCase().charAt(0);
+
+        for (int i = 0; i < letters.length(); i++) {
+            if (startingLetter == letters.charAt(i))
+                return true;
+        }
+
+        return false;
     }
 
     void initWordFormList() {

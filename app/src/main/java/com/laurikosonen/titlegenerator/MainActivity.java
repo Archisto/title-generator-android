@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
             boolean hasDecoration =
                 enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
 
-            Word word = getRandomWord(displayedCategory);
+            Word word = getRandomWord(displayedCategory, false, false);
             appendStringToTitle(title, word.getRandomWordForm());
 
             if (!isLastWord && !hasDecoration && word.chanceToUsePreposition())
@@ -307,7 +307,9 @@ public class MainActivity extends AppCompatActivity {
             title.append(" ");
     }
 
-    private Word getRandomWord(int wordCategoryId) {
+    private Word getRandomWord(int wordCategoryId,
+                               boolean startsWithVowel,
+                               boolean startsWithConsonant) {
         List<Word> wordList;
         if (wordCategoryId < 0)
             wordList = allWords;
@@ -315,7 +317,22 @@ public class MainActivity extends AppCompatActivity {
             wordList = wordLists.get(wordCategoryId);
 
         int wordIndex = (int) (Math.random() * wordList.size());
-        Word word = wordList.get(wordIndex);
+        Word word;
+
+        // Tries a set amount of times to get a word starting with either a vowel or a consonant
+        if (startsWithVowel || startsWithConsonant) {
+            int tries = 20;
+            for (int i = 0; i < tries; i++) {
+                if (startsWithVowel && wordList.get(wordIndex).startsWithVowel())
+                    break;
+                else if (startsWithConsonant && wordList.get(wordIndex).startsWithConsonant())
+                    break;
+                else
+                    wordIndex = (int) (Math.random() * wordList.size());
+            }
+        }
+
+        word = wordList.get(wordIndex);
         lastWordCategory = word.category.id;
 
         if (word.getLastChar() == '-') {
@@ -430,7 +447,7 @@ public class MainActivity extends AppCompatActivity {
             // to the title.)
             if (currentChar == templateWordChar) {
                 if (lastCharWasTemplateWordChar)
-                    appendWordToTitle(title, getRandomWord(displayedCategory));
+                    appendWordToTitle(title, getRandomWord(displayedCategory, false, false));
 
                 lastCharWasTemplateWordChar = true;
             }
@@ -452,7 +469,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (isLastChar && lastCharWasTemplateWordChar) {
-                Word word = getRandomWord(displayedCategory);
+                Word word = getRandomWord(displayedCategory, false, false);
                 appendWordToTitle(title, word);
                 lastWordCategory = word.category.id;
             }
@@ -475,7 +492,7 @@ public class MainActivity extends AppCompatActivity {
         String[] mutators = parseMutators(customTemplateIndex);
         String wordWithMutators;
         if (mutators == null)
-            wordWithMutators = getRandomWord(displayedCategory).toString();
+            wordWithMutators = getRandomWord(displayedCategory, false, false).toString();
         else
             wordWithMutators = getWordWithAppliedMutators(mutators);
 
@@ -536,6 +553,8 @@ public class MainActivity extends AppCompatActivity {
         boolean copyWord = false;
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
+        boolean startsWithVowel = false;
+        boolean startsWithConsonant = false;
         boolean emptyResult = false;
 
         for (String mutator : mutators) {
@@ -550,11 +569,17 @@ public class MainActivity extends AppCompatActivity {
                 else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
                     copyNonCategoryMutators = true;
                 }
+                else if (mutator.equals(getString(R.string.function_startsWithVowel))) {
+                    startsWithVowel = true;
+                }
+                else if (mutator.equals(getString(R.string.function_startsWithConsonant))) {
+                    startsWithConsonant = true;
+                }
                 // Copy category mutator is checked in getCategoryFromMutators()
             }
 
             // 50 % chance for an empty result
-            if (mutator.equals(getString(R.string.function_emptyChance1)) && Math.random() < 0.5) {
+            if (mutator.equals(getString(R.string.function_emptyChance)) && Math.random() < 0.5) {
                 emptyResult = true;
             }
         }
@@ -570,7 +595,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
-            word = getRandomWord(category);
+            word = getRandomWord(category, startsWithVowel, startsWithConsonant);
         }
 
         if (copyNonCategoryMutators && lastWordMutators != null) {
@@ -653,7 +678,7 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_manner))) {
                 replaceStringBuilderString(result, word.getManner());
             }
-            else if (mutator.equals(getString(R.string.function_possessive))) {
+            else if (mutator.equals(getString(R.string.function_possessive1)) || mutator.equals(getString(R.string.function_possessive2))) {
                 usePossessive = true;
             }
             else if (mutator.equals(getString(R.string.function_preposition))) {
@@ -776,9 +801,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         sb.delete(0, sb.length());
-        sb.append(("" + chars[0]).toUpperCase().charAt(0));
-        for (int i = 1; i < chars.length; i++) {
-            sb.append(chars[i]);
+
+        int firstLetterIndex = chars[0] != ' ' && chars[0] != '\'' ? 0 : 1;
+        sb.append(("" + chars[firstLetterIndex]).toUpperCase().charAt(0));
+
+        for (int i = firstLetterIndex + 1; i < chars.length; i++) {
+            if (chars[i] != ' ' && chars[i] != '\'')
+                sb.append(chars[i]);
         }
     }
 

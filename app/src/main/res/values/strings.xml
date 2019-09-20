@@ -63,13 +63,6 @@
     <string name="function_mutatorBlockStart">(</string>
     <string name="function_mutatorBlockEnd">)</string>
     <string name="function_mutatorSeparator">,</string>
-    <string name="function_uppercase">A</string>
-    <string name="function_lowercase">a</string>
-    <string name="function_initialism">.</string>
-    <string name="function_reverse">r</string>
-    <string name="function_jumble1">j</string>
-    <string name="function_jumble2">\!</string>
-    <string name="function_possessive">\'</string>
     <string name="function_plural1">+</string>
     <string name="function_plural2">s</string>
     <string name="function_pluralChance">~</string>
@@ -83,9 +76,19 @@
     <string name="function_noun">n</string>
     <string name="function_presentTense">pr</string>
     <string name="function_actor">er</string>
-    <string name="function_preposition">pre</string>
     <string name="function_randomForm">\?</string>
-    <string name="function_emptyChance1">x</string>
+    <string name="function_uppercase">A</string>
+    <string name="function_lowercase">a</string>
+    <string name="function_initialism">.</string>
+    <string name="function_possessive1">\'</string>
+    <string name="function_possessive2">\'s</string>
+    <string name="function_preposition">pre</string>
+    <string name="function_startsWithVowel">:a</string>
+    <string name="function_startsWithConsonant">:b</string>
+    <string name="function_reverse">r</string>
+    <string name="function_jumble1">j</string>
+    <string name="function_jumble2">\!</string>
+    <string name="function_emptyChance">x</string>
     <string name="function_copyWord">#</string>
     <string name="function_copyCategory">c</string>
     <string name="function_copyNonCatMutators">&amp;</string>
@@ -125,43 +128,48 @@
 
         "\n\nCategory mutators"
 
-        "\n\nAll categories:" <b>"0"</b> "or" <b>"*"</b>
-        "\nKind (adjectives):" <b>"1"</b> "or" <b>"ki"</b>
-        "\nConcept:" <b>"2"</b> "or" <b>"co"</b>
-        "\nSubstance:" <b>"3"</b> "or" <b>"su"</b>
-        "\nThing:" <b>"4"</b> "or" <b>"th"</b>
-        "\nPerson &amp; Creature:" <b>"5"</b> "or" <b>"pc"</b>
-        "\nAction (verbs):" <b>"6"</b> "or" <b>"ac"</b>
-        "\nPlace &amp; Time:" <b>"7"</b> "or" <b>"pt"</b>
-        "\nGrammatical particle:" <b>"8"</b> "or" <b>"gp"</b>
+        "\n\n- All categories:" <b>"0"</b> "or" <b>"*"</b>
+        "\n- Kind (adjectives):" <b>"1"</b> "or" <b>"ki"</b>
+        "\n- Concept:" <b>"2"</b> "or" <b>"co"</b>
+        "\n- Substance:" <b>"3"</b> "or" <b>"su"</b>
+        "\n- Thing:" <b>"4"</b> "or" <b>"th"</b>
+        "\n- Person &amp; Creature:" <b>"5"</b> "or" <b>"pc"</b>
+        "\n- Action (verbs):" <b>"6"</b> "or" <b>"ac"</b>
+        "\n- Place &amp; Time:" <b>"7"</b> "or" <b>"pt"</b>
+        "\n- Grammatical particle:" <b>"8"</b> "or" <b>"gp"</b>
+
+        "\n\nWord form mutators"
+
+        "\n\n- Plural:" <b>"+"</b> "or" <b>"s"</b>
+        "\n- Optional plural (50 % chance):" <b>"~"</b>
+        "\n- Comparative (Kind):" <b>>"</b>
+        "\n- Superlative (Kind):" <b>>>"</b>
+        "\n- Manner (Kind):" <b>"ly"</b>
+        "\n- Present participle (Action):" <b>"ing"</b>
+        "\n- Present tense (Action):" <b>"pr"</b>
+        "\n- Past tense (Action):" <b>"ed"</b> "or" <b>"d"</b>
+        "\n- Past perfect tense (Action):" <b>"pp"</b>
+        "\n- Noun (Action):" <b>"n"</b>
+        "\n- Actor (Action and Concept):" <b>"er"</b>
+        "\n- Random word form:" <b>"\?"</b>
 
         "\n\nOther mutators"
 
-        "\n\nChain mutators together:" <b>","</b>
-        "\nUppercase:" <b>"A"</b>
-        "\nLowercase:" <b>"a"</b>
-        "\nAcronym:" <b>"."</b>
-        "\nReverse:" <b>"r"</b>
-        "\nJumble the word\'s letters:" <b>"j"</b> "or" <b>"\!"</b>
-        "\nPossessive:" <b>"\'"</b>
-        "\nPlural:" <b>"+"</b> "or" <b>"s"</b>
-        "\nOptional plural (50 % chance):" <b>"~"</b>
-        "\nComparative (Kind):" <b>>"</b>
-        "\nSuperlative (Kind):" <b>>>"</b>
-        "\nManner (Kind):" <b>"ly"</b>
-        "\nPresent participle (Action):" <b>"ing"</b>
-        "\nPresent tense (Action):" <b>"pr"</b>
-        "\nPast tense (Action):" <b>"ed"</b> "or" <b>"d"</b>
-        "\nPast perfect tense (Action):" <b>"pp"</b>
-        "\nNoun (Action):" <b>"n"</b>
-        "\nActor (Concept and Action):" <b>"er"</b>
-        "\nPreposition:" <b>"pre"</b>
-        "\nRandom word form:" <b>"\?"</b>
-        "\nOptional word (50 % chance):" <b>"x"</b>
-        "\nCopy previous word:" <b>"#"</b>
-        "\nCopy previous word\'s category:" <b>"c"</b>
-        "\nCopy non-category mutators*:" <b>"&amp;"</b>
-        "\nCopy all mutators*:" <b>"="</b>
+        "\n\n- Chain mutators together:" <b>","</b>
+        "\n- Uppercase:" <b>"A"</b>
+        "\n- Lowercase:" <b>"a"</b>
+        "\n- Acronym:" <b>"."</b>
+        "\n- Possessive:" <b>"\'"</b> "or" <b>"\'s"</b>
+        "\n- Preposition (Action):" <b>"pre"</b>
+        "\n- Starts with a vowel:" <b>":a"</b>
+        "\n- Starts with a consonant:" <b>":b"</b>
+        "\n- Reverse word:" <b>"r"</b>
+        "\n- Jumble the word\'s letters:" <b>"j"</b> "or" <b>"\!"</b>
+        "\n- Optional word (50 % chance):" <b>"x"</b>
+        "\n- Copy previous word:" <b>"#"</b>
+        "\n- Copy previous word\'s category:" <b>"c"</b>
+        "\n- Copy non-category mutators*:" <b>"&amp;"</b>
+        "\n- Copy all mutators*:" <b>"="</b>
 
         "\n\n*The copy mutators (#, c, &amp;, =) and the optional word mutator (x) won\'t be copied."
 
