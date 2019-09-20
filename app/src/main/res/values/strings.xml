@@ -44,14 +44,14 @@
     <string name="customTemplate_off">Custom template OFF</string>
     <string name="customTemplateExample0">Example #: #</string>
     <string name="customTemplateExample1">#: The #(su) #</string>
-    <string name="customTemplateExample2">#(co) #(pt)</string>
+    <string name="customTemplateExample2">#(co) #(pc, pt)</string>
     <string name="customTemplateExample3">#(pc, \') #</string>
     <string name="customTemplateExample4">#(th, +) of #(su)</string>
     <string name="customTemplateExample5">#(ki, >>) #(th)</string>
     <string name="customTemplateExample6">#(+) and #(=)</string>
-    <string name="customTemplateExample7">##(ac, n, a)</string>
-    <string name="customTemplateExample8">#(ki, ly) #(ac, ed)</string>
-    <string name="customTemplateExample9">#(ac, pp, pre) #(co)</string>
+    <string name="customTemplateExample7">#(ki, ly) #(ac, ed)</string>
+    <string name="customTemplateExample8">#(ac, pp, pre) #(co)</string>
+    <string name="customTemplateExample9">##(th, ac, n, a)</string>
     <string name="customTemplateExample10">#(gp) the #(pc, +) #(ac, n)</string>
     <string name="customTemplateExample11">#(pc) #(ac, pr) #(*, +, x)</string>
     <string name="customTemplateExample12">The #(pt) of the #(ac, pp)</string>
@@ -116,8 +116,8 @@
         "displayed category on the top of the screen. You can change it, along with many other"
         "things, in the dropdown menu at the upper right corner of the screen."
 
-        "\n\nPress the Custom template button next to the title generation button to activate the"
-        <b>"custom template"</b> "mode:"
+        "\n\nPress the" <b>"Custom template"</b> "button next to the title generation button to"
+        "activate the custom template mode:"
         "\nWrite something in the text field which has now appeared and generate new titles to see"
         "all of the titles become what you wrote. Add a" <b>"hash #"</b> "into the text and"
         "generate new titles; a random word has appeared to that place in each title."
@@ -125,9 +125,12 @@
         <b>"\n\nMutators"</b> "are short codes which allow you to customize words' forms and"
         "properties and limit what kind of words you'll get. Add parentheses right after a hash #"
         "and, within them, write any of the mutators listed below to have control over the outcome."
-        "You can have any number of mutators for a word; separate them with a comma."
-        "Words without a category mutator will obey the displayed category."
-        <i>"\nExample: The #(pc, +) of the #"</i>
+        \nExample:" <i>"The #(pc) of the #"</i>
+
+        "\n\nFor any word, you can have" <b>"multiple mutators"</b> "separated with a comma."
+        "If there are more than one category mutator, there's a chance for any of them to take"
+        "effect. Words without a category mutator will obey the displayed category."
+        "\nExample:" <i>"#(ki, co) #(\?, A)"</i>
 
         "\n\nCategory mutators"
 
@@ -166,6 +169,8 @@
         "\n- Preposition (Action):" <b>"pre"</b>
         "\n- Starts with a vowel:" <b>":a"</b>
         "\n- Starts with a consonant:" <b>":b"</b>
+        "\n- Remove end vowels:" <b>"/-a"</b>
+        "\n- Remove end consonants:" <b>"/-b"</b>
         "\n- Remove letters from beginning:" <b>":-1"</b> "through" <b>":-9"</b>
         "\n- Remove letters from end:" <b>"/-1"</b> "through" <b>"/-9"</b>
         "\n- Reverse word:" <b>"r"</b>

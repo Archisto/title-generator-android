@@ -37,7 +37,7 @@
                 android:foregroundGravity="fill_horizontal"
                 android:gravity="center|center_horizontal"
                 android:text="@string/credits_text"
-                android:textColor="@color/colorLightGray" />
+                android:textColor="@color/colorWhite" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>

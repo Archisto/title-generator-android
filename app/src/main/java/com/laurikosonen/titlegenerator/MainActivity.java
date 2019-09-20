@@ -575,7 +575,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (mutator.equals(getString(R.string.function_startsWithConsonant))) {
                     startsWithConsonant = true;
                 }
-                // Copy category mutator is checked in getCategoryFromMutators()
+                // Copy category mutator is checked in getCategoryIdFromMutators()
             }
 
             // 50 % chance for an empty result
@@ -594,7 +594,7 @@ public class MainActivity extends AppCompatActivity {
             word = lastWord;
         }
         else {
-            int category = copyCategory ? lastWordCategory : getCategoryFromMutators(mutators);
+            int category = copyCategory ? lastWordCategory : getCategoryIdFromMutators(mutators);
             word = getRandomWord(category, startsWithVowel, startsWithConsonant);
         }
 
@@ -615,7 +615,9 @@ public class MainActivity extends AppCompatActivity {
         return result.toString();
     }
 
-    private int getCategoryFromMutators(String[] mutators) {
+    private int getCategoryIdFromMutators(String[] mutators) {
+        List<Category> categoryPossibilities = new ArrayList<>();
+
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_copyCategory))) {
                 return lastWordCategory;
@@ -623,11 +625,20 @@ public class MainActivity extends AppCompatActivity {
 
             for (Category category : categories) {
                 if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName))
-                    return category.id;
+                    categoryPossibilities.add(category);
             }
         }
 
-        return displayedCategory;
+        int categoryId = displayedCategory;
+        if (categoryPossibilities.size() == 1) {
+            categoryId = categoryPossibilities.get(0).id;
+        }
+        else if (categoryPossibilities.size() > 1) {
+            int index = (int) (Math.random() * categoryPossibilities.size());
+            categoryId = categoryPossibilities.get(index).id;
+        }
+
+        return categoryId;
     }
 
     private String getWordFormFromMutators(Word word, String[] mutators) {

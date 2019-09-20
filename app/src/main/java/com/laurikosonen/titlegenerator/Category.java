@@ -1,6 +1,6 @@
 package com.laurikosonen.titlegenerator;
 
-public class Category {
+class Category {
     String name;
     String shortName;
     int id;
