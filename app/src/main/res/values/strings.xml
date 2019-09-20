@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">Title Generator</string>
     <string name="title_activity_help">Help</string>
-    <string name="form_X__Y">": "</string>
-    <string name="form_X__The_Y">": The "</string>
+    <string name="form_X_colon_Y">": "</string>
+    <string name="form_X_colon_The_Y">": The "</string>
     <string name="form_X_of_Y">" of "</string>
     <string name="form_X_of_the_Y">" of the "</string>
     <string name="form_X_and_Y">" and "</string>
     <string name="form_X_and_the_Y">" and the "</string>
-    <string name="form_Xs_Y">"\'s "</string>
-    <string name="form_Xs_Y2">"\' "</string>
     <string name="category_all">All</string>
     <string name="category_kind">Kind</string>
     <string name="category_concept">Concept</string>

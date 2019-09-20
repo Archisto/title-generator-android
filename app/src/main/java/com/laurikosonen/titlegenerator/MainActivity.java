@@ -298,10 +298,6 @@ public class MainActivity extends AppCompatActivity {
             title.append(c);
     }
 
-    private void appendDecorationToTitle(StringBuilder title, String decoration) {
-        title.append(decoration);
-    }
-
     private void appendSpaceToTitleIfNotSkipped(StringBuilder title) {
         if (!skipSpace)
             title.append(" ");
@@ -365,7 +361,7 @@ public class MainActivity extends AppCompatActivity {
         else if (rand <= 0.65) {
             return TitleDecoration.XandtheY;
         }
-        else if (rand <= 0.7) {
+        else if (rand <= 0.72) {
             return TitleDecoration.XsY;
         }
         else {
@@ -386,29 +382,28 @@ public class MainActivity extends AppCompatActivity {
                 appendSpaceToTitleIfNotSkipped(title);
                 break;
             case X_colon_Y:
-                appendDecorationToTitle(title, getString(R.string.form_X__Y));
+                title.append(getString(R.string.form_X_colon_Y));
                 break;
             case X_colon_theY:
                 if (!startsWithThe)
-                    appendDecorationToTitle(title, getString(R.string.form_X__The_Y));
+                    title.append(getString(R.string.form_X_colon_The_Y));
                 else
-                    appendDecorationToTitle(title, getString(R.string.form_X__Y));
+                    title.append(getString(R.string.form_X_colon_Y));
                 break;
             case XofY:
-                appendDecorationToTitle(title, getString(R.string.form_X_of_Y));
+                title.append(getString(R.string.form_X_of_Y));
                 break;
             case XoftheY:
-                appendDecorationToTitle(title, getString(R.string.form_X_of_the_Y));
+                title.append(getString(R.string.form_X_of_the_Y));
                 break;
             case XandY:
-                appendDecorationToTitle(title, getString(R.string.form_X_and_Y));
+                title.append(getString(R.string.form_X_and_Y));
                 break;
             case XandtheY:
-                appendDecorationToTitle(title, getString(R.string.form_X_and_the_Y));
+                title.append(getString(R.string.form_X_and_the_Y));
                 break;
             case XsY:
-                appendDecorationToTitle(
-                    title, Word.getPossessiveEnding(title.toString()) + " ");
+                title.append(Word.getPossessiveEnding(title.toString())).append(' ');
                 break;
             default:
                 appendSpaceToTitleIfNotSkipped(title);
