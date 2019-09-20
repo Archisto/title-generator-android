@@ -321,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Tries a set amount of times to get a word starting with either a vowel or a consonant
         if (startsWithVowel || startsWithConsonant) {
-            int tries = 20;
+            int tries = 25;
             for (int i = 0; i < tries; i++) {
                 if (startsWithVowel && wordList.get(wordIndex).startsWithVowel())
                     break;
@@ -769,6 +769,8 @@ public class MainActivity extends AppCompatActivity {
             if (charsRemovedFromEnd > 0) {
                 removeCharsFromEnd(sb, charsRemovedFromEnd);
             }
+
+            skipSpace = false;
         }
 
         if (reverseWord) {

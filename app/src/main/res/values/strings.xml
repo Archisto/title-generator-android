@@ -122,8 +122,8 @@
 
         <b>"\n\nMutators"</b> "are short codes which allow you to customize words' forms and"
         "properties and limit what kind of words you'll get. Add parentheses right after a hash #"
-        "and, within them, write any of the mutators listed below to control what kind of word"
-        "you\'ll get. You can have any number of mutators for a word; separate them with a comma."
+        "and, within them, write any of the mutators listed below to have control over the outcome."
+        "You can have any number of mutators for a word; separate them with a comma."
         "Words without a category mutator will obey the displayed category."
         <i>"\nExample: The #(pc, +) of the #"</i>
 
@@ -142,7 +142,7 @@
         "\n\nWord form mutators"
 
         "\n\n- Plural:" <b>"+"</b> "or" <b>"s"</b>
-        "\n- Optional plural (50 % chance):" <b>"~"</b>
+        "\n- Possible plural (50 % chance):" <b>"~"</b>
         "\n- Comparative (Kind):" <b>>"</b>
         "\n- Superlative (Kind):" <b>>>"</b>
         "\n- Manner (Kind):" <b>"ly"</b>
@@ -168,13 +168,13 @@
         "\n- Remove letters from end:" <b>"/-1"</b> "through" <b>"/-9"</b>
         "\n- Reverse word:" <b>"r"</b>
         "\n- Jumble the word\'s letters:" <b>"j"</b>
-        "\n- Optional word (50 % chance):" <b>"x"</b>
+        "\n- Remove word (50 % chance):" <b>"x"</b>
         "\n- Copy previous word:" <b>"#"</b>
         "\n- Copy previous word\'s category:" <b>"c"</b>
         "\n- Copy non-category mutators*:" <b>"&amp;"</b>
         "\n- Copy all mutators*:" <b>"="</b>
 
-        "\n\n*The copy mutators (#, c, &amp;, =) and the optional word mutator (x) won\'t be copied."
+        "\n\n*The copy mutators (#, c, &amp;, =) and the word removal mutator (x) won\'t be copied."
 
         "\n\nCustom template examples"
 
