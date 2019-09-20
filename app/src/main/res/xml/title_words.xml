@@ -15,7 +15,7 @@
         <word name="Adamant" />
         <word name="Adaptive" />
         <word name="Afflicted" />
-        <word name="African" plural="-" />
+        <word name="African" plural="-" compa="" super="" manner="" />
         <word name="Aggressive" />
         <word name="Agile" />
         <word name="Airborne" />
@@ -25,12 +25,12 @@
         <word name="Alleged" compa="" super="" />
         <word name="Almost" compa="" super="" manner="" />
         <word name="Alone" />
-        <word name="Alpha" manner="" />
-        <word name="Alpine" />
+        <word name="Alpha" compa="" super="" manner="" />
+        <word name="Alpine" compa="" super="" manner="" />
         <word name="Altered" />
         <word name="Amazing" />
         <word name="Ambitious" />
-        <word name="American" plural="-" />
+        <word name="American" plural="-" compa="" super="" manner="" />
         <word name="Among" manner="" />
         <word name="Amplified" />
         <word name="Ancestral" />
@@ -48,7 +48,7 @@
         <word name="Arguable" compa="" super="" />
         <word name="Arrogant" />
         <word name="Ashen" />
-        <word name="Asian" plural="-" />
+        <word name="Asian" plural="-" compa="" super="" manner="" />
         <word name="Astonishing" />
         <word name="Astral" />
         <word name="Astronomical" />
@@ -72,7 +72,7 @@
         <word name="Beautiful" />
         <word name="Beloved" manner="2ingly" />
         <word name="Benevolent" />
-        <word name="Beta" manner="" />
+        <word name="Beta" compa="" super="" manner="" />
         <word name="Betrayed" />
         <word name="Big" compa="ger" super="gest" manner="!Hugely" />
         <word name="Billion" plural="-" compa="" super="" manner="" />
@@ -90,9 +90,9 @@
         <word name="Bloody" compa="-" super="-" />
         <word name="Blurry" compa="-" super="-" />
         <word name="Bold" compa="-" super="-" />
-        <word name="Bonus" manner="" />
+        <word name="Bonus" compa="" super="" manner="" />
         <word name="Borrowed" />
-        <word name="Both" manner="" />
+        <word name="Both" compa="" super="" manner="" />
         <word name="Bottom" manner="" />
         <word name="Bountiful" />
         <word name="Brave" compa="-" super="-" />
@@ -216,7 +216,7 @@
         <word name="Delicious" />
         <word name="Delighted" />
         <word name="Delirious" />
-        <word name="Delta" manner="" />
+        <word name="Delta" compa="" super="" manner="" />
         <word name="Deluxe" />
         <word name="Demonic" />
         <word name="Dense" compa="-" super="-" />
@@ -301,7 +301,7 @@
         <word name="Eternal" />
         <word name="Ethical" />
         <word name="Euro-" compa="" super="" manner="" />
-        <word name="European" plural="-" />
+        <word name="European" plural="-" compa="" super="" manner="" />
         <word name="Even" />
         <word name="Ever" manner="" />
         <word name="Every" manner="" />
@@ -391,7 +391,7 @@
         <word name="Further" compa="" super="1st" manner="" />
         <word name="Futile" />
         <word name="Galactic" />
-        <word name="Gamma" manner="" />
+        <word name="Gamma" compa="" super="" manner="" />
         <word name="Gargantuan" />
         <word name="Generic" plural="-" />
         <word name="Generous" />
@@ -408,7 +408,8 @@
         <word name="Glorified" />
         <word name="Glorious" />
         <word name="Glowing" />
-        <word name="Godlike" />
+        <word name="Godlike" manner="" />
+        <word name="Godly" compa="-" super="-" manner="" />
         <word name="Golden" />
         <word name="Gone" manner="" />
         <word name="Good" compa="!Better" super="!Best" manner="!Well" />
@@ -424,12 +425,12 @@
         <word name="Gruesome" />
         <word name="Gruff" compa="-" super="-" />
         <word name="Guaranteed" />
-        <word name="Guiding" />
+        <word name="Guiding" compa="" super="" />
         <word name="Guilty" compa="-" super="-" />
         <word name="Half" compa="" super="" />
         <word name="Hallowed" />
         <word name="Handsome" compa="-" super="-" />
-        <word name="Hanged" />
+        <word name="Hanged" compa="" super="" />
         <word name="Happy" compa="-" super="-" />
         <word name="Hard" compa="-" super="-" />
         <word name="Hardcore" manner="" />
@@ -449,7 +450,7 @@
         <word name="Heroic" />
         <word name="Hidden" />
         <word name="High" compa="-" super="-" />
-        <word name="Hired" />
+        <word name="Hired" compa="" super="" />
         <word name="Historical" />
         <word name="Hollow" compa="-" super="-" />
         <word name="Holy" compa="-" super="-" manner="" />
@@ -457,7 +458,7 @@
         <word name="Honest" />
         <word name="Honorable" />
         <word name="Honourable" />
-        <word name="Horned" />
+        <word name="Horned" compa="" super="" />
         <word name="Horrible" />
         <word name="Horrid" />
         <word name="Horrific" />
@@ -683,7 +684,7 @@
         <word name="Odd" compa="-" super="-" />
         <word name="Official" />
         <word name="Old" compa="-" super="-" />
-        <word name="Omega" manner="" />
+        <word name="Omega" compa="" super="" manner="" />
         <word name="Omni-" compa="" super="" manner="" />
         <word name="Once" compa="" super="" manner="" />
         <word name="One" plural="-" compa="" super="" manner="" />
@@ -856,7 +857,7 @@
         <word name="Shared" />
         <word name="Sharp" compa="-" super="-" />
         <word name="Shattered" />
-        <word name="Sheer" />
+        <word name="Sheer" compa="" super="" />
         <word name="Shimmering" />
         <word name="Shining" />
         <word name="Shiny" compa="-" super="-" />
@@ -1104,6 +1105,7 @@
         <word name="Young" compa="-" super="-" />
         <word name="Z" compa="" super="" manner="" />
         <word name="Zero" compa="" super="" manner="" />
+        <word name="Zeta" compa="" super="" manner="" />
         <word name="[Number]" />
     </category>
     <category id="1" name="Concept" shortName="co" implicitPlural="true">
@@ -4732,6 +4734,7 @@
         <word name="Age" />
         <word name="Alley" />
         <word name="Alleyway" />
+        <word name="Alps" plural="" />
         <word name="Altar" />
         <word name="Always" plural="" />
         <word name="America" />
@@ -4945,6 +4948,7 @@
         <word name="Marsh" />
         <word name="Maze" />
         <word name="Meadow" />
+        <word name="Mediterranean" plural="" />
         <word name="Mesa" />
         <word name="Metro" />
         <word name="Metropolis" />
