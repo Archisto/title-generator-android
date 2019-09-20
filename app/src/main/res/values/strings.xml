@@ -107,7 +107,9 @@
     <string name="number_9">9</string>
     <string name="number_10">10</string>
     <string name="help_text">
-        "\nGeneral"
+        "\nTitle Generator was designed and developed by Lauri Kosonen."
+
+        "\n\n\nGeneral"
 
         "\n\nPress the button on the lower right corner of the screen to" <b>"generate new"
         "titles."</b> "The chosen category affects which words will appear. You can see the"

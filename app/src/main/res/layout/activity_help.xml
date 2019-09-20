@@ -30,15 +30,6 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="298dp"
-                android:layout_height="76dp"
-                android:foregroundGravity="fill_horizontal"
-                android:gravity="center|center_horizontal"
-                android:text="@string/credits_text"
-                android:textColor="@color/colorWhite" />
-
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
