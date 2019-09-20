@@ -205,6 +205,7 @@
         <word name="Decorative" />
         <word name="Deep" compa="-" super="-" />
         <word name="Default" plural="-" manner="!by Default" />
+        <word name="Defective" plural="-" />
         <word name="Defensive" />
         <word name="Defiant" />
         <word name="Defiled" />
@@ -223,7 +224,7 @@
         <word name="Depraved" />
         <word name="Deranged" />
         <word name="Derelict" />
-        <word name="Derivative" />
+        <word name="Derivative" plural="-" />
         <word name="Designated" />
         <word name="Desolate" />
         <word name="Destroyed" />
@@ -510,6 +511,7 @@
         <word name="Inherent" />
         <word name="Inhospitable" />
         <word name="Inhuman" manner="ely" />
+        <word name="Initial" compa="" super="" />
         <word name="Inner" compa="" super="most" manner="" />
         <word name="Innocent" />
         <word name="Insane" />
@@ -2411,6 +2413,7 @@
         <word name="Cube" />
         <word name="Cup" />
         <word name="Currency" />
+        <word name="Current" />
         <word name="Curtain" />
         <word name="Curve" />
         <word name="Cutlass" />
@@ -4228,6 +4231,7 @@
         <word name="Infect" noun="-" prepos="With" />
         <word name="Inflict" noun="-" prepos="on, With" />
         <word name="Inherit" noun="ance" actor="or" />
+        <word name="Initiate" noun="-" actor="=" prepos="into" />
         <word name="Innovate" noun="-" />
         <word name="Insult" />
         <word name="Intend" noun="1tion" prepos="to" />
@@ -4573,7 +4577,7 @@
         <word name="Stall" prepos="for" />
         <word name="Stand" past="!Stood" prepos="Down, for, on, Through, Up" />
         <word name="Stare" prepos="at" />
-        <word name="Start" prepos="From, Over" />
+        <word name="Start" prepos="at, From, Over" />
         <word name="Startle" />
         <word name="Starve" noun="1ation" noDefPrepos="-" />
         <word name="Stay" prepos="Apart, at, in, Together" />
@@ -4681,6 +4685,7 @@
         <word name="Venture" noun="Forth, Out" />
         <word name="View" />
         <word name="Violate" noun="-" />
+        <word name="Volunteer" noun="ing" actor="=" prepos="for, in" noDefPrepos="-" />
         <word name="Vouch" noun="er" prepos="for" noDefPrepos="-" />
         <word name="Wage" prepos="Against" />
         <word name="Wager" prepos="on" />
