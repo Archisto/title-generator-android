@@ -33,7 +33,7 @@ class CustomXmlResourceParser {
     private static final String defaultPreposStr = "defaultPrepos";
     private static final String noDefPreposStr = "noDefPrepos";
 
-    private static int parseInt(String str) {
+    static int parseInt(String str) {
         int result = -1;
         if (str != null && str.length() > 0) {
             try {

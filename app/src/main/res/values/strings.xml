@@ -85,9 +85,10 @@
     <string name="function_preposition">pre</string>
     <string name="function_startsWithVowel">:a</string>
     <string name="function_startsWithConsonant">:b</string>
+    <string name="function_removeCharsFromBeginning">:-</string>
+    <string name="function_removeCharsFromEnd">/-</string>
     <string name="function_reverse">r</string>
-    <string name="function_jumble1">j</string>
-    <string name="function_jumble2">\!</string>
+    <string name="function_jumble">j</string>
     <string name="function_emptyChance">x</string>
     <string name="function_copyWord">#</string>
     <string name="function_copyCategory">c</string>
@@ -163,8 +164,10 @@
         "\n- Preposition (Action):" <b>"pre"</b>
         "\n- Starts with a vowel:" <b>":a"</b>
         "\n- Starts with a consonant:" <b>":b"</b>
+        "\n- Remove letters from beginning:" <b>":-1"</b> "through" <b>":-9"</b>
+        "\n- Remove letters from end:" <b>"/-1"</b> "through" <b>"/-9"</b>
         "\n- Reverse word:" <b>"r"</b>
-        "\n- Jumble the word\'s letters:" <b>"j"</b> "or" <b>"\!"</b>
+        "\n- Jumble the word\'s letters:" <b>"j"</b>
         "\n- Optional word (50 % chance):" <b>"x"</b>
         "\n- Copy previous word:" <b>"#"</b>
         "\n- Copy previous word\'s category:" <b>"c"</b>

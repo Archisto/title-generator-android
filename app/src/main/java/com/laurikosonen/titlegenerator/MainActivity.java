@@ -730,6 +730,8 @@ public class MainActivity extends AppCompatActivity {
         boolean useInitialism = false;
         boolean reverseWord = false;
         boolean jumbleWord = false;
+        int charsRemovedFromBeginning = 0;
+        int charsRemovedFromEnd = 0;
 
         for (String mutator : mutators) {
             if (mutator.equals(getString(R.string.function_uppercase))) {
@@ -744,8 +746,28 @@ public class MainActivity extends AppCompatActivity {
             else if (mutator.equals(getString(R.string.function_reverse))) {
                 reverseWord = true;
             }
-            else if (mutator.equals(getString(R.string.function_jumble1)) || mutator.equals(getString(R.string.function_jumble2))) {
+            else if (mutator.equals(getString(R.string.function_jumble))) {
                 jumbleWord = true;
+            }
+            else if (safeSubstring(mutator, 0, 2).equals(getString(R.string.function_removeCharsFromBeginning))) {
+                charsRemovedFromBeginning = CustomXmlResourceParser.
+                    parseInt(safeSubstring(mutator, 2, 3));
+            }
+            else if (safeSubstring(mutator, 0, 2).equals(getString(R.string.function_removeCharsFromEnd))) {
+                charsRemovedFromEnd = CustomXmlResourceParser.
+                    parseInt(safeSubstring(mutator, 2, 3));
+            }
+        }
+
+        if ((charsRemovedFromBeginning > 0 || charsRemovedFromEnd > 0) && sb.length() > 1) {
+            if (sb.charAt(sb.length() - 1) == '-')
+                sb.deleteCharAt(sb.length() - 1);
+
+            if (charsRemovedFromBeginning > 0) {
+                removeCharsFromBeginning(sb, charsRemovedFromBeginning);
+            }
+            if (charsRemovedFromEnd > 0) {
+                removeCharsFromEnd(sb, charsRemovedFromEnd);
             }
         }
 
@@ -767,6 +789,19 @@ public class MainActivity extends AppCompatActivity {
             replaceStringBuilderString(sb, sb.toString().toLowerCase());
         else if (useUppercase)
             replaceStringBuilderString(sb, sb.toString().toUpperCase());
+    }
+
+    private void removeCharsFromBeginning(StringBuilder sb, int charsRemoved) {
+        if (charsRemoved > sb.length() - 1)
+            charsRemoved = sb.length() - 1;
+        sb.delete(0, charsRemoved);
+        sb.setCharAt(0, ("" + sb.charAt(0)).toUpperCase().charAt(0));
+    }
+
+    private void removeCharsFromEnd(StringBuilder sb, int charsRemoved) {
+        if (charsRemoved > sb.length() - 1)
+            charsRemoved = sb.length() - 1;
+        sb.delete(sb.length() - charsRemoved, sb.length());
     }
 
     private void reverseString(StringBuilder sb) {
@@ -820,6 +855,13 @@ public class MainActivity extends AppCompatActivity {
                     sb.append(str.charAt(i)).append('.');
             }
         }
+    }
+
+    private String safeSubstring(String str, int beginIndex, int endIndex) {
+        if (endIndex > str.length())
+            endIndex = str.length();
+
+        return str.substring(beginIndex, endIndex);
     }
 
     @Override
