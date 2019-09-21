@@ -611,6 +611,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int getCategoryIdFromMutators(String[] mutators) {
+        // TODO: Remove used mutators from the mutator list
+
         List<Category> categoryPossibilities = new ArrayList<>();
 
         for (String mutator : mutators) {
@@ -619,8 +621,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
             for (Category category : categories) {
-                if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName))
+                if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName)) {
                     categoryPossibilities.add(category);
+                    break;
+                }
             }
         }
 
