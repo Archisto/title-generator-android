@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleDecorationsToggle;
 
     private List<List<Word>> wordLists;
-    private List<Word> allWords;
     private List<Category> categories;
 
     private int displayedCategory = -1;
@@ -120,10 +119,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initWords() {
         wordLists = new ArrayList<>();
-        allWords = new ArrayList<>();
         categories = new ArrayList<>();
         categories.add(new Category(getString(R.string.category_all), getString(R.string.function_catAny), -1));
-        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, allWords, categories);
+        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, categories);
         templateWordChar = getString(R.string.function_word).charAt(0);
     }
 
@@ -309,14 +307,13 @@ public class MainActivity extends AppCompatActivity {
     private Word getRandomWord(int wordCategoryId,
                                boolean startsWithVowel,
                                boolean startsWithConsonant) {
-        List<Word> wordList;
-        if (wordCategoryId < 0)
-            wordList = allWords;
-        else
-            wordList = wordLists.get(wordCategoryId);
-
-        int wordIndex = (int) (Math.random() * wordList.size());
         Word word;
+
+        if (wordCategoryId < 0)
+            wordCategoryId = getRandomCategoryId();
+
+        List<Word> wordList = wordLists.get(wordCategoryId);
+        int wordIndex = (int) (Math.random() * wordList.size());
 
         // Tries a set amount of times to get a word starting with either a vowel or a consonant
         if (startsWithVowel || startsWithConsonant) {
@@ -344,29 +341,44 @@ public class MainActivity extends AppCompatActivity {
         return word;
     }
 
+    private int getRandomCategoryId() {
+        if (Math.random() < 0.06)
+            return wordLists.size() - 1; // Last category = Grammatical Particle
+        else
+            return (int) (Math.random() * (wordLists.size() - 1));
+    }
+
     private TitleDecoration getRandomTitleDecoration() {
         double rand = Math.random();
+        // 12 %
         if (rand <= 0.12) {
             return TitleDecoration.X_colon_Y;
         }
+        // 8 %
         else if (rand <= 0.2) {
             return TitleDecoration.X_colon_theY;
         }
+        // 10 %
         else if (rand <= 0.3) {
             return TitleDecoration.XofY;
         }
+        // 15 %
         else if (rand <= 0.45) {
             return TitleDecoration.XoftheY;
         }
+        // 10 %
         else if (rand <= 0.55) {
             return TitleDecoration.XandY;
         }
+        // 10 %
         else if (rand <= 0.65) {
             return TitleDecoration.XandtheY;
         }
+        // 7 %
         else if (rand <= 0.72) {
             return TitleDecoration.XsY;
         }
+        // 28 %
         else {
             return TitleDecoration.X_Y;
         }
@@ -621,6 +633,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             for (Category category : categories) {
+                // The mutator has to be checked against a category ID one higher than
+                // it actually is because there cannot be a negative ID as a mutator.
+                // Thus, the ID for all categories, -1, becomes 0 instead and so on.
                 if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName)) {
                     categoryPossibilities.add(category);
                     break;

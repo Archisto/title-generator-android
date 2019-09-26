@@ -4,7 +4,7 @@ class Category {
     String name;
     String shortName;
     int id;
-    Category.Type type;
+    Type type;
 
     enum Type {
         all,
@@ -15,7 +15,7 @@ class Category {
         personAndCreature,
         action,
         placeAndTime,
-        conjunctionAndPreposition,
+        grammaticalParticle,
         unknown
     }
 
@@ -49,7 +49,7 @@ class Category {
             case 6:
                 return Category.Type.placeAndTime;
             case 7:
-                return Category.Type.conjunctionAndPreposition;
+                return Category.Type.grammaticalParticle;
             default:
                 return Category.Type.unknown;
         }

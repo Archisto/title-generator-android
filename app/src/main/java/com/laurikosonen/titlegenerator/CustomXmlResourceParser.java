@@ -51,7 +51,6 @@ class CustomXmlResourceParser {
     static void parseWords(Resources resources,
                            int resourceID,
                            List<List<Word>> pools,
-                           List<Word> poolAll,
                            List<Category> categories) {
         XmlResourceParser parser = resources.getXml(resourceID);
 
@@ -93,10 +92,8 @@ class CustomXmlResourceParser {
                     else if (startTagName.equalsIgnoreCase(wordStr)) {
                         // Creates a new word
                         Word word = getParsedWord(parser, category, isImplicitPlural, defaultPrepositions);
-                        if (word != null) {
+                        if (word != null)
                             pools.get(categoryId).add(word);
-                            poolAll.add(word);
-                        }
                     }
                 }
 
