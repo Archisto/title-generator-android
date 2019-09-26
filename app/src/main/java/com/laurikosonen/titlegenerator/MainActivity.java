@@ -26,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem titleWordCountMenuItem;
     private ToggleButton customTemplateToggle;
     private EditText customTemplateInput;
-    private MenuItem titleDecorationsToggle;
     private MenuItem randomTitleLengthToggle;
+    private MenuItem randomWordFormToggle;
+    private MenuItem titleDecorationsToggle;
 
     private List<List<Word>> wordLists;
     private List<Word> allWords;
@@ -36,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
     private int titleWordCount = 3;
-    private boolean enableTitleDecorations = true;
     private boolean enableRandomTitleLength = true;
+    private boolean enableRandomWordForm = true;
+    private boolean enableTitleDecorations = true;
 
     // Custom template
     private boolean enableCustomTemplate = false;
@@ -257,9 +259,10 @@ public class MainActivity extends AppCompatActivity {
                 enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
 
             Word word = getRandomWord(displayedCategory, false, false);
-            appendStringToTitle(title, word.getRandomWordForm());
+            appendStringToTitle(title,
+                enableRandomWordForm ? word.getRandomWordForm() : word.toString());
 
-            if (!isLastWord && !hasDecoration && word.usesPreposition())
+            if (enableRandomWordForm && !isLastWord && !hasDecoration && word.usesPreposition())
                 title.append(' ').append(word.getRandomPreposition(false));
 
             if (hasDecoration)
@@ -404,9 +407,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case XsY:
                 title.append(Word.getPossessiveEnding(title.toString())).append(' ');
-                break;
-            default:
-                appendSpaceToTitleIfNotSkipped(title);
                 break;
         }
     }
@@ -906,11 +906,14 @@ public class MainActivity extends AppCompatActivity {
         initMenu(menu);
         initCategoryMenu(menu);
 
-        titleDecorationsToggle = menu.findItem(R.id.action_titleDecorations);
-        titleDecorationsToggle.setChecked(enableTitleDecorations);
-
         randomTitleLengthToggle = menu.findItem(R.id.action_randomTitleLength);
         randomTitleLengthToggle.setChecked(enableRandomTitleLength);
+
+        randomWordFormToggle = menu.findItem(R.id.action_randomWordForm);
+        randomWordFormToggle.setChecked(enableRandomWordForm);
+
+        titleDecorationsToggle = menu.findItem(R.id.action_titleDecorations);
+        titleDecorationsToggle.setChecked(enableTitleDecorations);
 
         return true;
     }
@@ -950,9 +953,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         else if (handleDisplayedCategoryOptions(id, item))
             return true;
-        else if (handleTitleDecorationsActivation(id))
-            return true;
         else if (handleRandomTitleLengthActivation(id))
+            return true;
+        else if (handleRandomWordFormActivation(id))
+            return true;
+        else if (handleTitleDecorationsActivation(id))
             return true;
         else if (handleCustomTemplateExampleOptions(id))
             return true;
@@ -1010,44 +1015,44 @@ public class MainActivity extends AppCompatActivity {
     private boolean handleCustomTemplateExampleOptions(int id) {
         switch (id) {
             case R.id.action_exampleTemplate1:
-                return setCustomTemplate(getString(R.string.customTemplateExample1), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample1));
             case R.id.action_exampleTemplate2:
-                return setCustomTemplate(getString(R.string.customTemplateExample2), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample2));
             case R.id.action_exampleTemplate3:
-                return setCustomTemplate(getString(R.string.customTemplateExample3), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample3));
             case R.id.action_exampleTemplate4:
-                return setCustomTemplate(getString(R.string.customTemplateExample4), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample4));
             case R.id.action_exampleTemplate5:
-                return setCustomTemplate(getString(R.string.customTemplateExample5), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample5));
             case R.id.action_exampleTemplate6:
-                return setCustomTemplate(getString(R.string.customTemplateExample6), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample6));
             case R.id.action_exampleTemplate7:
-                return setCustomTemplate(getString(R.string.customTemplateExample7), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample7));
             case R.id.action_exampleTemplate8:
-                return setCustomTemplate(getString(R.string.customTemplateExample8), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample8));
             case R.id.action_exampleTemplate9:
-                return setCustomTemplate(getString(R.string.customTemplateExample9), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample9));
             case R.id.action_exampleTemplate10:
-                return setCustomTemplate(getString(R.string.customTemplateExample10), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample10));
             case R.id.action_exampleTemplate11:
-                return setCustomTemplate(getString(R.string.customTemplateExample11), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample11));
             case R.id.action_exampleTemplate12:
-                return setCustomTemplate(getString(R.string.customTemplateExample12), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample12));
             case R.id.action_exampleTemplate13:
-                return setCustomTemplate(getString(R.string.customTemplateExample13), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample13));
             case R.id.action_exampleTemplate14:
-                return setCustomTemplate(getString(R.string.customTemplateExample14), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample14));
             case R.id.action_exampleTemplate15:
-                return setCustomTemplate(getString(R.string.customTemplateExample15), true);
+                return setCustomTemplate(getString(R.string.customTemplateExample15));
         }
 
         return false;
     }
 
-    private boolean handleTitleDecorationsActivation(int id) {
-        if (id == R.id.action_titleDecorations) {
-            enableTitleDecorations = !enableTitleDecorations;
-            titleDecorationsToggle.setChecked(enableTitleDecorations);
+    private boolean handleRandomTitleLengthActivation(int id) {
+        if (id == R.id.action_randomTitleLength) {
+            enableRandomTitleLength = !enableRandomTitleLength;
+            randomTitleLengthToggle.setChecked(enableRandomTitleLength);
 
             if (!enableCustomTemplate)
                 generateTitles();
@@ -1058,10 +1063,24 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private boolean handleRandomTitleLengthActivation(int id) {
-        if (id == R.id.action_randomTitleLength) {
-            enableRandomTitleLength = !enableRandomTitleLength;
-            randomTitleLengthToggle.setChecked(enableRandomTitleLength);
+    private boolean handleRandomWordFormActivation(int id) {
+        if (id == R.id.action_randomWordForm) {
+            enableRandomWordForm = !enableRandomWordForm;
+            randomWordFormToggle.setChecked(enableRandomWordForm);
+
+            if (!enableCustomTemplate)
+                generateTitles();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean handleTitleDecorationsActivation(int id) {
+        if (id == R.id.action_titleDecorations) {
+            enableTitleDecorations = !enableTitleDecorations;
+            titleDecorationsToggle.setChecked(enableTitleDecorations);
 
             if (!enableCustomTemplate)
                 generateTitles();
@@ -1117,20 +1136,18 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private boolean setCustomTemplate(String template, boolean activateCustomTemplate) {
+    private boolean setCustomTemplate(String template) {
         if (template != null) {
             customTemplate = template;
 
-            if (activateCustomTemplate) {
-                if (!enableCustomTemplate) {
-                    activateCustomTemplate(true);
-                }
-                else {
-                    customTemplateInput.setText(customTemplate);
-                }
-
-                generateTitles();
+            if (!enableCustomTemplate) {
+                activateCustomTemplate(true);
             }
+            else {
+                customTemplateInput.setText(customTemplate);
+            }
+
+            generateTitles();
 
             return true;
         }

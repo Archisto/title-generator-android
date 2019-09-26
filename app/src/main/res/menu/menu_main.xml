@@ -88,6 +88,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_randomWordForm"
+        android:checkable="true"
+        android:title="@string/action_randomWordForm"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_titleDecorations"
         android:checkable="true"
         android:title="@string/action_titleDecorations"
