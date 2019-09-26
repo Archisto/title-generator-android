@@ -42,19 +42,20 @@
     <string name="customTemplate_off">Custom template OFF</string>
     <string name="customTemplateExample0">Example #: #</string>
     <string name="customTemplateExample1">#: The #(su) #</string>
-    <string name="customTemplateExample2">#(co) #(pc, pt)</string>
-    <string name="customTemplateExample3">#(pc, \') #</string>
-    <string name="customTemplateExample4">#(th, +) of #(su)</string>
-    <string name="customTemplateExample5">#(ki, >>) #(th)</string>
-    <string name="customTemplateExample6">#(+) and #(=)</string>
-    <string name="customTemplateExample7">#(ki, ly) #(ac, ed)</string>
-    <string name="customTemplateExample8">#(ac, pp, pre) #(co)</string>
-    <string name="customTemplateExample9">##(th, ac, n, a)</string>
-    <string name="customTemplateExample10">#(gp) the #(pc, +) #(ac, n)</string>
-    <string name="customTemplateExample11">#(pc) #(ac, pr) #(*, +, x)</string>
-    <string name="customTemplateExample12">The #(pt) of the #(ac, pp)</string>
+    <string name="customTemplateExample2">The #(pt) of the #(ac, pp)</string>
+    <string name="customTemplateExample3">#(co) #(pc, pt)</string>
+    <string name="customTemplateExample4">#(pc, \'s) #</string>
+    <string name="customTemplateExample5">#(th, +) of #(su)</string>
+    <string name="customTemplateExample6">#(ki, >>) #(th)</string>
+    <string name="customTemplateExample7">#(+) and #(=)</string>
+    <string name="customTemplateExample8">I Was #(ki, ly) #(ac, ed)</string>
+    <string name="customTemplateExample9">#(ac, pp, pre) #(co)</string>
+    <string name="customTemplateExample10">##(th, ac, n, a)</string>
+    <string name="customTemplateExample11">#(gp) the #(pc, +) #(ac, n)</string>
+    <string name="customTemplateExample12">#(pc) #(ac, pr) #(*, +, x)</string>
     <string name="customTemplateExample13">The #(ki, x) #(pt) of #(r)</string>
-    <string name="customTemplateExample14">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
+    <string name="customTemplateExample14">#(j, /-2) the #(co, er)</string>
+    <string name="customTemplateExample15">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>
@@ -68,7 +69,7 @@
     <string name="function_superlative">>></string>
     <string name="function_manner">ly</string>
     <string name="function_presentParticiple">ing</string>
-    <string name="function_pastTense1">d</string>
+    <string name="function_pastTense1">p</string>
     <string name="function_pastTense2">ed</string>
     <string name="function_pastPerfectTense">pp</string>
     <string name="function_noun">n</string>
@@ -122,13 +123,13 @@
         "all of the titles become what you wrote. Add a" <b>"hash #"</b> "into the text and"
         "generate new titles; a random word has appeared to that place in each title."
 
-        <b>"\n\nMutators"</b> "are short codes which allow you to customize words' forms and"
-        "properties and limit what kind of words you'll get. Add parentheses right after a hash #"
-        "and, within them, write any of the mutators listed below to have control over the outcome."
+        <b>"\n\nMutators"</b> "are short codes which allow you to limit what kind of words you'll"
+        "get and change words' forms and properties. Add parentheses right after a hash # and,"
+        "within them, write any of the mutators listed below to have control over the outcome."
         \nExample:" <i>"The #(pc) of the #"</i>
 
-        "\n\nFor any word, you can have" <b>"multiple mutators"</b> "separated with a comma."
-        "If there are more than one category mutator, there's a chance for any of them to take"
+        "\n\nYou can have" <b>"multiple mutators"</b> "separated with a comma."
+        "If there are multiple category mutators, each of them has an equal chance of taking"
         "effect. Words without a category mutator will obey the displayed category."
         "\nExample:" <i>"#(ki, co) #(\?, A)"</i>
 
@@ -148,12 +149,12 @@
 
         "\n\n- Plural:" <b>"+"</b> "or" <b>"s"</b>
         "\n- Possible plural (50 % chance):" <b>"~"</b>
-        "\n- Comparative (Kind):" <b>>"</b>
-        "\n- Superlative (Kind):" <b>>>"</b>
+        "\n- Comparative (Kind):" <b>">"</b>
+        "\n- Superlative (Kind):" <b>">>"</b>
         "\n- Manner (Kind):" <b>"ly"</b>
         "\n- Present participle (Action):" <b>"ing"</b>
         "\n- Present tense (Action):" <b>"pr"</b>
-        "\n- Past tense (Action):" <b>"ed"</b> "or" <b>"d"</b>
+        "\n- Past tense (Action):" <b>"ed"</b> "or" <b>"p"</b>
         "\n- Past perfect tense (Action):" <b>"pp"</b>
         "\n- Noun (Action):" <b>"n"</b>
         "\n- Actor (Action and Concept):" <b>"er"</b>
@@ -165,7 +166,7 @@
         "\n- Uppercase:" <b>"A"</b>
         "\n- Lowercase:" <b>"a"</b>
         "\n- Acronym:" <b>"."</b>
-        "\n- Possessive:" <b>"\'"</b> "or" <b>"\'s"</b>
+        "\n- Possessive:" <b>"\'s"</b> "or" <b>"\'"</b>
         "\n- Preposition (Action):" <b>"pre"</b>
         "\n- Starts with a vowel:" <b>":a"</b>
         "\n- Starts with a consonant:" <b>":b"</b>

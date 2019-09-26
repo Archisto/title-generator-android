@@ -196,8 +196,9 @@ public class Word {
         }
     }
 
-    boolean chanceToUsePreposition() {
-        if (category.type != Category.Type.action) {
+    boolean usesPreposition() {
+        if (category.type != Category.Type.action
+            || prepositions == null || prepositions.length == 0) {
             return false;
         }
         else {
@@ -207,7 +208,7 @@ public class Word {
     }
 
     String getRandomPreposition(boolean isLastWord) {
-        if (prepositions == null)
+        if (prepositions == null || prepositions.length == 0)
             return null;
 
         String preposition;

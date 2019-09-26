@@ -145,6 +145,9 @@
             <item
                 android:id="@+id/action_exampleTemplate14"
                 android:title="@string/customTemplateExample14" />
+            <item
+                android:id="@+id/action_exampleTemplate15"
+                android:title="@string/customTemplateExample15" />
         </menu>
     </item>
 

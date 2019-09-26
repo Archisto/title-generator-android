@@ -4821,7 +4821,7 @@
         <word name="Talk" prepos="About, to, With" />
         <word name="Tamper" prepos="With" />
         <word name="Tap" dupcon="p" prepos="on" />
-        <word name="Tarnish" prepos="With" />
+        <word name="Tarnish" />
         <word name="Taunt" prepos="With" />
         <word name="Teach" noun="ing" past="!Taught" prepos="to" />
         <word name="Tear" past="!Tore" perf="!Torn" prepos="Apart, Down, for, Up" />

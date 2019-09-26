@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
             Word word = getRandomWord(displayedCategory, false, false);
             appendStringToTitle(title, word.getRandomWordForm());
 
-            if (!isLastWord && !hasDecoration && word.chanceToUsePreposition())
+            if (!isLastWord && !hasDecoration && word.usesPreposition())
                 title.append(' ').append(word.getRandomPreposition(false));
 
             if (hasDecoration)
@@ -1037,6 +1037,8 @@ public class MainActivity extends AppCompatActivity {
                 return setCustomTemplate(getString(R.string.customTemplateExample13), true);
             case R.id.action_exampleTemplate14:
                 return setCustomTemplate(getString(R.string.customTemplateExample14), true);
+            case R.id.action_exampleTemplate15:
+                return setCustomTemplate(getString(R.string.customTemplateExample15), true);
         }
 
         return false;
