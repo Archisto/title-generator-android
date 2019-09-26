@@ -49,14 +49,15 @@
     <string name="customTemplateExample5">#(th, +) of #(su)</string>
     <string name="customTemplateExample6">#(ki, >>) #(th)</string>
     <string name="customTemplateExample7">#(+) and #(=)</string>
-    <string name="customTemplateExample8">I Was #(ki, ly) #(ac, ed)</string>
-    <string name="customTemplateExample9">#(ac, pp, pre) #(co)</string>
-    <string name="customTemplateExample10">##(th, ac, n, a)</string>
-    <string name="customTemplateExample11">#(gp) the #(pc, +) #(ac, n)</string>
-    <string name="customTemplateExample12">#(pc) #(ac, pr) #(*, +, x)</string>
-    <string name="customTemplateExample13">The #(ki, x) #(pt) of #(r)</string>
-    <string name="customTemplateExample14">#(j, /-2) the #(co, er)</string>
-    <string name="customTemplateExample15">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
+    <string name="customTemplateExample8">#(ki, ly) #(ki)</string>
+    <string name="customTemplateExample9">The #(su, pc) #(ac, ed) Us</string>
+    <string name="customTemplateExample10">#(ac, pp, pre) #(co)</string>
+    <string name="customTemplateExample11">##(th, ac, n, a)</string>
+    <string name="customTemplateExample12">#(gp) the #(pc, +) #(ac, n)</string>
+    <string name="customTemplateExample13">#(pc) #(ac, pr) #(*, +, x)</string>
+    <string name="customTemplateExample14">The #(ki, x) #(pt) of #(r)</string>
+    <string name="customTemplateExample15">#(j, /-2) the #(co, er)</string>
+    <string name="customTemplateExample16">#(ac, ing, x) Without #(ac, er, x) #(co, ~)</string>
     <string name="str_the">The</string>
     <string name="str_ERROR">[ERROR]</string>
     <string name="function_word">#</string>

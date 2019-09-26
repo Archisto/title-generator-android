@@ -1059,6 +1059,8 @@ public class MainActivity extends AppCompatActivity {
                 return setCustomTemplate(getString(R.string.customTemplateExample14));
             case R.id.action_exampleTemplate15:
                 return setCustomTemplate(getString(R.string.customTemplateExample15));
+            case R.id.action_exampleTemplate16:
+                return setCustomTemplate(getString(R.string.customTemplateExample16));
         }
 
         return false;
