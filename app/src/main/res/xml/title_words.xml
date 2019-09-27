@@ -109,6 +109,7 @@
         <word name="Burning" />
         <word name="Burnt" />
         <word name="Busy" compa="-" super="-" />
+        <word name="Bygone" plural="-" compa="" super="" manner="" />
         <word name="Calm" compa="-" super="-" />
         <word name="Candid" />
         <word name="Careful" plural="-" />
@@ -371,6 +372,7 @@
         <word name="Feared" />
         <word name="Fearful" />
         <word name="Fearless" />
+        <word name="Feeble" compa="-" super="-" />
         <word name="Festering" />
         <word name="Festive" />
         <word name="Few" compa="-" super="-" manner="" />
@@ -386,6 +388,7 @@
         <word name="Fixed" />
         <word name="Flat" compa="ter" super="test" />
         <word name="Flawed" />
+        <word name="Flexible" />
         <word name="Floral" />
         <word name="Flying" />
         <word name="Forbidden" />
@@ -908,6 +911,7 @@
         <word name="Selfless" />
         <word name="Semi-" compa="" super="" manner="" />
         <word name="Senseless" />
+        <word name="Sensory" compa="" super="" manner="" />
         <word name="Sentient" />
         <word name="Separate" />
         <word name="Serious" />
@@ -1033,6 +1037,7 @@
         <word name="Three" plural="-" compa="" super="" manner="" />
         <word name="Threefold" compa="" super="" manner="" />
         <word name="Thriving" />
+        <word name="Tidal" compa="" super="" manner="" />
         <word name="Tidy" compa="-" super="-" />
         <word name="Tight" compa="-" super="-" />
         <word name="Timeless" />
@@ -1192,6 +1197,7 @@
         <word name="Account" actor="ant" />
         <word name="Accuracy" actor="2te" />
         <word name="Ache" />
+        <word name="Achievement" actor="4r" />
         <word name="Activity" actor="3e" />
         <word name="Addiction" actor="3" />
         <word name="Advantage" actor="ous" />
@@ -1323,7 +1329,7 @@
         <word name="Constitution" />
         <word name="Contagion" actor="1us" />
         <word name="Contempt" plural="" />
-        <word name="Content" actor="=" />
+        <word name="Content" />
         <word name="Contingency" />
         <word name="Continuum" plural="2a" actor="2ous" />
         <word name="Controversy" actor="1ial" />
@@ -1485,7 +1491,7 @@
         <word name="Freedom" actor="3" />
         <word name="Frenzy" actor="1ied" />
         <word name="Frequency" actor="2t" />
-        <word name="Friction" />
+        <word name="Friction" plural="" />
         <word name="Fright" actor="ful" />
         <word name="Fringe" />
         <word name="Frontline" />
@@ -1767,7 +1773,7 @@
         <word name="Problem" />
         <word name="Procedure" actor="4ssor" />
         <word name="Process" actor="or" />
-        <word name="Prodigy" actor="=" />
+        <word name="Prodigy" />
         <word name="Promise" actor="r" />
         <word name="Proof" actor="2ver" />
         <word name="Property" />
@@ -1943,6 +1949,7 @@
         <word name="Together" plural="" />
         <word name="Torment" actor="or" />
         <word name="Trace" actor="r" />
+        <word name="Traction" plural="" />
         <word name="Tradition" actor="ist" />
         <word name="Tragedy" actor="1ist" />
         <word name="Trance" />
@@ -2439,6 +2446,7 @@
         <word name="Bunch" plural="" />
         <word name="Bundle" />
         <word name="Bush" />
+        <word name="Business" />
         <word name="Button" />
         <word name="Cabbage" />
         <word name="Caber" />
@@ -2652,6 +2660,7 @@
         <word name="Fork" />
         <word name="Form" />
         <word name="Fossil" />
+        <word name="Foundation" />
         <word name="Fountain" />
         <word name="Fracture" />
         <word name="Frag" />
@@ -2857,6 +2866,7 @@
         <word name="Mess" />
         <word name="Message" />
         <word name="Meteor" />
+        <word name="Meteorite" />
         <word name="Meter" />
         <word name="Metre" />
         <word name="Mile" />
@@ -2981,7 +2991,6 @@
         <word name="Profile" />
         <word name="Program" />
         <word name="Project" />
-        <word name="Protrusion" />
         <word name="Pulse" />
         <word name="Pump" />
         <word name="Pumpkin" />
@@ -3184,6 +3193,7 @@
         <word name="Tarot" plural="" />
         <word name="Task" />
         <word name="Tax" />
+        <word name="Taxi" />
         <word name="Tear" />
         <word name="Technique" />
         <word name="Telescope" />
@@ -3310,6 +3320,7 @@
     </category>
     <category id="4" name="Person &amp; Creature" shortName="pc" implicitPlural="true">
         <word name="Ace" />
+        <word name="Achilles" plural="" />
         <word name="Acolyte" />
         <word name="Actor" />
         <word name="Actress" />
@@ -3396,7 +3407,6 @@
         <word name="Bug" />
         <word name="Bull" />
         <word name="Bunny" />
-        <word name="Business" />
         <word name="Butterfly" />
         <word name="Cabal" />
         <word name="Cadet" />
@@ -3807,6 +3817,7 @@
         <word name="Professional" />
         <word name="Professor" />
         <word name="Programmer" />
+        <word name="Prometheus" plural="" />
         <word name="Prophet" />
         <word name="Protector" />
         <word name="Psychic" />
@@ -4367,6 +4378,7 @@
         <word name="Flatter" noun="y" />
         <word name="Flay" />
         <word name="Flee" past="1d" actor="r" prepos="From" noDefPrepos="-" />
+        <word name="Flex" noDefPrepos="-" />
         <word name="Flip" dupcon="p" prepos="Out, Upside Down" noDefPrepos="-" />
         <word name="Flog" dupcon="g" />
         <word name="Flop" dupcon="p" prepos="on" noDefPrepos="-" />
@@ -5207,6 +5219,7 @@
         <word name="Lobby" />
         <word name="Location" />
         <word name="Lodge" />
+        <word name="Lookout" />
         <word name="Lot" />
         <word name="Lounge" />
         <word name="Luna" plural="!Moons" />
