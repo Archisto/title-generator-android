@@ -236,8 +236,14 @@ public class MainActivity extends AppCompatActivity {
             wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
         }
 
+        int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
+        Word firstWord = getRandomWord(usedCategories[0], false, false);
+
+        boolean startsWithShortGrammaticalParticle =
+            firstWord.category.type == Category.Type.grammaticalParticle && firstWord.canBeLowercase;
         boolean startsWithThe = false;
-        if (enableTitleDecorations && Math.random() <= 0.3f) {
+        if (enableTitleDecorations && !startsWithShortGrammaticalParticle
+              && Math.random() <= 0.3f) {
             title.append(getString(R.string.str_the)).append(' ');
             startsWithThe = true;
         }
@@ -245,14 +251,16 @@ public class MainActivity extends AppCompatActivity {
         // The index of the word which will get the only decoration of the title
         int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
 
-        int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
-
         for (int i = 0; i < wordsPerTitle; i++) {
             boolean isLastWord = i == wordsPerTitle - 1;
             boolean hasDecoration =
                 enableTitleDecorations && wordsPerTitle > 1 && i == formPlaceWordIndex;
 
-            Word word = getRandomWord(usedCategories[i], false, false);
+            Word word;
+            if (i == 0)
+                word = firstWord;
+            else
+                word = getRandomWord(usedCategories[i], false, false);
 
             // The word is not the first or the last
             boolean lowercaseIfPossible = i > 0 && !isLastWord;
@@ -306,8 +314,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Word getRandomWord(int wordCategoryId,
-                               boolean startsWithVowel,
-                               boolean startsWithConsonant) {
+                               boolean mustStartWithVowel,
+                               boolean mustStartWithConsonant) {
         Word word;
 
         if (wordCategoryId < 0)
@@ -317,12 +325,12 @@ public class MainActivity extends AppCompatActivity {
         int wordIndex = (int) (Math.random() * wordList.size());
 
         // Tries a set amount of times to get a word starting with either a vowel or a consonant
-        if (startsWithVowel || startsWithConsonant) {
+        if (mustStartWithVowel || mustStartWithConsonant) {
             int tries = 25;
             for (int i = 0; i < tries; i++) {
-                if (startsWithVowel && wordList.get(wordIndex).startsWithVowel())
+                if (mustStartWithVowel && wordList.get(wordIndex).startsWithVowel())
                     break;
-                else if (startsWithConsonant && wordList.get(wordIndex).startsWithConsonant())
+                else if (mustStartWithConsonant && wordList.get(wordIndex).startsWithConsonant())
                     break;
                 else
                     wordIndex = (int) (Math.random() * wordList.size());
@@ -351,8 +359,9 @@ public class MainActivity extends AppCompatActivity {
     private int[] getRandomCategoryIds(int wordsPerTitle) {
         int[] categoryIds = new int[wordsPerTitle];
         for (int i = 0; i < wordsPerTitle; i++) {
-            if (displayedCategory < 0)
+            if (displayedCategory < 0) {
                 categoryIds[i] = getRandomCategoryId();
+            }
             else {
                 categoryIds[i] = displayedCategory;
                 continue;
