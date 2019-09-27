@@ -464,6 +464,7 @@
         <word name="Hardly" compa="" super="" manner="" />
         <word name="Harmful" />
         <word name="Harsh" compa="-" super="-" />
+        <word name="Hasty" compa="-" super="-" />
         <word name="Hated" />
         <word name="Hateful" />
         <word name="Haunted" />
@@ -806,6 +807,7 @@
         <word name="Primordial" />
         <word name="Pristine" />
         <word name="Private" />
+        <word name="Prodigious" />
         <word name="Promised" />
         <word name="Prone" compa="-" super="-" />
         <word name="Proper" />
@@ -857,6 +859,7 @@
         <word name="Remorseful" />
         <word name="Renowned" />
         <word name="Replica" plural="-" />
+        <word name="Repulsive" />
         <word name="Required" />
         <word name="Resolute" />
         <word name="Respectable" />
@@ -1764,6 +1767,7 @@
         <word name="Problem" />
         <word name="Procedure" actor="4ssor" />
         <word name="Process" actor="or" />
+        <word name="Prodigy" actor="=" />
         <word name="Promise" actor="r" />
         <word name="Proof" actor="2ver" />
         <word name="Property" />
@@ -1810,6 +1814,7 @@
         <word name="Renaissance" plural="" actor=" Man" />
         <word name="Renown" plural="" actor="ed" />
         <word name="Republic" actor="an" />
+        <word name="Repulsion" actor="2ve" />
         <word name="Reputation" actor="!Celebrity" />
         <word name="Requiem" />
         <word name="Resentment" actor="4er" />
@@ -3660,6 +3665,7 @@
         <word name="Liar" />
         <word name="Lion" />
         <word name="Lisk" />
+        <word name="Listener" />
         <word name="Lizard" />
         <word name="Locust" />
         <word name="Lord" />
@@ -3723,6 +3729,7 @@
         <word name="Mutant" />
         <word name="Myself" plural="!Ourselves" poss="!Mine" />
         <word name="Mystic" />
+        <word name="Narrator" />
         <word name="Nation" />
         <word name="Naut" />
         <word name="Navigator" />
@@ -3795,6 +3802,7 @@
         <word name="Prisoner" />
         <word name="Privateer" />
         <word name="Pro" />
+        <word name="Prodigy" />
         <word name="Producer" />
         <word name="Professional" />
         <word name="Professor" />
