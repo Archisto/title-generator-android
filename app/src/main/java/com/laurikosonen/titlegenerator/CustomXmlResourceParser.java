@@ -32,6 +32,7 @@ class CustomXmlResourceParser {
     private static final String prepositionStr = "prepos";
     private static final String defaultPreposStr = "defaultPrepos";
     private static final String noDefPreposStr = "noDefPrepos";
+    private static final String noArticleStr = "noArticle";
     private static final String lowercaseStr = "lowercase";
 
     static int parseInt(String str) {
@@ -148,6 +149,7 @@ class CustomXmlResourceParser {
             parser.getAttributeValue(null, noDefPreposStr) != null ? null : defaultPrepositions);
         word.initWordFormList();
 
+        word.setArticlePossibility(parser.getAttributeValue(null, noArticleStr) == null);
         word.setLowercasePossibility(parser.getAttributeValue(null, lowercaseStr) != null);
 
         return word;

@@ -27,6 +27,7 @@ public class Word {
 
     Category category;
     boolean isPlaceholder;
+    boolean canHaveArticle;
     boolean canBeLowercase;
     private boolean implicitPlural;
     private ArrayList<String> wordForms;
@@ -609,8 +610,15 @@ public class Word {
         }
     }
 
+    void setArticlePossibility(boolean canHaveArticle) {
+        this.canHaveArticle = canHaveArticle;
+    }
+
     void setLowercasePossibility(boolean canBeLowercase) {
         this.canBeLowercase = canBeLowercase;
+
+        if (canBeLowercase)
+            canHaveArticle = false;
     }
 
     private String getModifierEndingWithS(String str) {

@@ -5431,25 +5431,25 @@
         <word name="[Place Name]" />
     </category>
     <category id="7" name="Grammatical Particle" shortName="gp">
-        <word name="Aboard" />
-        <word name="About" />
+        <word name="Aboard" noArticle="-" />
+        <word name="About" noArticle="-" />
         <word name="Above" />
         <word name="Across" />
         <word name="After" />
-        <word name="Again" />
-        <word name="Against" />
-        <word name="Along" />
-        <word name="Although" />
-        <word name="Anymore" />
-        <word name="Apart" />
-        <word name="Around" />
+        <word name="Again" noArticle="-" />
+        <word name="Against" noArticle="-" />
+        <word name="Along" noArticle="-" />
+        <word name="Although" noArticle="-" />
+        <word name="Anymore" noArticle="-" />
+        <word name="Apart" noArticle="-" />
+        <word name="Around" noArticle="-" />
         <word name="Astray" />
-        <word name="Asunder" />
-        <word name="Atop" />
-        <word name="Away" />
+        <word name="Asunder" noArticle="-" />
+        <word name="Atop" noArticle="-" />
+        <word name="Away" noArticle="-" />
         <word name="Back" />
         <word name="Backward" />
-        <word name="Because" />
+        <word name="Because" noArticle="-" />
         <word name="Before" />
         <word name="Behind" />
         <word name="Below" />
@@ -5457,55 +5457,55 @@
         <word name="Beside" />
         <word name="Between" />
         <word name="Beyond" />
-        <word name="Despite" />
+        <word name="Despite" noArticle="-" />
         <word name="Down" />
         <word name="Downward" />
-        <word name="During" />
-        <word name="Forth" />
+        <word name="During" noArticle="-" />
+        <word name="Forth" noArticle="-" />
         <word name="Forward" />
-        <word name="From" />
+        <word name="From" noArticle="-" />
         <word name="Front" />
-        <word name="How" />
-        <word name="If" />
+        <word name="How" noArticle="-" />
+        <word name="If" noArticle="-" />
         <word name="Inside" />
-        <word name="Into" />
+        <word name="Into" noArticle="-" />
         <word name="Inward" />
-        <word name="Lest" />
+        <word name="Lest" noArticle="-" />
         <word name="Like" />
         <word name="Near" />
         <word name="Off" />
-        <word name="Onto" />
+        <word name="Onto" noArticle="-" />
         <word name="Onward" />
         <word name="Out" />
         <word name="Outside" />
         <word name="Outward" />
         <word name="Over" />
         <word name="Past" />
-        <word name="Since" />
+        <word name="Since" noArticle="-" />
         <word name="Still" />
-        <word name="Such" />
-        <word name="Than" />
-        <word name="Then" />
-        <word name="Though" />
+        <word name="Such" noArticle="-" />
+        <word name="Than" noArticle="-" />
+        <word name="Then" noArticle="-" />
+        <word name="Though" noArticle="-" />
         <word name="Through" />
         <word name="Throughout" />
         <word name="Towards" />
         <word name="Under" />
         <word name="Underneath" />
-        <word name="Unless" />
-        <word name="Until" />
+        <word name="Unless" noArticle="-" />
+        <word name="Until" noArticle="-" />
         <word name="Up" />
-        <word name="Upon" />
+        <word name="Upon" noArticle="-" />
         <word name="Upward" />
-        <word name="What" />
-        <word name="When" />
-        <word name="Where" />
-        <word name="Whether" />
-        <word name="Which" />
-        <word name="While" />
-        <word name="Who" poss="se" />
-        <word name="Why" />
-        <word name="With" />
+        <word name="What" noArticle="-" />
+        <word name="When" noArticle="-" />
+        <word name="Where" noArticle="-" />
+        <word name="Whether" noArticle="-" />
+        <word name="Which" noArticle="-" />
+        <word name="While" noArticle="-" />
+        <word name="Who" poss="se" noArticle="-" />
+        <word name="Why" noArticle="-" />
+        <word name="With" noArticle="-" />
         <word name="Within" />
         <word name="Without" />
         <word name="and" lowercase="-" />

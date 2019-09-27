@@ -239,11 +239,8 @@ public class MainActivity extends AppCompatActivity {
         int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
         Word firstWord = getRandomWord(usedCategories[0], false, false);
 
-        boolean startsWithShortGrammaticalParticle =
-            firstWord.category.type == Category.Type.grammaticalParticle && firstWord.canBeLowercase;
         boolean startsWithThe = false;
-        if (enableTitleDecorations && !startsWithShortGrammaticalParticle
-              && Math.random() <= 0.3f) {
+        if (enableTitleDecorations && firstWord.canHaveArticle && Math.random() <= 0.3f) {
             title.append(getString(R.string.str_the)).append(' ');
             startsWithThe = true;
         }
