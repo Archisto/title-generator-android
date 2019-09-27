@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem randomWordFormToggle;
     private MenuItem titleDecorationsToggle;
 
-    private List<List<Word>> wordLists;
-    private List<Category> categories;
+    private List<List<Word>> wordsByCategory;
+    private List<Category> categories; // Contains All Categories (ID: -1) as the first item
 
     private int displayedCategory = -1;
     private int displayedTitleCount = 10;
@@ -118,10 +118,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initWords() {
-        wordLists = new ArrayList<>();
+        wordsByCategory = new ArrayList<>();
         categories = new ArrayList<>();
         categories.add(new Category(getString(R.string.category_all), getString(R.string.function_catAny), -1));
-        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordLists, categories);
+        CustomXmlResourceParser.parseWords(getResources(), R.xml.title_words, wordsByCategory, categories);
         templateWordChar = getString(R.string.function_word).charAt(0);
     }
 
@@ -206,10 +206,6 @@ public class MainActivity extends AppCompatActivity {
             customTemplate = customTemplateInput.getText().toString();
         }
 
-        displayTitles();
-    }
-
-    private void displayTitles() {
         for (int i = 0; i < titleSlots.size(); i++) {
             skipSpace = false;
 
@@ -225,12 +221,10 @@ public class MainActivity extends AppCompatActivity {
             titleNumberSlots.get(i).setText(numberText);
 
             StringBuilder title = new StringBuilder();
-            if (enableCustomTemplate) {
+            if (enableCustomTemplate)
                 createCustomTemplateTitle(title);
-            }
-            else {
+            else
                 createTitle(title);
-            }
 
             titleSlots.get(i).setText(title);
         }
@@ -251,17 +245,24 @@ public class MainActivity extends AppCompatActivity {
         // The index of the word which will get the only decoration of the title
         int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
 
-        for (int j = 0; j < wordsPerTitle; j++) {
-            boolean isLastWord = j == wordsPerTitle - 1;
-            boolean hasDecoration =
-                enableTitleDecorations && wordsPerTitle > 1 && j == formPlaceWordIndex;
+        int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
 
-            Word word = getRandomWord(displayedCategory, false, false);
+        for (int i = 0; i < wordsPerTitle; i++) {
+            boolean isLastWord = i == wordsPerTitle - 1;
+            boolean hasDecoration =
+                enableTitleDecorations && wordsPerTitle > 1 && i == formPlaceWordIndex;
+
+            Word word = getRandomWord(usedCategories[i], false, false);
+
+            // The word is not the first or the last
+            boolean lowercaseIfPossible = i > 0 && !isLastWord;
+
             appendStringToTitle(title,
-                enableRandomWordForm ? word.getRandomWordForm() : word.toString());
+                enableRandomWordForm ?
+                    word.getRandomWordForm(lowercaseIfPossible) : word.toString(lowercaseIfPossible));
 
             if (enableRandomWordForm && !isLastWord && !hasDecoration && word.usesPreposition())
-                title.append(' ').append(word.getRandomPreposition(false));
+                title.append(' ').append(word.getRandomPreposition());
 
             if (hasDecoration)
                 applyTitleDecoration(getRandomTitleDecoration(), title, startsWithThe);
@@ -312,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
         if (wordCategoryId < 0)
             wordCategoryId = getRandomCategoryId();
 
-        List<Word> wordList = wordLists.get(wordCategoryId);
+        List<Word> wordList = wordsByCategory.get(wordCategoryId);
         int wordIndex = (int) (Math.random() * wordList.size());
 
         // Tries a set amount of times to get a word starting with either a vowel or a consonant
@@ -331,9 +332,8 @@ public class MainActivity extends AppCompatActivity {
         word = wordList.get(wordIndex);
         lastWordCategory = word.category.id;
 
-        if (word.getLastChar() == '-') {
+        if (word.getLastChar() == '-')
             skipSpace = true;
-        }
 
         if (enableCustomTemplate)
             lastWord = word;
@@ -343,9 +343,35 @@ public class MainActivity extends AppCompatActivity {
 
     private int getRandomCategoryId() {
         if (Math.random() < 0.06)
-            return wordLists.size() - 1; // Last category = Grammatical Particle
+            return wordsByCategory.size() - 1; // Last category = Grammatical Particle
         else
-            return (int) (Math.random() * (wordLists.size() - 1));
+            return (int) (Math.random() * (wordsByCategory.size() - 1));
+    }
+
+    private int[] getRandomCategoryIds(int wordsPerTitle) {
+        int[] categoryIds = new int[wordsPerTitle];
+        for (int i = 0; i < wordsPerTitle; i++) {
+            if (displayedCategory < 0)
+                categoryIds[i] = getRandomCategoryId();
+            else {
+                categoryIds[i] = displayedCategory;
+                continue;
+            }
+
+            // In titles with more than 2 words, a word of the
+            // Grammatical Particle category cannot be the last word
+            int grammaticalParticleId = wordsByCategory.size() - 1;
+            if (wordsPerTitle > 2 && i == wordsPerTitle - 1
+                  && categoryIds[i] == grammaticalParticleId) {
+                while (categoryIds[i] == grammaticalParticleId)
+                    categoryIds[i] = getRandomCategoryId();
+
+                int newGPIndex = (int) (Math.random() * (wordsPerTitle - 1));
+                categoryIds[newGPIndex] = grammaticalParticleId;
+            }
+        }
+
+        return categoryIds;
     }
 
     private TitleDecoration getRandomTitleDecoration() {
@@ -430,6 +456,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         lastWordCategory = -1;
+        boolean multipleTemplateWordCharsInARow = false;
 
         for (int i = 0; i < customTemplate.length(); i++) {
             if (mutatorBlockLength > 0) {
@@ -453,14 +480,17 @@ public class MainActivity extends AppCompatActivity {
             // (Unless there are consecutive template word chars in which case a word is added
             // to the title.)
             if (currentChar == templateWordChar) {
-                if (lastCharWasTemplateWordChar)
+                if (lastCharWasTemplateWordChar) {
                     appendWordToTitle(title, getRandomWord(displayedCategory, false, false));
+                    multipleTemplateWordCharsInARow = true;
+                }
 
                 lastCharWasTemplateWordChar = true;
             }
             // The character immediately following a word template char
             else if (lastCharWasTemplateWordChar) {
-                appendWordWithMutatorsToTitle(title, i);
+                appendWordWithMutatorsToTitle(
+                    title, i, i == 1, multipleTemplateWordCharsInARow);
 
                 // Evaluated again because the value of skipSpace may have changed
                 anyCharCanBeAppended =
@@ -470,12 +500,13 @@ public class MainActivity extends AppCompatActivity {
                     appendCharToTitle(title, currentChar);
 
                 lastCharWasTemplateWordChar = false;
+                multipleTemplateWordCharsInARow = false;
             }
             else if (anyCharCanBeAppended) {
                 appendCharToTitle(title, currentChar);
             }
 
-            if (isLastChar && lastCharWasTemplateWordChar) {
+            if (isLastChar && currentChar == templateWordChar) {
                 Word word = getRandomWord(displayedCategory, false, false);
                 appendWordToTitle(title, word);
                 lastWordCategory = word.category.id;
@@ -495,13 +526,28 @@ public class MainActivity extends AppCompatActivity {
         skipSpace = false;
     }
 
-    private void appendWordWithMutatorsToTitle(StringBuilder title, int customTemplateIndex) {
-        String[] mutators = parseMutators(customTemplateIndex);
+    private void appendWordWithMutatorsToTitle(StringBuilder title,
+                                               int mutatorBlockStartIndex,
+                                               boolean isFirstWord,
+                                               boolean multipleTemplateWordCharsInARow) {
+        String[] mutators = parseMutators(mutatorBlockStartIndex);
         String wordWithMutators;
+
+        // Checks if the mutator block is at the end of the custom template string
+        boolean isLastWord = false;
+        if (mutatorBlockStartIndex + mutatorBlockLength == customTemplate.length() - 1) {
+            isLastWord = true;
+        }
+
+        boolean lowercaseIfPossible =
+            !multipleTemplateWordCharsInARow && !isFirstWord && !isLastWord;
+
         if (mutators == null)
-            wordWithMutators = getRandomWord(displayedCategory, false, false).toString();
-        else
-            wordWithMutators = getWordWithAppliedMutators(mutators);
+            wordWithMutators = getRandomWord(displayedCategory, false, false).
+                toString(lowercaseIfPossible);
+        else {
+            wordWithMutators = getWordWithAppliedMutators(mutators, lowercaseIfPossible);
+        }
 
         if (wordWithMutators.length() > 0)
             appendStringToTitle(title, wordWithMutators);
@@ -556,7 +602,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private String getWordWithAppliedMutators(String[] mutators) {
+    private String getWordWithAppliedMutators(String[] mutators,
+                                              boolean lowercaseIfPossible) {
+        // TODO: Remove used mutators from the mutator list if
+        //  you can figure out how to preserve lastWordMutators
+
         boolean copyWord = false;
         boolean copyCategory = false;
         boolean copyNonCategoryMutators = false;
@@ -611,10 +661,11 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuilder result;
         if (word.isPlaceholder) {
-            result = new StringBuilder(word.toString());
+            result = new StringBuilder(word.toString(lowercaseIfPossible));
         }
         else {
-            result = new StringBuilder(getWordFormFromMutators(word, mutators));
+            result = new StringBuilder(
+                getWordFormFromMutators(word, mutators, lowercaseIfPossible));
             applyVisualMutators(result, mutators);
         }
 
@@ -623,8 +674,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int getCategoryIdFromMutators(String[] mutators) {
-        // TODO: Remove used mutators from the mutator list
-
         List<Category> categoryPossibilities = new ArrayList<>();
 
         for (String mutator : mutators) {
@@ -635,7 +684,7 @@ public class MainActivity extends AppCompatActivity {
             for (Category category : categories) {
                 // The mutator has to be checked against a category ID one higher than
                 // it actually is because there cannot be a negative ID as a mutator.
-                // Thus, the ID for all categories, -1, becomes 0 instead and so on.
+                // Thus, the ID for All Categories, -1, becomes 0 instead and so on.
                 if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName)) {
                     categoryPossibilities.add(category);
                     break;
@@ -655,7 +704,12 @@ public class MainActivity extends AppCompatActivity {
         return categoryId;
     }
 
-    private String getWordFormFromMutators(Word word, String[] mutators) {
+    private String getWordFormFromMutators(Word word,
+                                           String[] mutators,
+                                           boolean lowercaseIfPossible) {
+        if (word.category.type == Category.Type.grammaticalParticle)
+            return word.toString(lowercaseIfPossible);
+
         StringBuilder result = new StringBuilder();
 
         boolean usePlural = false;
@@ -715,7 +769,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (useRandomForm) {
-            replaceStringBuilderString(result, word.getRandomWordForm());
+            replaceStringBuilderString(
+                result, word.getRandomWordForm(false));
         }
         else if (result.length() == 0) {
             if (usePlural && useNoun)
@@ -740,7 +795,7 @@ public class MainActivity extends AppCompatActivity {
             replaceStringBuilderString(result, word.getPossessive(result.toString()));
 
         if (usePreposition) {
-            String preposition = word.getRandomPreposition(false);
+            String preposition = word.getRandomPreposition();
             if (preposition != null) {
                 result.append(' ').append(preposition);
             }
@@ -1138,7 +1193,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean setDisplayedCategory(MenuItem item, int categoryId) {
-        if (categoryId < wordLists.size()) {
+        if (categoryId < wordsByCategory.size()) {
             displayedCategory = categoryId;
             item.setEnabled(false);
             currentDisplayedCatItem.setEnabled(true);

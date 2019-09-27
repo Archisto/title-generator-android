@@ -5482,23 +5482,23 @@
         <word name="Whether" />
         <word name="Which" />
         <word name="While" />
-        <word name="Who" />
+        <word name="Who" poss="se" />
         <word name="Why" />
         <word name="With" />
         <word name="Within" />
         <word name="Without" />
-        <word name="and" />
-        <word name="as" />
-        <word name="at" />
-        <word name="but" />
-        <word name="by" />
-        <word name="for" />
-        <word name="in" />
-        <word name="of" />
-        <!--<word name="off" />-->
-        <word name="on" />
-        <word name="or" />
-        <word name="so" />
-        <word name="to" />
+        <word name="and" lowercase="-" />
+        <word name="as" lowercase="-" />
+        <word name="at" lowercase="-" />
+        <word name="but" lowercase="-" />
+        <word name="by" lowercase="-" />
+        <word name="for" lowercase="-" />
+        <word name="in" lowercase="-" />
+        <word name="of" lowercase="-" />
+        <!--<word name="off" lowercase="-" />-->
+        <word name="on" lowercase="-" />
+        <word name="or" lowercase="-" />
+        <word name="so" lowercase="-" />
+        <word name="to" lowercase="-" />
     </category>
 </resources>

@@ -32,6 +32,7 @@ class CustomXmlResourceParser {
     private static final String prepositionStr = "prepos";
     private static final String defaultPreposStr = "defaultPrepos";
     private static final String noDefPreposStr = "noDefPrepos";
+    private static final String lowercaseStr = "lowercase";
 
     static int parseInt(String str) {
         int result = -1;
@@ -119,7 +120,7 @@ class CustomXmlResourceParser {
     private static Word getParsedWord(XmlResourceParser parser,
                                       Category category,
                                       boolean isImplicitPlural,
-                                      String defaultPreposition) {
+                                      String defaultPrepositions) {
         String text = parser.getAttributeValue(null, nameStr);
         if (text == null || text.isEmpty())
             return null;
@@ -144,8 +145,10 @@ class CustomXmlResourceParser {
         word.setManner(parser.getAttributeValue(null, mannerStr));
         word.setPossessive(parser.getAttributeValue(null, possessiveStr));
         word.setPrepositions(parser.getAttributeValue(null, prepositionStr),
-            parser.getAttributeValue(null, noDefPreposStr) != null ? null : defaultPreposition);
+            parser.getAttributeValue(null, noDefPreposStr) != null ? null : defaultPrepositions);
         word.initWordFormList();
+
+        word.setLowercasePossibility(parser.getAttributeValue(null, lowercaseStr) != null);
 
         return word;
     }

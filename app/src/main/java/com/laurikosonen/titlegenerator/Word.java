@@ -27,6 +27,7 @@ public class Word {
 
     Category category;
     boolean isPlaceholder;
+    boolean canBeLowercase;
     private boolean implicitPlural;
     private ArrayList<String> wordForms;
 
@@ -165,15 +166,13 @@ public class Word {
 //        }
     }
 
-    String getRandomWordForm() {
+    String getRandomWordForm(boolean lowercaseIfPossible) {
         float baseWordChance;
         switch (category.type) {
             case kind:
                 baseWordChance = 0.85f;
                 break;
             case personAndCreature:
-                baseWordChance = 0.6f;
-                break;
             case action:
                 baseWordChance = 0.6f;
                 break;
@@ -184,7 +183,7 @@ public class Word {
 
         if (isPlaceholder || wordForms == null || wordForms.size() == 0
             || Math.random() < baseWordChance) {
-            return word;
+            return toString(lowercaseIfPossible);
         }
 
         if (wordForms.size() == 1) {
@@ -207,7 +206,9 @@ public class Word {
         }
     }
 
-    String getRandomPreposition(boolean isLastWord) {
+    String getRandomPreposition() {
+        // TODO: The last word of a title is always capitalized
+
         if (prepositions == null || prepositions.length == 0)
             return null;
 
@@ -219,11 +220,6 @@ public class Word {
         else {
             int index = (int) (Math.random() * prepositions.length);
             preposition = prepositions[index];
-        }
-
-        // The last word of a title is always capitalized
-        if (isLastWord) {
-            preposition = capitalizeFirstLetter(preposition);
         }
 
         return preposition;
@@ -613,6 +609,10 @@ public class Word {
         }
     }
 
+    void setLowercasePossibility(boolean canBeLowercase) {
+        this.canBeLowercase = canBeLowercase;
+    }
+
     private String getModifierEndingWithS(String str) {
         if (str == null || str.length() == 0)
             return "S_ERROR";
@@ -700,5 +700,12 @@ public class Word {
     @NonNull
     public String toString() {
         return word;
+    }
+
+    String toString(boolean lowercaseIfPossible) {
+        if (lowercaseIfPossible && canBeLowercase)
+            return word.toLowerCase();
+        else
+            return word;
     }
 }
