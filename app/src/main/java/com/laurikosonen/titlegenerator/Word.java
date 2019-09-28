@@ -28,7 +28,7 @@ public class Word {
     Category category;
     boolean isPlaceholder;
     boolean canHaveArticle;
-    boolean canBeLowercase;
+    private boolean canBeLowercase;
     private boolean implicitPlural;
     private ArrayList<String> wordForms;
 

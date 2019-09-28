@@ -238,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
         int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
         Word firstWord = getRandomWord(usedCategories[0], false, false);
+        Word nextWord = null;
 
         boolean startsWithThe = false;
         if (enableTitleDecorations && firstWord.canHaveArticle && Math.random() <= 0.3f) {
@@ -257,7 +258,10 @@ public class MainActivity extends AppCompatActivity {
             if (i == 0)
                 word = firstWord;
             else
-                word = getRandomWord(usedCategories[i], false, false);
+                word = nextWord;
+
+            if (i < wordsPerTitle - 1)
+                nextWord = getRandomWord(usedCategories[i + 1], false, false);
 
             // The word is not the first or the last
             boolean lowercaseIfPossible = i > 0 && !isLastWord;
@@ -269,10 +273,13 @@ public class MainActivity extends AppCompatActivity {
             if (enableRandomWordForm && !isLastWord && !hasDecoration && word.usesPreposition())
                 title.append(' ').append(word.getRandomPreposition());
 
-            if (hasDecoration)
-                applyTitleDecoration(getRandomTitleDecoration(), title, startsWithThe);
-            else if (!isLastWord && !skipSpace)
+            if (hasDecoration) {
+                applyTitleDecoration(
+                    getRandomTitleDecoration(nextWord.canHaveArticle), title, startsWithThe);
+            }
+            else if (!isLastWord && !skipSpace) {
                 applyTitleDecoration(TitleDecoration.X_Y, title, startsWithThe);
+            }
 
             skipSpace = false;
         }
@@ -380,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
         return categoryIds;
     }
 
-    private TitleDecoration getRandomTitleDecoration() {
+    private TitleDecoration getRandomTitleDecoration(boolean nextWordCanHaveArticle) {
         double rand = Math.random();
         // 12 %
         if (rand <= 0.12) {
@@ -388,7 +395,10 @@ public class MainActivity extends AppCompatActivity {
         }
         // 8 %
         else if (rand <= 0.2) {
-            return TitleDecoration.X_colon_theY;
+            if (nextWordCanHaveArticle)
+                return TitleDecoration.X_colon_theY;
+            else
+                return TitleDecoration.X_colon_Y;
         }
         // 10 %
         else if (rand <= 0.3) {
@@ -396,7 +406,10 @@ public class MainActivity extends AppCompatActivity {
         }
         // 15 %
         else if (rand <= 0.45) {
-            return TitleDecoration.XoftheY;
+            if (nextWordCanHaveArticle)
+                return TitleDecoration.XoftheY;
+            else
+                return TitleDecoration.XofY;
         }
         // 10 %
         else if (rand <= 0.55) {
@@ -404,7 +417,10 @@ public class MainActivity extends AppCompatActivity {
         }
         // 10 %
         else if (rand <= 0.65) {
-            return TitleDecoration.XandtheY;
+            if (nextWordCanHaveArticle)
+                return TitleDecoration.XandtheY;
+            else
+                return TitleDecoration.XandY;
         }
         // 7 %
         else if (rand <= 0.72) {
@@ -418,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void applyTitleDecoration(TitleDecoration decoration,
                                       StringBuilder title,
-                                      boolean startsWithThe) {
+                                      boolean titleStartsWithThe) {
         if (decoration == null) {
             appendSpaceToTitleIfNotSkipped(title);
             return;
@@ -432,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
                 title.append(getString(R.string.form_X_colon_Y));
                 break;
             case X_colon_theY:
-                if (!startsWithThe)
+                if (!titleStartsWithThe)
                     title.append(getString(R.string.form_X_colon_The_Y));
                 else
                     title.append(getString(R.string.form_X_colon_Y));
