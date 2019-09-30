@@ -128,8 +128,10 @@ class CustomXmlResourceParser {
 
         Word word = new Word(text, category, isImplicitPlural);
 
-        if (word.isPlaceholder)
+        if (word.isPlaceholder) {
+            word.setArticlePossibility(true);
             return word;
+        }
 
         word.setNoun(parser.getAttributeValue(null, nounStr));
         word.setPlural(parser.getAttributeValue(null, pluralStr));
