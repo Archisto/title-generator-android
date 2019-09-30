@@ -236,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
             wordsPerTitle = (int) (Math.random() * titleWordCount) + 1;
         }
 
-        int[] usedCategories = getRandomCategoryIds(wordsPerTitle);
-        Word firstWord = getRandomWord(usedCategories[0], false, false);
+        int[] wordCategoriesInTitle = getRandomCategoryIds(wordsPerTitle);
+        Word firstWord = getRandomWord(wordCategoriesInTitle[0], false, false);
         Word nextWord = null;
 
         boolean startsWithThe = false;
@@ -246,25 +246,42 @@ public class MainActivity extends AppCompatActivity {
             startsWithThe = true;
         }
 
-        // The index of the word which will get the only decoration of the title
+        // The index of the word which will get the only non-space decoration of the title
         int formPlaceWordIndex = (int) (Math.random() * (wordsPerTitle - 1));
+        TitleDecoration decoration = null;
 
         for (int i = 0; i < wordsPerTitle; i++) {
             boolean isLastWord = i == wordsPerTitle - 1;
             boolean hasDecoration =
                 enableTitleDecorations && wordsPerTitle > 1 && i == formPlaceWordIndex;
 
-            Word word;
-            if (i == 0)
-                word = firstWord;
-            else
-                word = nextWord;
+            Word word = (i == 0 ? firstWord : nextWord);
 
             if (i < wordsPerTitle - 1)
-                nextWord = getRandomWord(usedCategories[i + 1], false, false);
+                nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);
 
-            // The word is not the first or the last
-            boolean lowercaseIfPossible = i > 0 && !isLastWord;
+            // The word can be in lowercase if it's not the first or the last or preceded by a colon
+            boolean lowercaseIfPossible = i > 0
+                    && !isLastWord
+                    && decoration != TitleDecoration.X_colon_Y
+                    && decoration != TitleDecoration.X_colon_theY;
+
+            // The succeeding decoration
+            if (hasDecoration) {
+                decoration = getRandomTitleDecoration(nextWord.canHaveArticle);
+
+                // The word can't be in lowercase if succeeded by a colon
+                if (decoration == TitleDecoration.X_colon_Y ||
+                    decoration == TitleDecoration.X_colon_theY) {
+                    lowercaseIfPossible = false;
+                }
+            }
+            else if (!isLastWord && !skipSpace) {
+                decoration = TitleDecoration.X_Y;
+            }
+            else {
+                decoration = null;
+            }
 
             appendStringToTitle(title,
                 enableRandomWordForm ?
@@ -273,13 +290,7 @@ public class MainActivity extends AppCompatActivity {
             if (enableRandomWordForm && !isLastWord && !hasDecoration && word.usesPreposition())
                 title.append(' ').append(word.getRandomPreposition());
 
-            if (hasDecoration) {
-                applyTitleDecoration(
-                    getRandomTitleDecoration(nextWord.canHaveArticle), title, startsWithThe);
-            }
-            else if (!isLastWord && !skipSpace) {
-                applyTitleDecoration(TitleDecoration.X_Y, title, startsWithThe);
-            }
+            applyTitleDecoration(decoration, title, startsWithThe);
 
             skipSpace = false;
         }
@@ -435,10 +446,8 @@ public class MainActivity extends AppCompatActivity {
     private void applyTitleDecoration(TitleDecoration decoration,
                                       StringBuilder title,
                                       boolean titleStartsWithThe) {
-        if (decoration == null) {
-            appendSpaceToTitleIfNotSkipped(title);
+        if (decoration == null)
             return;
-        }
 
         switch (decoration) {
             case X_Y:
