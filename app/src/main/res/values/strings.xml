@@ -25,7 +25,7 @@
     <string name="category_placeAndTime_short">pt</string>
     <string name="category_grammaticalParticle_short">gp</string>
     <string name="displayingCategory">Category %d: %s (%s)</string>
-    <string name="displayingAllCategories">Displaying all categories</string>
+    <string name="displayingAllCategories">Using all categories</string>
     <string name="titleNumber">%d)</string>
     <string name="titleCount">Title count: %d</string>
     <string name="titleWordCount">Word count cap: %d</string>
@@ -34,7 +34,7 @@
     <string name="action_randomTitleLength">Random word count</string>
     <string name="action_randomWordForm">Random word form</string>
     <string name="action_titleDecorations">Title decorations</string>
-    <string name="action_displayAll">Display all categories</string>
+    <string name="action_displayAll">Use all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom template</string>
     <string name="action_customTemplateHint">Custom template. # marks a word.</string>
@@ -116,7 +116,7 @@
 
         "\n\nPress the button on the lower right corner of the screen to" <b>"generate new"
         "titles."</b> "The chosen category affects which words will appear. You can see the"
-        "displayed category on the top of the screen. You can change it, along with many other"
+        "used category on the top of the screen. You can change it, along with many other"
         "things, in the dropdown menu at the upper right corner of the screen."
 
         "\n\nPress the" <b>"Custom template"</b> "button next to the title generation button to"
@@ -132,7 +132,7 @@
 
         "\n\nYou can have" <b>"multiple mutators"</b> "separated with a comma."
         "If there are multiple category mutators, each of them has an equal chance of taking"
-        "effect. Words without a category mutator will obey the displayed category."
+        "effect. Words without a category mutator will obey the used category."
         "\nExample:" <i>"#(ki, co) #(\?, A)"</i>
 
         "\n\nCategory mutators"
