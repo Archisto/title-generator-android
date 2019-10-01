@@ -28,6 +28,7 @@ public class Word {
     Category category;
     boolean isPlaceholder;
     boolean canHaveArticle;
+    boolean canBeLast;
     private boolean canBeLowercase;
     private boolean implicitPlural;
     private ArrayList<String> wordForms;
@@ -612,6 +613,10 @@ public class Word {
 
     void setArticlePossibility(boolean canHaveArticle) {
         this.canHaveArticle = canHaveArticle;
+    }
+
+    void setLastWordPossibility(boolean canBeLast) {
+        this.canBeLast = canBeLast;
     }
 
     void setLowercasePossibility(boolean canBeLowercase) {

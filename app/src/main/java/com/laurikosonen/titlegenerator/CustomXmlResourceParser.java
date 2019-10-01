@@ -20,7 +20,7 @@ class CustomXmlResourceParser {
     private static final String pluralStr = "plural";
     private static final String nounStr = "noun";
     private static final String presParticipleStr = "prtc";
-    private static final String duplicateConsonantStr = "dupcon";
+    private static final String duplicateConsonantStr = "dupCon";
     private static final String presentTenseStr = "pres";
     private static final String pastTenseStr = "past";
     private static final String pastPerfTenseStr = "perf";
@@ -33,6 +33,7 @@ class CustomXmlResourceParser {
     private static final String defaultPreposStr = "defaultPrepos";
     private static final String noDefPreposStr = "noDefPrepos";
     private static final String noArticleStr = "noArticle";
+    private static final String notLastStr = "notLast";
     private static final String lowercaseStr = "lowercase";
 
     static int parseInt(String str) {
@@ -130,6 +131,7 @@ class CustomXmlResourceParser {
 
         if (word.isPlaceholder) {
             word.setArticlePossibility(true);
+            word.setLastWordPossibility(true);
             return word;
         }
 
@@ -152,6 +154,7 @@ class CustomXmlResourceParser {
         word.initWordFormList();
 
         word.setArticlePossibility(parser.getAttributeValue(null, noArticleStr) == null);
+        word.setLastWordPossibility(parser.getAttributeValue(null, notLastStr) == null);
         word.setLowercasePossibility(parser.getAttributeValue(null, lowercaseStr) != null);
 
         return word;

@@ -257,8 +257,18 @@ public class MainActivity extends AppCompatActivity {
 
             Word word = (i == 0 ? firstWord : nextWord);
 
-            if (i < wordsPerTitle - 1)
-                nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);
+            if (i < wordsPerTitle - 1) {
+                nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);;
+
+                // Certain words of the Grammatical Particle category cannot be
+                // the last word of the title
+                // (this doesn't matter if there are less than 3 words in the title)
+                if (wordsPerTitle >= 3 && i == wordsPerTitle - 2) {
+                    while (!nextWord.canBeLast) {
+                        nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);
+                    }
+                }
+            }
 
             // The word can be in lowercase if it's not the first or the last or preceded by a colon
             boolean lowercaseIfPossible = i > 0
@@ -374,25 +384,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] getRandomCategoryIds(int wordsPerTitle) {
         int[] categoryIds = new int[wordsPerTitle];
         for (int i = 0; i < wordsPerTitle; i++) {
-            if (displayedCategory < 0) {
-                categoryIds[i] = getRandomCategoryId();
-            }
-            else {
-                categoryIds[i] = displayedCategory;
-                continue;
-            }
-
-            // In titles with more than 2 words, a word of the
-            // Grammatical Particle category cannot be the last word
-            int grammaticalParticleId = wordsByCategory.size() - 1;
-            if (wordsPerTitle > 2 && i == wordsPerTitle - 1
-                  && categoryIds[i] == grammaticalParticleId) {
-                while (categoryIds[i] == grammaticalParticleId)
-                    categoryIds[i] = getRandomCategoryId();
-
-                int newGPIndex = (int) (Math.random() * (wordsPerTitle - 1));
-                categoryIds[newGPIndex] = grammaticalParticleId;
-            }
+            categoryIds[i] = (displayedCategory < 0 ? getRandomCategoryId() : displayedCategory);
         }
 
         return categoryIds;
@@ -739,7 +731,7 @@ public class MainActivity extends AppCompatActivity {
                                            String[] mutators,
                                            boolean lowercaseIfPossible) {
         if (word.category.type == Category.Type.grammaticalParticle)
-            return word.toString(lowercaseIfPossible);
+            return word.getRandomWordForm(lowercaseIfPossible);
 
         StringBuilder result = new StringBuilder();
 
