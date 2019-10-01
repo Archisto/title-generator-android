@@ -203,14 +203,12 @@ public class Word {
             return false;
         }
         else {
-            double prepositionChance = 0.5;
+            double prepositionChance = 0.4;
             return Math.random() < prepositionChance;
         }
     }
 
-    String getRandomPreposition() {
-        // TODO: The last word of a title is always capitalized
-
+    String getRandomPreposition(boolean lowercaseIfPossible) {
         if (prepositions == null || prepositions.length == 0)
             return null;
 
@@ -224,7 +222,7 @@ public class Word {
             preposition = prepositions[index];
         }
 
-        return preposition;
+        return (lowercaseIfPossible ? preposition : capitalizeFirstLetter(preposition));
     }
 
     char getLastChar() {
@@ -235,7 +233,7 @@ public class Word {
         return getCharFromEnd(str, 1);
     }
 
-    static char getCharFromEnd(String str, int charsFromEnd) {
+    private static char getCharFromEnd(String str, int charsFromEnd) {
         return str.charAt(str.length() - charsFromEnd);
     }
 
@@ -491,8 +489,9 @@ public class Word {
     void setComparative(String modifier) {
         final String moreStr = "More";
 
-        if (modifier != null && modifier.length() == 0)
+        if (modifier != null && modifier.length() == 0) {
             return;
+        }
         // Kind words have implicit comparative forms
         else if (category.type == Category.Type.kind && modifier == null) {
             comparative = moreStr + ' ' + word;
@@ -520,8 +519,9 @@ public class Word {
     void setSuperlative(String modifier) {
         final String mostStr = "Most";
 
-        if (modifier != null && modifier.length() == 0)
+        if (modifier != null && modifier.length() == 0) {
             return;
+        }
         // Kind words have implicit superlative forms
         else if (category.type == Category.Type.kind && modifier == null) {
             superlative = mostStr + ' ' + word;

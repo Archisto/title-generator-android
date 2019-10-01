@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         R.id.action_setTitleCount_10
     };
 
+    private char[] sentenceSeparators = { ':', '-', '.', '!', '?' };
+
     private enum TitleDecoration {
         X_Y,
         X_colon_Y,
@@ -257,6 +259,9 @@ public class MainActivity extends AppCompatActivity {
 
             Word word = (i == 0 ? firstWord : nextWord);
 
+            if (word.getLastChar() == '-')
+                skipSpace = true;
+
             if (i < wordsPerTitle - 1) {
                 nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);;
 
@@ -280,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             if (hasDecoration) {
                 decoration = getRandomTitleDecoration(nextWord.canHaveArticle);
 
-                // The word can't be in lowercase if succeeded by a colon
+                // The word can't be in lowercase if it's succeeded by a colon
                 if (decoration == TitleDecoration.X_colon_Y ||
                     decoration == TitleDecoration.X_colon_theY) {
                     lowercaseIfPossible = false;
@@ -298,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
                     word.getRandomWordForm(lowercaseIfPossible) : word.toString(lowercaseIfPossible));
 
             if (enableRandomWordForm && !isLastWord && !hasDecoration && word.usesPreposition())
-                title.append(' ').append(word.getRandomPreposition());
+                title.append(' ').append(word.getRandomPreposition(true));
 
             applyTitleDecoration(decoration, title, startsWithThe);
 
@@ -328,6 +333,12 @@ public class MainActivity extends AppCompatActivity {
         title.append(str);
     }
 
+    /* Appends a character to the title.
+     * Prevents the title form starting with a space and having two consecutive spaces.
+     *
+     * @param title    A StringBuilder title
+     * @param c        A character
+     */
     private void appendCharToTitle(StringBuilder title, char c) {
         if (c != ' ' || (title.length() > 0 && title.charAt(title.length() - 1) != ' '))
             title.append(c);
@@ -363,13 +374,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         word = wordList.get(wordIndex);
-        lastWordCategory = word.category.id;
 
-        if (word.getLastChar() == '-')
-            skipSpace = true;
-
-        if (enableCustomTemplate)
+        if (enableCustomTemplate) {
             lastWord = word;
+            lastWordCategory = word.category.id;
+
+            if (word.getLastChar() == '-')
+                skipSpace = true;
+        }
 
         return word;
     }
@@ -479,7 +491,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         lastWordCategory = -1;
-        boolean multipleTemplateWordCharsInARow = false;
+        boolean emptySubtitleOrSentence = false;
+        boolean allowLowercase = false;
 
         for (int i = 0; i < customTemplate.length(); i++) {
             if (mutatorBlockLength > 0) {
@@ -489,44 +502,59 @@ public class MainActivity extends AppCompatActivity {
 
             char currentChar = customTemplate.charAt(i);
             boolean isLastChar = i == customTemplate.length() - 1;
+            boolean charIsSpace = currentChar == ' ';
 
             char nextChar = '_';
-            if (!isLastChar) {
+            if (!isLastChar)
                 nextChar = customTemplate.charAt(i + 1);
-            }
 
-            boolean anyCharCanBeAppended =
-                !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
+            boolean currCharCanBeAppended =
+                !skipSpace || !charIsSpace || nextChar != templateWordChar;
 
             // When a template word character is hit, a word isn't yet added to the title.
             // Instead, it is checked if the word has any mutators after it.
             // (Unless there are consecutive template word chars in which case a word is added
-            // to the title.)
+            // to the title immediately.)
             if (currentChar == templateWordChar) {
                 if (lastCharWasTemplateWordChar) {
                     appendWordToTitle(title, getRandomWord(displayedCategory, false, false));
-                    multipleTemplateWordCharsInARow = true;
+                    allowLowercase = false;
                 }
 
                 lastCharWasTemplateWordChar = true;
+                emptySubtitleOrSentence = false;
             }
-            // The character immediately following a word template char
+            // If the previous character was a word template char,
+            // adds a word with possible mutators to the title
             else if (lastCharWasTemplateWordChar) {
                 appendWordWithMutatorsToTitle(
-                    title, i, i == 1, multipleTemplateWordCharsInARow);
+                    title, i, i == 1, allowLowercase);
 
                 // Evaluated again because the value of skipSpace may have changed
-                anyCharCanBeAppended =
-                    !skipSpace || currentChar != ' ' || nextChar != templateWordChar;
-
-                if (mutatorBlockLength == 0 && anyCharCanBeAppended)
-                    appendCharToTitle(title, currentChar);
+                currCharCanBeAppended =
+                    !skipSpace || !charIsSpace || nextChar != templateWordChar;
 
                 lastCharWasTemplateWordChar = false;
-                multipleTemplateWordCharsInARow = false;
+
+                // The next Grammatical Particle word can be lowercase only if
+                // 1) the previous word didn't have mutators or there will be
+                //    a space between the words and
+                // 2) the current space is not skipped
+                allowLowercase = mutatorBlockLength == 0 && currCharCanBeAppended;
             }
-            else if (anyCharCanBeAppended) {
+
+            // Adds any non-template character to the title if it isn't a template char,
+            // the start of a mutator block or a space which should be skipped
+            if (currentChar != templateWordChar && mutatorBlockLength == 0
+                  && currCharCanBeAppended) {
                 appendCharToTitle(title, currentChar);
+
+                emptySubtitleOrSentence = (emptySubtitleOrSentence && charIsSpace)
+                    || charIs(currentChar, sentenceSeparators);
+
+                // Lowercase only if a subtitle hasn't just started
+                // and the character before a GP word is a space
+                allowLowercase = !emptySubtitleOrSentence && charIsSpace;
             }
 
             if (isLastChar && currentChar == templateWordChar) {
@@ -552,24 +580,38 @@ public class MainActivity extends AppCompatActivity {
     private void appendWordWithMutatorsToTitle(StringBuilder title,
                                                int mutatorBlockStartIndex,
                                                boolean isFirstWord,
-                                               boolean multipleTemplateWordCharsInARow) {
+                                               boolean allowLowercase) {
         String[] mutators = parseMutators(mutatorBlockStartIndex);
         String wordWithMutators;
 
-        // Checks if the mutator block is at the end of the custom template string
-        boolean isLastWord = false;
-        if (mutatorBlockStartIndex + mutatorBlockLength == customTemplate.length() - 1) {
-            isLastWord = true;
-        }
+        // If a valid mutator block exists, it's end index is calculated;
+        // otherwise mutatorBlockEndIndex == mutatorBlockStartIndex
+        int mutatorBlockEndIndex = mutatorBlockStartIndex + mutatorBlockLength;
 
-        boolean lowercaseIfPossible =
-            !multipleTemplateWordCharsInARow && !isFirstWord && !isLastWord;
+        // When there's no mutator block, the end index is the index of the template word character
+        if (mutatorBlockLength == 0)
+            mutatorBlockEndIndex = mutatorBlockStartIndex - 1;
+
+        // Determines whether lowercase is allowed for both Grammatical Particle words
+        // and Action word prepositions
+        boolean nextCharIsSpace = false;
+        boolean nextCharIsFinal = mutatorBlockEndIndex == customTemplate.length() - 2;
+        if (mutatorBlockEndIndex < customTemplate.length() - 1)
+            nextCharIsSpace = customTemplate.charAt(mutatorBlockEndIndex + 1) == ' ';
+
+        boolean lowercasePrepositionIfPossible = nextCharIsSpace && !nextCharIsFinal;
+
+        // Grammatical Particle words have tougher requirements for lowercase because
+        // Action word prepositions are never at the beginning of the word
+        boolean lowercaseGrammaticalParticleIfPossible =
+            !isFirstWord && allowLowercase && lowercasePrepositionIfPossible;
 
         if (mutators == null)
             wordWithMutators = getRandomWord(displayedCategory, false, false).
-                toString(lowercaseIfPossible);
+                toString(lowercaseGrammaticalParticleIfPossible);
         else {
-            wordWithMutators = getWordWithAppliedMutators(mutators, lowercaseIfPossible);
+            wordWithMutators = getWordWithAppliedMutators(
+                mutators, lowercaseGrammaticalParticleIfPossible, lowercasePrepositionIfPossible);
         }
 
         if (wordWithMutators.length() > 0)
@@ -626,7 +668,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getWordWithAppliedMutators(String[] mutators,
-                                              boolean lowercaseIfPossible) {
+                                              boolean lowercaseGrammaticalParticleIfPossible,
+                                              boolean lowercasePrepositionIfPossible) {
         // TODO: Remove used mutators from the mutator list if
         //  you can figure out how to preserve lastWordMutators
 
@@ -684,11 +727,14 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuilder result;
         if (word.isPlaceholder) {
-            result = new StringBuilder(word.toString(lowercaseIfPossible));
+            result = new StringBuilder(word.toString());
         }
         else {
             result = new StringBuilder(
-                getWordFormFromMutators(word, mutators, lowercaseIfPossible));
+                getWordFormFromMutators(word,
+                                        mutators,
+                                        lowercaseGrammaticalParticleIfPossible,
+                                        lowercasePrepositionIfPossible));
             applyVisualMutators(result, mutators);
         }
 
@@ -729,9 +775,10 @@ public class MainActivity extends AppCompatActivity {
 
     private String getWordFormFromMutators(Word word,
                                            String[] mutators,
-                                           boolean lowercaseIfPossible) {
+                                           boolean lowercaseGrammaticalParticleIfPossible,
+                                           boolean lowercasePrepositionIfPossible) {
         if (word.category.type == Category.Type.grammaticalParticle)
-            return word.getRandomWordForm(lowercaseIfPossible);
+            return word.getRandomWordForm(lowercaseGrammaticalParticleIfPossible);
 
         StringBuilder result = new StringBuilder();
 
@@ -818,7 +865,7 @@ public class MainActivity extends AppCompatActivity {
             replaceStringBuilderString(result, word.getPossessive(result.toString()));
 
         if (usePreposition) {
-            String preposition = word.getRandomPreposition();
+            String preposition = word.getRandomPreposition(lowercasePrepositionIfPossible);
             if (preposition != null) {
                 result.append(' ').append(preposition);
             }
@@ -990,6 +1037,15 @@ public class MainActivity extends AppCompatActivity {
             endIndex = str.length();
 
         return str.substring(beginIndex, endIndex);
+    }
+
+    private boolean charIs(char c, char[] chars) {
+        for (char inspectedChar : chars) {
+            if (c == inspectedChar)
+                return true;
+        }
+
+        return false;
     }
 
     @Override
