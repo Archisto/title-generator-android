@@ -262,17 +262,9 @@ public class MainActivity extends AppCompatActivity {
             if (word.getLastChar() == '-')
                 skipSpace = true;
 
-            if (i < wordsPerTitle - 1) {
-                nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);;
-
-                // Certain words of the Grammatical Particle category cannot be
-                // the last word of the title
-                // (this doesn't matter if there are less than 3 words in the title)
-                if (wordsPerTitle >= 3 && i == wordsPerTitle - 2) {
-                    while (!nextWord.canBeLast) {
-                        nextWord = getRandomWord(wordCategoriesInTitle[i + 1], false, false);
-                    }
-                }
+            if (!isLastWord) {
+                nextWord = getRandomLastWord(
+                    wordCategoriesInTitle[i + 1], wordsPerTitle, false, false);
             }
 
             // The word can be in lowercase if it's not the first or the last or preceded by a colon
@@ -386,6 +378,25 @@ public class MainActivity extends AppCompatActivity {
         return word;
     }
 
+    private Word getRandomLastWord(int categoryId,
+                                   int wordsPerTitle,
+                                   boolean mustStartWithVowel,
+                                   boolean mustStartWithConsonant) {
+        Word word = getRandomWord(categoryId, mustStartWithVowel, mustStartWithConsonant);
+        int wordFilterThreshold = 3;
+
+        // Certain words of the Grammatical Particle category
+        // cannot be the last word of the title
+        // (ignored if the word threshold is not reached)
+        if (wordsPerTitle >= wordFilterThreshold) {
+            while (!word.canBeLast) {
+                word = getRandomWord(categoryId, mustStartWithVowel, mustStartWithConsonant);
+            }
+        }
+
+        return word;
+    }
+
     private int getRandomCategoryId() {
         if (Math.random() < 0.06)
             return wordsByCategory.size() - 1; // Last category = Grammatical Particle
@@ -490,6 +501,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        lastWord = null;
         lastWordCategory = -1;
         boolean emptySubtitleOrSentence = false;
         boolean allowLowercase = false;
@@ -557,10 +569,10 @@ public class MainActivity extends AppCompatActivity {
                 allowLowercase = !emptySubtitleOrSentence && charIsSpace;
             }
 
+            // Adds the last, mutator-less word to the title
             if (isLastChar && currentChar == templateWordChar) {
                 Word word = getRandomWord(displayedCategory, false, false);
                 appendWordToTitle(title, word);
-                lastWordCategory = word.category.id;
             }
 
             if (mutatorBlockLength == 0)
@@ -570,7 +582,6 @@ public class MainActivity extends AppCompatActivity {
         if (title.length() == 0)
             title.append(getString(R.string.untitled));
 
-        lastWord = null;
         lastWordMutators = null;
         mutatorBlockLength = 0;
         lastCharWasTemplateWordChar = false;
