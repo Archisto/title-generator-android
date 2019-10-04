@@ -594,7 +594,7 @@ public class Word {
         if ((prepositions != null && prepositions.length() == 0)
             || (prepositions == null
                 && (defaultPrepositions == null || defaultPrepositions.length() == 0))) {
-            prepositions = null;
+            this.prepositions = null;
             return;
         }
 

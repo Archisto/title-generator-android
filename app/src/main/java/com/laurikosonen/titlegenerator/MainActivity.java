@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         lastWord = null;
-        lastWordCategory = -1;
+        lastWordCategory = displayedCategory;
         boolean emptySubtitleOrSentence = false;
         boolean allowLowercase = false;
 
@@ -692,35 +692,51 @@ public class MainActivity extends AppCompatActivity {
         boolean emptyResult = false;
 
         for (String mutator : mutators) {
-            if (!emptyResult) {
-                if (mutator.equals(getString(R.string.function_copyWord))) {
-                    copyWord = true;
-                }
-                else if (mutator.equals(getString(R.string.function_copyAllMutators))) {
-                    copyCategory = true;
-                    copyNonCategoryMutators = true;
-                }
-                else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
-                    copyNonCategoryMutators = true;
-                }
-                else if (mutator.equals(getString(R.string.function_startsWithVowel))) {
-                    startsWithVowel = true;
-                }
-                else if (mutator.equals(getString(R.string.function_startsWithConsonant))) {
-                    startsWithConsonant = true;
-                }
-                // Copy category mutator is checked in getCategoryIdFromMutators()
+            if (mutator.equals(getString(R.string.function_copyWord))) {
+                copyWord = true;
+            }
+            else if (mutator.equals(getString(R.string.function_copyAllMutators))) {
+                copyCategory = (lastWordCategory != displayedCategory);
+                copyNonCategoryMutators = true;
+            }
+            else if (mutator.equals(getString(R.string.function_copyCategory))) {
+                copyCategory = true;
+            }
+            else if (mutator.equals(getString(R.string.function_copyNonCatMutators))) {
+                copyNonCategoryMutators = true;
             }
 
-            // 50 % chance for an empty result
-            if (mutator.equals(getString(R.string.function_emptyChance)) && Math.random() < 0.5) {
+            // 50 % chance for an empty result if the mutator is x.
+            // 100 % chance if the mutator is testx.
+            else if ((mutator.equals(getString(R.string.function_emptyChance)) && Math.random() < 0.5) || mutator.equals(getString(R.string.function_testEmptyWord))) {
                 emptyResult = true;
+                break;
             }
         }
 
+        if (copyNonCategoryMutators && lastWordMutators != null) {
+            mutators = lastWordMutators;
+        }
+
         if (emptyResult) {
+            lastWordCategory = displayedCategory;
             lastWordMutators = mutators;
+            skipSpace = false;
             return "";
+        }
+
+        // These mutators have to be checked after copying last word's
+        // non-category mutators because they might be included there
+        for (String mutator : mutators) {
+            if (mutator.equals(getString(R.string.function_testSkipSpace))) {
+                skipSpace = true;
+            }
+            else if (mutator.equals(getString(R.string.function_startsWithVowel))) {
+                startsWithVowel = true;
+            }
+            else if (mutator.equals(getString(R.string.function_startsWithConsonant))) {
+                startsWithConsonant = true;
+            }
         }
 
         Word word;
@@ -754,19 +770,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int getCategoryIdFromMutators(String[] mutators) {
-        List<Category> categoryPossibilities = new ArrayList<>();
+        List<Integer> categoryPossibilities = new ArrayList<>();
 
         for (String mutator : mutators) {
-            if (mutator.equals(getString(R.string.function_copyCategory))) {
-                return lastWordCategory;
-            }
-
             for (Category category : categories) {
                 // The mutator has to be checked against a category ID one higher than
                 // it actually is because there cannot be a negative ID as a mutator.
                 // Thus, the ID for All Categories, -1, becomes 0 instead and so on.
                 if (mutator.equals("" + (category.id + 1)) || mutator.equals(category.shortName)) {
-                    categoryPossibilities.add(category);
+                    categoryPossibilities.add(category.id);
                     break;
                 }
             }
@@ -774,11 +786,11 @@ public class MainActivity extends AppCompatActivity {
 
         int categoryId = displayedCategory;
         if (categoryPossibilities.size() == 1) {
-            categoryId = categoryPossibilities.get(0).id;
+            categoryId = categoryPossibilities.get(0);
         }
         else if (categoryPossibilities.size() > 1) {
             int index = (int) (Math.random() * categoryPossibilities.size());
-            categoryId = categoryPossibilities.get(index).id;
+            categoryId = categoryPossibilities.get(index);
         }
 
         return categoryId;
@@ -1023,12 +1035,13 @@ public class MainActivity extends AppCompatActivity {
 
         sb.delete(0, sb.length());
 
-        int firstLetterIndex = chars[0] != ' ' && chars[0] != '\'' ? 0 : 1;
-        sb.append(("" + chars[firstLetterIndex]).toUpperCase().charAt(0));
-
-        for (int i = firstLetterIndex + 1; i < chars.length; i++) {
-            if (chars[i] != ' ' && chars[i] != '\'')
-                sb.append(chars[i]);
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] != ' ' && chars[i] != '-' && chars[i] != '\'') {
+                if (sb.length() == 0)
+                    sb.append(("" + chars[i]).toUpperCase().charAt(0));
+                else
+                    sb.append(chars[i]);
+            }
         }
     }
 

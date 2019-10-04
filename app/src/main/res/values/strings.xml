@@ -97,6 +97,8 @@
     <string name="function_copyCategory">c</string>
     <string name="function_copyNonCatMutators">&amp;</string>
     <string name="function_copyAllMutators">=</string>
+    <string name="function_testSkipSpace">test-</string>
+    <string name="function_testEmptyWord">testx</string>
     <string name="function_catAny">*</string>
     <string name="number_0">0</string>
     <string name="number_1">1</string>
