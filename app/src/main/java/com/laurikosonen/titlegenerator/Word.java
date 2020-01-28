@@ -563,13 +563,13 @@ public class Word {
             }
 
             if (secondToLastChar == 'l' && lastChar == 'e') {
-                modifier = "1y"; // Remove one char, add 'Y'
+                modifier = "1y"; // Remove one char, add "Y"
             }
             else if (secondToLastChar == 'i' && lastChar == 'c') {
-                modifier = "ally";
+                modifier = "ally"; // "ALLY"
             }
             else if (secondToLastChar == 'l' && lastChar == 'l') {
-                modifier = "y";
+                modifier = "y"; // "Y"
             }
             else if (lastChar == 'y') {
                 modifier = "1ily"; // Remove one char, add "ILY"
