@@ -34,6 +34,7 @@
     <string name="action_randomTitleLength">Random word count</string>
     <string name="action_randomWordForm">Random word form</string>
     <string name="action_titleDecorations">Title decorations</string>
+    <string name="action_singlePlainWord">Single plain word</string>
     <string name="action_displayAll">Use all categories</string>
     <string name="action_displayCategory">> %s (%s)</string>
     <string name="action_customTemplate">Custom template</string>
@@ -114,7 +115,7 @@
     <string name="help_text">
         "\nTitle Generator was designed and developed by Lauri Kosonen."
 
-        "\n\n\nGeneral"
+        "\n\n\nGENERAL"
 
         "\n\nPress the button on the lower right corner of the screen to" <b>"generate new"
         "titles."</b> "The chosen category affects which words will appear. You can see the"
@@ -137,7 +138,7 @@
         "effect. Words without a category mutator will obey the used category."
         "\nExample:" <i>"#(ki, co) #(\?, A)"</i>
 
-        "\n\nCategory mutators"
+        "\n\nCATEGORY MUTATORS"
 
         "\n\n- All categories:" <b>"0"</b> "or" <b>"*"</b>
         "\n- Kind (adjectives):" <b>"1"</b> "or" <b>"ki"</b>
@@ -149,7 +150,7 @@
         "\n- Place &amp; Time:" <b>"7"</b> "or" <b>"pt"</b>
         "\n- Grammatical particle:" <b>"8"</b> "or" <b>"gp"</b>
 
-        "\n\nWord form mutators"
+        "\n\nWORD FORM MUTATORS"
 
         "\n\n- Plural:" <b>"+"</b> "or" <b>"s"</b>
         "\n- Possible plural (50 % chance):" <b>"~"</b>
@@ -161,10 +162,13 @@
         "\n- Past tense (Action):" <b>"ed"</b> "or" <b>"p"</b>
         "\n- Past perfect tense (Action):" <b>"pp"</b>
         "\n- Noun (Action):" <b>"n"</b>
-        "\n- Actor (Action and Concept):" <b>"er"</b>
+        "\n- Actor (Action and Concept)*:" <b>"er"</b>
         "\n- Random word form:" <b>"\?"</b>
 
-        "\n\nOther mutators"
+        "\n\n*The actor mutator (er) used with a concept word may result in an adjective."
+        "\nExample: The \"actor\" form of" <i>"Bravery"</i> "is" <i>"Brave"</i>
+
+        "\n\nOTHER MUTATORS"
 
         "\n\n- Chain mutators together:" <b>","</b>
         "\n- Uppercase:" <b>"A"</b>
@@ -188,12 +192,29 @@
 
         "\n\n*The copy mutators (#, c, &amp;, =) and the word removal mutator (x) won\'t be copied."
 
-        "\n\nCustom template examples"
+        "\n\nCUSTOM TEMPLATE EXAMPLES"
 
         "\n\nTo ease the learning of the custom template system, there are some ready-made"
         "templates for you to use. Open the" <b>"Custom template examples"</b> "submenu from the"
         "dropdown menu and select an option there. You\'ll see titles tailored to that template and"
-        "you can also edit it to your liking.\n\n"
+        "you can also edit it to your liking."
+
+        "\n\nOTHER FEATURES"
+
+        "\n\nGive some style to your titles with" <b>"title decorations"</b> "- short"
+        "words or symbols in between the main generated words. For example, \"of\", \"and the\""
+        "and \":\" are title decorations. Title decorations aren't generated when using"
+        "a custom template as you can write them yourself in the template."
+        "You can toggle random title decorations on and off in the dropdown menu."
+
+        "\n\nThe" <b>"Single plain word"</b> "option in the dropdown menu brings the word count"
+        "cap down to one and deactivates random word form and title decoration toggles."
+        "This is useful when you just want to quickly generate a random word from the used category"
+        "without anything extra. The option only affects settings and won't activate a special mode"
+        "like custom template does. Now, with the settings being taken care of, you can keep"
+        "tapping the big title generation button to get more single plain words.\n"
+
+        <i>"\nExit the help screen with your device's back button."</i>
     </string>
     <string name="credits_text">
         "Designed and developed by Lauri Kosonen"

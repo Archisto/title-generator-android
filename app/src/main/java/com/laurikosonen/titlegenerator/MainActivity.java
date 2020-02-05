@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem randomTitleLengthToggle;
     private MenuItem randomWordFormToggle;
     private MenuItem titleDecorationsToggle;
+    private MenuItem singlePlainWordButton;
 
     private List<List<Word>> wordsByCategory;
     private List<Category> categories; // Contains All Categories (ID: -1) as the first item
@@ -1132,6 +1133,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         else if (handleTitleDecorationsActivation(id))
             return true;
+        else if (handleSinglePlainWordActivation(id))
+            return true;
         else if (handleCustomTemplateExampleOptions(id))
             return true;
 
@@ -1259,6 +1262,30 @@ public class MainActivity extends AppCompatActivity {
 
             if (!enableCustomTemplate)
                 generateTitles();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean handleSinglePlainWordActivation(int id) {
+        if (id == R.id.action_singlePlainWord) {
+            activateCustomTemplate(false);
+
+            titleWordCount = 1;
+            enableRandomWordForm = false;
+            enableTitleDecorations = false;
+
+            titleWordCountMenuItem.
+                setTitle(String.format(getString(R.string.titleWordCount), titleWordCount));
+            randomWordFormToggle.setChecked(enableRandomWordForm);
+            titleDecorationsToggle.setChecked(enableTitleDecorations);
+
+            if (enableCustomTemplate)
+                activateCustomTemplate(false);
+
+            generateTitles();
 
             return true;
         }

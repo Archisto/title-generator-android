@@ -1144,7 +1144,6 @@
         <word name="Single" compa="" super="" manner="" />
         <word name="Singular" compa="" super="" />
         <word name="Sinister" />
-        <word name="Siphoned" />
         <word name="Six" compa="" super="" manner="" />
         <word name="Skilled" manner="2fully" />
         <word name="Skillful" />
@@ -6127,7 +6126,7 @@
         <word name="Fiefdom" />
         <word name="Field" />
         <word name="Fjord" />
-        <word name="Flats" plural="" />
+        <word name="Flat" />
         <word name="Floor" />
         <word name="Forest" />
         <word name="Forever" plural="" />

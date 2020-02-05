@@ -100,6 +100,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/action_singlePlainWord"
+        android:title="@string/action_singlePlainWord"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/submenu_exampleTemplates"
         android:enabled="true"
         android:title="@string/action_exampleTemplates"
