@@ -121,6 +121,7 @@
         <word name="Bonus" compa="" super="" manner="" />
         <word name="Boring" />
         <word name="Borrowed" />
+        <word name="Botanical" compa="" super="" />
         <word name="Both" compa="" super="" manner="" />
         <word name="Bottom" manner="" />
         <word name="Boundless" compa="" super="" />
@@ -1532,7 +1533,6 @@
         <word name="Anxiety" plural="" />
         <word name="Apocalypse" plural="" />
         <word name="Apocrypha" plural="" />
-        <word name="Apparition" />
         <word name="Appearance" />
         <word name="Archaeology" plural="" actor="1ist" />
         <word name="Architecture" plural="" actor="3" />
@@ -1588,7 +1588,7 @@
         <word name="Bond" actor="-" />
         <word name="Boon" />
         <word name="Border" />
-        <word name="Botany" actor="1ist" />
+        <word name="Botany" plural="" actor="1ist" />
         <word name="Boundary" />
         <word name="Bounds" plural="" />
         <word name="Bounty" actor="1iful" />
@@ -2141,6 +2141,7 @@
         <word name="Myth" />
         <word name="Mythology" actor="5ic" />
         <word name="Narrative" actor="3or" />
+        <word name="Nationality" actor="3" />
         <word name="Nature" actor="1al" />
         <word name="Navigation" plural="" actor="3or" />
         <word name="Necessity" actor="3ary" />
@@ -2610,11 +2611,14 @@
         <word name="Cinder" />
         <word name="Clay" />
         <word name="Cloth" plural="-" />
+        <word name="Cluster" plural="-" />
         <word name="Coal" />
         <word name="Cobalt" />
         <word name="Color" plural="-" />
         <word name="Colour" plural="-" />
+        <word name="Component" plural="-" />
         <word name="Composite" plural="-" />
+        <word name="Composition" plural="-" />
         <word name="Compound" plural="-" />
         <word name="Concrete" />
         <word name="Conduit" plural="-" />
@@ -2634,6 +2638,9 @@
         <word name="Diamond" plural="-" />
         <word name="Diesel" />
         <word name="Dirt" />
+        <word name="Drink" plural="-" />
+        <word name="Drop" plural="-" />
+        <word name="Droplet" plural="-" />
         <word name="Dust" />
         <word name="Dye" plural="-" />
         <word name="Dynamite" />
@@ -2653,9 +2660,11 @@
         <word name="Extract" plural="-" />
         <word name="Fabric" plural="-" />
         <word name="Fiber" plural="-" />
+        <word name="Film" plural="-" />
         <word name="Filth" />
         <word name="Fire" plural="-" />
         <word name="Fission" />
+        <word name="Flake" plural="-" />
         <word name="Flame" plural="-" prtc="-" />
         <word name="Fleece" />
         <word name="Flesh" />
@@ -2663,10 +2672,14 @@
         <word name="Fluid" plural="-" />
         <word name="Foam" />
         <word name="Fog" />
+        <word name="Food" />
         <word name="Fractal" plural="-" />
+        <word name="Fragment" plural="-" />
         <word name="Frost" />
         <word name="Fuel" />
         <word name="Fume" plural="-" />
+        <word name="Fungus" plural="2i" />
+        <word name="Fur" plural="-" />
         <word name="Fusion" />
         <word name="Garbage" />
         <word name="Garnet" plural="-" />
@@ -2680,6 +2693,8 @@
         <word name="Gold" />
         <word name="Gore" />
         <word name="Granite" />
+        <word name="Grass" />
+        <word name="Gravel" />
         <word name="Gray" />
         <word name="Green" />
         <word name="Grey" />
@@ -2724,6 +2739,7 @@
         <word name="Matter" plural="-" />
         <word name="Mead" plural="-" />
         <word name="Meat" plural="-" />
+        <word name="Medicine" />
         <word name="Mega" />
         <word name="Mercury" />
         <word name="Metal" plural="-" />
@@ -2827,6 +2843,7 @@
         <word name="Smolder" />
         <word name="Smoulder" />
         <word name="Snow" />
+        <word name="Snowflake" plural="-" />
         <word name="Soap" />
         <word name="Soil" />
         <word name="Solid" plural="-" />
@@ -2914,8 +2931,10 @@
         <word name="Anything" plural="" noArticle="-" />
         <word name="Apology" />
         <word name="App" />
+        <word name="Apparition" />
         <word name="Apple" />
         <word name="Appliance" />
+        <word name="Application" />
         <word name="Arc" />
         <word name="Arch" />
         <word name="Arm" />
@@ -3091,6 +3110,7 @@
         <word name="Cherry" />
         <word name="Chess" plural="" />
         <word name="Chest" />
+        <word name="Chestnut" />
         <word name="Chord" />
         <word name="Chorus" />
         <word name="Christmas" />
@@ -3108,7 +3128,6 @@
         <word name="Cloud" />
         <word name="Clover" />
         <word name="Club" />
-        <word name="Cluster" />
         <word name="Coaster" />
         <word name="Coat" />
         <word name="Cocoon" />
@@ -3129,8 +3148,6 @@
         <word name="Commodity" />
         <word name="Communion" />
         <word name="Compass" />
-        <word name="Component" />
-        <word name="Composition" />
         <word name="Computer" />
         <word name="Concert" />
         <word name="Concussion" />
@@ -3160,6 +3177,7 @@
         <word name="Countdown" />
         <word name="Counter" />
         <word name="Counterpart" />
+        <word name="Coupon" />
         <word name="Course" />
         <word name="Crack" />
         <word name="Cradle" />
@@ -3271,6 +3289,7 @@
         <word name="Fan" />
         <word name="Fanfare" />
         <word name="Fang" />
+        <word name="Faucet" />
         <word name="Feast" />
         <word name="Feather" />
         <word name="Fence" />
@@ -3303,7 +3322,6 @@
         <word name="Flu" plural="" />
         <word name="Flute" />
         <word name="Foil" />
-        <word name="Food" plural="" />
         <word name="Foreground" />
         <word name="Forge" />
         <word name="Fork" />
@@ -3321,9 +3339,7 @@
         <word name="Frontline" />
         <word name="Fruit" />
         <word name="Funeral" />
-        <word name="Fungus" plural="2i" />
         <word name="Funnel" />
-        <word name="Fur" />
         <word name="Furnace" />
         <word name="Furniture" plural="" />
         <word name="Gadget" />
@@ -4561,6 +4577,7 @@
         <word name="Mystic" />
         <word name="Narrator" />
         <word name="Nation" />
+        <word name="Native" />
         <word name="Naut" />
         <word name="Navigator" />
         <word name="Navy" plural="" />
@@ -5099,7 +5116,7 @@
         <word name="Convince" noDefPrepos="-" />
         <word name="Cool" noun="!Cold" prepos="Down, Off" />
         <word name="Cooperate" noun="-" prepos="With" noDefPrepos="-" />
-        <word name="Copy" pres="1ies" prepos="From" />
+        <word name="Copy" prepos="From" />
         <word name="Corrode" noun="2sion" />
         <word name="Corrupt" noun="-" prepos="With" />
         <word name="Cough" noDefPrepos="-" />
@@ -5115,7 +5132,7 @@
         <word name="Cremate" noun="-" />
         <word name="Croak" noDefPrepos="-" />
         <word name="Crush" prepos="Under" />
-        <word name="Cry" plural="1ies" prepos="for" noDefPrepos="-" />
+        <word name="Cry" prepos="for" noDefPrepos="-" />
         <word name="Cure" prepos="From" />
         <word name="Curse" prepos="for, to" />
         <word name="Cut" dupCon="t" past="=" prepos="Apart, in, Through" />
@@ -5547,7 +5564,7 @@
         <word name="Nominate" noun="-" prepos="for" />
         <word name="Notice" prepos="About" />
         <word name="Nudge" />
-        <word name="Nullify" noun="1ication" pres="1ies" />
+        <word name="Nullify" noun="1ication" />
         <word name="Obey" noun="1dience" />
         <word name="Oblige" noun="1ation" />
         <word name="Observe" noun="1ation" />
@@ -5861,6 +5878,7 @@
         <word name="Spoil" />
         <word name="Spread" past="=" prepos="Across, on" />
         <word name="Sprint" prepos="at, Towards" />
+        <word name="Spy" prepos="on" noDefPrepos="-" />
         <word name="Squish" prepos="Under" />
         <word name="Stabilize" noun="1ation" />
         <word name="Stain" prepos="With" />
@@ -5880,7 +5898,7 @@
         <word name="Stoke" />
         <word name="Stomp" noun="!Stampede" prepos="on" />
         <word name="Stop" dupCon="p" prepos="at, for" />
-        <word name="Storm" prepos="Out" />
+        <word name="Storm" prepos="in, Out" />
         <word name="Strand" prepos="on" />
         <word name="Strangle" noun="2ulation" />
         <word name="Stray" actor="=" prepos="Out" />
@@ -5975,7 +5993,7 @@
         <word name="Trip" dupCon="p" prepos="on" />
         <word name="Trudge" prepos="Through" noDefPrepos="-" />
         <word name="Trust" plural="" prepos="in" noDefPrepos="-" />
-        <word name="Try" pres="1ies" prepos="on, to" />
+        <word name="Try" prepos="on, to" />
         <word name="Tug" dupCon="g" prepos="on, to, With" />
         <word name="Tune" prepos="to" />
         <word name="Turn" prepos="Down, Up" />
@@ -6163,6 +6181,7 @@
         <word name="Crag" />
         <word name="Crater" />
         <word name="Creek" />
+        <word name="Crematory" />
         <word name="Croft" />
         <word name="Crypt" />
         <word name="Dale" />
@@ -6335,6 +6354,7 @@
         <word name="Mountain Range" />
         <word name="Mountain" />
         <word name="Museum" />
+        <word name="Nation" />
         <word name="Neptune" plural="" />
         <word name="Nest" />
         <word name="Nether" />
@@ -6400,6 +6420,7 @@
         <word name="Reef" />
         <word name="Refinery" />
         <word name="Region" />
+        <word name="Reservation" />
         <word name="Reservoir" />
         <word name="Residence" />
         <word name="Resort" />
