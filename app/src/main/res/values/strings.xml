@@ -117,8 +117,8 @@
 
         "\n\n\nGENERAL"
 
-        "\n\nPress the button on the lower right corner of the screen to" <b>"generate new"
-        "titles."</b> "The chosen category affects which words will appear. You can see the"
+        "\n\nPress the big green button on the lower right corner of the screen to" <b>"generate"
+        "new titles."</b> "The chosen category affects which words will appear. You can see the"
         "used category on the top of the screen. You can change it, along with many other"
         "things, in the dropdown menu at the upper right corner of the screen."
 
@@ -148,7 +148,7 @@
         "\n- Person &amp; Creature:" <b>"5"</b> "or" <b>"pc"</b>
         "\n- Action (verbs):" <b>"6"</b> "or" <b>"ac"</b>
         "\n- Place &amp; Time:" <b>"7"</b> "or" <b>"pt"</b>
-        "\n- Grammatical particle:" <b>"8"</b> "or" <b>"gp"</b>
+        "\n- Grammatical Particle:" <b>"8"</b> "or" <b>"gp"</b>
 
         "\n\nWORD FORM MUTATORS"
 
@@ -160,12 +160,13 @@
         "\n- Present participle (Action):" <b>"ing"</b>
         "\n- Present tense (Action):" <b>"pr"</b>
         "\n- Past tense (Action):" <b>"ed"</b> "or" <b>"p"</b>
-        "\n- Past perfect tense (Action):" <b>"pp"</b>
+        "\n- Past participle (Action):" <b>"pp"</b>
         "\n- Noun (Action):" <b>"n"</b>
         "\n- Actor (Action and Concept)*:" <b>"er"</b>
         "\n- Random word form:" <b>"\?"</b>
 
-        "\n\n*The actor mutator (er) used with a concept word may result in an adjective."
+        "\n\n*The actor mutator (er) used with a concept word results in an adjective most of the"
+        "time."
         "\nExample: The \"actor\" form of" <i>"Bravery"</i> "is" <i>"Brave"</i>
 
         "\n\nOTHER MUTATORS"
@@ -208,13 +209,19 @@
         "You can toggle random title decorations on and off in the dropdown menu."
 
         "\n\nThe" <b>"Single plain word"</b> "option in the dropdown menu brings the word count"
-        "cap down to one and deactivates random word form and title decoration toggles."
+        "cap down to one and deactivates random word forms and title decorations."
         "This is useful when you just want to quickly generate a random word from the used category"
         "without anything extra. The option only affects settings and won't activate a special mode"
         "like custom template does. Now, with the settings being taken care of, you can keep"
-        "tapping the big title generation button to get more single plain words.\n"
+        "tapping the big green button to get more single plain words."
 
-        <i>"\nExit the help screen with your device's back button."</i>
+        "\n\nWords in brackets are" <b>"placeholder words"</b> "and their purpose is to give you"
+        "room to decide the word yourself. For example, in the title \"[Color] Planet\", "
+        "[Color] is a placeholder for any color you wish."
+        "Other placeholders are [Number], [Character's Name], [Place Name], [Nationality] and"
+        "[Month]."
+
+        <i>"\n\nExit the help screen with your device's back button."</i>
     </string>
     <string name="credits_text">
         "Designed and developed by Lauri Kosonen"
