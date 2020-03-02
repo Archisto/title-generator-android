@@ -191,7 +191,7 @@
         <word name="Compromised" />
         <word name="Concave" />
         <word name="Condemned" />
-        <word name="Confident" plural="-" />
+        <word name="Confident" />
         <word name="Confidential" />
         <word name="Conscious" />
         <word name="Consecutive" compa="" super="" />
@@ -689,6 +689,7 @@
         <word name="Intensive" />
         <word name="Intentional" compa="" super="" />
         <word name="Inter-" compa="" super="" manner="" />
+        <word name="Interconnected" />
         <word name="Interdimensional" />
         <word name="Interesting" />
         <word name="Internal" plural="-" />
@@ -783,6 +784,7 @@
         <word name="Masked" />
         <word name="Massive" />
         <word name="Material" plural="-" compa="" super="" />
+        <word name="Maternal" compa="" super="" />
         <word name="Max" compa="" super="" manner="" />
         <word name="Maximum" compa="" super="" manner="2ally" />
         <word name="Maybe" compa="" super="" manner="" />
@@ -933,6 +935,7 @@
         <word name="Outlandish" />
         <word name="Outright" compa="" super="" manner="" />
         <word name="Overall" compa="" super="" manner="" />
+        <word name="Overboard" compa="" super="" manner="" />
         <word name="Overcrowded" manner="" />
         <word name="Oversaturated" manner="" />
         <word name="Overt" />
@@ -947,6 +950,7 @@
         <word name="Paranormal" />
         <word name="Particular" />
         <word name="Passive" />
+        <word name="Paternal" compa="" super="" />
         <word name="Pathetic" />
         <word name="Patient" />
         <word name="Peak" compa="" super="" manner="" />
@@ -1033,6 +1037,7 @@
         <word name="Quadruple" plural="-" compa="" super="" />
         <word name="Quaint" compa="-" super="-" />
         <word name="Quality" plural="-" compa="" super="" manner="" />
+        <word name="Quantum" compa="" super="" manner="" />
         <word name="Quarter" plural="-" compa="" super="" />
         <word name="Quasi-" compa="" super="" manner="" />
         <word name="Quick" compa="-" super="-" />
@@ -1393,6 +1398,7 @@
         <word name="Utter" compa="" super="" />
         <word name="Vain" compa="-" super="-" />
         <word name="Valiant" />
+        <word name="Valorous" />
         <word name="Valuable" />
         <word name="Vapid" compa="-" super="-" />
         <word name="Vast" compa="-" super="-" />
@@ -3003,6 +3009,7 @@
         <word name="Bestiary" />
         <word name="Bet" />
         <word name="Bicycle" />
+        <word name="Biscuit" />
         <word name="Bit" />
         <word name="Blade" />
         <word name="Blanket" />
@@ -3086,6 +3093,7 @@
         <word name="Card" />
         <word name="Cargo" plural="" />
         <word name="Carnival" />
+        <word name="Carpet" />
         <word name="Carriage" />
         <word name="Cart" />
         <word name="Cartridge" />
@@ -3164,7 +3172,8 @@
         <word name="Contract" />
         <word name="Conversation" />
         <word name="Convoy" />
-        <word name="Coordinates" plural="" />
+        <word name="Cookie" />
+        <word name="Coordinate" />
         <word name="Copy" />
         <word name="Cord" />
         <word name="Corn" plural="" />
@@ -3395,6 +3404,7 @@
         <word name="Handshake" />
         <word name="Harness" />
         <word name="Harp" />
+        <word name="Harpoon" />
         <word name="Hat" />
         <word name="Hatch" />
         <word name="Head" />
@@ -3801,6 +3811,7 @@
         <word name="Scarecrow" />
         <word name="Scarf" />
         <word name="Sceptre" />
+        <word name="Schema" />
         <word name="Scheme" />
         <word name="Scimitar" />
         <word name="Scope" />
@@ -3926,7 +3937,7 @@
         <word name="Sun" />
         <word name="Sunrise" />
         <word name="Sunset" />
-        <word name="Sunshine" />
+        <word name="Sunshine" plural="" />
         <word name="Supernova" />
         <word name="Supply" />
         <word name="Sword" />
@@ -4060,6 +4071,7 @@
         <word name="Volley" />
         <word name="Volt" />
         <word name="Vortex" />
+        <word name="Vote" />
         <word name="Voyage" />
         <word name="Wager" />
         <word name="Wagon" />
@@ -4140,6 +4152,7 @@
         <word name="Athena" plural="" />
         <word name="Athlete" />
         <word name="Audience" />
+        <word name="Aunt" />
         <word name="Author" />
         <word name="Automaton" />
         <word name="Avenger" />
@@ -4254,6 +4267,7 @@
         <word name="Conspirator" />
         <word name="Constructor" />
         <word name="Convict" />
+        <word name="Cook" />
         <word name="Cop" />
         <word name="Corporation" />
         <word name="Corps" plural="" />
@@ -4394,6 +4408,8 @@
         <word name="Goon" />
         <word name="Gorilla" />
         <word name="Government" />
+        <word name="Grandfather" />
+        <word name="Grandmother" />
         <word name="Grasshopper" />
         <word name="Griever" />
         <word name="Griffin" />
@@ -4836,6 +4852,7 @@
         <word name="Twin" />
         <word name="Tycoon" />
         <word name="Tyrant" />
+        <word name="Uncle" />
         <word name="Unicorn" />
         <word name="Union" />
         <word name="Urchin" />
@@ -5162,7 +5179,7 @@
         <word name="Defile" noun="ment" />
         <word name="Define" noun="1ition" />
         <word name="Defy" noun="1iance" />
-        <word name="Degrade" />
+        <word name="Degrade" noun="1ation" />
         <word name="Delay" prepos="to" />
         <word name="Delete" noun="-" actor="r" prepos="From" />
         <word name="Deliver" noun="y" prepos="From, to" />
@@ -5428,6 +5445,7 @@
         <word name="Ignite" noun="-" actor="r" />
         <word name="Ignore" plural="" noun="1ance" />
         <word name="Imagine" noun="1ation" actor="1ator" />
+        <word name="Imbue" noun="1ing" prepos="With" />
         <word name="Imitate" noun="-" />
         <word name="Immerse" noun="-" prepos="in" noDefPrepos="-" />
         <word name="Immolate" noun="-" />
@@ -5511,6 +5529,7 @@
         <word name="Lie" prtc="!Lying" past="!Lay" perf="!Laid" actor="!Layer" prepos="Down, on" noDefPrepos="-" />
         <word name="Lift" prepos="Up" />
         <word name="Like" prepos="to" />
+        <word name="Link" prepos="to, With" />
         <word name="Listen" prepos="to" noDefPrepos="-" />
         <word name="Live" plural="-" noun="!Life" />
         <word name="Load" prepos="of" />
@@ -5996,6 +6015,7 @@
         <word name="Try" prepos="on, to" />
         <word name="Tug" dupCon="g" prepos="on, to, With" />
         <word name="Tune" prepos="to" />
+        <word name="Tunnel" prepos="Through, Under" noDefPrepos="-" />
         <word name="Turn" prepos="Down, Up" />
         <word name="Twist" prepos="Around" />
         <word name="Undermine" noun="1ing" />
@@ -6401,6 +6421,7 @@
         <word name="Plaza" plural="" />
         <word name="Pluto" plural="" />
         <word name="Point" />
+        <word name="Polis" />
         <word name="Pond" />
         <word name="Pool" />
         <word name="Port" />
@@ -6468,6 +6489,7 @@
         <word name="Stables" plural="" />
         <word name="Stadium" />
         <word name="Star" />
+        <word name="State" />
         <word name="Station" />
         <word name="Steppe" />
         <word name="Stockade" />
