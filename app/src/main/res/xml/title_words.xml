@@ -710,6 +710,7 @@
         <word name="Inverse" />
         <word name="Invisible" />
         <word name="Invulnerable" />
+        <word name="Ionic" />
         <word name="Irate" />
         <word name="Iridescent" />
         <word name="Ironclad" />
@@ -1330,6 +1331,7 @@
         <word name="Tiny" compa="-" super="-" />
         <word name="Tired" />
         <word name="Tireless" />
+        <word name="Together" compa="" super="" manner="" />
         <word name="Too" compa="" super="" manner="" />
         <word name="Top" plural="-" compa="!Higher" super="most" manner="" />
         <word name="Torn" />
@@ -1384,6 +1386,7 @@
         <word name="Unfamiliar" />
         <word name="Unfathomable" />
         <word name="Unforeseen" />
+        <word name="Unforgettable" />
         <word name="Unforgiven" />
         <word name="Unfortunate" />
         <word name="Unholy" compa="-" super="-" manner="" />
@@ -1531,6 +1534,7 @@
         <word name="Addiction" actor="3" />
         <word name="Advantage" actor="ous" />
         <word name="Adventure" actor="-" />
+        <word name="Adversity" actor="3ary" />
         <word name="Advice" plural="" actor="2sor" />
         <word name="Affair" />
         <word name="Affection" />
@@ -2330,6 +2334,7 @@
         <word name="Range" actor="-" />
         <word name="Rank" actor="-" />
         <word name="Rapture" />
+        <word name="Rarity" actor="3e" />
         <word name="Rate" actor="r" />
         <word name="Rationality" plural="" actor="3" />
         <word name="Reality" actor="3" />
@@ -2519,7 +2524,6 @@
         <word name="Thrill" actor="-" />
         <word name="Tidings" plural="" />
         <word name="Time" />
-        <word name="Together" plural="" />
         <word name="Torment" actor="or" />
         <word name="Trace" actor="-" />
         <word name="Traction" plural="" />
@@ -4050,6 +4054,7 @@
         <word name="Tentacle" />
         <word name="Terminal" />
         <word name="Tesseract" />
+        <word name="Test" />
         <word name="Testament" />
         <word name="Testimony" />
         <word name="Tether" />
@@ -5166,7 +5171,7 @@
         <word name="Chase" prepos="From, to" />
         <word name="Chat" dupCon="t" prepos="With" />
         <word name="Cheat" prepos="at, in, on" noDefPrepos="-" />
-        <word name="Check" prepos="for, on, Out" />
+        <word name="Check" prepos="for, in, on, Out" />
         <word name="Cheer" prepos="for, on, Up" noDefPrepos="-" />
         <word name="Chill" noDefPrepos="-" />
         <word name="Choke" prepos="on" />
